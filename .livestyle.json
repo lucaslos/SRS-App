@@ -1,0 +1,3 @@
+{
+    "globals": ["style/abstracts/_variables.scss", "style/abstracts/_mixins.scss", "style/abstracts/_functions.scss"]
+}

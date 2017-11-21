@@ -1,0 +1,108 @@
+$main-color: $light1;
+
+.button {
+  position: relative;
+
+  display: inline-block;
+  color: $main-color;
+  font-family: $roboto;
+  font-weight: 500;
+
+  border-radius: 2px;
+
+  cursor: pointer;
+  transition: .2s ease-out;
+
+  /* size */
+  &.medium {
+    height: 36px;
+
+    font-size: 14px;
+  }
+
+  &.small {
+    height: 28px;
+    line-height: 28px;
+
+    font-size: 13px;
+  }
+
+  /* type */
+  &.raised {
+    padding: 0 16px;
+
+    color: #fff;
+
+    background-color: $main-color;
+
+    &:hover {
+      background-color: shade($main-color, 6%);
+    }
+  }
+
+  &.flat {
+    padding: 0 10px;
+
+    color: $main-color;
+
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  /* corner */
+  &.rounded {
+    border-radius: 100px;
+  }
+
+  /* aling */
+  &.align-right {
+    float: right;
+
+    margin: 8px 8px 8px 0;
+  }
+
+  &.align-left {
+    float: left;
+
+    margin: 8px 0 8px 8px;
+  }
+
+  /* state */
+  &.disabled {
+    color: rgba(0, 0, 0, 0.26);
+
+    pointer-events: none;
+  }
+}
+
+/* floating action button */
+.floating-action-btn {
+  position: absolute;
+  right: 56px;
+  bottom: 80px;
+
+  height: 56px;
+  width: 56px;
+
+  background-color: $main-color;
+  border-radius: 56px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+
+  transition: 0.2s ease-out;
+  cursor: pointer;
+
+  .icon {
+    @include v-center(24px);
+    @include h-center(24px);
+
+    position: absolute;
+  }
+
+  &:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+    background-color: shade($main-color, 6%);
+  }
+}

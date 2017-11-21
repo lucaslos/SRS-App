@@ -1,0 +1,21 @@
+// Horizontally center a div
+@mixin h-center($width) {
+  width: $width;
+  left: 50%;
+  margin-left: (-$width / 2);
+}
+
+@mixin v-center($height) {
+  position: absolute;
+
+  height: $height;
+  top: 50%;
+  margin-top: (-$height / 2);
+}
+
+@mixin center($width, $height: $width) {
+  @include h-center($width);
+  @include v-center($height);
+
+  position: absolute;
+}

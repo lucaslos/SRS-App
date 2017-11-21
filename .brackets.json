@@ -1,0 +1,27 @@
+{
+    "path": {
+        "style/main.scss": {
+            "sass.enabled": true,
+            "sass.options": {
+                "outputDir": "../public",
+                "output": "style.css",
+                "sourceComments": "map",
+                "outputStyle": "nested"
+            },
+            "jwolfe.file-tree-exclude.list": [
+                "node_modules",
+                "bower_components",
+                ".git",
+                "dist",
+                "vendor"
+            ],
+            "brackets-icons.iconset": "devicons",
+            "linting.collapsed": true,
+            "custom.work.useIconsOfCustomWork": true,
+            "custom.work.moveToolbarToSidebar": true,
+            "custom.work.grayScaleIcons": true,
+            "custom.work.toggle.sidebar": true,
+            "custom.work.scrollwheel": true
+        }
+    }
+}

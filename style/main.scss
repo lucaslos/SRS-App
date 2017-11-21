@@ -1,0 +1,27 @@
+// compileCompressed, compressedFilenamePattern: ../public/style.css
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'base/normalize';
+@import 'base/general';
+
+@import 'sections/section';
+@import 'sections/header';
+@import 'sections/revision';
+
+@import 'components/buttons';
+@import 'components/menu';
+@import 'components/logo';
+@import 'components/hamburger-button';
+@import 'components/scroll-bar';
+@import 'components/modals';
+@import 'components/groups';
+@import 'components/text-field';
+@import 'components/edit-create-card';
+@import 'components/edit-create-group';
+@import 'components/tags';
+@import 'components/notes';
+@import 'components/switcher';
