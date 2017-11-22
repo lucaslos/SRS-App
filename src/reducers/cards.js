@@ -33,9 +33,10 @@ export default (state = {}, action) => {
       });
 
     case 'REMOVE_DUPLICATES':
-      return Object.assign({}, state, {
-        items: state.items.filter((el, i, a) => i === a.indexOf(el)),
-      });
+      return { ...state, items: state.items.filter(card => !card.ignoreInSRSAlgo) };
+      // return Object.assign({}, state, {
+      //   items: state.items.filter((el, i, a) => i === a.indexOf(el)),
+      // });
 
     case 'RESET':
       return {
@@ -86,8 +87,14 @@ export default (state = {}, action) => {
         return Object.assign({}, state, {
           items: [
             ...state.items,
-            tempArray[Math.floor(Math.random() * tempArray.length)],
-            state.items.find(card => card.id === action.cardId),
+            {
+              ...tempArray[Math.floor(Math.random() * tempArray.length)],
+              ignoreInSRSAlgo: true,
+            },
+            {
+              ...state.items.find(card => card.id === action.cardId),
+              ignoreInSRSAlgo: true,
+            },
           ],
         });
       }
@@ -95,7 +102,10 @@ export default (state = {}, action) => {
       return Object.assign({}, state, {
         items: [
           ...state.items,
-          state.items.find(card => card.id === action.cardId),
+          {
+            ...state.items.find(card => card.id === action.cardId),
+            ignoreInSRSAlgo: true,
+          },
         ],
       });
     }

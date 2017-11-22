@@ -33,31 +33,16 @@ const limitRange = (val, min, max) => {
 // };
 
 export const logReview = {
-  add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
-    // const db = open.result;
-    // const tx = db.transaction('log', 'readwrite');
-    // const store = tx.objectStore('log');
-    //
+  add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength, section) => {
     const item = {
       group,
       failureRate,
       failures,
       repetitionsBeforeReview,
       cardsLength,
+      section,
       created: +new Date(),
     };
-    //
-    // const request = store.add(item);
-    //
-    // request.onsuccess = () => {
-    //   console.log('log registered!');
-    // };
-    //
-    // // Close the db when the transaction is done
-    // tx.oncomplete = () => {
-    //   // db.close();
-    //   console.log('transaction done');
-    // };
 
     // localstorage
     const currentLog = JSON.parse(window.localStorage.getItem('log')) || [];

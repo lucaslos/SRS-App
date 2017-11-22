@@ -75,6 +75,7 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "highcharts": "^6.0.3",
     "json-server": "^0.12.0",
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",
