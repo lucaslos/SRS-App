@@ -26,7 +26,7 @@ class EditCardModal extends React.Component {
       difficulty: { value: this.props.activeCard.difficulty, isValid: false },
       lastView: { value: this.props.activeCard.lastView, isValid: true },
       tags: this.props.activeCard.tags ? this.props.activeCard.tags.map(item => ({ id: _.uniqueId(), text: item.text || item })) : [],
-      notes: this.props.activeCard.tags ? this.props.activeCard.notes.map(item => ({ id: _.uniqueId(), text: item.text || item })) : [],
+      notes: this.props.activeCard.notes ? this.props.activeCard.notes.map(item => ({ id: _.uniqueId(), text: item.text || item })) : [],
     });
   }
 

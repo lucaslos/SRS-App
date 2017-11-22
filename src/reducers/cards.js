@@ -34,9 +34,6 @@ export default (state = {}, action) => {
 
     case 'REMOVE_DUPLICATES':
       return { ...state, items: state.items.filter(card => !card.ignoreInSRSAlgo) };
-      // return Object.assign({}, state, {
-      //   items: state.items.filter((el, i, a) => i === a.indexOf(el)),
-      // });
 
     case 'RESET':
       return {
@@ -111,15 +108,19 @@ export default (state = {}, action) => {
     }
 
     case 'ADD_TAG':
-      return Object.assign({}, state, {
-        items: state.items.map(card => (
-          card.id === action.cardId
-            ? { ...card,
-              tags: [...card.tags, action.tag],
-            }
-            : card
-        )),
-      });
+      return {
+        ...state,
+        items: state.items.map((card) => {
+          card.tags = card.tags || [];
+
+          return card.id === action.cardId
+          ? {
+            ...card,
+            tags: [...card.tags, action.tag],
+          }
+          : card
+        }),
+      }
 
     default:
       return state;

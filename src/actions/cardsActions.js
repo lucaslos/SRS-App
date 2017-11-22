@@ -1,6 +1,8 @@
 import Axios from 'axios';
 import { showError } from 'actions/errorActions';
 import { updateCards } from 'actions/groupsActions';
+import { setModalVisibility } from 'actions/modalsActions';
+import { finishRevision } from 'actions/revisionActions';
 
 const apiUrl = 'http://localhost:4000/api/card';
 
@@ -30,14 +32,24 @@ export const addCardToDeletion = cardId => ({
 });
 
 export const deleteCard = cardId => (dispatch, getState) => {
-  const directDeletion = getState().modalsVisibility.SearchModal;
+  const modalsVisibility = getState().modalsVisibility;
 
-  if (directDeletion) {
+  if (modalsVisibility.SearchModal) {
     dispatch(deleteCardSuccess(cardId));
     updateCards([], [], [cardId], null, dispatch);
   } else {
     dispatch(deleteCardSuccess(cardId));
     dispatch(addCardToDeletion(cardId));
+
+    if (modalsVisibility.Revision && getState().cards.items.length === getState().revision.position + 1) {
+      const state = getState();
+      const activeGroup = state.groups.active === 'REFORCE'
+        ? { id: 'REFORCE', name: 'Reforce Cards', repetitions: 0 }
+        : state.groups.items.find(group => group.id === state.groups.active);
+
+      dispatch(setModalVisibility('Revision', false));
+      dispatch(finishRevision(activeGroup));
+    }
   }
 };
 

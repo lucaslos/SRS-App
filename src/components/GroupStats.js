@@ -1,8 +1,9 @@
+/* global Highcharts, $ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { srsAlgo } from 'utils';
-import Highcharts from 'highcharts';
 
 class GropStats extends React.Component {
   constructor() {
@@ -13,29 +14,269 @@ class GropStats extends React.Component {
     };
   }
 
-  toggleExpand = () => {
-    this.setState({
-      isExpanded: !this.state.isExpanded,
-    });
+  toggleExpand = (e) => {
+    if (!this.chartContainer.contains(e.target)) {
+      this.setState({
+        isExpanded: !this.state.isExpanded,
+      });
 
-    if (!this.state.isExpanded)
-      this.generateChart();
-    else
-      this.chart.destroy();
+      if (!this.state.isExpanded)
+        this.generateChart();
+      else
+        this.chart.destroy();
+    }
   }
 
   generateChart = () => {
     const data = JSON.parse(localStorage.getItem('log') || '[]')
-      .filter(log => log.repetitionsBeforeReview != 0) // eslint-disable-line
-      .map(log => [log.repetitionsBeforeReview, log.failureRate]);
+    .filter(log => log.repetitionsBeforeReview != 0) // eslint-disable-line
+    .map(log => [
+      log.repetitionsBeforeReview,
+      Math.round(log.failureRate * 100),
+      log.groupDomain,
+    ]);
+
+    Highcharts.theme = {
+      chart: {
+        backgroundColor: {
+          linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+          stops: [
+                [0, '#2a2a2b'],
+                [1, '#3e3e40'],
+          ],
+        },
+        plotBorderColor: '#606063',
+      },
+      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066','#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+      title: {
+        style: {
+          color: '#E0E0E3',
+          textTransform: 'uppercase',
+          fontSize: '14px',
+        },
+      },
+      subtitle: {
+        style: {
+          color: '#E0E0E3',
+          textTransform: 'uppercase',
+        },
+      },
+      xAxis: {
+        gridLineColor: '#707073',
+        labels: {
+          style: {
+            color: '#E0E0E3',
+          },
+        },
+        lineColor: '#707073',
+        minorGridLineColor: '#505053',
+        tickColor: '#707073',
+        title: {
+          style: {
+            color: '#A0A0A3',
+
+          },
+        },
+      },
+      yAxis: {
+        gridLineColor: '#707073',
+        labels: {
+          style: {
+            color: '#E0E0E3',
+          },
+        },
+        lineColor: '#707073',
+        minorGridLineColor: '#505053',
+        tickColor: '#707073',
+        tickWidth: 1,
+        title: {
+          style: {
+            color: '#A0A0A3',
+          },
+        },
+      },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        style: {
+          color: '#F0F0F0',
+        },
+      },
+      plotOptions: {
+        series: {
+          dataLabels: {
+            color: '#B0B0B3',
+          },
+          marker: {
+            lineColor: '#333',
+          },
+        },
+        boxplot: {
+          fillColor: '#505053',
+        },
+        candlestick: {
+          lineColor: 'white',
+        },
+        errorbar: {
+          color: 'white',
+        },
+      },
+      legend: {
+        itemStyle: {
+          color: '#E0E0E3',
+        },
+        itemHoverStyle: {
+          color: '#FFF',
+        },
+        itemHiddenStyle: {
+          color: '#606063',
+        },
+      },
+      credits: {
+        style: {
+          color: '#666',
+        },
+      },
+      labels: {
+        style: {
+          color: '#707073',
+        },
+      },
+
+      drilldown: {
+        activeAxisLabelStyle: {
+          color: '#F0F0F3',
+        },
+        activeDataLabelStyle: {
+          color: '#F0F0F3',
+        },
+      },
+
+      navigation: {
+        buttonOptions: {
+          symbolStroke: '#DDDDDD',
+          theme: {
+            fill: '#505053',
+          },
+        },
+      },
+
+       // scroll charts
+      rangeSelector: {
+        buttonTheme: {
+          fill: '#505053',
+          stroke: '#000000',
+          style: {
+            color: '#CCC',
+          },
+          states: {
+            hover: {
+              fill: '#707073',
+              stroke: '#000000',
+              style: {
+                color: 'white',
+              },
+            },
+            select: {
+              fill: '#000003',
+              stroke: '#000000',
+              style: {
+                color: 'white',
+              },
+            },
+          },
+        },
+        inputBoxBorderColor: '#505053',
+        inputStyle: {
+          backgroundColor: '#333',
+          color: 'silver',
+        },
+        labelStyle: {
+          color: 'silver',
+        },
+      },
+
+      navigator: {
+        handles: {
+          backgroundColor: '#666',
+          borderColor: '#AAA',
+        },
+        outlineColor: '#CCC',
+        maskFill: 'rgba(255,255,255,0.1)',
+        series: {
+          color: '#7798BF',
+          lineColor: '#A6C7ED',
+        },
+        xAxis: {
+          gridLineColor: '#505053',
+        },
+      },
+
+      scrollbar: {
+        barBackgroundColor: '#808083',
+        barBorderColor: '#808083',
+        buttonArrowColor: '#CCC',
+        buttonBackgroundColor: '#606063',
+        buttonBorderColor: '#606063',
+        rifleColor: '#FFF',
+        trackBackgroundColor: '#404043',
+        trackBorderColor: '#404043',
+      },
+
+       // special colors for some of the
+      legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+      background2: '#505053',
+      dataLabelsColor: '#B0B0B3',
+      textColor: '#C0C0C0',
+      contrastTextColor: '#F0F0F3',
+      maskColor: 'rgba(255,255,255,0.3)',
+    };
+
+    // Apply the theme
+    Highcharts.setOptions(Highcharts.theme);
+
+    Highcharts.setOptions({
+      colors: Highcharts.getOptions().colors.map(color => ({
+        radialGradient: {
+          cx: 0.4,
+          cy: 0.3,
+          r: 0.5,
+        },
+        stops: [
+          [0, color],
+          [1, Highcharts.Color(color).brighten(-0.2).get('rgb')],
+        ],
+      })),
+    });
 
     this.chart = Highcharts.chart(this.chartContainer, {
       chart: {
-        type: 'scatter',
-        zoomType: 'xy',
+        type: 'scatter3d',
+        margin: 100,
+        options3d: {
+          enabled: true,
+          alpha: 10,
+          beta: 30,
+          depth: 250,
+          viewDistance: 5,
+          fitToPlot: false,
+          frame: {
+            bottom: {
+              size: 1,
+              color: 'rgba(0,0,0,0.06)',
+            },
+            back: {
+              size: 1,
+              color: 'rgba(0,0,0,0.08)',
+            },
+            side: {
+              size: 1,
+              color: 'rgba(0,0,0,0.1)',
+            },
+          },
+        },
       },
       title: {
-        text: 'WrongRate vs Repetitions',
+        text: 'WrongRate vs Repetitions vs GroupDomain',
       },
       xAxis: {
         title: {
@@ -49,40 +290,70 @@ class GropStats extends React.Component {
         showLastLabel: true,
       },
       yAxis: {
+        max: 100,
+        min: 0,
+        labels: {
+          format: '{value}%',
+        },
         title: {
           text: 'WrongRate',
         },
       },
+      zAxis: {
+        title: {
+          text: 'GroupDomain',
+        },
+      },
       plotOptions: {
         scatter: {
-          marker: {
-            radius: 5,
-            states: {
-              hover: {
-                enabled: true,
-                lineColor: 'rgb(100,100,100)',
-              },
-            },
-          },
-          states: {
-            hover: {
-              marker: {
-                enabled: false,
-              },
-            },
-          },
-          tooltip: {
-            pointFormat: '{point.x} Repetitions, {point.y} WrongRate',
-          },
+          width: 10,
+          height: 10,
+          depth: 10,
         },
+      },
+      tooltip: {
+        headerFormat: null,
+        pointFormat: 'Repetitions: <b>{point.x}</b><br/>WrongRate: <b>{point.y}%</b><br/>GroupDomain: <b>{point.z}</b><br/>',
       },
       series: [
         {
-          name: 'Repetitions/WrongRate',
-          color: 'rgba(119, 152, 191, .7)',
+          name: 'Repetitions/WrongRate/GroupDomain',
+          colorByPoint: true,
           data,
         },
       ],
+    });
+
+    // Add mouse events for rotation
+    // TODO: remove jquery
+    $(this.chartContainer).on('mousedown.hc touchstart.hc', (eStart) => {
+      eStart = this.chart.pointer.normalize(eStart);
+
+      const posX = eStart.chartX;
+      const posY = eStart.chartY;
+      const alpha = this.chart.options.chart.options3d.alpha;
+      const beta = this.chart.options.chart.options3d.beta;
+      let newAlpha;
+      let newBeta;
+      const sensitivity = 5; // lower is more sensitive
+
+      $(document).on({
+        'mousemove.hc touchmove.hc': (e) => {
+                // Run beta
+          e = this.chart.pointer.normalize(e);
+          newBeta = beta + ((posX - e.chartX) / sensitivity);
+          this.chart.options.chart.options3d.beta = newBeta;
+
+                // Run alpha
+          newAlpha = alpha + ((e.chartY - posY) / sensitivity);
+          this.chart.options.chart.options3d.alpha = newAlpha;
+
+          this.chart.redraw(false);
+        },
+        'mouseup touchend': () => {
+          $(document).off('.hc');
+        },
+      });
     });
   }
 

@@ -9,7 +9,7 @@ const QuickAddTag = ({ addTag, tagsSuggestion, cardTags, cardId }) => {
   return (
     <div className="quick-add-tag">
       {tagsSuggestion.map((tag, i) => {
-        if (!cardTags.includes(tag) && tagsControl < 7) {
+        if ((!cardTags || !cardTags.includes(tag)) && tagsControl < 8) {
           tagsControl++;
 
           return (

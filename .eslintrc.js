@@ -20,11 +20,7 @@ module.exports = {
     "no-multi-assign": 0,
     "no-plusplus": 0,
     "curly": 0,
-    // "no-extra-parens": ["error", "all", {
-    //   conditionalAssign: true,
-    //   nestedBinaryExpressions: false,
-    //   returnAssign: false,
-    // }],
+    "no-use-before-define": ["error", { "functions": false }],
     "no-mixed-operators": [
         "error",
         {

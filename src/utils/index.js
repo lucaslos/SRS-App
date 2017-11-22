@@ -19,33 +19,28 @@ const limitRange = (val, min, max) => {
   } return min;
 };
 
-// const open = window.indexedDB.open('srsLocalDB', 1);
-//
-// // Create the schema
-// open.onupgradeneeded = () => {
-//   const db = open.result;
-//   const store = db.createObjectStore('log', { keyPath: 'created' });
-//   // const index = store.createIndex("created", ["name.last", "name.first"]);
-// };
-
-// open.onsuccess = () => {
-//   db = open.result;
-// };
-
 export const logReview = {
-  add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength, section) => {
+  add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
+    const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10));
+
     const item = {
       group,
       failureRate,
       failures,
       repetitionsBeforeReview,
       cardsLength,
-      section,
+      groupDomain,
       created: +new Date(),
     };
 
     // localstorage
-    const currentLog = JSON.parse(window.localStorage.getItem('log')) || [];
+    let currentLog;
+    try {
+      currentLog = JSON.parse(window.localStorage.getItem('log'));
+    } catch (e) {
+      currentLog = [];
+    }
+
     const newLog = [...currentLog, item];
 
     window.localStorage.setItem('log', JSON.stringify(newLog));
@@ -65,7 +60,7 @@ export const srsAlgo = {
     return dateDiff / idealDaysDiff[repetitions > 13 ? 13 : repetitions];
   },
 
-  processGroupReview: (cards, repetitions, deleteCards, groupName) => {
+  processGroupReview: (cards, repetitions, deleteCards, group) => {
     let wrongCardsCounter = 0;
     let newRepetitions = repetitions;
 
@@ -122,7 +117,7 @@ export const srsAlgo = {
     newRepetitions = newRepetitions < 1 ? 1 : newRepetitions;
 
     // log
-    logReview.add(groupName, wrongRate, wrongCardsCounter, repetitions, cards.length);
+    logReview.add(group, wrongRate, wrongCardsCounter, repetitions, cards.length);
 
     return {
       cards: newCards,

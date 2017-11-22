@@ -107,7 +107,7 @@ export const updateCards = (editCard, addCard, deleteCards, groupId, dispatch) =
       lastView: editCard[i].lastView,
       createdAt: editCard[i].createdAt,
       tags: editCard[i].tags ? editCard[i].tags.map(tag => tag.text || tag) : [],
-      notes: editCard[i].tags ? editCard[i].notes.map(tag => tag.text || tag) : [],
+      notes: editCard[i].notes ? editCard[i].notes.map(tag => tag.text || tag) : [],
     }))
     .then(() => {
       console.log('edit card Ok!');

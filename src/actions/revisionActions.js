@@ -50,6 +50,6 @@ export const finishRevision = group => (dispatch, getState) => {
 
   const state = getState();
   dispatch(groupActions.editGroup(Object.assign({}, group,
-    srsAlgo.processGroupReview(state.cards.items, group.repetitions, state.cards.deleteCards, group.name)
+    srsAlgo.processGroupReview(state.cards.items, group.repetitions, state.cards.deleteCards, group)
   )));
 };
