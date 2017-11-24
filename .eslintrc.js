@@ -20,7 +20,7 @@ module.exports = {
     "no-multi-assign": 0,
     "no-plusplus": 0,
     "curly": 0,
-    "no-use-before-define": ["error", { "functions": false }],
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "no-mixed-operators": [
         "error",
         {

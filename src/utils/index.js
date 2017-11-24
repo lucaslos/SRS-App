@@ -21,7 +21,7 @@ const limitRange = (val, min, max) => {
 
 export const logReview = {
   add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
-    const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10));
+    const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10)); // eslint-disable-line
 
     const item = {
       group,

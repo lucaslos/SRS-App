@@ -14,7 +14,9 @@ const render = Component =>
 
 render(Root);
 
-module.hot.accept('./Root', () => {
-  const NextApp = require('./Root').default;
-  render(NextApp);
-});
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    const NextApp = require('./Root').default;
+    render(NextApp);
+  });
+}
