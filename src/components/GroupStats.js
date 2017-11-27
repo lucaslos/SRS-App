@@ -1,6 +1,7 @@
 /* global Highcharts, $ */
 
 import React from 'react';
+import Axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { srsAlgo } from 'utils';
@@ -27,11 +28,17 @@ class GropStats extends React.Component {
     }
   }
 
-  generateChart = () => {
-    const data = JSON.parse(localStorage.getItem('log') || '[]')
-    .filter(log => log.repetitionsBeforeReview != 0) // eslint-disable-line
+  generateChart() {
+    Axios.get('http://localhost:4000/api/log')
+    .then(({ data }) => {
+      this.drawChart(data);
+    });
+  }
+
+  drawChart = (logs) => {
+    const data = logs.filter(log => parseInt(log.repetitionsBeforeReview, 10) !== 0) // eslint-disable-line
     .map(log => [
-      log.repetitionsBeforeReview,
+      parseInt(log.repetitionsBeforeReview, 10),
       Math.round(log.failureRate * 100),
       log.groupDomain,
     ]);

@@ -1,3 +1,7 @@
+import Axios from 'axios';
+
+const apiUrl = 'http://localhost:4000/api/log';
+
 export const timeToDate = (timeStamp) => {
   const date = new Date(timeStamp * 1000);
   let dd = date.getDate();
@@ -20,8 +24,11 @@ const limitRange = (val, min, max) => {
 };
 
 export const logReview = {
-  add: (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
+  add: async (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
     const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10)); // eslint-disable-line
+
+    delete group.cards;
+    delete group.deleteCards;
 
     const item = {
       group,
@@ -33,17 +40,10 @@ export const logReview = {
       created: +new Date(),
     };
 
-    // localstorage
-    let currentLog;
-    try {
-      currentLog = JSON.parse(window.localStorage.getItem('log'));
-    } catch (e) {
-      currentLog = [];
-    }
-
-    const newLog = [...currentLog, item];
-
-    window.localStorage.setItem('log', JSON.stringify(newLog));
+    Axios.post(`${apiUrl}`, item)
+    .catch((error) => {
+      console.log(error);
+    });
   },
 };
 
