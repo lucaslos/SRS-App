@@ -145,6 +145,23 @@ class EditCardModal extends React.Component {
     }
   }
 
+  addNote = (e) => {
+    if (e.dataTransfer.types.includes('text/plain')) {
+      const notes = [...this.state.notes, {
+        id: this.state.notes.length + 1,
+        text: e.dataTransfer.getData('Text'),
+      }];
+
+      this.hangleArrChange('notes', notes);
+    }
+  }
+
+  onDragOver = (e) => {
+    e.preventDefault();
+
+    e.dataTransfer.dropEffect = 'copy';
+  }
+
   confirmEditCard = () => {
     this.props.close();
 
@@ -171,7 +188,13 @@ class EditCardModal extends React.Component {
     const { allIsValid, newFrontValue, newBackValue, tags, notes } = this.state;
 
     return (
-      <div className="modal-box" style={{ width: '500px' }}>
+      <div
+        className="modal-box"
+        style={{ width: '500px' }}
+        onDrop={this.addNote}
+        onDragOver={this.onDragOver}
+        onDragEnter={this.onDragOver}
+      >
         <h1>Edit Card from <span>{cardGroup}</span></h1>
         <div className="close-button" onClick={close}><Icon name="close" /></div>
 
@@ -250,7 +273,9 @@ class EditCardModal extends React.Component {
           <TagsInput tags={tags} handleChange={this.hangleArrChange} />
         </div>
 
-        <div className="notes-container">
+        <div
+          className="notes-container"
+        >
           <div className="divider"><span>Notes</span></div>
           <Notes notes={notes} handleChange={this.hangleArrChange} />
         </div>

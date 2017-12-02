@@ -142,3 +142,10 @@ export const addTag = (tag, cardId) => ({
   tag,
   cardId,
 });
+
+export const addNote = (note, cardId) => ({
+  type: 'ADD_NOTE',
+  note,
+  cardId,
+});
+

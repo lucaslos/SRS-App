@@ -63,6 +63,7 @@ module.exports = {
     }],
     "react/require-default-props": 0,
     "react/no-unused-prop-types": 1,
+    "react/prop-types": 0,
     "react/no-array-index-key": 0, // disabled because no need for reorder the items
 
     "jsx-a11y/no-static-element-interactions": "off",

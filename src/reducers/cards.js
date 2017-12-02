@@ -122,6 +122,22 @@ export default (state = {}, action) => {
         }),
       }
 
+    case 'ADD_NOTE':
+      return {
+        ...state,
+        items: state.items.map((card) => {
+          card.notes = card.notes || [];
+
+          return card.id === action.cardId
+          ? {
+            ...card,
+            notes: [...card.notes, action.note],
+          }
+          : card
+        }),
+      }
+
+
     default:
       return state;
   }

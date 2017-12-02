@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { WithContext as ReactTags } from 'react-tag-input';
+import { WithOutContext as ReactTags } from 'react-tag-input';
 
 import Icon from 'components/Icon';
 
@@ -18,13 +18,18 @@ class TagsInput extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      tags: nextProps.notes || [],
+    });
+  }
+
   getNotes = () => (this.state.tags);
 
   handleDelete = (i) => {
     const tags = this.state.tags.filter((tag, index) => index !== i);
     this.setState({ tags }, this.handleChange);
   }
-
 
   handleAddition = (tag) => {
     const tags = [...this.state.tags, {

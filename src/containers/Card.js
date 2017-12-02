@@ -129,9 +129,20 @@ class Card extends React.Component {
     }
   }
 
-  render() {
+  addNote = (e) => {
+    if (e.dataTransfer.types.includes('text/plain')) {
+      this.props.addNote(e.dataTransfer.getData('Text'), this.props.card.id);
+    }
+  }
 
-    const { position, modals, cardsLength } = this.props;
+  onDragOver = (e) => {
+    e.preventDefault();
+
+    e.dataTransfer.dropEffect = 'copy';
+  }
+
+  render() {
+    const { position, cardsLength } = this.props;
     const { frontIsVisible, card, dropDownIsActive } = this.state;
 
     if (!card) return null;
@@ -167,7 +178,7 @@ class Card extends React.Component {
           </div>
         </div>
 
-        <div className="back" onClick={this.goForward}>
+        <div className="back" onClick={this.goForward} onDrop={this.addNote} onDragOver={this.onDragOver}>
           <div className="actions">
             <div className="align-left">
               <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
@@ -277,6 +288,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setActiveCard: cardId => dispatch(cardsActions.setActiveCard(cardId)),
+  addNote: (note, cardId) => dispatch(cardsActions.addNote(note, cardId)),
   deleteCard: cardId => dispatch(cardsActions.deleteCard(cardId)),
   processCardAnswer: (cardId, isRight, position, isEnd = false) => dispatch(revisionActions.processCardAnswer(cardId, isRight, position, isEnd)),
   showEditCard: () => dispatch(setModalVisibility('EditCardModal', true)),
