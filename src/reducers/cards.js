@@ -73,7 +73,7 @@ export default (state = {}, action) => {
       return Object.assign({}, state, {
         items: state.items.map(card => (
           card.id === action.id
-            ? Object.assign({}, card, { wrongAnswer: !action.isRight, edited: true })
+            ? Object.assign({}, card, { answer: action.answer, edited: true })
             : card
         )),
       });
@@ -118,9 +118,9 @@ export default (state = {}, action) => {
             ...card,
             tags: [...card.tags, action.tag],
           }
-          : card
+          : card;
         }),
-      }
+      };
 
     case 'ADD_NOTE':
       return {
@@ -133,9 +133,9 @@ export default (state = {}, action) => {
             ...card,
             notes: [...card.notes, action.note],
           }
-          : card
+          : card;
         }),
-      }
+      };
 
 
     default:

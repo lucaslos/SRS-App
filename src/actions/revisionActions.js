@@ -35,11 +35,12 @@ export const goBack = pos => (dispatch, getState) => {
   dispatch(decreasePosition());
 };
 
-export const processCardAnswer = (cardId, isRight, pos, isEnd = false) => (dispatch) => {
-  if (isRight) {
+export const processCardAnswer = (cardId, answer, pos, isEnd = false) => (dispatch) => {
+  if (answer > 0) {
     if (!isEnd) dispatch(increasePosition());
+    dispatch(cardActions.registerCardAnswer(cardId, answer));
   } else {
-    dispatch(cardActions.registerCardAnswer(cardId, isRight));
+    dispatch(cardActions.registerCardAnswer(cardId, answer));
     if (!isEnd) dispatch(cardActions.moveToEnd(cardId, pos));
     if (!isEnd) dispatch(increasePosition());
   }
