@@ -1,77 +1,80 @@
 const path = require('path');
 const webpack = require('webpack');
+const HappyPack = require('happypack');
 
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    // activate HMR for React
-
-    'webpack-hot-middleware/client?http://localhost:3000',
-    // bundle the client for webpack-dev-server
-    // and connect to the provided endpoint
-
-    'webpack/hot/only-dev-server',
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
-
     path.join(__dirname, 'src/index.js'),
-    // the entry point of our app
+    './style/main.scss',
   ],
 
   output: {
     filename: 'bundle.js',
-    // the output bundle
-
     path: path.resolve(__dirname, 'public'),
-
     publicPath: '/',
-    // necessary for HMR to know where to load the hot update chunks
+    pathinfo: true,
   },
 
-  devtool: 'inline-source-map',
+  devtool: 'eval-cheap-module-source-map',
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'happypack/loader?id=js',
         exclude: /node_modules/,
-        // options: {
-        //   cacheDirectory: true,
-        //   presets: ['es2015', 'react'],
-        //   plugins: ['transform-class-properties', 'transform-object-rest-spread'],
-        // },
+      },
+      {
+        test: /\.scss$/,
+        loader: 'happypack/loader?id=styles',
+        exclude: /node_modules/,
       },
     ],
   },
 
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-
-    new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-
-    new webpack.NoEmitOnErrorsPlugin(),
-    // do not emit compiled assets that include errors
-  ],
-
   devServer: {
     host: 'localhost',
-    port: 3000,
     https: true,
-    open: true,
-
-    historyApiFallback: true,
-    // respond to 404s with index.html
-
+    port: 3000,
     hot: true,
-    // enable HMR on the server
+    open: true,
+    historyApiFallback: true,
+    stats: {
+      colors: true, // color is life
+      errorDetails: true,
+    },
   },
+
+  plugins: [
+    // new HardSourceWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HappyPack({
+      id: 'js',
+      threads: 4,
+      loaders: [
+        'babel-loader?cacheDirectory',
+      ],
+    }),
+    new HappyPack({
+      id: 'styles',
+      threads: 4,
+      loaders: [
+        'cache-loader',
+        'style-loader',
+        'css-loader?sourceMap&-url',
+        'sass-loader?sourceMap',
+        'import-glob',
+      ],
+    }),
+  ],
 
   resolve: {
     modules: [
       path.join(__dirname, 'src'),
+      path.join(__dirname, 'style'),
       'node_modules',
     ],
   },

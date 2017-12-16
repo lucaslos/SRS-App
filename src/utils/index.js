@@ -68,10 +68,10 @@ export const srsAlgo = {
     const newCards = cards.map((card) => {
       let difficulty = card.difficulty;
       let wrongViews = card.wrongViews;
-      const wrongAnswer = card.wrongAnswer;
+      const answer = card.answer;
 
       // precessa nova dificuldade
-      if (wrongAnswer) {
+      if (answer === 0) {
         wrongViews++;
         wrongCardsCounter++;
 
@@ -83,8 +83,10 @@ export const srsAlgo = {
           difficulty += 0.75;
         }
         // se card for acertado
-      } else {
+      } else if (answer === 1) {
         difficulty -= 0.25;
+      } else {
+        difficulty += difficulty === 0 ? 0.25 : 0;
       }
 
       difficulty = limitRange(difficulty, 0, 1);

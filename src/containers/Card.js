@@ -82,9 +82,10 @@ class Card extends React.Component {
       this.props.close();
       this.props.processCardAnswer(this.props.card.id, answer, this.props.position, true);
       this.props.finishRevision(this.props.activeGroup);
-    } else if (this.props.cardsLength === this.props.position + 1 && answer) {
+    } else if (this.props.cardsLength === this.props.position + 1 && answer > 0) {
       this.props.close();
       this.props.finishRevision(this.props.activeGroup);
+      this.props.processCardAnswer(this.props.card.id, answer, this.props.position, true);
     } else {
       this.props.processCardAnswer(this.props.card.id, answer, this.props.position);
     }
@@ -249,10 +250,13 @@ class Card extends React.Component {
             </div>
           }
           <div className="bottom-buttons">
-            <div className="wrong-btn" onClick={() => this.processCardAnswer(false)}>
+            <div className="wrong-btn" onClick={() => this.processCardAnswer(0)}>
               <Icon name="close" color="#eb5757" />
             </div>
-            <div className="right-btn" onClick={() => this.processCardAnswer(true)}>
+            <div className="not-so-right-btn" onClick={() => this.processCardAnswer(2)}>
+              <Icon name="check" color="#e4b71b" />
+            </div>
+            <div className="right-btn" onClick={() => this.processCardAnswer(1)}>
               <Icon name="check" color="#219653" />
             </div>
           </div>
@@ -296,7 +300,7 @@ const mapDispatchToProps = dispatch => ({
   close: () => dispatch(setModalVisibility('Revision', false)),
   goBack: position => dispatch(revisionActions.goBack(position)),
   finishRevision: activeGroup => dispatch(revisionActions.finishRevision(activeGroup)),
-  addCardToDeletion: cardId => dispatch(revisionActions.addCardToDeletion(cardId)),
+  // addCardToDeletion: cardId => dispatch(revisionActions.addCardToDeletion(cardId)),
   // showDictionary: () => dispatch(setModalVisibility('DictionaryModal', true)),
 });
 

@@ -251,12 +251,13 @@
   border-top: 1px solid #ddd;
 
   .right-btn,
+  .not-so-right-btn,
   .wrong-btn {
     position: relative;
 
     float: left;
     height: 100%;
-    width: 50%;
+    width: 33%;
 
     text-align: center;
 
@@ -273,6 +274,14 @@
 
   .right-btn:hover {
     background-color: rgba(#219653, 0.14);
+
+    .icon {
+      transform: scale(1.2);
+    }
+  }
+
+  .not-so-right-btn:hover {
+    background-color: rgba(#e4b71b, 0.14);
 
     .icon {
       transform: scale(1.2);

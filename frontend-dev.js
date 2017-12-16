@@ -1,45 +1,46 @@
-const path = require('path');
+const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
-const express = require('express');
-const config = require('./webpack.config.rhl');
+const path = require('path');
 
-const app = express();
-const compiler = webpack(config);
+const config = require('./webpack.config.rhl.js');
 
-app.use(require('webpack-dev-middleware')(compiler, {
+const options = {
   publicPath: config.output.publicPath,
+  contentBase: './public',
   hot: true,
+  host: 'localhost',
   historyApiFallback: true,
   stats: {
     colors: true, // color is life
     errorDetails: true,
   },
-}));
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
 
-app.use(require('webpack-hot-middleware')(compiler));
+  before(app) {
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/index.html'));
+    });
 
-app.use(express.static(__dirname + '/public'));
+    app.get('/style.css', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/style.css'));
+    });
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/index2.html'));
+    app.get('/bookmarklet.js', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/bookmarklet.js'));
+    });
+
+    app.get('/section/*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/index.html'));
+    });
+  },
+};
+
+WebpackDevServer.addDevServerEntrypoints(config, options);
+const compiler = webpack(config);
+const server = new WebpackDevServer(compiler, options);
+
+server.listen(3000, '0.0.0.0', () => {
+  console.log('dev server listening on port 3000');
 });
-
-app.get('/style.css', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/style.css'));
-});
-
-app.get('/bookmarklet.js', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/bookmarklet.js'));
-});
-
-app.get('/section/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/index2.html'));
-});
-
-app.listen(3000, function(err) {
-  if (err) {
-    return console.error(err);
-  }
-
-  console.log('Listening at http://localhost:3000/');
-})

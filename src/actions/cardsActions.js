@@ -131,10 +131,10 @@ export const removeDuplicates = () => ({
   type: 'REMOVE_DUPLICATES',
 });
 
-export const registerCardAnswer = (id, isRight) => ({
+export const registerCardAnswer = (id, answer) => ({
   type: 'REGISTER_CARD_ANSWER',
   id,
-  isRight,
+  answer,
 });
 
 export const addTag = (tag, cardId) => ({
@@ -148,4 +148,3 @@ export const addNote = (note, cardId) => ({
   note,
   cardId,
 });
-
