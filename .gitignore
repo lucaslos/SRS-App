@@ -3,6 +3,8 @@ node_modules
 config.json
 resources
 
-public
+public/images
+production/*.js
+production/*.css
 resources
 .cache-loader

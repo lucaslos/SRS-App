@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Axios from 'axios';
 
 import Button from 'components/Button';
 import TextField from 'components/TextField';
@@ -91,18 +92,28 @@ class AddGroupModal extends React.Component {
       try {
         const translations = JSON.parse(paste);
 
-        for (let i = 0; i < translations.length; i++) {
-          this.props.addCard({
-            id: _.uniqueId('card-'),
-            front: translations[i][0],
-            back: translations[i][1],
-            wrongViews: 0,
-            difficulty: 0,
-            lastView: '',
-            tags: [],
-            notes: [],
-          });
-        }
+        Axios.get('http://localhost:4000/card')
+        .then(({ data }) => {
+          for (let i = 0; i < translations.length; i++) {
+            if (!data.find(
+              card => card.front === translations[i][0].toLowerCase()
+            )) {
+              this.props.addCard({
+                id: _.uniqueId('card-'),
+                front: translations[i][0],
+                back: translations[i][1],
+                wrongViews: 0,
+                difficulty: 0,
+                lastView: '',
+                tags: [],
+                notes: [],
+              });
+            }
+          }
+        }, (error) => {
+          alert(error);
+        });
+
       } catch (e) {
         console.log(e.message);
       }
