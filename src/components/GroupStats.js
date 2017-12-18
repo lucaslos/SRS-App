@@ -1,10 +1,13 @@
-/* global Highcharts, $ */
+/* global Highcharts, $, google */
 
 import React from 'react';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { srsAlgo } from 'utils';
+import moment from 'moment';
+
+import Button from 'components/Button';
 
 class GropStats extends React.Component {
   constructor() {
@@ -24,18 +27,105 @@ class GropStats extends React.Component {
       if (!this.state.isExpanded)
         this.generateChart();
       else
-        this.chart.destroy();
+        if (this.chart) this.chart.destroy();
     }
   }
 
   generateChart() {
     Axios.get('http://localhost:4000/api/log')
     .then(({ data }) => {
-      this.drawChart(data);
+      this.draw3DChart(data);
     });
   }
 
-  drawChart = (logs) => {
+  drawNextDaysChart() {
+    if (this.chart) this.chart.destroy();
+
+    const data = [];
+
+    const calcDayGroups = (day) => {
+      let cardPrevision = 0;
+
+      this.props.groups.forEach((group) => {
+        const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10), 3600 * 24 * day * 1000);
+
+        if (groupDomain === 1 && group.repetitions !== 0) {
+          cardPrevision++;
+        }
+      });
+
+      return [moment().add(day, 'd').format('DD/MM'), cardPrevision];
+    };
+
+    for (let i = 1; i < 90; i++) {
+      data.push(calcDayGroups(i));
+    }
+
+    Highcharts.theme = {};
+
+    this.chart = Highcharts.chart(this.chartContainer, {
+      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+      chart: {
+        type: 'Combination chart',
+      },
+      title: {
+        text: 'Groups prevision',
+      },
+      xAxis: {
+        type: 'category',
+        labels: {
+          rotation: -45,
+          style: {
+            fontSize: '13px',
+            fontFamily: 'Verdana, sans-serif',
+          },
+        },
+        crosshair: true,
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Groups',
+        },
+      },
+      legend: {
+        enabled: false,
+      },
+      tooltip: {
+        pointFormat: `{point.key}{point.y}<br>`,
+      },
+      series: [
+        {
+          type: 'column',
+          name: 'Groups by day',
+          data,
+          dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+              fontSize: '13px',
+              fontFamily: 'Verdana, sans-serif',
+            },
+          },
+        },
+        // {
+        //   type: 'spline',
+        //   data,
+        //   marker: {
+        //     lineWidth: 2,
+        //     lineColor: Highcharts.getOptions().colors[3],
+        //     fillColor: 'white',
+        //   },
+        // },
+      ],
+    });
+  }
+
+  draw3DChart = (logs) => {
     const data = logs.filter(log => parseInt(log.repetitionsBeforeReview, 10) !== 0) // eslint-disable-line
     .map(log => [
       parseInt(log.repetitionsBeforeReview, 10),
@@ -54,7 +144,7 @@ class GropStats extends React.Component {
         },
         plotBorderColor: '#606063',
       },
-      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066','#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
       title: {
         style: {
           color: '#E0E0E3',
@@ -334,7 +424,7 @@ class GropStats extends React.Component {
     // Add mouse events for rotation
     // TODO: remove jquery
     $(this.chartContainer).on('mousedown.hc touchstart.hc', (eStart) => {
-      eStart = this.chart.pointer.normalize(eStart);
+      eStart = this.chart.pointer.normalize(eStart); // eslint-disable-line
 
       const posX = eStart.chartX;
       const posY = eStart.chartY;
@@ -347,7 +437,7 @@ class GropStats extends React.Component {
       $(document).on({
         'mousemove.hc touchmove.hc': (e) => {
                 // Run beta
-          e = this.chart.pointer.normalize(e);
+          e = this.chart.pointer.normalize(e); // eslint-disable-line
           newBeta = beta + ((posX - e.chartX) / sensitivity);
           this.chart.options.chart.options3d.beta = newBeta;
 
@@ -397,24 +487,34 @@ class GropStats extends React.Component {
         text: `${cardPrevisionNextDay} ${cardPrevisionNext2Days}`,
       },
     ];
-    return (<div
-      className={`groups-stats ${isExpanded
-        ? 'expanded'
-        : ''}`}
-      onClick={this.toggleExpand}
-    >
-      <div className="stats-container">
-        {
-          stats.map(stat => (<span key={stat.name} className="stat">{stat.name}
-            <b>{stat.text}</b>
-          </span>))
-        }
+    return (
+      <div
+        className={`groups-stats ${isExpanded
+          ? 'expanded'
+          : ''}`}
+        onClick={this.toggleExpand}
+      >
+        <div className="stats-container">
+          {
+            stats.map(stat => (<span key={stat.name} className="stat">{stat.name}
+              <b>{stat.text}</b>
+            </span>))
+          }
+        </div>
+        <div className="chart-buttons">
+          <Button
+            label="Groups prevision"
+            rounded
+            size="small"
+            onClick={(e) => { e.stopPropagation(); this.drawNextDaysChart(); }}
+          />
+        </div>
+        <div ref={(i) => {
+          this.chartContainer = i;
+        }}
+        />
       </div>
-      <div ref={(i) => {
-        this.chartContainer = i;
-      }}
-      />
-    </div>);
+    );
   }
 }
 

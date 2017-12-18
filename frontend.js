@@ -3,22 +3,22 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/production`));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index2.html'));
+  res.sendFile(path.join(__dirname, 'production/index.html'));
 });
 
 app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/style.css'));
+  res.sendFile(path.join(__dirname, 'production/style.css'));
 });
 
 app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/bundle.js'));
+  res.sendFile(path.join(__dirname, 'production/bundle.js'));
 });
 
 app.get('/section/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index2.html'));
+  res.sendFile(path.join(__dirname, 'production/index.html'));
 });
 
 app.listen(3000, (err) => {
