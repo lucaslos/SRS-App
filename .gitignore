@@ -8,3 +8,5 @@ production/*.js
 production/*.css
 resources
 .cache-loader
+
+production/bundle.js
