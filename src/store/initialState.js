@@ -11,6 +11,7 @@ export default {
     AddCardModal: false,
     RevisionDialog: false,
     Revision: false,
+    GroupChart: false,
     DictionaryModal: false,
     EditCardModal: false,
     DeleteCardDialog: false,

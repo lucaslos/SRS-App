@@ -54,7 +54,7 @@ class GropStats extends React.Component {
         }
       });
 
-      return [moment().add(day, 'd').format('DD/MM'), cardPrevision];
+      return [moment().add(day, 'd').valueOf(), cardPrevision];
     };
 
     for (let i = 1; i < 90; i++) {
@@ -72,7 +72,11 @@ class GropStats extends React.Component {
         text: 'Groups prevision',
       },
       xAxis: {
-        type: 'category',
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            month: '%e. %b',
+            year: '%b',
+        },
         labels: {
           rotation: -45,
           style: {
@@ -92,7 +96,7 @@ class GropStats extends React.Component {
         enabled: false,
       },
       tooltip: {
-        pointFormat: `{point.key}{point.y}<br>`,
+        // pointFormat: `{point.key}{point.y}<br>`,
       },
       series: [
         {

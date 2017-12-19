@@ -23,6 +23,10 @@ class RevisionDialog extends React.Component {
     this.props.showEditGroup();
   }
 
+  showChart = () => {
+    this.props.showChart();
+  }
+
   startRevision = () => {
     this.props.startRevision(this.props.activeGroup.id);
   }
@@ -38,11 +42,13 @@ class RevisionDialog extends React.Component {
             label="START REVISION"
             type="flat"
             alignRight
+            size="small"
             onClick={this.startRevision}
           />
           <Button
             label="CANCEL"
             type="flat"
+            size="small"
             alignRight
             onClick={close}
           />
@@ -51,8 +57,19 @@ class RevisionDialog extends React.Component {
               label="EDIT GROUP"
               type="flat"
               alignLeft
+              size="small"
               textColor="#888"
               onClick={this.showEditGroup}
+            />
+          }
+          {activeGroup.id !== 'REFORCE' &&
+            <Button
+              label="STATS"
+              type="flat"
+              alignLeft
+              size="small"
+              textColor="#888"
+              onClick={this.showChart}
             />
           }
         </div>
@@ -86,6 +103,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCards: groupId => dispatch(fetchCards(groupId)),
   resetCards: () => dispatch(reset()),
   showEditGroup: () => dispatch(setModalVisibility('EditGroupModal', true)),
+  showChart: () => dispatch(setModalVisibility('GroupChart', true)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RevisionDialog);
