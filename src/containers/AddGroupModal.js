@@ -123,7 +123,7 @@ class AddGroupModal extends React.Component {
   }
 
   render() {
-    const { activeSection, cards, modal, cardsCache } = this.props;
+    const { activeSection, cards, modal, cardsCache, defaultNameGroup } = this.props;
     const { allIsValid } = this.state;
 
     return (
@@ -140,6 +140,7 @@ class AddGroupModal extends React.Component {
             name="name"
             max="100"
             width="260px"
+            value={defaultNameGroup}
             handleChange={this.handleChange}
             required
           />
@@ -205,6 +206,7 @@ AddGroupModal.propTypes = {
 const mapStateToProps = state => ({
   activeSection: state.sections.items.find(section => section.id === state.sections.active),
   cards: state.cards.items,
+  defaultNameGroup: `Group ${state.groups.items.length + 1}`,
   cardsCache: state.reforceCards.items,
   modal: state.modalsVisibility,
 });

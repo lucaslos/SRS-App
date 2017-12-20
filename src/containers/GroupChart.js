@@ -99,7 +99,7 @@ class GroupChart extends React.Component {
           data: data2,
           yAxis: 1,
           tooltip: {
-            valueSuffix: ' %'
+            valueSuffix: ' %',
           },
         },
       ],
