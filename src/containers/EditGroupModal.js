@@ -148,8 +148,8 @@ class EditGroupModal extends React.Component {
               <CardTile
                 key={card.id}
                 card={card}
-                duplicatedFront={cardsCache.filter(cardCache => cardCache.front === card.front).length > 0}
-                duplicatedBack={cardsCache.filter(cardCache => cardCache.back === card.back).length > 0}
+                duplicatedFront={cardsCache.filter(cardCache => cardCache.front === card.front).length > 1}
+                duplicatedBack={cardsCache.filter(cardCache => cardCache.back === card.back).length > 1}
               />
             ))}
           </div>
