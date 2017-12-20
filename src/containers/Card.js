@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'components/Icon';
 import { connect } from 'react-redux';
+import Markdown from 'react-markdown';
 
 import { setModalVisibility } from 'actions/modalsActions';
 import * as cardsActions from 'actions/cardsActions';
@@ -170,7 +171,7 @@ class Card extends React.Component {
               {(card.wrongViews > 4 || card.difficulty >= 0.5) && <Icon name="warning" color="#eb5757" />}
             </div>
           </div>
-          <div className="content"><span>{card.front}</span></div>
+          <div className="content"><Markdown source={card.front} /></div>
           <div className="tags">
             {tags.length !== 0 && <div className="border-top" />}
             {tags.map((tag, i) => (
@@ -241,7 +242,7 @@ class Card extends React.Component {
               </div>
             </div>
           </div>
-          <div className="content"><span>{card.back}</span></div>
+          <div className="content"><Markdown source={card.back} /></div>
           {notes.length > 0 &&
             <div className="notes">
               {notes.map((note, i) => (

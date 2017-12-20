@@ -146,10 +146,11 @@
 
   .content {
     position: relative;
-    height: 184px;
+    min-height: 184px;
+    max-height: 600px;
     width: 100%;
     padding: 0 16px;
-    text-align: center;
+
 
     display: flex;
     justify-content: center;
@@ -157,10 +158,47 @@
 
     font-size: 28px;
     font-weight: 300;
+
+    p {
+      text-align: center;
+    }
+
+    li {
+      list-style: initial;
+    }
+
+    table {
+      width: 360px;
+      font-size: 18px;
+      margin: 20px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      tr {
+        border-top: 1px solid #c6cbd1;
+        background: #fff;
+      }
+
+      th,
+      td {
+        padding: 6px 13px;
+        border: 1px solid #dfe2e5;
+      }
+
+      & tr:nth-child(2n) {
+        background: #f6f8fa;
+      }
+    }
+
+    img {
+      position: relative;
+      display: block;
+      max-width: 100%;
+    }
   }
 
   .back .content {
-    height: 170px;
+    min-height: 170px;
   }
 }
 
