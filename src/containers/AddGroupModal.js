@@ -150,7 +150,12 @@ class AddGroupModal extends React.Component {
           <div className="divider"><span>Cards: {cards.length}</span></div>
           <div className="cards-tile-container">
             {cards.map(card => (
-              <CardTile key={card.id} card={card} duplicated={cardsCache.filter(cardCache => cardCache.front === card.front).length > 0} />
+              <CardTile
+                key={card.id}
+                card={card}
+                duplicatedFront={cardsCache.filter(cardCache => cardCache.front === card.front).length > 0}
+                duplicatedBack={cardsCache.filter(cardCache => cardCache.back === card.back).length > 0}
+              />
             ))}
           </div>
 

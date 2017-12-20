@@ -195,7 +195,7 @@ class EditCardModal extends React.Component {
         onDragOver={this.onDragOver}
         onDragEnter={this.onDragOver}
       >
-        <h1>Edit Card from <span>{cardGroup}</span></h1>
+        <h1>Edit Card {cardGroup ? 'from' : null}{cardGroup ? <span>{cardGroup.name}</span> : null}</h1>
         <div className="close-button" onClick={close}><Icon name="close" /></div>
 
         {activeCard &&
@@ -328,7 +328,7 @@ const mapStateToProps = state => ({
   activeCard: state.cards.items.find(card => card.id === state.cards.active),
   cardGroup: state.groups.items.find(group =>
     group.id === state.cards.items.find(card => card.id === state.cards.active).group_id
-  ).name,
+  ),
   isInAddGroup: state.modalsVisibility.AddGroupModal,
 });
 

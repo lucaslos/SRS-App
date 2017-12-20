@@ -160,7 +160,7 @@ class Card extends React.Component {
               {position !== 0 &&
                 <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
               }
-              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front); }}><Icon name="volume_up" /></div>
+              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="num-of-answers">
@@ -184,7 +184,12 @@ class Card extends React.Component {
           <div className="actions">
             <div className="align-left">
               <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
-              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front); }}><Icon name="volume_up" /></div>
+              <div
+                className="button"
+                onClick={(e) => {
+                  this.textToSpeech(e, (this.props.activeSection === '57522bf113391' ? card.front : card.back), (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE'));
+                }}
+              ><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="button" ref={(i) => { this.dropDownBtn = i; }} onClick={this.toggleMoreOptions}>
@@ -246,7 +251,7 @@ class Card extends React.Component {
           {notes.length > 0 &&
             <div className="notes">
               {notes.map((note, i) => (
-                <div key={i} className="note" onDoubleClick={(e) => { this.textToSpeech(e, note, (this.props.activeSection === '57522bf113391' ? 'en-EN' : 'de-DE')); }}>{note}</div>
+                <div key={i} className="note" onDoubleClick={(e) => { this.textToSpeech(e, note, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}>{note}</div>
               ))}
             </div>
           }

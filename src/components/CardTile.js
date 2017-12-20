@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setModalVisibility } from 'actions/modalsActions';
 import * as cards from 'actions/cardsActions';
 
-const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplicated }) => (
+const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplicatedFront, duplicatedBack }) => (
   <div
     className="card-tile"
     onClick={() => {
@@ -15,8 +15,8 @@ const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplic
     }}
   >
     <div className="faces">
-      <div className="front" style={{ color: duplicated ? '#f44' : null }}>{card.front}</div>
-      <div className="back">{card.back}</div>
+      <div className="front" style={{ color: duplicatedFront ? '#f44' : null }}>{card.front}</div>
+      <div className="back" style={{ color: duplicatedBack ? '#f44' : null }}>{card.back}</div>
     </div>
 
     <div
@@ -32,7 +32,7 @@ const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplic
 
 CardTile.propTypes = {
   card: PropTypes.object.isRequired,
-  deleteCardDialog: PropTypes.func.isRequired,
+  deleteCardDialog: PropTypes.func,
   showEditCard: PropTypes.func.isRequired,
   setActiveCard: PropTypes.func.isRequired,
 };

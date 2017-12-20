@@ -97,7 +97,7 @@ class EditGroupModal extends React.Component {
   }
 
   render() {
-    const { activeGroup, cards, modal, deleteGroupDialog } = this.props;
+    const { activeGroup, cards, modal, deleteGroupDialog, cardsCache } = this.props;
     const { allIsValid, name, repetitions, lastview } = this.state;
 
     return (
@@ -145,7 +145,12 @@ class EditGroupModal extends React.Component {
           <div className="divider"><span>Cards: {cards.length}</span></div>
           <div className="cards-tile-container">
             {cards.map(card => (
-              <CardTile key={card.id} card={card} />
+              <CardTile
+                key={card.id}
+                card={card}
+                duplicatedFront={cardsCache.filter(cardCache => cardCache.front === card.front).length > 0}
+                duplicatedBack={cardsCache.filter(cardCache => cardCache.back === card.back).length > 0}
+              />
             ))}
           </div>
 
@@ -209,6 +214,7 @@ const mapStateToProps = state => ({
   cards: state.cards.items,
   deleteCards: state.cards.deleteCards,
   modal: state.modalsVisibility,
+  cardsCache: state.reforceCards.items,
   cardsIsFetching: state.cards.isFetching,
 });
 
