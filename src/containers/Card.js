@@ -49,17 +49,17 @@ class Card extends React.Component {
     }
   }
 
-  textToSpeech = (e) => {
+  textToSpeech = (e, text, lang = 'en-US') => {
     e.stopPropagation();
 
     const msg = new SpeechSynthesisUtterance();
     const voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[4]; // Note: some voices don't support altering params
+    msg.voice = voices.find(voice => voice.voiceURI.includes('Google') && voice.lang === lang); // Note: some voices don't support altering params
     msg.volume = 1; // 0 to 1
 
     msg.pitch = 1; // 0 to 2
-    msg.text = this.props.card.front;
-    msg.lang = 'en-US';
+    msg.text = text;
+    msg.lang = lang;
 
     speechSynthesis.speak(msg);
   }
@@ -160,7 +160,7 @@ class Card extends React.Component {
               {position !== 0 &&
                 <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
               }
-              <div className="button" onClick={(e) => { this.textToSpeech(e); }}><Icon name="volume_up" /></div>
+              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front); }}><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="num-of-answers">
@@ -184,7 +184,7 @@ class Card extends React.Component {
           <div className="actions">
             <div className="align-left">
               <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
-              <div className="button" onClick={(e) => { this.textToSpeech(e); }}><Icon name="volume_up" /></div>
+              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front); }}><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="button" ref={(i) => { this.dropDownBtn = i; }} onClick={this.toggleMoreOptions}>
@@ -246,7 +246,7 @@ class Card extends React.Component {
           {notes.length > 0 &&
             <div className="notes">
               {notes.map((note, i) => (
-                <div key={i} className="note">{note}</div>
+                <div key={i} className="note" onDoubleClick={(e) => { this.textToSpeech(e, note, (this.props.activeSection === '57522bf113391' ? 'en-EN' : 'de-DE')); }}>{note}</div>
               ))}
             </div>
           }
@@ -286,6 +286,7 @@ const mapStateToProps = state => ({
   cardsLength: state.cards.items.length,
   position: state.revision.position,
   modals: state.modalsVisibility,
+  activeSection: state.sections.active,
   activeGroup: state.groups.active === 'REFORCE'
     ? { id: 'REFORCE', name: 'Reforce Cards', repetitions: 0 }
     : state.groups.items.find(group => group.id === state.groups.active),
