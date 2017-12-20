@@ -77,8 +77,9 @@ class GroupChart extends React.Component {
             format: '{value}%',
           },
           opposite: true,
+          // tickInterval: 10,
           min: 0,
-          max: 100,
+          max: 101,
         },
       ],
       legend: {
@@ -95,7 +96,7 @@ class GroupChart extends React.Component {
           yAxis: 0,
         },
         {
-          name: 'Domain',
+          name: 'FailureRate',
           data: data2,
           yAxis: 1,
           tooltip: {

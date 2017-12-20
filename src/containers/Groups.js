@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import { srsAlgo } from 'utils';
 
@@ -28,14 +29,23 @@ class Groups extends React.Component {
     this.props.showRevisionModal();
   }
 
+  getNumOfCards = groupId => this.props.reforceCards.filter(card => card.group_id === groupId).length;
+
   render() {
     const { groups } = this.props;
     const { filterWeak } = this.state;
     const reforceCards = this.props.reforceCards.filter((card) => {
-      const timeLimitIncrease = 3600 * (6 + 3) * 1000;
+      const timeLimitIncrease = 3600 * (6 + 3) * 1000; // time to normalize srs calculation (shift day end)
+      const diff = parseFloat(card.difficulty); // parse float
+
+      // calc the diff between last review and now of card
       const dateDiff = Math.floor((new Date() - timeLimitIncrease - Date.parse(card.lastView)) / (1000 * 3600 * 24));
 
-      return card.difficulty > 0 && dateDiff >= 1 && (dateDiff % 2 === 0 || card.difficulty >= 0.75);
+      return (
+        (diff === 0.25 && dateDiff >= 3) // 0.25 = 3 days interval
+        || (diff === 0.5 && dateDiff >= 2) // 0.5 = 2 days interval
+        || (diff >= 0.75 && dateDiff > 0) // 0.75 or higher = 1 day interval
+      );
     });
 
     return (
@@ -45,6 +55,7 @@ class Groups extends React.Component {
             className="group reforce-cards"
             onClick={() => this.startReforceCardsRevision(reforceCards)}
             style={{ order: -1000000 }}
+            title={`Cards: ${reforceCards.length} ETR: ${new Date(7 * reforceCards.length * 1000).toISOString().substr(14, 5)}`}
           >
             <p><span>Reforce Cards</span></p>
             <div className="group-domain error" />
@@ -54,12 +65,14 @@ class Groups extends React.Component {
         {filterWeak ?
           groups.map((group, i) => {
             const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10));
-            return (groupDomain >= 1 || groupDomain === 'new') ? <Group key={i} data={group} domain={groupDomain} /> : null;
+            const numOfCards = this.getNumOfCards(group.id);
+            return (groupDomain >= 1 || groupDomain === 'new') ? <Group key={i} data={group} domain={groupDomain} numOfCards={numOfCards} /> : null;
           })
           :
           groups.map((group, i) => {
             const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10));
-            return <Group key={i} data={group} domain={groupDomain} />;
+            const numOfCards = this.getNumOfCards(group.id);
+            return <Group key={i} data={group} domain={groupDomain} numOfCards={numOfCards} />;
           })}
       </article>
     );

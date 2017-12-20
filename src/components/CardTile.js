@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setModalVisibility } from 'actions/modalsActions';
 import * as cards from 'actions/cardsActions';
 
-const CardTile = ({ card, deleteCardDialog, showEditCard, setActiveCard, duplicated }) => (
+const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplicated }) => (
   <div
     className="card-tile"
     onClick={() => {
@@ -24,7 +24,7 @@ const CardTile = ({ card, deleteCardDialog, showEditCard, setActiveCard, duplica
       onClick={(e) => {
         e.stopPropagation();
         setActiveCard(card.id);
-        deleteCardDialog();
+        confirmDeleteCard(card.id);
       }}
     ><Icon name="delete" /></div>
   </div>
@@ -39,7 +39,7 @@ CardTile.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   setActiveCard: cardId => dispatch(cards.setActiveCard(cardId)),
-  deleteCardDialog: () => dispatch(setModalVisibility('DeleteCardDialog', true)),
+  confirmDeleteCard: id => dispatch(cards.deleteCard(id)),
   showEditCard: () => dispatch(setModalVisibility('EditCardModal', true)),
 });
 

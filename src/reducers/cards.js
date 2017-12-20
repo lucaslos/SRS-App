@@ -72,7 +72,7 @@ export default (state = {}, action) => {
     case 'REGISTER_CARD_ANSWER':
       return Object.assign({}, state, {
         items: state.items.map(card => (
-          card.id === action.id
+          card.id === action.id && !card.edited
             ? Object.assign({}, card, { answer: action.answer, edited: true })
             : card
         )),

@@ -130,7 +130,10 @@ class GropStats extends React.Component {
   }
 
   draw3DChart = (logs) => {
-    const data = logs.filter(log => parseInt(log.repetitionsBeforeReview, 10) !== 0) // eslint-disable-line
+    const data = logs.filter(log => (
+      parseInt(log.repetitionsBeforeReview, 10) !== 0)
+      && log.group.section_id === this.props.activeSection
+    )
     .map(log => [
       parseInt(log.repetitionsBeforeReview, 10),
       Math.round(log.failureRate * 100),
@@ -404,6 +407,7 @@ class GropStats extends React.Component {
         title: {
           text: 'GroupDomain',
         },
+        // max: 10,
       },
       plotOptions: {
         scatter: {
@@ -533,6 +537,11 @@ GropStats.propTypes = {
   startRevision: PropTypes.any,
 };
 
-const mapStateToProps = state => ({ cards: state.reforceCards.items, position: state.revision.position, groups: state.groups.items });
+const mapStateToProps = state => ({
+  cards: state.reforceCards.items,
+  position: state.revision.position,
+  groups: state.groups.items,
+  activeSection: state.sections.active,
+});
 
 export default connect(mapStateToProps)(GropStats);
