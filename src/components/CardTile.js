@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setModalVisibility } from 'actions/modalsActions';
 import * as cards from 'actions/cardsActions';
 
-const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplicatedFront, duplicatedBack }) => (
+const CardTile = ({ card, modals, confirmDeleteCard, showEditCard, setActiveCard, duplicatedFront, duplicatedBack, deleteCard }) => (
   <div
     className="card-tile"
     onClick={() => {
@@ -24,7 +24,7 @@ const CardTile = ({ card, confirmDeleteCard, showEditCard, setActiveCard, duplic
       onClick={(e) => {
         e.stopPropagation();
         setActiveCard(card.id);
-        confirmDeleteCard(card.id);
+        if (modals.SearchModal) { confirmDeleteCard(); } else { deleteCard(); }
       }}
     ><Icon name="delete" /></div>
   </div>
@@ -37,10 +37,15 @@ CardTile.propTypes = {
   setActiveCard: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  setActiveCard: cardId => dispatch(cards.setActiveCard(cardId)),
-  confirmDeleteCard: id => dispatch(cards.deleteCard(id)),
-  showEditCard: () => dispatch(setModalVisibility('EditCardModal', true)),
+const mapStateToProps = state => ({
+  modals: state.modalsVisibility,
 });
 
-export default connect(null, mapDispatchToProps)(CardTile);
+const mapDispatchToProps = dispatch => ({
+  setActiveCard: cardId => dispatch(cards.setActiveCard(cardId)),
+  deleteCard: id => dispatch(cards.deleteCard(id)),
+  showEditCard: () => dispatch(setModalVisibility('EditCardModal', true)),
+  confirmDeleteCard: () => dispatch(setModalVisibility('DeleteCardDialog', true)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardTile);
