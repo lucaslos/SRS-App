@@ -75,8 +75,9 @@ RevisionStats.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeGroup: state.groups.active === 'REFORCE'
-    ? { id: 'REFORCE', name: 'Reforce Cards' }
+  activeGroup: state.groups.active === 'REFORCE' && state.cards.items[state.revision.position].group_id
+    // ? { id: 'REFORCE', name: 'Reforce Cards' }
+    ? { id: 'REFORCE', name: `Ref. Cards - ${state.groups.items.find(group => group.id === state.cards.items[state.revision.position].group_id).name}` }
     : state.groups.items.find(group => group.id === state.groups.active),
   cardsLength: state.cards.items.length,
   position: state.revision.position,

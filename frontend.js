@@ -1,30 +1,46 @@
+const WebpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
 const path = require('path');
-const express = require('express');
 
-const app = express();
+const config = require('./webpack.config.rhl.js');
 
-app.use(express.static(`${__dirname}/production`));
+const options = {
+  publicPath: config.output.publicPath,
+  contentBase: './public',
+  hot: true,
+  host: 'localhost',
+  historyApiFallback: true,
+  stats: {
+    colors: true, // color is life
+    errorDetails: true,
+  },
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'production/index.html'));
-});
+  before(app) {
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/index.html'));
+    });
 
-app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'production/style.css'));
-});
+    app.get('/style.css', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/style.css'));
+    });
 
-app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'production/bundle.js'));
-});
+    app.get('/bookmarklet.js', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/bookmarklet.js'));
+    });
 
-app.get('/section/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'production/index.html'));
-});
+    app.get('/section/*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public/index.html'));
+    });
+  },
+};
 
-app.listen(3000, (err) => {
-  if (err) {
-    return console.error(err);
-  }
+WebpackDevServer.addDevServerEntrypoints(config, options);
+const compiler = webpack(config);
+const server = new WebpackDevServer(compiler, options);
 
-  console.log('Listening at http://localhost:3000/');
+server.listen(3000, '0.0.0.0', () => {
+  console.log('dev server listening on port 3000');
 });

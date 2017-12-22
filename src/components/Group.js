@@ -28,7 +28,7 @@ const Group = ({ data, setActiveGroupId, showRevisionModal, domain, numOfCards }
         showRevisionModal();
       }}
       ref={(c) => { this.group = c; }}
-      title={`Cards: ${numOfCards} ETR: ${new Date(10 * numOfCards * 1000).toISOString().substr(14, 5)}`}
+      title={`Cards: ${numOfCards} ETR: ${new Date(localStorage.getItem('averageCardReviewTime') * numOfCards * 1000).toISOString().substr(14, 5)}`}
       style={{ order: domain === 'new' ? -1000 : Math.floor(domain * -1000) }}
     >
       <p><span>{data.name}</span></p>

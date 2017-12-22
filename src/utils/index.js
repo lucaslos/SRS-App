@@ -62,7 +62,7 @@ export const srsAlgo = {
 
   processGroupReview: (cards, repetitions, deleteCards, group) => {
     let wrongCardsCounter = 0;
-    let newRepetitions = repetitions;
+    let newRepetitions = parseInt(repetitions, 10);
 
     // processa dificuldade dos cards
     const newCards = cards.map((card) => {

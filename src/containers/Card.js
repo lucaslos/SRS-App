@@ -236,6 +236,12 @@ class Card extends React.Component {
                       onClick={() => this.showDictionary('https://translate.google.com/?source=gtx_m#en/pt/')}
                     >Google Translate</div>
                   </li>
+                  <li>
+                    <div
+                      className="item"
+                      onClick={() => this.showDictionary('https://www.merriam-webster.com/dictionary/')}
+                    >Merriam Webster</div>
+                  </li>
 
                   <li><div className="item" onClick={this.showEditCard}>Edit card</div></li>
                   {cardsLength > 1 &&

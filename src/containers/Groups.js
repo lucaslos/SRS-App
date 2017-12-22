@@ -55,7 +55,7 @@ class Groups extends React.Component {
             className="group reforce-cards"
             onClick={() => this.startReforceCardsRevision(reforceCards)}
             style={{ order: -1000000 }}
-            title={`Cards: ${reforceCards.length} ETR: ${new Date(7 * reforceCards.length * 1000).toISOString().substr(14, 5)}`}
+            title={`Cards: ${reforceCards.length} ETR: ${new Date(localStorage.getItem('averageCardReviewTimeCR') * reforceCards.length * 1000).toISOString().substr(14, 5)}`}
           >
             <p><span>Reforce Cards</span></p>
             <div className="group-domain error" />
