@@ -73,6 +73,7 @@ class GropStats extends React.Component {
       },
       xAxis: {
         type: 'datetime',
+        gridLineWidth: 1,
         dateTimeLabelFormats: { // don't display the dummy year
             month: '%e. %b',
             year: '%b',

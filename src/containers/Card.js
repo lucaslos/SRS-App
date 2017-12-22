@@ -160,7 +160,7 @@ class Card extends React.Component {
               {position !== 0 &&
                 <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
               }
-              <div className="button" onClick={(e) => { this.textToSpeech(e, card.front, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}><Icon name="volume_up" /></div>
+              <div className="button" onClick={(e) => { this.textToSpeech(e, this.contentFront.innerText, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="num-of-answers">
@@ -171,7 +171,7 @@ class Card extends React.Component {
               {(card.wrongViews > 4 || card.difficulty >= 0.5) && <Icon name="warning" color="#eb5757" />}
             </div>
           </div>
-          <div className="content"><Markdown source={card.front} /></div>
+          <div className="content" ref={(i) => { this.contentFront = i; }}><Markdown source={card.front} /></div>
           <div className="tags">
             {tags.length !== 0 && <div className="border-top" />}
             {tags.map((tag, i) => (
@@ -187,7 +187,7 @@ class Card extends React.Component {
               <div
                 className="button"
                 onClick={(e) => {
-                  this.textToSpeech(e, (this.props.activeSection === '57522bf113391' ? card.front : card.back), (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE'));
+                  this.textToSpeech(e, (this.props.activeSection === '57522bf113391' ? this.contentFront.innerText : this.contentBack.innerText), (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE'));
                 }}
               ><Icon name="volume_up" /></div>
             </div>
@@ -247,7 +247,7 @@ class Card extends React.Component {
               </div>
             </div>
           </div>
-          <div className="content"><Markdown source={card.back} /></div>
+          <div className="content" ref={(i) => { this.contentBack = i; }}><Markdown source={card.back} /></div>
           {notes.length > 0 &&
             <div className="notes">
               {notes.map((note, i) => (

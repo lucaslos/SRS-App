@@ -30,7 +30,7 @@ class GroupChart extends React.Component {
 
     const data = filtered.map(log => [
       log.created,
-      log.repetitionsBeforeReview,
+      parseInt(log.repetitionsBeforeReview, 10),
     ]);
 
     const data2 = filtered.map(log => [
