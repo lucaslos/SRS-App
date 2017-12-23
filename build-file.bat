@@ -1,1 +1,1 @@
-cmd.exe /k webpack
+webpack

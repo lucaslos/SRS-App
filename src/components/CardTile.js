@@ -24,7 +24,11 @@ const CardTile = ({ card, modals, confirmDeleteCard, showEditCard, setActiveCard
       onClick={(e) => {
         e.stopPropagation();
         setActiveCard(card.id);
-        if (modals.SearchModal) { confirmDeleteCard(); } else { deleteCard(); }
+        if (modals.SearchModal) {
+          confirmDeleteCard();
+        } else {
+          deleteCard(card.id);
+        }
       }}
     ><Icon name="delete" /></div>
   </div>

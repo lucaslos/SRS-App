@@ -505,9 +505,9 @@ class GropStats extends React.Component {
       >
         <div className="stats-container">
           {
-            stats.map(stat => (<span key={stat.name} className="stat">{stat.name}
-              <b>{stat.text}</b>
-            </span>))
+            stats.map(stat => (
+              <span key={stat.name} className="stat">{stat.name}&nbsp;<b>{stat.text}</b></span>
+            ))
           }
         </div>
         <div className="chart-buttons">

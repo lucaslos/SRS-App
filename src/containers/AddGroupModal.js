@@ -12,6 +12,7 @@ import CardTile from 'components/CardTile';
 import { setModalVisibility, hideOthersModals } from 'actions/modalsActions';
 import * as cardsActions from 'actions/cardsActions';
 import { addGroup } from 'actions/groupsActions';
+import { showError } from 'actions/errorActions';
 
 class AddGroupModal extends React.Component {
   constructor() {
@@ -20,6 +21,7 @@ class AddGroupModal extends React.Component {
     this.state = {
       allIsValid: false,
       cardsIsValid: false,
+      isWaitingForPaste: false,
       name: {
         value: '',
         isValid: false,
@@ -75,6 +77,7 @@ class AddGroupModal extends React.Component {
   }
 
   importFromGT = () => {
+    this.setState({ isWaitingForPaste: true });
     this.hidden.style.display = 'block';
 
     this.hidden.addEventListener('paste', this.processPaste, false);
@@ -82,6 +85,9 @@ class AddGroupModal extends React.Component {
   }
 
   processPaste = (e) => {
+    this.setState({ isWaitingForPaste: false });
+    this.hidden.removeEventListener('paste', this.processPaste, false);
+
     const paste = e.clipboardData && e.clipboardData.getData ?
     e.clipboardData.getData('text/plain') : // Standard
     window.clipboardData && window.clipboardData.getData ?
@@ -92,7 +98,7 @@ class AddGroupModal extends React.Component {
       try {
         const translations = JSON.parse(paste);
 
-        Axios.get('http://localhost:4000/card')
+        Axios.get('http://localhost:4000/api/card')
         .then(({ data }) => {
           for (let i = 0; i < translations.length; i++) {
             if (!data.find(
@@ -108,14 +114,17 @@ class AddGroupModal extends React.Component {
                 tags: [],
                 notes: [],
               });
+            } else {
+              break;
             }
           }
         }, (error) => {
-          alert(error);
+          this.props.throwError(error);
+          console.error(error);
         });
-
-      } catch (e) {
-        console.log(e.message);
+      } catch (error) {
+        this.props.throwError(error);
+        console.error(error);
       }
     }
 
@@ -124,7 +133,7 @@ class AddGroupModal extends React.Component {
 
   render() {
     const { activeSection, cards, modal, cardsCache, defaultNameGroup } = this.props;
-    const { allIsValid } = this.state;
+    const { allIsValid, isWaitingForPaste } = this.state;
 
     return (
       <div
@@ -167,7 +176,7 @@ class AddGroupModal extends React.Component {
             onClick={() => this.showAddCard()}
           />
           <Button
-            label="IMPORT FROM GOOGLE TRANSLATE"
+            label={isWaitingForPaste ? 'PRESS CTRL + V' : 'IMPORT FROM GOOGLE TRANSLATE'}
             rounded
             size="small"
             alignRight
@@ -223,6 +232,7 @@ const mapDispatchToProps = dispatch => ({
   showAddCard: () => dispatch(setModalVisibility('AddCardModal', true)),
   setActiveCard: cardId => dispatch(cardsActions.setActiveCard(cardId)),
   resetCardsCache: () => dispatch(cardsActions.reset()),
+  throwError: error => dispatch(showError(error), true),
   addCard: card => dispatch(cardsActions.addCard(card)),
 });
 

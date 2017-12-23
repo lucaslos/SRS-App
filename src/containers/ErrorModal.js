@@ -6,10 +6,6 @@ import { setModalVisibility, hideOthersModals } from 'actions/modalsActions';
 import Button from 'components/Button';
 
 class ErrorModal extends React.Component {
-  componentWillMount() {
-    this.props.hideOthersModals();
-  }
-
   render() {
     const { close, errorMsg } = this.props;
 
@@ -45,7 +41,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   close: () => dispatch(setModalVisibility('ErrorModal', false)),
-  hideOthersModals: () => dispatch(hideOthersModals(['ErrorModal'])),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ErrorModal);
