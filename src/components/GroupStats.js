@@ -8,38 +8,59 @@ import { srsAlgo } from 'utils';
 import moment from 'moment';
 
 import Button from 'components/Button';
+import GeneralStats from 'components/GeneralStats';
 
-class GropStats extends React.Component {
+class GroupStats extends React.Component {
   constructor() {
     super();
 
     this.state = {
       isExpanded: false,
+      content: false,
     };
   }
 
-  toggleExpand = (e) => {
-    if (!this.chartContainer.contains(e.target)) {
-      this.setState({
-        isExpanded: !this.state.isExpanded,
-      });
+  toggleExpand = () => {
+    this.setState({
+      isExpanded: !this.state.isExpanded,
+    });
 
-      if (!this.state.isExpanded)
-        this.generateChart();
-      else
-        if (this.chart) this.chart.destroy();
-    }
+    if (!this.state.isExpanded)
+      this.generateChart();
+    else
+      this.resetContent();
   }
 
-  generateChart() {
+  setContent = (Component) => {
+    Axios.get('http://localhost:4000/api/log')
+    .then(({ data }) => {
+      if (this.chart) this.chart.destroy();
+
+      this.setState({
+        content: Component,
+        log: data,
+      });
+    });
+  }
+
+  resetContent = () => {
+    if (this.chart.hasRendered) this.chart.destroy();
+    this.chart = false;
+
+    this.setState({
+      content: false,
+    });
+  }
+
+  generateChart = () => {
     Axios.get('http://localhost:4000/api/log')
     .then(({ data }) => {
       this.draw3DChart(data);
     });
   }
 
-  drawNextDaysChart() {
-    if (this.chart) this.chart.destroy();
+  drawNextDaysChart = () => {
+    this.resetContent();
 
     const data = [];
 
@@ -75,8 +96,8 @@ class GropStats extends React.Component {
         type: 'datetime',
         gridLineWidth: 1,
         dateTimeLabelFormats: { // don't display the dummy year
-            month: '%e. %b',
-            year: '%b',
+          month: '%e. %b',
+          year: '%b',
         },
         labels: {
           rotation: -45,
@@ -131,6 +152,8 @@ class GropStats extends React.Component {
   }
 
   draw3DChart = (logs) => {
+    this.resetContent();
+
     const data = logs.filter(log => (
       parseInt(log.repetitionsBeforeReview, 10) !== 0)
       && log.group.section_id === this.props.activeSection
@@ -465,7 +488,15 @@ class GropStats extends React.Component {
 
   render() {
     const { cards, groups } = this.props;
-    const { isExpanded } = this.state;
+    const { isExpanded, content, log } = this.state;
+
+
+    const components = {
+      GeneralStats,
+    };
+
+    const Component = components[content];
+
     let cardPrevisionNextDay = 0;
     let cardPrevisionNext2Days = 0;
     groups.forEach((group) => {
@@ -482,16 +513,20 @@ class GropStats extends React.Component {
       {
         name: 'Number of words',
         text: cards.length,
-      }, {
+      },
+      {
         name: 'Cards Add Per Week',
         text: cardsAddPerWeek,
-      }, {
+      },
+      {
         name: 'Forecast for the next 3 months',
         text: Math.round((cardsAddPerWeek * 4.34 * 3) + cards.length),
-      }, {
+      },
+      {
         name: 'Groups',
         text: groups.length,
-      }, {
+      },
+      {
         name: 'Cards prevision',
         text: `${cardPrevisionNextDay} ${cardPrevisionNext2Days}`,
       },
@@ -501,9 +536,11 @@ class GropStats extends React.Component {
         className={`groups-stats ${isExpanded
           ? 'expanded'
           : ''}`}
-        onClick={this.toggleExpand}
       >
-        <div className="stats-container">
+        <div
+          className="stats-container"
+          onClick={this.toggleExpand}
+        >
           {
             stats.map(stat => (
               <span key={stat.name} className="stat">{stat.name}&nbsp;<b>{stat.text}</b></span>
@@ -512,22 +549,34 @@ class GropStats extends React.Component {
         </div>
         <div className="chart-buttons">
           <Button
+            label="Groups Stats"
+            rounded
+            size="small"
+            onClick={this.generateChart}
+          />
+          <Button
             label="Groups prevision"
             rounded
             size="small"
-            onClick={(e) => { e.stopPropagation(); this.drawNextDaysChart(); }}
+            onClick={this.drawNextDaysChart}
+          />
+          <Button
+            label="General Stats"
+            rounded
+            size="small"
+            onClick={e => this.setContent('GeneralStats')}
           />
         </div>
-        <div ref={(i) => {
-          this.chartContainer = i;
-        }}
+        { content && <Component logs={log} /> }
+        <div
+          ref={(i) => { this.chartContainer = i; }}
         />
       </div>
     );
   }
 }
 
-GropStats.propTypes = {
+GroupStats.propTypes = {
   hideOthersModals: PropTypes.any,
   activeGroup: PropTypes.any,
   close: PropTypes.any,
@@ -545,4 +594,4 @@ const mapStateToProps = state => ({
   activeSection: state.sections.active,
 });
 
-export default connect(mapStateToProps)(GropStats);
+export default connect(mapStateToProps)(GroupStats);

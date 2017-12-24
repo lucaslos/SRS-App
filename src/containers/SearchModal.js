@@ -18,12 +18,10 @@ class SearchModal extends React.Component {
     this.cardsChange = 0;
     this.props.hideOthersModals();
 
-    this.timeOut
-
     this.setState({
       allIsValid: false,
       cardsIsValid: false,
-      query: { value: '', isValid: true },
+      query: { value: '', isValid: false },
     });
   }
 
@@ -32,11 +30,11 @@ class SearchModal extends React.Component {
       this.setState({
         cardsIsValid: nextProps.cards.length > 0,
         initialCards: nextProps.cards,
-      }, this.checkFullValidity);
+      });
     } else {
       this.setState({
         cardsIsValid: nextProps.cards.length > 0,
-      }, this.checkFullValidity);
+      });
     }
 
     this.cardsChange++;
@@ -63,12 +61,12 @@ class SearchModal extends React.Component {
   }
 
   render() {
-    const { activeGroup, cards, modal, deleteGroupDialog } = this.props;
+    const { cards } = this.props;
     const { query } = this.state;
 
     return (
       <div
-        className={`modal-box`}
+        className={'modal-box'}
         style={{ width: '500px' }}
       >
         <div className="close-button" onClick={this.close}><Icon name="close" /></div>
@@ -76,7 +74,7 @@ class SearchModal extends React.Component {
         <div className="group-props">
           <TextField
             label="Search cards"
-            name="name"
+            name="query"
             value={query.value}
             maxlength="100"
             width="430px"
@@ -87,9 +85,12 @@ class SearchModal extends React.Component {
         <div className="cards-container">
           <div className="divider"><span>Search results: {cards.length}</span></div>
           <div className="cards-tile-container" style={{ minHeight: '300px' }}>
-            {cards.map(card => (
-              <CardTile key={card.id} card={card} />
-            ))}
+            {cards.length === 0 && query.value !== ''
+              ? <div style={{ width: '100%', textAlign: 'center' }}>No results found for {query.value}</div>
+              : cards.map(card => (
+                <CardTile key={card.id} card={card} />
+              ))
+            }
           </div>
         </div>
 

@@ -44,9 +44,10 @@ class RevisionStats extends React.Component {
       remaingTime: this.toHHMMSS(this.remaing / 1000),
     });
 
-    this.remaing = this.remaing <= 0
-    ? Math.floor((new Date().getTime() - this.startTime) / this.props.position * (this.props.cardsLength + 1 - this.props.position))
-    : this.remaing - 1000;
+    // this.remaing = this.remaing <= 0
+    // ? Math.floor((new Date().getTime() - this.startTime) / this.props.position * (this.props.cardsLength + 1 - this.props.position))
+    // : this.remaing - 1000;
+    this.remaing = new Date().getTime() - this.startTime;
   }
 
   render() {
@@ -55,7 +56,7 @@ class RevisionStats extends React.Component {
       <div className="revision-stats">
         <div className="progress-bar-full" />
         <div className="progress-bar" style={{ width: `${((position + 1) / cardsLength) * 100}%` }} />
-        <span className="remaing-time">RT: {this.state.remaingTime}</span>
+        <span className="remaing-time">ET: {this.state.remaingTime}</span>
         <span className="group-name">{activeGroup.name}</span>
         <span className="progress">{position + 1} / {cardsLength}</span>
       </div>
@@ -75,7 +76,7 @@ RevisionStats.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeGroup: state.groups.active === 'REFORCE' && state.cards.items[state.revision.position].group_id
+  activeGroup: state.groups.active === 'REFORCE' && state.cards.items[state.revision.position]
     // ? { id: 'REFORCE', name: 'Reforce Cards' }
     ? { id: 'REFORCE', name: `Ref. Cards - ${state.groups.items.find(group => group.id === state.cards.items[state.revision.position].group_id).name}` }
     : state.groups.items.find(group => group.id === state.groups.active),

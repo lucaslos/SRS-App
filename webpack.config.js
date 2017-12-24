@@ -48,9 +48,9 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new UglifyJsPlugin({
-      parallel: true,
-    }),
+    // new UglifyJsPlugin({
+    //   parallel: true,
+    // }),
     new ProgressBarPlugin(),
     new ExtractTextPlugin({ // define where to save the file
       filename: 'style.css',
