@@ -18,6 +18,8 @@ class GroupStats extends React.Component {
       isExpanded: false,
       content: false,
     };
+
+    this.chart = false;
   }
 
   toggleExpand = () => {
