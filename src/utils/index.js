@@ -24,7 +24,7 @@ const limitRange = (val, min, max) => {
 };
 
 export const logReview = {
-  add: async (group, failureRate, failures, repetitionsBeforeReview, cardsLength) => {
+  add: async (group, failureRate, failures, repetitionsBeforeReview, cardsLength, revisionDuration) => {
     const groupDomain = srsAlgo.calcGroupDomain(group.lastview, parseInt(group.repetitions, 10)); // eslint-disable-line
 
     delete group.cards;
@@ -38,6 +38,7 @@ export const logReview = {
       cardsLength,
       groupDomain,
       created: +new Date(),
+      revisionDuration,
     };
 
     Axios.post(`${apiUrl}`, item)
@@ -60,7 +61,7 @@ export const srsAlgo = {
     return dateDiff / idealDaysDiff[repetitions > 13 ? 13 : repetitions];
   },
 
-  processGroupReview: (cards, repetitions, deleteCards, group) => {
+  processGroupReview: (cards, repetitions, deleteCards, group, revisionDuration) => {
     let wrongCardsCounter = 0;
     let newRepetitions = parseInt(repetitions, 10);
 
@@ -119,7 +120,7 @@ export const srsAlgo = {
     newRepetitions = newRepetitions < 1 ? 1 : newRepetitions;
 
     // log
-    logReview.add(group, wrongRate, wrongCardsCounter, repetitions, cards.length);
+    logReview.add(group, wrongRate, wrongCardsCounter, repetitions, cards.length, revisionDuration);
 
     return {
       cards: newCards,

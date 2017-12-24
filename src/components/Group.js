@@ -20,6 +20,10 @@ const Group = ({ data, setActiveGroupId, showRevisionModal, domain, numOfCards }
     domainClass = 'new';
   }
 
+  const localStorageItem = `averageCardReviewTime${parseInt(data.repetitions, 10) < 1 ? data.repetitions : ''}`;
+
+  const etr = new Date(localStorage.getItem(localStorageItem) * numOfCards * 1000).toISOString().substr(14, 5);
+
   return (
     <div
       className="group"
@@ -28,7 +32,7 @@ const Group = ({ data, setActiveGroupId, showRevisionModal, domain, numOfCards }
         showRevisionModal();
       }}
       ref={(c) => { this.group = c; }}
-      title={`Cards: ${numOfCards} ETR: ${new Date(localStorage.getItem('averageCardReviewTime') * numOfCards * 1000).toISOString().substr(14, 5)}`}
+      title={`Cards: ${numOfCards} ETR: ${etr}`}
       style={{ order: domain === 'new' ? -1000 : Math.floor(domain * -1000) }}
     >
       <p><span>{data.name}</span></p>

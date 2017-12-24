@@ -16,6 +16,9 @@ export default (state = {}, action) => {
         position: state.position - 1,
       });
 
+    case 'SET_REVISION_DURATION':
+      return { ...state, revisionDuration: action.time };
+
     default:
       return state;
   }

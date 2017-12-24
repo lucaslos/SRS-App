@@ -11,6 +11,11 @@ export const startRevisionSuccess = () => ({
   type: 'START_REVISION_SUCCESS',
 });
 
+export const setRevisionDuration = time => ({
+  type: 'SET_REVISION_DURATION',
+  time,
+});
+
 export const startRevision = groupId => (dispatch) => {
   if (groupId !== 'REFORCE') dispatch(cardActions.fetchCards(groupId));
   dispatch(startRevisionSuccess());
@@ -51,6 +56,6 @@ export const finishRevision = group => (dispatch, getState) => {
 
   const state = getState();
   dispatch(groupActions.editGroup(Object.assign({}, group,
-    srsAlgo.processGroupReview(state.cards.items, group.repetitions, state.cards.deleteCards, group)
+    srsAlgo.processGroupReview(state.cards.items, group.repetitions, state.cards.deleteCards, group, state.revision.revisionDuration)
   )));
 };

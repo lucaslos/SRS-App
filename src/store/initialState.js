@@ -35,6 +35,7 @@ export default {
   },
   revision: {
     position: 1,
+    revisionDuration: 0,
   },
   reforceCards: {
     items: [],
