@@ -86,8 +86,9 @@ export const srsAlgo = {
         // se card for acertado
       } else if (answer === 1) {
         difficulty -= 0.25;
+        // se for meio acerto
       } else {
-        difficulty += difficulty === 0 ? 0.25 : 0;
+        difficulty = (difficulty <= 0.25) ? 0.25 : difficulty - 0.25;
       }
 
       difficulty = limitRange(difficulty, 0, 1);

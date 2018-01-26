@@ -32,7 +32,7 @@ const Group = ({ data, setActiveGroupId, showRevisionModal, domain, numOfCards }
         showRevisionModal();
       }}
       ref={(c) => { this.group = c; }}
-      title={`Cards: ${numOfCards} ETR: ${etr}`}
+      title={`Cards: ${numOfCards} ETR: ${etr} D: ${Math.round(domain * 100) / 100} R: ${data.repetitions}`}
       style={{ order: domain === 'new' ? -1000 : Math.floor(domain * -1000) }}
     >
       <p><span>{data.name}</span></p>

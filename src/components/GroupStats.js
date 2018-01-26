@@ -80,7 +80,7 @@ class GroupStats extends React.Component {
       return [moment().add(day, 'd').valueOf(), cardPrevision];
     };
 
-    for (let i = 1; i < 90; i++) {
+    for (let i = 0; i < 90; i++) {
       data.push(calcDayGroups(i));
     }
 

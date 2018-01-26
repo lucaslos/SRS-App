@@ -5,6 +5,14 @@ import { connect } from 'react-redux';
 // import * as _Actions from 'actions/_Actions';
 // import Group from 'component/Group';
 
+const trimMean = (array, percentage) => {
+  array.sort((a, b) => a - b);
+  const l = array.length;
+  const low = Math.round(l * (percentage / 100));
+  const high = l - low;
+  return array.slice(low, high);
+};
+
 const roundPercentage = num => Math.round(num * 1000) / 10;
 
 const GeneralStats = ({ logs, activeSection, cards }) => {
@@ -22,31 +30,30 @@ const GeneralStats = ({ logs, activeSection, cards }) => {
 
   const cardsAddLastMonth = cards.filter(card => card.createdAt > firstDay).length;
 
-  const newGroupsLogsTime = logs.filter(log => (
+  const newGroupsLogsTime = trimMean(logs.filter(log => (
     log.group.id !== 'REFORCE'
     && parseInt(log.repetitionsBeforeReview, 10) === 0
     && log.revisionDuration
     && log.group.section_id === activeSection
-  )).map(log => log.revisionDuration / log.cardsLength);
+  )).map(log => log.revisionDuration / log.cardsLength), 20);
 
-  const reforceCardsLogsTime = logs.filter(log => (
+  const reforceCardsLogsTime = trimMean(logs.filter(log => (
     log.group.id === 'REFORCE'
     && log.revisionDuration
-    && log.group.section_id === activeSection
-  )).map(log => log.revisionDuration / log.cardsLength);
+  )).map(log => log.revisionDuration / log.cardsLength), 20);
 
-  const oneReviewGroupsLogsTime = logs.filter(log => (
+  const oneReviewGroupsLogsTime = trimMean(logs.filter(log => (
     parseInt(log.repetitionsBeforeReview, 10) === 1
     && log.revisionDuration
     && log.group.section_id === activeSection
-  )).map(log => log.revisionDuration / log.cardsLength);
+  )).map(log => log.revisionDuration / log.cardsLength), 20);
 
-  const othersGroupsLogsTime = logs.filter(log => (
+  const othersGroupsLogsTime = trimMean(logs.filter(log => (
     parseInt(log.repetitionsBeforeReview, 10) !== 0
     && parseInt(log.repetitionsBeforeReview, 10) !== 1
     && log.revisionDuration
     && log.group.section_id === activeSection
-  )).map(log => log.revisionDuration / log.cardsLength);
+  )).map(log => log.revisionDuration / log.cardsLength), 20);
 
   const stats = [
     {
