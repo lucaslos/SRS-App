@@ -132,8 +132,14 @@ class Card extends React.Component {
   }
 
   addNote = (e) => {
+    e.preventDefault();
+
     if (e.dataTransfer.types.includes('text/plain')) {
-      this.props.addNote(e.dataTransfer.getData('Text'), this.props.card.id);
+      if (e.dataTransfer.getData('Text').match(/(\.png|\.jpg|\.jpeg)$/g)) {
+        this.props.addImg(e.dataTransfer.getData('Text'), this.props.card.id);
+      } else {
+        this.props.addNote(e.dataTransfer.getData('Text'), this.props.card.id);
+      }
     }
   }
 
@@ -306,6 +312,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setActiveCard: cardId => dispatch(cardsActions.setActiveCard(cardId)),
   addNote: (note, cardId) => dispatch(cardsActions.addNote(note, cardId)),
+  addImg: (img, cardId) => dispatch(cardsActions.addImg(img, cardId)),
   deleteCard: cardId => dispatch(cardsActions.deleteCard(cardId)),
   processCardAnswer: (cardId, isRight, position, isEnd = false) => dispatch(revisionActions.processCardAnswer(cardId, isRight, position, isEnd)),
   showEditCard: () => dispatch(setModalVisibility('EditCardModal', true)),

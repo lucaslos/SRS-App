@@ -137,6 +137,18 @@ export default (state = {}, action) => {
         }),
       };
 
+    case 'ADD_IMG':
+      return {
+        ...state,
+        items: state.items.map(card => (
+          card.id === action.cardId
+          ? {
+            ...card,
+            back: `![](${action.img})\n${card.back}`,
+          }
+          : card
+        )),
+      };
 
     default:
       return state;

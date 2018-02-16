@@ -148,3 +148,9 @@ export const addNote = (note, cardId) => ({
   note,
   cardId,
 });
+
+export const addImg = (img, cardId) => ({
+  type: 'ADD_IMG',
+  img,
+  cardId,
+});
