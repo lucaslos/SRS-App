@@ -221,8 +221,8 @@ class Card extends React.Component {
                   <li>
                     <div
                       className="item"
-                      onClick={() => this.showDictionary('http://pt.bab.la/dicionario/ingles-portugues/')}
-                    >bab.la</div>
+                      onClick={() => this.showDictionary('https://www.shutterstock.com/search?searchterm=')}
+                    >Search images</div>
                   </li>
                   <li>
                     <div
