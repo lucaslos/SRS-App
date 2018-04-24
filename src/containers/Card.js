@@ -159,7 +159,7 @@ class Card extends React.Component {
     const notes = card.notes ? card.notes.map(item => item.text || item) : [];
 
     return (
-      <div className={`card-container ${!frontIsVisible ? 'flipped' : ''}`}>
+      <div className={`card-container ${!frontIsVisible ? 'flipped' : ''} ${(card.wrongViews > 4 || card.difficulty >= 0.5) ? 'warning' : ''}`}>
         <div className="front" onClick={this.goForward} >
           <div className="actions">
             <div className="align-left">
@@ -174,7 +174,7 @@ class Card extends React.Component {
                   <div key={i} className="dot" />
                 )) : <div className="dot" />}
               </div>
-              {(card.wrongViews > 4 || card.difficulty >= 0.5) && <Icon name="warning" color="#eb5757" />}
+              {(card.wrongViews > 4 || card.difficulty >= 0.5) && <Icon name="warning" color="#000" />}
             </div>
           </div>
           <div className="content" ref={(i) => { this.contentFront = i; }}><Markdown source={card.front} /></div>
