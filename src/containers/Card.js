@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Icon from 'components/Icon';
 import { connect } from 'react-redux';
 import Markdown from 'react-markdown';
@@ -150,13 +149,15 @@ class Card extends React.Component {
   }
 
   render() {
-    const { position, cardsLength } = this.props;
+    const { position, cardsLength, language } = this.props;
     const { frontIsVisible, card, dropDownIsActive } = this.state;
 
     if (!card) return null;
 
     const tags = card.tags ? card.tags.map(item => item.text || item) : [];
     const notes = card.notes ? card.notes.map(item => item.text || item) : [];
+
+    const backText = () => (language === 'en-US' ? this.contentFront.innerText : this.contentBack.innerText);
 
     return (
       <div className={`card-container ${!frontIsVisible ? 'flipped' : ''} ${(card.wrongViews > 4 || card.difficulty >= 0.5) ? 'warning' : ''}`}>
@@ -166,7 +167,7 @@ class Card extends React.Component {
               {position !== 0 &&
                 <div className="button" onClick={(e) => { this.goBack(e); }}><Icon name="undo" /></div>
               }
-              <div className="button" onClick={(e) => { this.textToSpeech(e, this.contentFront.innerText, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}><Icon name="volume_up" /></div>
+              <div className="button" onClick={(e) => { this.textToSpeech(e, this.contentFront.innerText, language); }}><Icon name="volume_up" /></div>
             </div>
             <div className="align-right">
               <div className="num-of-answers">
@@ -193,7 +194,7 @@ class Card extends React.Component {
               <div
                 className="button"
                 onClick={(e) => {
-                  this.textToSpeech(e, (this.props.activeSection === '57522bf113391' ? this.contentFront.innerText : this.contentBack.innerText), (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE'));
+                  this.textToSpeech(e, backText, language);
                 }}
               ><Icon name="volume_up" /></div>
             </div>
@@ -263,7 +264,7 @@ class Card extends React.Component {
           {notes.length > 0 &&
             <div className="notes">
               {notes.map((note, i) => (
-                <div key={i} className="note" onDoubleClick={(e) => { this.textToSpeech(e, note, (this.props.activeSection === '57522bf113391' ? 'en-US' : 'de-DE')); }}>{note}</div>
+                <div key={i} className="note" onDoubleClick={(e) => { this.textToSpeech(e, note, language); }}>{note}</div>
               ))}
             </div>
           }
@@ -284,22 +285,11 @@ class Card extends React.Component {
   }
 }
 
-Card.propTypes = {
-  card: PropTypes.any,
-  deleteCard: PropTypes.any,
-  processCardAnswer: PropTypes.any,
-  card: PropTypes.any,
-  cardsLength: PropTypes.any,
-  position: PropTypes.any,
-  close: PropTypes.any,
-  finishRevision: PropTypes.any,
-  goBack: PropTypes.any,
-  activeGroupId: PropTypes.any,
-  showDictionary: PropTypes.any,
-};
-
 const mapStateToProps = state => ({
   card: state.cards.items[state.revision.position],
+  language: state.groups.items.find(group =>
+    group.id === state.cards.items[state.revision.position].group_id
+  ).section_id === '57522bf113391' ? 'en-US' : 'de-DE',
   cardsLength: state.cards.items.length,
   position: state.revision.position,
   modals: state.modalsVisibility,
