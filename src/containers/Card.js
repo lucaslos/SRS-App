@@ -194,7 +194,7 @@ class Card extends React.Component {
               <div
                 className="button"
                 onClick={(e) => {
-                  this.textToSpeech(e, backText, language);
+                  this.textToSpeech(e, backText(), language);
                 }}
               ><Icon name="volume_up" /></div>
             </div>
