@@ -134,7 +134,7 @@ class Card extends React.Component {
     e.preventDefault();
 
     if (e.dataTransfer.types.includes('text/plain')) {
-      if (e.dataTransfer.getData('Text').match(/(\.png|\.jpg|\.jpeg)$/g)) {
+      if (e.dataTransfer.getData('Text').match(/(\.png|\.jpg|\.jpeg|\.gif)$/g)) {
         this.props.addImg(e.dataTransfer.getData('Text'), this.props.card.id);
       } else {
         this.props.addNote(e.dataTransfer.getData('Text'), this.props.card.id);
@@ -182,7 +182,7 @@ class Card extends React.Component {
           <div className="tags">
             {tags.length !== 0 && <div className="border-top" />}
             {tags.map((tag, i) => (
-              <div key={i} className="tag">{tag}</div>
+              <div key={i} className={`tag ${tag === 'verb' || tag === 'adjective' || tag === 'adverb' || tag === 'noun' ? tag : ''}`}>{tag}</div>
             ))}
           </div>
         </div>
@@ -287,9 +287,11 @@ class Card extends React.Component {
 
 const mapStateToProps = state => ({
   card: state.cards.items[state.revision.position],
-  language: state.groups.items.find(group =>
-    group.id === state.cards.items[state.revision.position].group_id
-  ).section_id === '57522bf113391' ? 'en-US' : 'de-DE',
+  language: state.cards.items[state.revision.position]
+    ? state.groups.items.find(group =>
+      group.id === state.cards.items[state.revision.position].group_id
+    ).section_id === '57522bf113391' ? 'en-US' : 'de-DE'
+    : null,
   cardsLength: state.cards.items.length,
   position: state.revision.position,
   modals: state.modalsVisibility,

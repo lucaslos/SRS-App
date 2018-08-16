@@ -1,1 +1,1 @@
-cmd.exe /k node frontend-dev.js
+cmd.exe /k npm run dev

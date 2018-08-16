@@ -13,14 +13,20 @@
     closePopUp();
   }
 
-  function openPopUp(content, width) {
+  function openPopUp(title, content, width) {
     const box = document.createElement('div');
 
     box.style.zIndex = '99999';
 
     document.body.appendChild(box);
 
-    box.innerHTML = content;
+    const innerHTML = `
+    	${title}
+    	<textarea id='input_bookmarklet' type='text' style='position: absolute; top: 0; left: 0; opacity:0'>
+    		${content}
+    	</textarea>`;
+
+    box.innerHTML = innerHTML;
     box.id = 'boxPopUp';
 
     box.style.position = 'absolute';
@@ -48,6 +54,6 @@
     wordsTable.push([en[i].innerText.toLowerCase(), pt[i].innerText.toLowerCase()]);
   }
 
-  openPopUp(`Click to copy ${wordsTable.length} cards<textarea id='input_bookmarklet' type='text' style='position: absolute; top: 0; left: 0; opacity:0'>${JSON.stringify(wordsTable)}</textarea>`, 300);
+  openPopUp(`Click to copy ${wordsTable.length} cards`, JSON.stringify(wordsTable), 300);
   window.document.getElementById('boxPopUp').addEventListener('click', copyText);
 })();

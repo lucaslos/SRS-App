@@ -2,9 +2,9 @@ const jsonServer = require('json-server');
 const path = require('path');
 
 const server = jsonServer.create();
-const router = jsonServer.router('D:/Files/Google Drive/Backups/srs/db.json');
+const router = jsonServer.router('G:/Meu Drive/Backups/srs/db.json');
 const middlewares = jsonServer.defaults({
-  static: 'prodution',
+  static: 'production',
 });
 
 // Set default middlewares (logger, static, cors and no-cache)

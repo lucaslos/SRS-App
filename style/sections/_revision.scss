@@ -208,7 +208,7 @@
   }
 
   .tag {
-    animation: tag-alert 0.5s infinite alternate;
+    // animation: tag-alert 0.5s infinite alternate;
   }
 }
 
@@ -252,6 +252,23 @@
     background-color: #ddd;
   }
 
+  .tag.verb {
+    background-color: #E91E63;
+    color: #fff;
+  }
+
+  .tag.adjective {
+    background-color: #00BCD4;
+  }
+
+  .tag.noun {
+    background-color: #cddc39;
+  }
+
+  .tag.adverb {
+    background-color: #ff9800;
+  }
+
   .tag {
     position: relative;
 
@@ -268,7 +285,7 @@
     font-weight: 500;
 
     border-radius: 36px;
-    background: $light1;
+    background-color: $light1;
 
     user-select: text;
   }

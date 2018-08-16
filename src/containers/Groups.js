@@ -53,7 +53,7 @@ class Groups extends React.Component {
         {reforceCards.length > 0 &&
           <div
             className="group reforce-cards"
-            onClick={() => this.startReforceCardsRevision(reforceCards)}
+            onClick={() => this.startReforceCardsRevision(reforceCards.filter((card, i) => i < 11))}
             style={{ order: -1000000 }}
             title={`Cards: ${reforceCards.length} ETR: ${new Date(localStorage.getItem('averageCardReviewTimeCR') * reforceCards.length * 1000).toISOString().substr(14, 5)}`}
           >

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { WithContext as ReactTags } from 'react-tag-input';
+import ReactTags from 'components/ReactTagInput';
 
 import Icon from 'components/Icon';
 
