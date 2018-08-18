@@ -34,7 +34,7 @@ class GroupStats extends React.Component {
   }
 
   setContent = (Component) => {
-    Axios.get('http://localhost:4000/api/log')
+    firebase.database().ref('/log/').once('value')
     .then(({ data }) => {
       if (this.chart) this.chart.destroy();
 
@@ -55,9 +55,9 @@ class GroupStats extends React.Component {
   }
 
   generateChart = () => {
-    Axios.get('http://localhost:4000/api/log')
+    firebase.database().ref('/log/').once('value')
     .then(({ data }) => {
-      this.draw3DChart(data);
+      this.draw3DChart(data.val());
     });
   }
 

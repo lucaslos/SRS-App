@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { showError } from 'actions/errorActions';
 import { addCards, reset } from 'actions/cardsActions';
 import { fetchReforceCards } from 'actions/reforceCardsActions';
+import { objectToArray, genId } from '../utils';
 
 const apiUrl = 'http://localhost:4000/api/group';
 const apiUrlCard = 'http://localhost:4000/api/card';
@@ -28,18 +29,22 @@ export const fetchGroupsError = () => ({
 });
 
 export const fetchGroups = sectionId => (dispatch) => {
-  const url = sectionId === 'ALL' ? apiUrl : `${apiUrl}?section_id=${sectionId}`;
-
-  Axios.get(url)
+  // const url = sectionId === 'ALL' ? apiUrl : `${apiUrl}?section_id=${sectionId}`;
+  (sectionId === 'ALL'
+    ? firebase.database().ref('/group/')
+    : firebase.database().ref('/group/').orderByChild('section_id').equalTo(sectionId)
+  )
+  .once('value')
   .then((response) => {
     // Dispatch another action
     // to consume data
-    dispatch(fetchGroupsSuccess(response.data));
+    dispatch(fetchGroupsSuccess(objectToArray(response.val() || [])));
     dispatch(fetchReforceCards());
-  })
-  .catch((error) => {
-    dispatch(fetchGroupsError());
-    dispatch(showError(error));
+  }, (error) => {
+    if (error) {
+      dispatch(fetchGroupsError());
+      dispatch(showError(error));
+    }
   });
 };
 
@@ -54,34 +59,49 @@ export const addGroupError = () => ({
 });
 
 export const addGroup = (sectionId, group, cards) => (dispatch) => {
-  Axios.post(apiUrl, Object.assign({}, group))
-  .then((response) => {
-    for (let i = 0; i < cards.length; i++) {
-      Axios.post(apiUrlCard, Object.assign({}, {
-        front: cards[i].front,
-        back: cards[i].back,
-        group_id: response.data.id,
-        wrongViews: cards[i].wrongViews,
-        difficulty: cards[i].difficulty,
-        lastView: cards[i].lastView,
-        createdAt: +new Date(),
-        tags: cards[i].tags.map(tag => tag.text || tag),
-        notes: cards[i].notes.map(tag => tag.text || tag),
-      }))
-      .then(() => {
-        console.log('add card Ok!');
-      }, (error) => {
-        console.error(error);
-        dispatch(addGroupError(error));
-      });
-    }
+  const index = genId();
 
-    dispatch(addGroupSuccess(response.data));
-    dispatch(fetchReforceCards());
-  }, (error) => {
-    dispatch(showError(error));
-    dispatch(addGroupError(error));
-  });
+  const newGroup = {
+    ...group,
+    id: genId(),
+    originalId: index,
+  };
+
+  firebase.database().ref(`group/${index}`)
+  .set(newGroup,
+    (error) => {
+      if (!error) {
+        for (let i = 0; i < cards.length; i++) {
+          Axios.post(apiUrlCard, Object.assign({}, {
+            front: cards[i].front,
+            back: cards[i].back,
+            group_id: response.data.id,
+            wrongViews: cards[i].wrongViews,
+            difficulty: cards[i].difficulty,
+            lastView: cards[i].lastView,
+            createdAt: +new Date(),
+            tags: cards[i].tags.map(tag => tag.text || tag),
+            notes: cards[i].notes.map(tag => tag.text || tag),
+          }))
+          .then(() => {
+            console.log('add card Ok!');
+          }, (error) => {
+            console.error(error);
+            dispatch(addGroupError(error));
+          });
+        }
+
+        firebase.database().ref('card')
+        .update(newGroup
+
+        dispatch(addGroupSuccess(newGroup));
+        dispatch(fetchReforceCards());
+      } else {
+        dispatch(showError(error));
+        dispatch(addGroupError(error));
+      }
+    }
+  );
 };
 
 /* edit groups */

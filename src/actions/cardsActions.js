@@ -95,26 +95,20 @@ export const fetchCardsFailure = () => ({
 export const fetchCards = groupId => (dispatch) => {
   dispatch(fetchCardsRequest());
 
-  Axios.get(`${apiUrl}?group_id=${groupId}`)
-  .then((response) => {
-    dispatch(fetchCardsSuccess(response.data));
-    dispatch(riffle());
-  }, (error) => {
-    dispatch(showError(error));
-    dispatch(fetchCardsFailure(error));
-  });
+  // firebase.database().ref('/card/').once('value')
+  // .then((response) => {
+  //   dispatch(fetchCardsSuccess(response.val()));
+  //   dispatch(riffle());
+  // }, (error) => {
+  //   dispatch(showError(error));
+  //   dispatch(fetchCardsFailure(error));
+  // });
 };
 
-export const searchCard = query => (dispatch) => {
-  dispatch(fetchCardsRequest());
-
-  Axios.get(`${apiUrl}?q=${query}`)
-  .then((response) => {
-    dispatch(fetchCardsSuccess(response.data));
-  }, (error) => {
-    dispatch(showError(error));
-    dispatch(fetchCardsFailure(error));
-  });
+export const searchCard = query => (dispatch, getState) => {
+  dispatch(fetchCardsSuccess(getState().reforceCards.items.filter(card =>
+    (RegExp(query, 'i').test(card.front) || RegExp(query, 'i').test(card.back))
+  )));
 };
 
 export const moveToEnd = (cardId, position) => ({

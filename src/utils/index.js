@@ -2,6 +2,16 @@ import Axios from 'axios';
 
 const apiUrl = 'http://localhost:4000/api/log';
 
+export const getById = (list, id) => {
+  for (let i = 0; i < list.length; i++) {
+    const element = list[i];
+
+    if (element.id === id) return element;
+  }
+
+  throw new Error('id not exist');
+};
+
 export const timeToDate = (timeStamp) => {
   const date = new Date(timeStamp * 1000);
   let dd = date.getDate();
@@ -22,6 +32,20 @@ const limitRange = (val, min, max) => {
     } return max;
   } return min;
 };
+
+export const objectToArray = (object) => {
+  const array = [];
+  Object.keys(object).forEach((i) => {
+    array.push({
+      ...object[i],
+      originalId: i,
+    });
+  });
+
+  return array;
+};
+
+export const genId = () => `${Math.random().toString(36).substr(2, 3)}-${Math.random().toString(36).substr(2, 9)}`;
 
 export const logReview = {
   add: async (group, failureRate, failures, repetitionsBeforeReview, cardsLength, revisionDuration) => {
