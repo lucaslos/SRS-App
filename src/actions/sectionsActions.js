@@ -61,10 +61,10 @@ export const addSection = name => (dispatch) => {
   const index = Math.random().toString(36).substr(2, 9);
 
   const newSection = {
-    id: Math.random().toString(36).substr(2, 9),
+    id: Math.random().toString(36).substr(2, 9), // remember it!
     name,
     isLanguageSection: true,
-    originalId: index,
+    originalId: index, // remember it!
   };
 
   firebase.database().ref(`section/${index}`).set(
@@ -123,13 +123,6 @@ export const deleteSectionError = () => ({
   type: 'DELETE_SECTION_ERROR',
 });
 
-export const deleteSection = id => dispatch =>
-  Axios.delete(`${apiUrl}/${id}`)
-  .then((response) => {
-    dispatch(setActiveSection('ALL'));
-    dispatch(deleteSectionSuccess(id));
-  })
-  .catch((error) => {
-    dispatch(deleteSectionError(error));
-    dispatch(showError(error));
-  });
+export const deleteSection = id => dispatch => {
+  firebase.database().ref(`section/${section.originalId}`).remove();
+};

@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
-* text=auto
-core.autocrlf = false
+* text eol=lf
 
 # Custom for Visual Studio
 *.cs     diff=csharp
@@ -16,3 +15,8 @@ core.autocrlf = false
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.ico binary
