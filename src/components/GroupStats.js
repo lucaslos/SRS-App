@@ -489,13 +489,15 @@ class GroupStats extends React.Component {
   }
 
   render() {
-    const { cards, groups } = this.props;
+    const { cards: AllCards, groups } = this.props;
     const { isExpanded, content, log } = this.state;
 
 
     const components = {
       GeneralStats,
     };
+
+    const cards = AllCards.filter(({ lastView }) => lastView && lastView !== '');
 
     const Component = components[content];
 
