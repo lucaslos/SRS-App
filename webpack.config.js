@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
-const folder = 'production';
+const folder = 'docs';
 
 module.exports = {
   mode: 'production',

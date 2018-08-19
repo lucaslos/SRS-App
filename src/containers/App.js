@@ -43,7 +43,7 @@ class App extends React.Component {
       if (user) {
         initialize();
       } else {
-        localStorage.password = prompt('???');
+        localStorage.password = prompt('????');
 
         firebase.auth().signInWithEmailAndPassword('lucas@sugestly.com', localStorage.password)
         .catch((err) => {
