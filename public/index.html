@@ -4,16 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Open+Sans:300,400,600|Source+Sans+Pro:300,400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Open+Sans:300,400,600|Source+Sans+Pro:300,400,600|Roboto:300,400,600" rel="stylesheet">
   <title>SRS</title>
 </head>
 <body>
   <div id="app"></div>
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-3d.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCAhxvqq5Jten9UeGx0isTPzbAe15uYtUQ",
+      authDomain: "srs-db-1b23d.firebaseapp.com",
+      databaseURL: "https://srs-db-1b23d.firebaseio.com",
+      projectId: "srs-db-1b23d",
+      storageBucket: "srs-db-1b23d.appspot.com",
+      messagingSenderId: "982649992026"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="/bundle.js"></script>
 </body>
 </html>

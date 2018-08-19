@@ -14,9 +14,9 @@ class GroupChart extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('http://localhost:4000/api/log')
+    firebase.database().ref('/log/').once('value')
     .then(({ data }) => {
-      this.drawChart(data);
+      this.drawChart(data.val());
     });
   }
 

@@ -98,10 +98,10 @@ class AddGroupModal extends React.Component {
       try {
         const translations = JSON.parse(paste);
 
-        Axios.get('http://localhost:4000/api/card')
+        firebase.database().ref('/card/').once('value')
         .then(({ data }) => {
           for (let i = 0; i < translations.length; i++) {
-            if (!data.find(
+            if (!data.val().find(
               card => card.front === translations[i][0].toLowerCase()
             )) {
               this.props.addCard({

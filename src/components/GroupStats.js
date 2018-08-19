@@ -34,7 +34,7 @@ class GroupStats extends React.Component {
   }
 
   setContent = (Component) => {
-    Axios.get('http://localhost:4000/api/log')
+    firebase.database().ref('/log/').once('value')
     .then(({ data }) => {
       if (this.chart) this.chart.destroy();
 
@@ -55,9 +55,9 @@ class GroupStats extends React.Component {
   }
 
   generateChart = () => {
-    Axios.get('http://localhost:4000/api/log')
+    firebase.database().ref('/log/').once('value')
     .then(({ data }) => {
-      this.draw3DChart(data);
+      this.draw3DChart(data.val());
     });
   }
 
@@ -489,13 +489,15 @@ class GroupStats extends React.Component {
   }
 
   render() {
-    const { cards, groups } = this.props;
+    const { cards: AllCards, groups } = this.props;
     const { isExpanded, content, log } = this.state;
 
 
     const components = {
       GeneralStats,
     };
+
+    const cards = AllCards.filter(({ lastView }) => lastView && lastView !== '');
 
     const Component = components[content];
 

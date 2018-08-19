@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { fetchGroups } from 'actions/groupsActions';
 import { setModalVisibility } from 'actions/modalsActions';
 import { showError } from 'actions/errorActions';
+import { objectToArray, getById } from '../utils';
 
 
 const apiUrl = 'http://localhost:4000/api/section';
@@ -42,12 +43,8 @@ export const fetchSectionsSuccess = sections => ({
 });
 
 export const fetchSections = () => dispatch =>
-  Axios.get(apiUrl)
-  .then((response) => {
-    dispatch(fetchSectionsSuccess(response.data));
-  })
-  .catch((error) => {
-    throw (error);
+  firebase.database().ref('/section/').once('value').then((snapshot) => {
+    dispatch(fetchSectionsSuccess(objectToArray(snapshot.val())));
   });
 
 /* add section */
@@ -60,20 +57,29 @@ export const addSectionError = () => ({
   type: 'ADD_SECTION_ERROR',
 });
 
-export const addSection = name => dispatch =>
-  Axios.post(`${apiUrl}`, {
+export const addSection = name => (dispatch) => {
+  const index = Math.random().toString(36).substr(2, 9);
+
+  const newSection = {
+    id: Math.random().toString(36).substr(2, 9),
     name,
     isLanguageSection: true,
-  })
-  .then((response) => {
-    dispatch(addSectionSuccess(response.data));
-    dispatch(setActiveSection(response.data.id));
-  })
-  .catch((error) => {
-    dispatch(addSectionError(error));
-    dispatch(showError(error));
-  });
+    originalId: index,
+  };
 
+  firebase.database().ref(`section/${index}`).set(
+    newSection,
+    (error) => {
+      if (!error) {
+        dispatch(addSectionSuccess(newSection));
+        dispatch(setActiveSection(newSection.id));
+      } else {
+        dispatch(addSectionError(error));
+        dispatch(showError(error));
+      }
+    }
+  );
+};
 
 /* edit section */
 export const editSectionSuccess = section => ({
@@ -85,18 +91,27 @@ export const editSectionError = () => ({
   type: 'EDIT_SECTION_ERROR',
 });
 
-export const editSection = (id, name) => dispatch =>
-  Axios.put(`${apiUrl}/${id}`, {
+export const editSection = (id, name) => (dispatch, getState) => {
+  const section = getById(getState().sections.items, id);
+
+  const newSection = {
+    ...section,
     name,
     isLanguageSection: true,
-  })
-  .then((response) => {
-    dispatch(editSectionSuccess(response.data));
-  })
-  .catch((error) => {
-    dispatch(editSectionError(error));
-    dispatch(showError(error));
-  });
+  };
+
+  firebase.database().ref(`section/${section.originalId}`).set(
+    newSection,
+    (error) => {
+      if (error) {
+        dispatch(editSectionError(error));
+        dispatch(showError(error));
+      } else {
+        dispatch(editSectionSuccess(newSection));
+      }
+    }
+  );
+};
 
 /* delete section */
 export const deleteSectionSuccess = sectionId => ({

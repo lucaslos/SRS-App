@@ -65,11 +65,11 @@ export const populateTagsSuggestion = (cards, dispatch) => {
 export const fetchReforceCards = () => (dispatch, getState) => {
   dispatch(fetchReforceCardsRequest());
 
-  Axios.get(`${apiUrl}`)
+  firebase.database().ref('/card/').once('value')
   .then((response) => {
     // filter groups to section
     const groups = getState().groups.items.map(group => group.id);
-    const cards = response.data.filter((card => groups.includes(card.group_id)));
+    const cards = response.val().filter((card => groups.includes(card.group_id)));
 
     dispatch(fetchReforceCardsSuccess(cards));
     populateTagsSuggestion(cards, dispatch);
@@ -83,7 +83,9 @@ export const fetchReforceCards = () => (dispatch, getState) => {
     //
     // dispatch(setTagsSuggestion(suggestions.filter((el, i, a) => i === a.indexOf(el))));
   }, (error) => {
-    dispatch(showError(error));
-    dispatch(fetchReforceCardsFailure(error));
+    if (error) {
+      dispatch(showError(error));
+      dispatch(fetchReforceCardsFailure(error));
+    }
   });
 };
