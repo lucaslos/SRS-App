@@ -37,20 +37,28 @@ class App extends React.Component {
       }
     };
 
+    const login = () => {
+      if (!localStorage.password && localStorage.password === 'null') {
+        localStorage.password = prompt('????');
+      }
+
+      firebase.auth().signInWithEmailAndPassword('lucas@sugestly.com', localStorage.password)
+        .catch((err) => {
+          if (err) {
+            localStorage.password = null;
+
+            login();
+          }
+        });
+    };
+
     firebase.auth().onAuthStateChanged((user) => {
       window.user = user; // user is undefined if no user signed in
 
       if (user) {
         initialize();
       } else {
-        localStorage.password = prompt('????');
-
-        firebase.auth().signInWithEmailAndPassword('lucas@sugestly.com', localStorage.password)
-        .catch((err) => {
-          if (err) {
-            localStorage.password = null;
-          }
-        });
+        login();
       }
     });
   }

@@ -34,6 +34,12 @@
   background-color: $dark3;
   border-bottom: 1px solid #ddd;
 
+  @include mobile {
+    padding: 0 24px;
+    height: 60px;
+    line-height: 60px;
+  }
+
   & > div {
     display: inline-block;
   }
@@ -48,6 +54,10 @@
     font-size: 36px;
 
     color: #333;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   .edit-button {
@@ -94,6 +104,13 @@
 
   transition: 0.2s ease-out;
 
+  @include mobile {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    overflow-x: auto;
+  }
+
   &.expanded {
     height: 490px;
   }
@@ -111,5 +128,9 @@
     margin-right: 11px;
     padding-right: 10px;
     border-right: 1.5px solid shade($light1, 20);
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

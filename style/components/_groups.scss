@@ -1,5 +1,5 @@
 .groups-container {
-  padding-top: 90px;
+  padding-top: 70px;
   padding-bottom: 60px;
   padding-left: 60px - 14px;
   padding-right: 60px - 14px;
@@ -12,6 +12,11 @@
   align-content: flex-start;
 
   overflow-y: scroll;
+
+  @include mobile {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 
 .group {
@@ -31,6 +36,11 @@
 
   cursor: pointer;
   transition: box-shadow 0.2s ease;
+
+  @include mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   &:hover {
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 8px 0 rgba(0, 0, 0, 0.24);

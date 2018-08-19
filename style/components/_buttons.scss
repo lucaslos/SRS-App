@@ -101,6 +101,10 @@ $main-color: $light1;
     position: absolute;
   }
 
+  @include mobile {
+    right: 24px;
+  }
+
   &:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
     background-color: shade($main-color, 6%);
