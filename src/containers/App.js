@@ -28,17 +28,17 @@ class App extends React.Component {
     // populate store
 
     const initialize = () => {
-      this.props.fetchSections();
+      this.props.fetchSections().then(() => {
+        if (this.props.match.path === '/') { // eslint-disable-line react/prop-types
+          this.props.setActiveSection('57522bf113391');
+        } else {
+          const sectionId = this.props.match.params.section; // eslint-disable-line react/prop-types
 
-      if (this.props.match.path === '/') { // eslint-disable-line react/prop-types
-        this.props.setActiveSection('57522bf113391');
-      } else {
-        const sectionId = this.props.match.params.section; // eslint-disable-line react/prop-types
-
-        this.props.fetchSections().then(() => {
-          this.props.setActiveSection(sectionId);
-        });
-      }
+          this.props.fetchSections().then(() => {
+            this.props.setActiveSection(sectionId);
+          });
+        }
+      });
     };
 
     const login = () => {
