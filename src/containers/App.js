@@ -22,16 +22,37 @@ const ModalsComponents = Object.assign(
 class App extends React.Component {
   componentDidMount() {
     // populate store
-    if (this.props.match.path === '/') { // eslint-disable-line react/prop-types
-      this.props.setActiveSection('ALL');
-      this.props.fetchSections();
-    } else {
-      const sectionId = this.props.match.params.section; // eslint-disable-line react/prop-types
 
-      this.props.fetchSections().then(() => {
-        this.props.setActiveSection(sectionId);
-      });
-    }
+    const initialize = () => {
+      this.props.fetchSections();
+
+      if (this.props.match.path === '/') { // eslint-disable-line react/prop-types
+        this.props.setActiveSection('ALL');
+      } else {
+        const sectionId = this.props.match.params.section; // eslint-disable-line react/prop-types
+
+        this.props.fetchSections().then(() => {
+          this.props.setActiveSection(sectionId);
+        });
+      }
+    };
+
+    firebase.auth().onAuthStateChanged((user) => {
+      window.user = user; // user is undefined if no user signed in
+
+      if (user) {
+        initialize();
+      } else {
+        localStorage.password = prompt('???');
+
+        firebase.auth().signInWithEmailAndPassword('lucas@sugestly.com', localStorage.password)
+        .catch((err) => {
+          if (err) {
+            localStorage.password = null;
+          }
+        });
+      }
+    });
   }
 
   render() {

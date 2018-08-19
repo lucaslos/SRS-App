@@ -1,8 +1,10 @@
-import Axios from 'axios';
+
 import { showError } from 'actions/errorActions';
-import { updateCards } from 'actions/groupsActions';
+// import { updateCards } from 'actions/groupsActions';
 import { setModalVisibility } from 'actions/modalsActions';
 import { finishRevision } from 'actions/revisionActions';
+import { fetchReforceCards } from './reforceCardsActions';
+import { getById } from '../utils';
 
 const apiUrl = 'http://localhost:4000/api/card';
 
@@ -35,8 +37,19 @@ export const deleteCard = cardId => (dispatch, getState) => {
   const modalsVisibility = getState().modalsVisibility;
 
   if (modalsVisibility.SearchModal) {
-    dispatch(deleteCardSuccess(cardId));
-    updateCards([], [], [cardId], null, dispatch);
+    const card = getById(getState().cards.items, cardId);
+
+    firebase.database().ref(`card/${card.originalId}`).remove(
+      (error) => {
+        if (!error) {
+          dispatch(deleteCardSuccess(cardId));
+          dispatch(fetchReforceCards());
+        } else {
+          console.log(error);
+          dispatch(showError(error));
+        }
+      }
+    );
   } else {
     dispatch(deleteCardSuccess(cardId));
     dispatch(addCardToDeletion(cardId));
@@ -64,7 +77,22 @@ export const editCard = card => (dispatch, getState) => {
   if (directEdit) {
     dispatch(editCardCache(card));
 
-    updateCards([card], [], [], null, dispatch);
+    firebase.database().ref(`card/${card.originalId}`).set(
+      {
+        ...card,
+        tags: card.tags ? card.tags.map(tag => tag.text || tag) : [],
+        notes: card.notes ? card.notes.map(tag => tag.text || tag) : [],
+        edited: null,
+      },
+      (error) => {
+        if (error) {
+          dispatch(fetchCardsFailure(error));
+          dispatch(showError(error));
+        } else {
+          dispatch(fetchReforceCards());
+        }
+      }
+    );
   } else {
     dispatch(editCardCache(card));
   }
@@ -91,18 +119,11 @@ export const fetchCardsFailure = () => ({
   type: 'FETCH_CARDS_FAILURE',
 });
 
-
-export const fetchCards = groupId => (dispatch) => {
-  dispatch(fetchCardsRequest());
-
-  // firebase.database().ref('/card/').once('value')
-  // .then((response) => {
-  //   dispatch(fetchCardsSuccess(response.val()));
-  //   dispatch(riffle());
-  // }, (error) => {
-  //   dispatch(showError(error));
-  //   dispatch(fetchCardsFailure(error));
-  // });
+export const fetchCards = groupId => (dispatch, getState) => {
+  dispatch(fetchCardsSuccess(getState().reforceCards.items.filter(card =>
+    card.group_id === groupId
+  )));
+  dispatch(riffle());
 };
 
 export const searchCard = query => (dispatch, getState) => {

@@ -1,8 +1,7 @@
-import Axios from 'axios';
 import { showError } from 'actions/errorActions';
 import { addCards, reset } from 'actions/cardsActions';
 import { fetchReforceCards } from 'actions/reforceCardsActions';
-import { objectToArray, genId } from '../utils';
+import { objectToArray, genId, getById } from '../utils';
 
 const apiUrl = 'http://localhost:4000/api/group';
 const apiUrlCard = 'http://localhost:4000/api/card';
@@ -111,18 +110,26 @@ export const editGroupFailure = () => ({
   type: 'EDIT_GROUP_FAILURE',
 });
 
-export const editGroup = group => (dispatch) => {
+export const editGroup = group => (dispatch, getState) => {
   const updates = {};
 
   if (group.id !== 'REFORCE') {
-    updates[`group/${group.originalId}`] = group;
+    updates[`group/${group.originalId}`] = {
+      id: group.id,
+      name: group.name,
+      section_id: group.section_id,
+      repetitions: group.repetitions,
+      lastview: group.lastview,
+      originalId: group.originalId,
+    };
   }
+
+  let updateCards = false;
 
   for (let i = 0; i < group.cards.length; i++) {
     const card = group.cards[i];
 
     if (group.deleteCards.includes(card.id)) {
-      updates[`card/${card.originalId}`] = null;
       continue;
     }
 
@@ -132,6 +139,9 @@ export const editGroup = group => (dispatch) => {
         tags: card.tags ? card.tags.map(tag => tag.text || tag) : [],
         notes: card.notes ? card.notes.map(tag => tag.text || tag) : [],
       };
+
+      delete updates[`card/${card.originalId}`].edited;
+      updateCards = true;
       continue;
     }
 
@@ -141,19 +151,31 @@ export const editGroup = group => (dispatch) => {
       updates[`card/${id}`] = {
         ...card,
         id,
+        group_id: group.id,
         originalId: id,
         createdAt: +new Date(),
         tags: card.tags ? card.tags.map(tag => tag.text || tag) : [],
         notes: card.notes ? card.notes.map(tag => tag.text || tag) : [],
       };
+
+      delete updates[`card/${id}`].addCard;
+      updateCards = true;
       continue;
     }
   }
+
+  group.deleteCards.forEach((id) => {
+    const card = getById(getState().reforceCards.items, id);
+
+    updates[`card/${card.originalId}`] = null;
+    updateCards = true;
+  });
 
   firebase.database().ref().update(updates,
     (error) => {
       if (!error) {
         dispatch(editGroupSuccess(group));
+        if (updateCards) dispatch(fetchReforceCards());
       } else {
         dispatch(showError(error));
         dispatch(editGroupFailure(error));
@@ -172,12 +194,28 @@ export const deleteGroupFailure = () => ({
   type: 'DELETE_GROUP_FAILURE',
 });
 
-export const deleteGroup = (id, deleteCards) => dispatch =>
-  Axios.delete(`${apiUrl}/${id}`)
-  .then(() => {
-    updateCards([], [], deleteCards, null, dispatch);
-    dispatch(deleteGroupSuccess(id));
-  }, (error) => {
-    dispatch(deleteGroupFailure(error));
-    dispatch(showError(error));
+export const deleteGroup = (groupId, deleteCards) => (dispatch, getState) => {
+  const group = getById(getState().groups.items, groupId);
+
+  const updates = {};
+
+  updates[`group/${group.originalId}`] = null;
+
+  deleteCards.forEach((id) => {
+    const card = getById(getState().reforceCards.items, id);
+
+    updates[`card/${card.originalId}`] = null;
   });
+
+  firebase.database().ref().update(updates,
+    (error) => {
+      if (!error) {
+        dispatch(deleteGroupSuccess(groupId));
+        dispatch(fetchReforceCards());
+      } else {
+        dispatch(deleteGroupFailure(error));
+        dispatch(showError(error));
+      }
+    }
+  );
+};

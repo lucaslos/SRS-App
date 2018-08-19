@@ -3,7 +3,7 @@ import * as groupActions from 'actions/groupsActions';
 import { showError } from 'actions/errorActions';
 import { setModalVisibility } from 'actions/modalsActions';
 import { srsAlgo } from 'utils';
-import Axios from 'axios';
+
 
 const apiUrl = 'http://5976c690312bc3001190bf6e.mockapi.io/sections';
 
@@ -55,6 +55,9 @@ export const finishRevision = group => (dispatch, getState) => {
   dispatch(cardActions.removeDuplicates());
 
   const state = getState();
+
+  localStorage.backup = JSON.stringify({ cards: state.reforceCards, groups: state.groups });
+
   dispatch(groupActions.editGroup(Object.assign({}, group,
     srsAlgo.processGroupReview(state.cards.items, group.repetitions, state.cards.deleteCards, group, state.revision.revisionDuration)
   )));

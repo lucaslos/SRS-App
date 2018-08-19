@@ -1,4 +1,4 @@
-import Axios from 'axios';
+
 import { fetchGroups } from 'actions/groupsActions';
 import { setModalVisibility } from 'actions/modalsActions';
 import { showError } from 'actions/errorActions';
@@ -21,13 +21,13 @@ export const setActiveSection = sectionId => (dispatch, getState) => {
 
   if (sectionId === 'ALL') {
     document.title = 'SRS';
-    history.pushState(null, null, '/');
+    window.location.hash = '';
 
     dispatch(setActiveSectionSuccess(sectionId));
     dispatch(fetchGroups(sectionId));
   } else if (sectionMatch.length > 0) {
     document.title = `SRS - ${sectionMatch[0].name}`;
-    history.pushState(null, null, `/section/${sectionId}`);
+    window.location.hash = `/section/${sectionId}`;
 
     dispatch(setActiveSectionSuccess(sectionId));
     dispatch(fetchGroups(sectionId));
@@ -123,6 +123,18 @@ export const deleteSectionError = () => ({
   type: 'DELETE_SECTION_ERROR',
 });
 
-export const deleteSection = id => dispatch => {
-  firebase.database().ref(`section/${section.originalId}`).remove();
+export const deleteSection = id => (dispatch, getState) => {
+  const section = getById(getState().sections.items, id);
+
+  firebase.database().ref(`section/${section.originalId}`).remove(
+    (error) => {
+      if (!error) {
+        dispatch(setActiveSection('ALL'));
+        dispatch(deleteSectionSuccess(id));
+      } else {
+        dispatch(deleteSectionError(error));
+        dispatch(showError(error));
+      }
+    }
+  );
 };

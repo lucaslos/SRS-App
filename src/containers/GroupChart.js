@@ -2,11 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import moment from 'moment';
-import Axios from 'axios';
 
 import { setModalVisibility, hideOthersModals } from 'actions/modalsActions';
 import Button from 'components/Button';
+import { objectToArray } from '../utils';
 
 class GroupChart extends React.Component {
   componentWillMount() {
@@ -15,8 +14,8 @@ class GroupChart extends React.Component {
 
   componentDidMount() {
     firebase.database().ref('/log/').once('value')
-    .then(({ data }) => {
-      this.drawChart(data.val());
+    .then((data) => {
+      this.drawChart(objectToArray(data.val()));
     });
   }
 

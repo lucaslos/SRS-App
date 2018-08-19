@@ -78,7 +78,7 @@ class EditGroupModal extends React.Component {
 
     if (this.state.allIsValid) {
       this.props.editGroup({
-        id: this.props.activeGroup.id,
+        ...this.props.activeGroup,
         name: this.state.name.value,
         repetitions: this.state.repetitions.value,
         lastview: this.state.lastview.value,

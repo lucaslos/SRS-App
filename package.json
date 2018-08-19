@@ -1,12 +1,13 @@
 {
   "name": "srs-app",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "",
   "private": true,
   "scripts": {
     "dev": "node frontend-dev.js",
     "start": "node server.js",
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "start http://localhost:5050 && node prod-server.js"
   },
   "moduleRoots": [
     "src"
@@ -75,7 +76,9 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "happypack": "^4.0.0",
+    "hard-source-webpack-plugin": "^0.12.0",
     "highcharts": "^6.0.4",
     "import-glob": "^1.5.0",
     "json-server": "^0.12.1",
@@ -83,6 +86,7 @@
     "lodash-webpack-plugin": "^0.11.4",
     "loglevel": "^1.6.0",
     "lowdb": "^0.16.2",
+    "mini-css-extract-plugin": "^0.4.1",
     "moment": "^2.20.0",
     "node-sass": "^4.9.0",
     "normalizr": "^3.2.4",
@@ -109,9 +113,12 @@
     "style-loader": "^0.19.1",
     "tap-dot": "~1.0.5",
     "uglifyjs-webpack-plugin": "^1.1.4",
-    "webpack": "^3.10.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^2.9.7",
-    "webpack-hot-middleware": "^2.21.0"
+    "webpack-hot-middleware": "^2.21.0",
+    "webpackbar": "^2.6.3",
+    "workbox-webpack-plugin": "^3.4.1"
   },
   "engines": {
     "node": ">=4.3.2"
