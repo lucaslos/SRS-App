@@ -12,7 +12,8 @@ import Header from 'containers/Header';
 import Section from 'containers/Section';
 import { showError } from '../actions/errorActions';
 
-let firstRun = true;
+let firstRunNotConnected = true;
+let firstRunConnected = true;
 
 // load Modals dinamically from inital store
 const ModalsComponents = Object.assign(
@@ -68,11 +69,11 @@ class App extends React.Component {
     const connectedRef = firebase.database().ref('.info/connected');
     connectedRef.on('value', (snap) => {
       if (!snap.val()) {
-        if (!firstRun) this.props.showError('not connected');
-        firstRun = false;
+        if (!firstRunNotConnected) this.props.showError('not connected');
+        firstRunNotConnected = false;
       } else {
-        if (!firstRun) this.props.showError('connected again');
-        firstRun = false;
+        if (!firstRunConnected) this.props.showError('connected again');
+        firstRunConnected = false;
       }
     });
   }
