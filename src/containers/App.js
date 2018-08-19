@@ -10,6 +10,9 @@ import * as sectionsActions from 'actions/sectionsActions';
 import AnimateMount from 'components/AnimateMount';
 import Header from 'containers/Header';
 import Section from 'containers/Section';
+import { showError } from '../actions/errorActions';
+
+let firstRun = true;
 
 // load Modals dinamically from inital store
 const ModalsComponents = Object.assign(
@@ -61,6 +64,17 @@ class App extends React.Component {
         login();
       }
     });
+
+    const connectedRef = firebase.database().ref('.info/connected');
+    connectedRef.on('value', (snap) => {
+      if (!snap.val()) {
+        if (!firstRun) this.props.showError('not connected');
+        firstRun = false;
+      } else {
+        if (!firstRun) this.props.showError('connected again');
+        firstRun = false;
+      }
+    });
   }
 
   render() {
@@ -103,9 +117,9 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  fetchSections : PropTypes.any,
-  setActiveSection : PropTypes.any,
-  modals : PropTypes.any,
+  fetchSections: PropTypes.any,
+  setActiveSection: PropTypes.any,
+  modals: PropTypes.any,
 };
 
 const mapStateToProps = state => ({
@@ -115,6 +129,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setActiveSection: sectionId => dispatch(sectionsActions.setActiveSection(sectionId)),
   fetchSections: () => dispatch(sectionsActions.fetchSections()),
+  showError: error => dispatch(showError(error, true)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

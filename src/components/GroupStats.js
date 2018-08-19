@@ -556,26 +556,28 @@ class GroupStats extends React.Component {
             ))
           }
         </div>
-        <div className="chart-buttons">
-          <Button
-            label="Groups Stats"
-            rounded
-            size="small"
-            onClick={this.generateChart}
-          />
-          <Button
-            label="Groups prevision"
-            rounded
-            size="small"
-            onClick={this.drawNextDaysChart}
-          />
-          <Button
-            label="General Stats"
-            rounded
-            size="small"
-            onClick={e => this.setContent('GeneralStats')}
-          />
-        </div>
+        {isExpanded &&
+          <div className="chart-buttons">
+            <Button
+              label="Groups Stats"
+              rounded
+              size="small"
+              onClick={this.generateChart}
+            />
+            <Button
+              label="Groups prevision"
+              rounded
+              size="small"
+              onClick={this.drawNextDaysChart}
+            />
+            <Button
+              label="General Stats"
+              rounded
+              size="small"
+              onClick={e => this.setContent('GeneralStats')}
+            />
+          </div>
+        }
         { content && <Component logs={log} /> }
         <div
           ref={(i) => { this.chartContainer = i; }}

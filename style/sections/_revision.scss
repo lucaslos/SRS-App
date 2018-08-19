@@ -429,9 +429,14 @@
   perspective: 1000px;
   overflow: auto;
 
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
   .front,
   .back {
-    @include h-center(400px);
+    width: calc(100% - 12px);
+    max-width: 400px;
 
     position: absolute;
     top: 50%;

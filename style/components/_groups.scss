@@ -1,5 +1,5 @@
 .groups-container {
-  padding-top: 70px;
+  padding-top: 80px;
   padding-bottom: 60px;
   padding-left: 60px - 14px;
   padding-right: 60px - 14px;
@@ -14,6 +14,7 @@
   overflow-y: scroll;
 
   @include mobile {
+    padding-top: 70px;
     padding-left: 8px;
     padding-right: 8px;
   }
