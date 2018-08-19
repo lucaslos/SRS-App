@@ -1,4 +1,4 @@
-import Axios from 'axios';
+
 
 const apiUrl = 'http://localhost:4000/api/log';
 
@@ -65,10 +65,14 @@ export const logReview = {
       revisionDuration,
     };
 
-    Axios.post(`${apiUrl}`, item)
-    .catch((error) => {
-      console.log(error);
-    });
+    firebase.database().ref(`log/${genId()}`).set(
+      item,
+      (error) => {
+        if (error) {
+          console.log(error);
+        }
+      }
+    );
   },
 };
 

@@ -178,6 +178,7 @@ class EditCardModal extends React.Component {
         lastView: this.state.lastView.value,
         tags: this.state.tags,
         notes: this.state.notes,
+        originalId: this.props.activeCard.originalId,
         edited: true,
       });
     }

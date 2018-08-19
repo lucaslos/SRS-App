@@ -1,80 +1,56 @@
 const path = require('path');
 const webpack = require('webpack');
-const HappyPack = require('happypack');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+
   entry: [
-    'react-hot-loader/patch',
     path.join(__dirname, 'src/index.js'),
     './style/main.scss',
   ],
 
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
     publicPath: '/',
     pathinfo: true,
   },
 
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'inline-source-map',
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'happypack/loader?id=js',
+        loader: 'babel-loader?cacheDirectory',
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        loader: 'happypack/loader?id=styles',
+        loader: [
+          'style-loader',
+          'css-loader?url=false&sourceMap',
+          'sass-loader?sourceMap',
+        ],
         exclude: /node_modules/,
       },
     ],
   },
 
-  devServer: {
-    host: 'localhost',
-    https: true,
-    port: 3000,
-    hot: true,
-    open: true,
-    historyApiFallback: true,
-    stats: {
-      colors: true, // color is life
-      errorDetails: true,
-    },
-  },
-
   plugins: [
-    // new HardSourceWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HappyPack({
-      id: 'js',
-      threads: 4,
-      loaders: [
-        'babel-loader?cacheDirectory',
-      ],
-    }),
-    new HappyPack({
-      id: 'styles',
-      threads: 4,
-      loaders: [
-        'cache-loader',
-        'style-loader',
-        'css-loader?sourceMap&-url',
-        'sass-loader?sourceMap',
-        'import-glob',
-      ],
-    }),
+    new HardSourceWebpackPlugin(),
   ],
 
   resolve: {
     modules: [
-      path.join(__dirname, 'src'),
-      path.join(__dirname, 'style'),
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'style'),
       'node_modules',
     ],
   },

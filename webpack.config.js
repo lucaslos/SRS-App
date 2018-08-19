@@ -1,19 +1,23 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
+const WebpackBar = require('webpackbar');
+
+const folder = 'production';
 
 module.exports = {
+  mode: 'production',
+
   entry: [
     './src/index.js',
     './style/main.scss',
   ],
 
   output: {
-    path: path.join(__dirname, 'production'),
+    path: path.join(__dirname, folder),
     filename: 'bundle.js',
-    publicPath: '/',
   },
 
   module: {
@@ -25,11 +29,11 @@ module.exports = {
       },
       { // sass / scss loader for webpack
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract([
-          'css-loader?-url&minimize=true',
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader?url=false&minimize=true',
           'sass-loader',
-          'import-glob',
-        ]),
+        ],
       },
     ],
   },
@@ -48,13 +52,32 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    // new UglifyJsPlugin({
-    //   parallel: true,
-    // }),
-    new ProgressBarPlugin(),
-    new ExtractTextPlugin({ // define where to save the file
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new UglifyJsPlugin({
+      parallel: true,
+      cache: true,
+    }),
+    new WebpackBar(),
+    new MiniCssExtractPlugin({ // define where to save the file
       filename: 'style.css',
-      allChunks: true,
+      // allChunks: true,
+    }),
+    new workboxPlugin.GenerateSW({
+      swDest: 'sw.js',
+      clientsClaim: true,
+      exclude: ['index.html'],
+      skipWaiting: true,
+      globDirectory: folder,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+          handler: 'cacheFirst',
+        },
+        {
+          urlPattern: new RegExp('images'),
+          handler: 'cacheFirst',
+        },
+      ],
     }),
   ],
 };

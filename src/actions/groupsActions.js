@@ -1,8 +1,7 @@
-import Axios from 'axios';
 import { showError } from 'actions/errorActions';
 import { addCards, reset } from 'actions/cardsActions';
 import { fetchReforceCards } from 'actions/reforceCardsActions';
-import { objectToArray, genId } from '../utils';
+import { objectToArray, genId, getById } from '../utils';
 
 const apiUrl = 'http://localhost:4000/api/group';
 const apiUrlCard = 'http://localhost:4000/api/card';
@@ -67,33 +66,30 @@ export const addGroup = (sectionId, group, cards) => (dispatch) => {
     originalId: index,
   };
 
-  firebase.database().ref(`group/${index}`)
-  .set(newGroup,
+  const updates = {};
+  updates[`group/${index}`] = newGroup;
+
+  for (let i = 0; i < cards.length; i++) {
+    const cardIndex = genId();
+
+    updates[`card/${cardIndex}`] = {
+      id: genId(),
+      originalId: cardIndex,
+      front: cards[i].front,
+      back: cards[i].back,
+      group_id: newGroup.id,
+      wrongViews: cards[i].wrongViews,
+      difficulty: cards[i].difficulty,
+      lastView: cards[i].lastView,
+      createdAt: +new Date(),
+      tags: cards[i].tags.map(tag => tag.text || tag),
+      notes: cards[i].notes.map(tag => tag.text || tag),
+    };
+  }
+
+  firebase.database().ref().update(updates,
     (error) => {
       if (!error) {
-        for (let i = 0; i < cards.length; i++) {
-          Axios.post(apiUrlCard, Object.assign({}, {
-            front: cards[i].front,
-            back: cards[i].back,
-            group_id: response.data.id,
-            wrongViews: cards[i].wrongViews,
-            difficulty: cards[i].difficulty,
-            lastView: cards[i].lastView,
-            createdAt: +new Date(),
-            tags: cards[i].tags.map(tag => tag.text || tag),
-            notes: cards[i].notes.map(tag => tag.text || tag),
-          }))
-          .then(() => {
-            console.log('add card Ok!');
-          }, (error) => {
-            console.error(error);
-            dispatch(addGroupError(error));
-          });
-        }
-
-        firebase.database().ref('card')
-        .update(newGroup
-
         dispatch(addGroupSuccess(newGroup));
         dispatch(fetchReforceCards());
       } else {
@@ -114,92 +110,78 @@ export const editGroupFailure = () => ({
   type: 'EDIT_GROUP_FAILURE',
 });
 
-export const updateCards = (editCard, addCard, deleteCards, groupId, dispatch) => {
-  let completeIterations = 0;
-
-  for (let i = 0; i < editCard.length; i++) {
-    Axios.put(`${apiUrlCard}/${editCard[i].id}`, Object.assign({}, {
-      front: editCard[i].front,
-      back: editCard[i].back,
-      group_id: editCard[i].group_id,
-      wrongViews: editCard[i].wrongViews,
-      difficulty: editCard[i].difficulty,
-      lastView: editCard[i].lastView,
-      createdAt: editCard[i].createdAt,
-      tags: editCard[i].tags ? editCard[i].tags.map(tag => tag.text || tag) : [],
-      notes: editCard[i].notes ? editCard[i].notes.map(tag => tag.text || tag) : [],
-    }))
-    .then(() => {
-      console.log('edit card Ok!');
-      completeIterations++;
-
-      if (completeIterations === editCard.length + deleteCards.length) {
-        dispatch(fetchReforceCards());
-      }
-    }, (error) => {
-      console.error(error);
-      dispatch(addGroupError(error));
-    });
-  }
-
-  for (let i = 0; i < addCard.length; i++) {
-    Axios.post(apiUrlCard, Object.assign({}, {
-      front: addCard[i].front,
-      back: addCard[i].back,
-      group_id: groupId,
-      wrongViews: addCard[i].wrongViews,
-      difficulty: addCard[i].difficulty,
-      lastView: addCard[i].lastView,
-      createdAt: +new Date(),
-      tags: addCard[i].tags.map(tag => tag.text || tag),
-      notes: addCard[i].notes.map(tag => tag.text || tag),
-    }))
-    .then(() => {
-      console.log('add card Ok!');
-    }, (error) => {
-      console.error(error);
-      dispatch(addGroupError(error));
-    });
-  }
-
-  for (let i = 0; i < deleteCards.length; i++) {
-    Axios.delete(`${apiUrlCard}/${deleteCards[i]}`)
-    .then(() => {
-      console.log('delete card Ok!');
-      completeIterations++;
-
-      if (completeIterations === editCard.length + deleteCards.length) {
-        dispatch(fetchReforceCards());
-      }
-    }, (error) => {
-      console.error(error);
-      dispatch(addGroupError(error));
-    });
-  }
-};
-
-export const editGroup = group => (dispatch) => {
-  const editCard = group.cards.filter(card => card.edited);
-  const addCard = group.cards.filter(card => !card.group_id);
+export const editGroup = group => (dispatch, getState) => {
+  const updates = {};
 
   if (group.id !== 'REFORCE') {
-    Axios.put(`${apiUrl}/${group.id}`, Object.assign({}, {
+    updates[`group/${group.originalId}`] = {
+      id: group.id,
       name: group.name,
       section_id: group.section_id,
       repetitions: group.repetitions,
       lastview: group.lastview,
-    }))
-    .then(() => {
-      updateCards(editCard, addCard, group.deleteCards, group.id, dispatch);
-
-      dispatch(editGroupSuccess(Object.assign({}, group)));
-    }, (error) => {
-      dispatch(showError(error));
-      dispatch(editGroupFailure(error));
-    });
-  } else {
-    updateCards(editCard, addCard, group.deleteCards, group.id, dispatch);
+      originalId: group.originalId,
+    };
   }
+
+  let updateCards = false;
+
+  for (let i = 0; i < group.cards.length; i++) {
+    const card = group.cards[i];
+
+    if (group.deleteCards.includes(card.id)) {
+      continue;
+    }
+
+    if (card.edited) {
+      updates[`card/${card.originalId}`] = {
+        ...card,
+        tags: card.tags ? card.tags.map(tag => tag.text || tag) : [],
+        notes: card.notes ? card.notes.map(tag => tag.text || tag) : [],
+      };
+
+      delete updates[`card/${card.originalId}`].edited;
+      updateCards = true;
+      continue;
+    }
+
+    if (!card.group_id) {
+      const id = genId();
+
+      updates[`card/${id}`] = {
+        ...card,
+        id,
+        group_id: group.id,
+        originalId: id,
+        createdAt: +new Date(),
+        tags: card.tags ? card.tags.map(tag => tag.text || tag) : [],
+        notes: card.notes ? card.notes.map(tag => tag.text || tag) : [],
+      };
+
+      delete updates[`card/${id}`].addCard;
+      updateCards = true;
+      continue;
+    }
+  }
+
+  group.deleteCards.forEach((id) => {
+    const card = getById(getState().reforceCards.items, id);
+
+    updates[`card/${card.originalId}`] = null;
+    updateCards = true;
+  });
+
+  firebase.database().ref().update(updates,
+    (error) => {
+      if (!error) {
+        dispatch(editGroupSuccess(group));
+        if (updateCards) dispatch(fetchReforceCards());
+      } else {
+        dispatch(showError(error));
+        dispatch(editGroupFailure(error));
+      }
+    }
+  );
 };
 
 /* delete section */
@@ -212,12 +194,28 @@ export const deleteGroupFailure = () => ({
   type: 'DELETE_GROUP_FAILURE',
 });
 
-export const deleteGroup = (id, deleteCards) => dispatch =>
-  Axios.delete(`${apiUrl}/${id}`)
-  .then(() => {
-    updateCards([], [], deleteCards, null, dispatch);
-    dispatch(deleteGroupSuccess(id));
-  }, (error) => {
-    dispatch(deleteGroupFailure(error));
-    dispatch(showError(error));
+export const deleteGroup = (groupId, deleteCards) => (dispatch, getState) => {
+  const group = getById(getState().groups.items, groupId);
+
+  const updates = {};
+
+  updates[`group/${group.originalId}`] = null;
+
+  deleteCards.forEach((id) => {
+    const card = getById(getState().reforceCards.items, id);
+
+    updates[`card/${card.originalId}`] = null;
   });
+
+  firebase.database().ref().update(updates,
+    (error) => {
+      if (!error) {
+        dispatch(deleteGroupSuccess(groupId));
+        dispatch(fetchReforceCards());
+      } else {
+        dispatch(deleteGroupFailure(error));
+        dispatch(showError(error));
+      }
+    }
+  );
+};

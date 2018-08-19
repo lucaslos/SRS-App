@@ -1,7 +1,7 @@
 /* global Highcharts, $, google */
 
 import React from 'react';
-import Axios from 'axios';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { srsAlgo } from 'utils';
@@ -17,6 +17,7 @@ class GroupStats extends React.Component {
     this.state = {
       isExpanded: false,
       content: false,
+      log: [],
     };
 
     this.chart = false;
@@ -27,20 +28,21 @@ class GroupStats extends React.Component {
       isExpanded: !this.state.isExpanded,
     });
 
-    if (!this.state.isExpanded)
-      this.generateChart();
-    else
+    if (!this.state.isExpanded) {
+      this.drawNextDaysChart();
+    } else {
       this.resetContent();
+    }
   }
 
   setContent = (Component) => {
-    firebase.database().ref('/log/').once('value')
-    .then(({ data }) => {
-      if (this.chart) this.chart.destroy();
+    if (this.chart) this.chart.destroy();
 
+    firebase.database().ref('/log/').once('value')
+    .then((data) => {
       this.setState({
+        log: data.val(),
         content: Component,
-        log: data,
       });
     });
   }
@@ -56,7 +58,10 @@ class GroupStats extends React.Component {
 
   generateChart = () => {
     firebase.database().ref('/log/').once('value')
-    .then(({ data }) => {
+    .then((data) => {
+      this.setState({
+        log: data.val(),
+      });
       this.draw3DChart(data.val());
     });
   }

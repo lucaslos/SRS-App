@@ -13,7 +13,30 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').then((registration) => {
+            console.log('SW registered: ', registration);
+          }).catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+
+    var config = {
+      apiKey: 'AIzaSyDmUrUmGIGEPHd32QmLJh9hklBGfsd_qoU',
+      authDomain: "srs-db-1b23d.firebaseapp.com",
+      databaseURL: "https://srs-db-1b23d.firebaseio.com",
+      projectId: "srs-db-1b23d",
+      storageBucket: "srs-db-1b23d.appspot.com",
+      messagingSenderId: "982649992026"
+    };
+    firebase.initializeApp(config);
+
+  </script>
   <script src="/bundle.js"></script>
 </body>
 </html>
