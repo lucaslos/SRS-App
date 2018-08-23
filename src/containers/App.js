@@ -24,6 +24,10 @@ const ModalsComponents = Object.assign(
 );
 
 class App extends React.Component {
+  state = {
+    isConnected: false,
+  };
+
   componentDidMount() {
     // populate store
 
@@ -69,17 +73,22 @@ class App extends React.Component {
     const connectedRef = firebase.database().ref('.info/connected');
     connectedRef.on('value', (snap) => {
       if (!snap.val()) {
-        if (!firstRunNotConnected) this.props.showError('not connected');
-        firstRunNotConnected = false;
+        this.changeConnectionState(false);
       } else {
-        if (!firstRunConnected) this.props.showError('connected again');
-        firstRunConnected = false;
+        this.changeConnectionState(true);
       }
+    });
+  }
+
+  changeConnectionState = (connected) => {
+    this.setState({
+      isConnected: connected,
     });
   }
 
   render() {
     const { modals } = this.props;
+    const { isConnected } = this.state;
 
     const disableMainContainer = !Object.values(modals).every(elem => !elem);
 
@@ -112,6 +121,7 @@ class App extends React.Component {
 
           return null;
         })}
+        {!isConnected && <div className="connection-container"><div>Not Connected</div></div>}
       </div>
     );
   }

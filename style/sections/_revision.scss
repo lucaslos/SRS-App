@@ -427,7 +427,8 @@
   bottom: 60px;
   overflow: hidden;
   perspective: 1000px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   display: flex;
   align-content: center;
@@ -455,10 +456,14 @@
 
   .back {
     transform: translate3d(0, -50%, 0) rotateX(-180deg);
+    opacity: 0;
+    visibility: hidden;
   }
 
   &.flipped .back {
     transform: translate3d(0, -50%, 0) rotateX(0deg);
+    opacity: 1;
+    visibility: visible;
   }
 
   &.flipped .front {
@@ -481,6 +486,11 @@
 
   opacity: 0;
   transition: opacity 0.2s ease-out;
+
+  @media (max-width: 750px) {
+    left: auto;
+    right: 50px;
+  }
 
   &.active {
     height: auto;
