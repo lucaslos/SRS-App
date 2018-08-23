@@ -136,13 +136,13 @@ export const srsAlgo = {
 
     if (wrongRate === 1) {
       newRepetitions = 1;
-    } else if (wrongRate > 0.8) {
-      newRepetitions -= 3;
-    } else if (wrongRate > 0.6) {
-      newRepetitions -= 2;
+    } else if (wrongRate > 0.7) {
+      newRepetitions -= 4;
     } else if (wrongRate > 0.4) {
-      newRepetitions -= 1;
-    } else if (wrongRate <= 0.23) {
+      newRepetitions -= 3;
+    } else if (wrongRate > 0.3) {
+      newRepetitions -= 2;
+    } else if (wrongRate <= 0.18) {
       newRepetitions += 1;
     }
 
