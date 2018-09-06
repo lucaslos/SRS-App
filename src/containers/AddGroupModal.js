@@ -98,30 +98,26 @@ class AddGroupModal extends React.Component {
       try {
         const translations = JSON.parse(paste);
 
-        firebase.database().ref('/card/').once('value')
-        .then(({ data }) => {
-          for (let i = 0; i < translations.length; i++) {
-            if (!data.val().find(
-              card => card.front === translations[i][0].toLowerCase()
-            )) {
-              this.props.addCard({
-                id: _.uniqueId('card-'),
-                front: translations[i][0],
-                back: translations[i][1],
-                wrongViews: 0,
-                difficulty: 0,
-                lastView: '',
-                tags: [],
-                notes: [],
-              });
-            } else {
-              break;
-            }
+        const data = this.props.cardCache;
+
+        for (let i = 0; i < translations.length; i++) {
+          if (!data.val().find(
+            card => card.front === translations[i][0].toLowerCase()
+          )) {
+            this.props.addCard({
+              id: _.uniqueId('card-'),
+              front: translations[i][0],
+              back: translations[i][1],
+              wrongViews: 0,
+              difficulty: 0,
+              lastView: '',
+              tags: [],
+              notes: [],
+            });
+          } else {
+            break;
           }
-        }, (error) => {
-          this.props.throwError(error);
-          console.error(error);
-        });
+        }
       } catch (error) {
         this.props.throwError(error);
         console.error(error);
