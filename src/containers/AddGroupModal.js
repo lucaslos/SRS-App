@@ -101,7 +101,7 @@ class AddGroupModal extends React.Component {
         const data = this.props.cardCache;
 
         for (let i = 0; i < translations.length; i++) {
-          if (!data.val().find(
+          if (!data.find(
             card => card.front === translations[i][0].toLowerCase()
           )) {
             this.props.addCard({

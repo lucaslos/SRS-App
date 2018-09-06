@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { version } from '../../package.json';
 
 import initialState from 'store/initialState';
 import * as sectionsActions from 'actions/sectionsActions';
@@ -29,6 +30,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    console.log(version);
     // populate store
 
     const initialize = () => {
