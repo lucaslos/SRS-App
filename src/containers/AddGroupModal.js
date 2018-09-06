@@ -98,7 +98,7 @@ class AddGroupModal extends React.Component {
       try {
         const translations = JSON.parse(paste);
 
-        const data = this.props.cardCache;
+        const data = this.props.cardsCache;
 
         for (let i = 0; i < translations.length; i++) {
           if (!data.find(
