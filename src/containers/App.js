@@ -48,7 +48,7 @@ class App extends React.Component {
     };
 
     const login = () => {
-      if (!localStorage.password && localStorage.password === 'null') {
+      if (!localStorage.password || localStorage.password === 'null') {
         localStorage.password = prompt('????');
       }
 

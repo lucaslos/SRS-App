@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
 const WebpackBar = require('webpackbar');
@@ -51,11 +50,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new UglifyJsPlugin({
-      parallel: true,
-      cache: true,
     }),
     new WebpackBar(),
     new MiniCssExtractPlugin({ // define where to save the file
