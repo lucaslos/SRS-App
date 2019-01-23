@@ -1,4 +1,0 @@
-{
-  "/api/*": "/$1",
-  "/group\\?section_id=ALL": "/group"
-}

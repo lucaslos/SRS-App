@@ -1,0 +1,39 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/docs": true
+  },
+  "findrelated.rulesets": [
+    {
+      "name": "component/style",
+      "rules": [
+        {
+          "pattern": "\/([\\w-]*)\\.js$",
+          "locators": ["**/style/**/_$1.scss"]
+        },
+        {
+          "pattern": "\/_([\\w-]*)\\.scss$",
+          "locators": ["**/src/**/$1.js"]
+        }
+      ]
+    },
+    {
+      "name": "redux",
+      "rules": [
+        {
+          "pattern": "\/([\\w-]*)Actions\\.js$",
+          "locators": ["src/state/**/$1Reducer.js"]
+        },
+        {
+          "pattern": "\/([\\w-]*)Reducer\\.js$",
+          "locators": ["src/state/**/$1Actions.js"]
+        }
+      ]
+    }
+  ],
+  "findrelated.applyRulesets": [
+    "component/style",
+    "redux"
+  ]
+}

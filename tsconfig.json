@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "sourceMap": true,          // allow sourcemap support
+    "strictNullChecks": true,   // enable strict null checks as a best practice
+    "module": "es6",            // specify module code generation
+    "jsx": "preserve",          // use typescript to transpile jsx to js
+    "allowJs": true,            // allow a partial TypeScript and JavaScript codebase
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+
+    "baseUrl": ".", // This must be specified if "paths" is set
+    "paths": {
+      "*": [
+        "src/*",
+        "*",
+      ]
+    },
+  },
+  "include": [
+    "./src/"
+  ],
+}

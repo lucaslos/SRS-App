@@ -2,21 +2,27 @@
   "env": {
     "development": {
       "presets": [
-        "react",
-        ["es2015", { "modules": false }]
+        "@babel/env",
+        "@babel/typescript",
+        ["@babel/preset-react", { "development": true }]
       ],
       "plugins": [
         "react-hot-loader/babel",
-        "transform-class-properties",
-        "transform-object-rest-spread"
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-optional-chaining"
       ]
     },
     "production": {
   	  "presets": [
-  	    "react",
-  	    ["es2015", { "modules": true }]
-  	  ],
-      "plugins": ["transform-class-properties", "transform-object-rest-spread"]
+        "@babel/env",
+  	    "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-optional-chaining"
+      ]
     }
   }
 }

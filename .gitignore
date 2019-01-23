@@ -1,10 +1,12 @@
 node_modules
 *.log
 config.json
-resources
-
 public/images
-production/*.js
-production/*.css
-resources
+public/*.js
+public/*.LICENSE
+public/style*
+production
 .cache-loader
+compilation-stats.json
+stats.json
+resources
