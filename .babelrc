@@ -4,9 +4,11 @@
       "presets": [
         "@babel/env",
         "@babel/typescript",
+        "@emotion/babel-preset-css-prop",
         ["@babel/preset-react", { "development": true }]
       ],
       "plugins": [
+        ["emotion", { "sourceMap": true }],
         "react-hot-loader/babel",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
@@ -16,9 +18,11 @@
     "production": {
   	  "presets": [
         "@babel/env",
+        "@emotion/babel-preset-css-prop",
   	    "@babel/preset-react"
       ],
       "plugins": [
+        "emotion",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
         "@babel/plugin-proposal-optional-chaining"

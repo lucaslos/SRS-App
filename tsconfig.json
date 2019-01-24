@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "sourceMap": true,          // allow sourcemap support
-    "strictNullChecks": true,   // enable strict null checks as a best practice
     "module": "es6",            // specify module code generation
-    "jsx": "preserve",          // use typescript to transpile jsx to js
+    "moduleResolution": "node",
+    "jsx": "react",             // use typescript to transpile jsx to js
     "allowJs": true,            // allow a partial TypeScript and JavaScript codebase
+    "strictNullChecks": true,   // enable strict null checks as a best practice
     "noImplicitReturns": true,
     "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
 
     "baseUrl": ".", // This must be specified if "paths" is set
     "paths": {
@@ -17,7 +19,10 @@
       ]
     },
   },
-  "include": [
-    "./src/"
+  "exclude": [
+    "docs",
+    "dist",
+    "node_modules",
+    "**/node_modules/*",
   ],
 }

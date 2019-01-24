@@ -56,7 +56,7 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin({
       checkSyntacticErrors: true,
       silent: true,
-      async: false,
+      async: true,
       formatter: typescriptFormatter,
     }),
   ],

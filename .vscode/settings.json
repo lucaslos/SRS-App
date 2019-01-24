@@ -35,5 +35,6 @@
   "findrelated.applyRulesets": [
     "component/style",
     "redux"
-  ]
+  ],
+  "search.usePCRE2": true
 }

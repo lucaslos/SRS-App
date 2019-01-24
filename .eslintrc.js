@@ -64,6 +64,7 @@ module.exports = {
     'quotes': 0,
     'function-paren-newline': 0,
     'operator-linebreak': ['error', 'before', { overrides: { '=': 'none', '&&': 'ignore' } }],
+    'arrow-parens': ['error', 'as-needed'],
 
     'import/no-extraneous-dependencies': 0,
     'import/extensions': 0,
