@@ -1,7 +1,6 @@
 /** forked from https://github.com/jhonnymichel/react-hookstore */
 import { useEffect, useState } from 'react';
 import devtools from './devtools';
-import { GenericObject, Callback } from 'utils/interfaces';
 // TODO: deep freeze?
 // TODO: connect function
 // TODO: memoize
@@ -10,7 +9,7 @@ import { GenericObject, Callback } from 'utils/interfaces';
 // IDEA: create hook for get multiple keys from store at same
 
 interface Subscribe {
-  (prev: GenericObject, current: GenericObject, action?: string | GenericObject): void;
+  (prev: genericObject, current: genericObject, action?: string | genericObject): void;
 }
 
 interface StoreConfig {
@@ -20,15 +19,15 @@ interface StoreConfig {
 }
 
 interface Store {
-  state: GenericObject;
-  reducers: GenericObject;
+  state: genericObject;
+  reducers: genericObject;
   setters: Setter[];
   subscribers: Subscribe[];
 }
 
 interface Setter {
   key: string;
-  callback: Callback;
+  callback: genericFunction;
 }
 
 let stores: { [index: string]: Store } = {};
@@ -60,7 +59,7 @@ export function createStore(name: string, { state = {}, reducers = {}, subscribe
 
   if (devToolsMiddeware) {
     store.subscribers.push(
-      devToolsMiddeware(name, state, (newState: GenericObject) => {
+      devToolsMiddeware(name, state, (newState: genericObject) => {
         setState(getStore(name), newState);
       })
     );
@@ -70,7 +69,7 @@ export function createStore(name: string, { state = {}, reducers = {}, subscribe
   return store;
 }
 
-function setState(store: Store, newState: GenericObject, action?: string | GenericObject) {
+function setState(store: Store, newState: genericObject, action?: string | genericObject) {
   for (let i = 0; i < store.setters.length; i++) {
     const setter = store.setters[i];
 
@@ -105,7 +104,7 @@ export function getState(name: string) {
   return getStore(name).state;
 }
 
-export function dispatch(name: string, type: string, payload: GenericObject) {
+export function dispatch(name: string, type: string, payload: genericObject) {
   const store = getStore(name);
 
   const newState = store.reducers[type](store.state, payload);

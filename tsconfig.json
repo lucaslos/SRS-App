@@ -9,6 +9,7 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "noEmit": true,
 
     "baseUrl": ".", // This must be specified if "paths" is set

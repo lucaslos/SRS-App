@@ -11,21 +11,11 @@ const SVGO = require('svgo-sync');
 const inputFolder = '../resources/Navigation Icons/';
 const outputFile = '../src/data/iconsStore.json';
 const input = {
-  'card-list': `
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 10H42V14H14V10Z" fill="#00FFC2"/>
-    <path d="M8 15C9.65685 15 11 13.6569 11 12C11 10.3431 9.65685 9 8 9C6.34315 9 5 10.3431 5 12C5 13.6569 6.34315 15 8 15Z" fill="#00FFC2"/>
-    <path d="M14 22H42V26H14V22Z" fill="#00FFC2"/>
-    <path d="M14 34H42V38H14V34Z" fill="#00FFC2"/>
-    <path d="M8 39C9.64 39 11 37.64 11 36C11 34.36 9.66 33 8 33C6.34 33 5 34.36 5 36C5 37.64 6.36 39 8 39Z" fill="#00FFC2"/>
-    <path d="M8 27C9.65685 27 11 25.6569 11 24C11 22.3431 9.65685 21 8 21C6.34315 21 5 22.3431 5 24C5 25.6569 6.34315 27 8 27Z" fill="#00FFC2"/>
-    </svg>
-  `,
-  'add-circle': `
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M26 14H22V22H14V26H22V34H26V26H34V22H26V14Z" fill="#00FFC2"/>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M4 24C4 12.96 12.96 4 24 4C35.04 4 44 12.96 44 24C44 35.04 35.04 44 24 44C12.96 44 4 35.04 4 24ZM8 24C8 32.82 15.18 40 24 40C32.82 40 40 32.82 40 24C40 15.18 32.82 8 24 8C15.18 8 8 15.18 8 24Z" fill="#00FFC2"/>
-    </svg>
+  logo: `
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10H34.7068C35.5799 10 36.0337 11.0406 35.4396 11.6805L24.2967 23.6805C24.1075 23.8842 23.842 24 23.5639 24H18C14.134 24 11 20.866 11 17C11 13.134 14.134 10 18 10Z" fill="#00FFC2"/>
+  <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 24H24.4361C24.158 24 23.8925 24.1158 23.7033 24.3195L12.5604 36.3195C11.9663 36.9594 12.4201 38 13.2932 38H30C33.866 38 37 34.866 37 31C37 27.134 33.866 24 30 24Z" fill="#00FFC2"/>
+  </svg>
   `,
 };
 const renames = {
@@ -164,15 +154,15 @@ if (!input[inputIcons[0]]) {
     console.log('JSON svg icon set created!');
   });
 } else {
-  const copyIcons = {};
+  let copyIcons = '';
 
   inputIcons.forEach((icon) => {
     const { data } = svgo.optimizeSync(input[icon]);
-    copyIcons[icon] = convertSvg(data);
+    copyIcons = `${copyIcons}"${icon}": ${JSON.stringify(convertSvg(data), null, 2)},\n`;
   });
 
-  const copyJson = JSON.stringify(copyIcons, null, 2);
+  copyIcons = copyIcons.slice(0, -2);
 
-  clipboardy.writeSync(copyJson);
-  process.stdout.write(`${copyJson}\n\n Copied to clipboard!`);
+  clipboardy.writeSync(copyIcons);
+  process.stdout.write(`${copyIcons}\n\n Copied to clipboard!`);
 }

@@ -2,30 +2,33 @@
   "env": {
     "development": {
       "presets": [
-        "@babel/env",
         "@babel/typescript",
-        "@emotion/babel-preset-css-prop",
-        ["@babel/preset-react", { "development": true }]
+        "@babel/env",
+        ["@babel/preset-react", { "development": true }],
+        "@emotion/babel-preset-css-prop"
       ],
       "plugins": [
         ["emotion", { "sourceMap": true }],
+        "polished",
         "react-hot-loader/babel",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-optional-chaining"
+        "@babel/plugin-proposal-optional-chaining",
       ]
     },
     "production": {
   	  "presets": [
+        "@babel/typescript",
         "@babel/env",
-        "@emotion/babel-preset-css-prop",
-  	    "@babel/preset-react"
+  	    "@babel/preset-react",
+        "@emotion/babel-preset-css-prop"
       ],
       "plugins": [
         "emotion",
+        "polished",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-optional-chaining"
+        "@babel/plugin-proposal-optional-chaining",
       ]
     }
   }

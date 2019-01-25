@@ -1,8 +1,6 @@
-import { Callback, GenericObject } from "utils/interfaces";
-
 // TODO: test if it is performant
-export function getIfKeyChangeTo(prev: GenericObject, current: GenericObject) {
-  return (key: string | string[], target: string | any[], callback: Callback) => {
+export function getIfKeyChangeTo(prev: genericObject, current: genericObject) {
+  return (key: string | string[], target: string | any[], callback: genericFunction) => {
     if (Array.isArray(key)) {
       let hasChanged = false;
       let allMatchTarget = true;
@@ -37,8 +35,8 @@ export function getIfKeyChangeTo(prev: GenericObject, current: GenericObject) {
 }
 
 // IDEA: simplify with upper function
-export function getIfKeyChange(prev: GenericObject, current: GenericObject) {
-  return (key: string | string[], callback: Callback) => {
+export function getIfKeyChange(prev: genericObject, current: genericObject) {
+  return (key: string | string[], callback: genericFunction) => {
     if (Array.isArray(key)) {
       let hasChanged = false;
 

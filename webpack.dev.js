@@ -65,7 +65,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     modules: [
       path.join(__dirname, 'src'),
-      path.join(__dirname, 'style'),
       'node_modules',
     ],
   },
