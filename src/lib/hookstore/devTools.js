@@ -15,7 +15,7 @@ export default (storeName, initialState, setState) => {
 
   devTools.init(initialState);
 
-  devTools.subscribe(data => {
+  devTools.subscribe((data) => {
     switch (data.type) {
       case 'RESET':
         setState(initialState);

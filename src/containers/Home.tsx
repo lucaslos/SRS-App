@@ -34,23 +34,21 @@ const LogoWrapper = styled.div`
   top: 40px;
 `;
 
-const Home = () => {
-  return (
-    <Container>
-      <div css={css(topButton, { left: 38 })}>
-        <Icon name="card-list" color={primary} />
-      </div>
-      <LogoWrapper>
-        <Icon name="logo" color={primary} size={48} />
-      </LogoWrapper>
-      <div css={css(topButton, { right: 38 })}>
-        <Icon name="add-circle" color={primary} />
-      </div>
+const Home = () => (
+  <Container>
+    <div css={css(topButton, { left: 38 })}>
+      <Icon name="card-list" color={primary} />
+    </div>
+    <LogoWrapper>
+      <Icon name="logo" color={primary} size={48} />
+    </LogoWrapper>
+    <div css={css(topButton, { right: 38 })}>
+      <Icon name="add-circle" color={primary} />
+    </div>
 
-      <CardsGroups />
-      <StatsBar />
-    </Container>
-  );
-};
+    <CardsGroups />
+    <StatsBar />
+  </Container>
+);
 
 export default Home;

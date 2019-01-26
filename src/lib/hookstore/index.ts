@@ -8,32 +8,31 @@ import devtools from './devtools';
 // TODO: test unmount remove setter
 // IDEA: create hook for get multiple keys from store at same
 
-interface Subscribe {
+type Subscribe = {
   (prev: genericObject, current: genericObject, action?: string | genericObject): void;
-}
+};
 
-interface StoreConfig {
-  state: object;
+type StoreConfig = {
+  state: T;
   reducers?: object;
   subscriber?: Subscribe;
-}
+};
 
-interface Store {
-  state: genericObject;
+type Store = {
+  state: T;
   reducers: genericObject;
   setters: Setter[];
   subscribers: Subscribe[];
-}
+};
 
-interface Setter {
+type Setter = {
   key: string;
   callback: genericFunction;
-}
+};
 
 let stores: { [index: string]: Store } = {};
 
-const devToolsMiddeware =
-  process.env.NODE_ENV === 'development' &&
+const devToolsMiddeware = process.env.NODE_ENV === 'development' &&
   typeof window !== 'undefined' &&
   ((window as any).__REDUX_DEVTOOLS_EXTENSION__ ? devtools : false);
 
@@ -45,7 +44,10 @@ const devToolsMiddeware =
  * @param {*} confg.reducer [{}] The reducers handlers.
  * @param {*} confg.subscribers [{}] Initial subscriber.
  */
-export function createStore(name: string, { state = {}, reducers = {}, subscriber }: StoreConfig) {
+export function createStore(
+  name: string,
+  { state, reducers = {}, subscriber }: StoreConfig
+) {
   if (stores[name]) {
     throw new Error(`Store ${name} already exists`);
   }
@@ -69,7 +71,11 @@ export function createStore(name: string, { state = {}, reducers = {}, subscribe
   return store;
 }
 
-function setState(store: Store, newState: genericObject, action?: string | genericObject) {
+function setState(
+  store: Store,
+  newState: genericObject,
+  action?: string | genericObject
+) {
   for (let i = 0; i < store.setters.length; i++) {
     const setter = store.setters[i];
 
@@ -143,8 +149,9 @@ export function useStore(name: string, key: string) {
     };
   }, []);
 
-  if (store.state[key] === undefined)
+  if (store.state[key] === undefined) {
     throw new Error(`Key '${key}' for the store '${name}' does not exist`);
+  }
 
   const getter = () => getState(name)[key];
 
