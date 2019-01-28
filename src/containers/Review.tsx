@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Modal from 'components/Modal';
 import Card from 'components/Card';
-import { useStore } from 'lib/hookstore';
-import { fillContainer, centerContent } from 'style/modifiers';
+import Modal from 'components/Modal';
 import ReviewStepper from 'containers/ReviewStepper';
-import cardsState from 'state/cards';
-import reviewState from 'state/review';
+import React, { useState } from 'react';
 import modalsState from 'state/modals';
-import { all } from 'q';
+import reviewState from 'state/review';
+import { centerContent } from 'style/modifiers';
+import { replaceAt } from 'utils/genericUtils';
+import { useOnChange } from 'utils/customHooks';
 
 const CardsContainer = styled.div`
   ${centerContent};
@@ -30,28 +29,66 @@ const Review = () => {
   const [reviewAgain] = reviewState.useStore('reviewAgain');
   const [reviewEnded] = reviewState.useStore('ended');
   const [reviewPos, setReviewPos] = reviewState.useStore('reviewPos');
+  const [cardsIsFlipped, setCardsIsFlipped] = useState<boolean[]>([]);
 
-  const reviewAgainCards = reviewAgain.map(id => cards.find(card => id === card.id)) as Card[];
+  const reviewAgainCards = reviewAgain.map(id =>
+    cards.find(card => id === card.id)
+  ) as Card[];
 
   const allCards = [...cards, ...reviewAgainCards];
 
+  function setIsFlipped(pos: typeof reviewPos, isFlipped: boolean) {
+    setCardsIsFlipped(replaceAt(cardsIsFlipped, pos, isFlipped));
+  }
+
+  function handleBack() {
+    if (cardsIsFlipped[reviewPos]) {
+      setIsFlipped(reviewPos, false);
+    } else {
+      setIsFlipped(reviewPos - 1, false);
+      setIsFlipped(reviewPos + 1, false);
+      reviewState.dispatch('goToPrev');
+    }
+  }
+
+  useOnChange(reviewPos, () => {
+    if (reviewPos === 0) {
+      setCardsIsFlipped([false]);
+    }
+  });
+
   return (
-    <Modal active={reviewPos >= 0 && !reviewEnded} handleClose={() => setReviewPos(-1)}>
+    <Modal
+      active={reviewPos >= 0 && !reviewEnded}
+      handleClose={() => setReviewPos(-1)}
+    >
       <CardsContainer>
         {(reviewDialog || reviewPos > -1) &&
-          allCards.map((card, i) =>
-            (i === reviewPos ? (
-              <Card key={card.id} card={card} pos="current" />
+          allCards.map((card, i) => {
+            const props = {
+              key: card.id,
+              card,
+              setIsFlipped: (flipped: boolean) => setIsFlipped(i, flipped),
+              isFlipped: cardsIsFlipped[i],
+            };
+
+            return i === reviewPos ? (
+              <Card pos="current" {...props} />
             ) : i === reviewPos - 1 ? (
-              <Card key={card.id} card={card} pos="prev" />
+              <Card pos="prev" {...props} />
             ) : i === reviewPos + 1 ? (
-              <Card key={card.id} card={card} pos="next" />
+              <Card pos="next" {...props} />
             ) : (
               undefined
-            ))
-          )}
+            );
+          })}
       </CardsContainer>
-      <ReviewStepper numOfCards={allCards.length} pos={reviewPos + 1} />
+      <ReviewStepper
+        numOfCards={allCards.length}
+        pos={reviewPos + 1}
+        showBackButton={cardsIsFlipped[reviewPos] || reviewPos > 0}
+        onBack={handleBack}
+      />
     </Modal>
   );
 };

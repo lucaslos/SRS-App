@@ -3,8 +3,11 @@ import ReviewGroup from 'components/ReviewGroup';
 import { useStore } from 'lib/hookstore';
 import * as React from 'react';
 import { showReviewDialog } from 'state/review';
-import { centerContent } from 'style/modifiers';
+import { centerContent, fillContainer } from 'style/modifiers';
 import { calcCardsCoF, needsReview } from 'utils/srsAlgo';
+import cardsState from 'state/cards';
+import { rgba } from 'polished';
+import { colorSecondary, fontDecorative, colorPrimary } from 'style/theme';
 
 const Container = styled.div`
   position: absolute;
@@ -24,8 +27,25 @@ const GroupsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+const Loading = styled.div<{ show: boolean }>`
+  ${fillContainer};
+  background-color: ${rgba(colorSecondary, 0.5)};
+  text-align: center;
+  padding-top: 24px;
+  font-size: 24px;
+
+  font-family: ${fontDecorative};
+  color: ${colorPrimary};
+
+  transition: 240ms;
+
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
+  opacity: ${props => (props.show ? 1 : 0)};
+`;
+
 const CardsGroups = () => {
-  const [cards] = useStore<Card[]>('cards', 'cards');
+  const [cards] = cardsState.useStore('cards');
+  const [isLoading] = cardsState.useStore('waitingForUpdate');
 
   const [reviewedCards, newCards] = calcCardsCoF(cards);
 
@@ -88,6 +108,7 @@ const CardsGroups = () => {
           />
         )}
       </GroupsContainer>
+      <Loading show={isLoading}>Loading...</Loading>
     </Container>
   );
 };

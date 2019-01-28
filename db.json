@@ -1,6 +1,6 @@
 {
-  "cards": [
-    {
+  "cards": {
+    "0": {
       "id": 0,
       "front": "lean",
       "back": "enxuto",
@@ -13,7 +13,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "1": {
       "id": 1,
       "front": "sight",
       "back": "vista",
@@ -27,7 +27,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "2": {
       "id": 2,
       "front": "usefulness",
       "back": "utilidade",
@@ -40,7 +40,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "3": {
       "id": 3,
       "front": "meets",
       "back": "atende",
@@ -53,7 +53,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "4": {
       "id": 4,
       "front": "host of",
       "back": "série de",
@@ -63,7 +63,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "5": {
       "id": 5,
       "front": "mindset",
       "back": "mentalidade",
@@ -76,7 +76,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "6": {
       "id": 6,
       "front": "stands for",
       "back": "representa",
@@ -89,7 +89,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "7": {
       "id": 7,
       "front": "mug",
       "back": "caneca",
@@ -103,7 +103,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "8": {
       "id": 8,
       "front": "mood",
       "back": "humor",
@@ -116,7 +116,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "9": {
       "id": 9,
       "front": "swaths",
       "back": "faixas",
@@ -129,7 +129,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "10": {
       "id": 10,
       "front": "chips",
       "back": "fichas",
@@ -142,7 +142,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "11": {
       "id": 11,
       "front": "hone",
       "back": "afiar",
@@ -155,7 +155,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "12": {
       "id": 12,
       "front": "darn",
       "back": "danado",
@@ -168,7 +168,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "13": {
       "id": 13,
       "front": "well-researched",
       "back": "bem fundamentado",
@@ -181,7 +181,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "14": {
       "id": 14,
       "front": "not up to par",
       "back": "insatisfatório",
@@ -191,7 +191,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "15": {
       "id": 15,
       "front": "ease",
       "back": "facilidade",
@@ -204,7 +204,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "16": {
       "id": 16,
       "front": "customer",
       "back": "cliente",
@@ -214,7 +214,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "17": {
       "id": 17,
       "front": "break down",
       "back": "quebrar; desmembrar / dividir",
@@ -227,7 +227,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "18": {
       "id": 18,
       "front": "those",
       "back": "essas / esses",
@@ -237,7 +237,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "19": {
       "id": 19,
       "front": "these",
       "back": "estes",
@@ -250,7 +250,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "20": {
       "id": 20,
       "front": "around",
       "back": "por aí; ao redor",
@@ -264,7 +264,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "21": {
       "id": 21,
       "front": "flee",
       "back": "fugir",
@@ -277,7 +277,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "22": {
       "id": 22,
       "front": "thoughtful",
       "back": "atencioso",
@@ -291,7 +291,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "23": {
       "id": 23,
       "front": "convey",
       "back": "transmitir",
@@ -305,7 +305,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "24": {
       "id": 24,
       "front": "convene",
       "back": "reunir",
@@ -315,7 +315,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "25": {
       "id": 25,
       "front": "strive",
       "back": "lutar",
@@ -331,7 +331,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "26": {
       "id": 26,
       "front": "glimpse",
       "back": "vislumbre / relance",
@@ -347,7 +347,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "27": {
       "id": 27,
       "front": "inception",
       "back": "começo",
@@ -360,7 +360,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "28": {
       "id": 28,
       "front": "evolve",
       "back": "evoluir",
@@ -373,7 +373,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "29": {
       "id": 29,
       "front": "harsh",
       "back": "duro",
@@ -386,7 +386,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "30": {
       "id": 30,
       "front": "shrink",
       "back": "encolher",
@@ -396,7 +396,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "31": {
       "id": 31,
       "front": "ease",
       "back": "aliviar",
@@ -409,7 +409,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "32": {
       "id": 32,
       "front": "approach",
       "back": "aproximação",
@@ -422,7 +422,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "33": {
       "id": 33,
       "front": "aware",
       "back": "consciente",
@@ -435,7 +435,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "34": {
       "id": 34,
       "front": "depict",
       "back": "retratar",
@@ -445,7 +445,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "35": {
       "id": 35,
       "front": "fetch",
       "back": "buscar",
@@ -458,7 +458,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "36": {
       "id": 36,
       "front": "Hint",
       "back": "sugestão",
@@ -471,7 +471,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "37": {
       "id": 37,
       "front": "reportedly",
       "back": "declaradamente",
@@ -481,7 +481,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "38": {
       "id": 38,
       "front": "god’s sake",
       "back": "pelo amor de Deus",
@@ -494,7 +494,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "39": {
       "id": 39,
       "front": "placement",
       "back": "localização",
@@ -508,7 +508,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "40": {
       "id": 40,
       "front": "get me wrong",
       "back": "me leve a mal",
@@ -518,7 +518,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "41": {
       "id": 41,
       "front": "overrated",
       "back": "superestimado",
@@ -528,7 +528,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "42": {
       "id": 42,
       "front": "mighty",
       "back": "poderoso",
@@ -538,7 +538,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "43": {
       "id": 43,
       "front": "overly",
       "back": "excessivamente",
@@ -554,7 +554,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "44": {
       "id": 44,
       "front": "evaluate",
       "back": "avaliar",
@@ -567,7 +567,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "45": {
       "id": 45,
       "front": "echelon",
       "back": "escalão",
@@ -580,7 +580,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "46": {
       "id": 46,
       "front": "either",
       "back": "também não / tampouco",
@@ -593,7 +593,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "47": {
       "id": 47,
       "front": "littered",
       "back": "cheio",
@@ -606,7 +606,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "48": {
       "id": 48,
       "front": "snippet",
       "back": "fragmento",
@@ -619,7 +619,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "49": {
       "id": 49,
       "front": "go down",
       "back": "descer",
@@ -632,7 +632,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "50": {
       "id": 50,
       "front": "kicker",
       "back": "uma inesperada e frequentemente desagradável descoberta ou mudança de eventos",
@@ -642,7 +642,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "51": {
       "id": 51,
       "front": "wary",
       "back": "desconfiado",
@@ -655,7 +655,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "52": {
       "id": 52,
       "front": "entrust",
       "back": "confiar",
@@ -668,7 +668,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "53": {
       "id": 53,
       "front": "droves",
       "back": "massa",
@@ -684,7 +684,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "54": {
       "id": 54,
       "front": "ripple",
       "back": "ondulação",
@@ -697,7 +697,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "55": {
       "id": 55,
       "front": "tie",
       "back": "vincular; amarrar",
@@ -710,7 +710,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "56": {
       "id": 56,
       "front": "gutter",
       "back": "calha",
@@ -723,7 +723,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "57": {
       "id": 57,
       "front": "guidance",
       "back": "orientação",
@@ -736,7 +736,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "58": {
       "id": 58,
       "front": "intend",
       "back": "pretender",
@@ -749,7 +749,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "59": {
       "id": 59,
       "front": "roughly",
       "back": "aproximadamente",
@@ -762,7 +762,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "60": {
       "id": 60,
       "front": "refrain",
       "back": "refrão",
@@ -775,7 +775,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "61": {
       "id": 61,
       "front": "fulfill",
       "back": "cumprir; preencher",
@@ -792,7 +792,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "62": {
       "id": 62,
       "front": "outcome",
       "back": "resultado",
@@ -805,7 +805,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "63": {
       "id": 63,
       "front": "gainfully",
       "back": "proveitosamente",
@@ -818,7 +818,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "64": {
       "id": 64,
       "front": "smorgasbord",
       "back": "miscelânea",
@@ -831,7 +831,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "65": {
       "id": 65,
       "front": "backlash",
       "back": "repercussão negativa",
@@ -847,7 +847,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "66": {
       "id": 66,
       "front": "whilst",
       "back": "enquanto",
@@ -860,7 +860,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "67": {
       "id": 67,
       "front": "up a notch",
       "back": "aumentar de nível",
@@ -870,7 +870,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "68": {
       "id": 68,
       "front": "work out",
       "back": "resolver",
@@ -886,7 +886,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "69": {
       "id": 69,
       "front": "benchmark",
       "back": "referência",
@@ -899,7 +899,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "70": {
       "id": 70,
       "front": "I’d",
       "back": "i had; I would",
@@ -912,7 +912,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "71": {
       "id": 71,
       "front": "leaflet",
       "back": "folheto",
@@ -925,7 +925,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "72": {
       "id": 72,
       "front": "neat",
       "back": "puro",
@@ -938,7 +938,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "73": {
       "id": 73,
       "front": "declutter",
       "back": "remover itens desnecessários",
@@ -951,7 +951,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "74": {
       "id": 74,
       "front": "unbiased",
       "back": "imparcial",
@@ -964,7 +964,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "75": {
       "id": 75,
       "front": "pitfall",
       "back": "armadilha",
@@ -980,7 +980,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "76": {
       "id": 76,
       "front": "defy",
       "back": "desafiar",
@@ -993,7 +993,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "77": {
       "id": 77,
       "front": "clout",
       "back": "influência",
@@ -1010,7 +1010,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "78": {
       "id": 78,
       "front": "tout",
       "back": "promover / indicar / vender",
@@ -1026,7 +1026,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "79": {
       "id": 79,
       "front": "trick",
       "back": "truque",
@@ -1043,7 +1043,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "80": {
       "id": 80,
       "front": "tailor (usually be tailored)",
       "back": "adaptar",
@@ -1060,7 +1060,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "81": {
       "id": 81,
       "front": "blurb",
       "back": "sinopse",
@@ -1074,7 +1074,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "82": {
       "id": 82,
       "front": "prospective",
       "back": "possível / potencial",
@@ -1090,7 +1090,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "83": {
       "id": 83,
       "front": "setback",
       "back": "contratempo",
@@ -1104,7 +1104,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "84": {
       "id": 84,
       "front": "streamline",
       "back": "simplificar",
@@ -1117,7 +1117,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "85": {
       "id": 85,
       "front": "closure",
       "back": "encerramento",
@@ -1132,7 +1132,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "86": {
       "id": 86,
       "front": "counteract",
       "back": "neutralizar",
@@ -1146,7 +1146,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "87": {
       "id": 87,
       "front": "overshoot",
       "back": "ultrapassar",
@@ -1159,7 +1159,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "88": {
       "id": 88,
       "front": "stick",
       "back": "colar / grudar",
@@ -1172,7 +1172,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "89": {
       "id": 89,
       "front": "workaround",
       "back": "solução alternativa",
@@ -1182,7 +1182,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "90": {
       "id": 90,
       "front": "redact",
       "back": "editar",
@@ -1192,7 +1192,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "91": {
       "id": 91,
       "front": "abide",
       "back": "cumprir; habitar",
@@ -1208,7 +1208,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "92": {
       "id": 92,
       "front": "disclosure",
       "back": "divulgação",
@@ -1221,7 +1221,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "93": {
       "id": 93,
       "front": "address",
       "back": "abordar / enfrentar",
@@ -1238,7 +1238,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "94": {
       "id": 94,
       "front": "sweeping",
       "back": "decisivo; amplo",
@@ -1255,7 +1255,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "95": {
       "id": 95,
       "front": "gloss over",
       "back": "encobertar",
@@ -1268,7 +1268,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "96": {
       "id": 96,
       "front": "lesser",
       "back": "inferior",
@@ -1278,7 +1278,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "97": {
       "id": 97,
       "front": "neglect",
       "back": "negligência",
@@ -1288,7 +1288,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "98": {
       "id": 98,
       "front": "stick with",
       "back": "ficar com",
@@ -1298,7 +1298,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "99": {
       "id": 99,
       "front": "vanity",
       "back": "vaidade",
@@ -1308,7 +1308,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "100": {
       "id": 100,
       "front": "head",
       "back": "dirigir / liderar",
@@ -1325,7 +1325,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "101": {
       "id": 101,
       "front": "drool",
       "back": "baba",
@@ -1339,7 +1339,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "102": {
       "id": 102,
       "front": "circa",
       "back": "cerca de / por volta de",
@@ -1352,7 +1352,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "103": {
       "id": 103,
       "front": "which",
       "back": "qual; cujo",
@@ -1369,7 +1369,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "104": {
       "id": 104,
       "front": "that",
       "back": "tão",
@@ -1385,7 +1385,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "105": {
       "id": 105,
       "front": "ditch",
       "back": "abandonar",
@@ -1399,7 +1399,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "106": {
       "id": 106,
       "front": "sake",
       "back": "causa",
@@ -1413,7 +1413,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "107": {
       "id": 107,
       "front": "ribbon",
       "back": "fita",
@@ -1426,7 +1426,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "108": {
       "id": 108,
       "front": "even so",
       "back": "mesmo assim",
@@ -1439,7 +1439,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "109": {
       "id": 109,
       "front": "embellish",
       "back": "embelezar",
@@ -1449,7 +1449,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "110": {
       "id": 110,
       "front": "lure",
       "back": "atrair",
@@ -1462,7 +1462,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "111": {
       "id": 111,
       "front": "downright",
       "back": "completamente",
@@ -1475,7 +1475,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "112": {
       "id": 112,
       "front": "master",
       "back": "dominar",
@@ -1488,7 +1488,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "113": {
       "id": 113,
       "front": "ever-so",
       "back": "sempre tão",
@@ -1498,7 +1498,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "114": {
       "id": 114,
       "front": "speaking engagement",
       "back": "palestra",
@@ -1511,7 +1511,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "115": {
       "id": 115,
       "front": "accolade",
       "back": "elogio",
@@ -1524,7 +1524,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "116": {
       "id": 116,
       "front": "scrap",
       "back": "jogar fora",
@@ -1537,7 +1537,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "117": {
       "id": 117,
       "front": "ship a thing",
       "back": "enviar uma coisa",
@@ -1551,7 +1551,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "118": {
       "id": 118,
       "front": "unspoken",
       "back": "não dito",
@@ -1561,7 +1561,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "119": {
       "id": 119,
       "front": "outline",
       "back": "delinear",
@@ -1571,7 +1571,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "120": {
       "id": 120,
       "front": "stepping stone",
       "back": "trampolim",
@@ -1585,7 +1585,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "121": {
       "id": 121,
       "front": "solely",
       "back": "somente",
@@ -1598,7 +1598,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "122": {
       "id": 122,
       "front": "steer",
       "back": "virar o volante / fazer curva / esterçar ",
@@ -1614,7 +1614,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "123": {
       "id": 123,
       "front": "constraint",
       "back": "restrição",
@@ -1627,7 +1627,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "124": {
       "id": 124,
       "front": "settle",
       "back": "acomodar",
@@ -1640,7 +1640,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "125": {
       "id": 125,
       "front": "never settle",
       "back": "nunca se contentar",
@@ -1650,7 +1650,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "126": {
       "id": 126,
       "front": "push",
       "back": "empurrar",
@@ -1663,7 +1663,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "127": {
       "id": 127,
       "front": "sheds light",
       "back": "lança luz",
@@ -1673,7 +1673,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "128": {
       "id": 128,
       "front": "breadth",
       "back": "largura",
@@ -1687,7 +1687,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "129": {
       "id": 129,
       "front": "gauge",
       "back": "medir",
@@ -1700,7 +1700,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "130": {
       "id": 130,
       "front": "ladder",
       "back": "escada",
@@ -1715,7 +1715,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "131": {
       "id": 131,
       "front": "rung",
       "back": "degrau",
@@ -1730,7 +1730,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "132": {
       "id": 132,
       "front": "lose track of",
       "back": "perde a noção do",
@@ -1740,7 +1740,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "133": {
       "id": 133,
       "front": "track of time",
       "back": "a noção do tempo",
@@ -1750,7 +1750,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "134": {
       "id": 134,
       "front": "boredom",
       "back": "tédio",
@@ -1763,7 +1763,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "135": {
       "id": 135,
       "front": "a bit of stretch",
       "back": "um pouco de exagero",
@@ -1776,7 +1776,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "136": {
       "id": 136,
       "front": "stumble",
       "back": "tropeçar",
@@ -1789,7 +1789,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "137": {
       "id": 137,
       "front": "peaceful",
       "back": "tranquilo",
@@ -1802,7 +1802,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "138": {
       "id": 138,
       "front": "slip away",
       "back": "escapar",
@@ -1818,7 +1818,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "139": {
       "id": 139,
       "front": "trail",
       "back": "trilha",
@@ -1831,7 +1831,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "140": {
       "id": 140,
       "front": "chamber",
       "back": "câmara",
@@ -1844,7 +1844,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "141": {
       "id": 141,
       "front": "capitalizes",
       "back": "tirar proveito de",
@@ -1858,7 +1858,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "142": {
       "id": 142,
       "front": "unobtrusive",
       "back": "discreto",
@@ -1871,7 +1871,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "143": {
       "id": 143,
       "front": "boast",
       "back": "vangloriar-se",
@@ -1887,7 +1887,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "144": {
       "id": 144,
       "front": "be gone",
       "back": "ter ido embora",
@@ -1897,7 +1897,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "145": {
       "id": 145,
       "front": "clockwise",
       "back": "no sentido horário",
@@ -1907,7 +1907,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "146": {
       "id": 146,
       "front": "knob",
       "back": "maçaneta",
@@ -1920,7 +1920,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "147": {
       "id": 147,
       "front": "overflow",
       "back": "transbordar",
@@ -1933,7 +1933,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "148": {
       "id": 148,
       "front": "publicize",
       "back": "divulgar",
@@ -1946,7 +1946,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "149": {
       "id": 149,
       "front": "accomplishment",
       "back": "realização",
@@ -1965,7 +1965,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "150": {
       "id": 150,
       "front": "otherwise",
       "back": "caso contrário",
@@ -1975,7 +1975,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "151": {
       "id": 151,
       "front": "one-off",
       "back": "único",
@@ -1988,7 +1988,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "152": {
       "id": 152,
       "front": "strive",
       "back": "lutar / esforçar-se",
@@ -2004,7 +2004,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "153": {
       "id": 153,
       "front": "underlying",
       "back": "subjacente",
@@ -2014,7 +2014,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "154": {
       "id": 154,
       "front": "glue",
       "back": "cola",
@@ -2027,7 +2027,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "155": {
       "id": 155,
       "front": "burden",
       "back": "carga",
@@ -2040,7 +2040,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "156": {
       "id": 156,
       "front": "match",
       "back": "combinar (com)",
@@ -2053,7 +2053,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "157": {
       "id": 157,
       "front": "carry on",
       "back": "continuar",
@@ -2066,7 +2066,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "158": {
       "id": 158,
       "front": "got it",
       "back": "entendi",
@@ -2076,7 +2076,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "159": {
       "id": 159,
       "front": "break out",
       "back": "sair / fugir",
@@ -2090,7 +2090,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "160": {
       "id": 160,
       "front": "clutter",
       "back": "desordem",
@@ -2103,7 +2103,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "161": {
       "id": 161,
       "front": "attainable",
       "back": "atingível",
@@ -2116,7 +2116,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "162": {
       "id": 162,
       "front": "get on with",
       "back": "continuar com",
@@ -2126,7 +2126,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "163": {
       "id": 163,
       "front": "sluggish",
       "back": "lento",
@@ -2139,7 +2139,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "164": {
       "id": 164,
       "front": "nowhere",
       "back": "lugar algum",
@@ -2149,7 +2149,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "165": {
       "id": 165,
       "front": "featured",
       "back": "destaque",
@@ -2162,7 +2162,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "166": {
       "id": 166,
       "front": "cumbersome",
       "back": "pesado / complicado / incomodo",
@@ -2179,7 +2179,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "167": {
       "id": 167,
       "front": "as much",
       "back": "tanto quanto",
@@ -2192,7 +2192,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "168": {
       "id": 168,
       "front": "dust off",
       "back": "tirar a poeira",
@@ -2205,7 +2205,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "169": {
       "id": 169,
       "front": "round-trip",
       "back": "ida e volta",
@@ -2219,7 +2219,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "170": {
       "id": 170,
       "front": "drill down",
       "back": "to look for something on a computer or website by moving from general information to more detailed information",
@@ -2232,7 +2232,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "171": {
       "id": 171,
       "front": "lead",
       "back": "conduzir",
@@ -2245,7 +2245,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "172": {
       "id": 172,
       "front": "appeal",
       "back": "apelo",
@@ -2259,7 +2259,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "173": {
       "id": 173,
       "front": "heavy lifting",
       "back": "trabalho pesado",
@@ -2272,7 +2272,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "174": {
       "id": 174,
       "front": "ton",
       "back": "tonelada",
@@ -2285,7 +2285,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "175": {
       "id": 175,
       "front": "as",
       "back": "como; enquanto, tão",
@@ -2300,7 +2300,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "176": {
       "id": 176,
       "front": "slick",
       "back": "liso",
@@ -2313,7 +2313,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "177": {
       "id": 177,
       "front": "compelling",
       "back": "atraente",
@@ -2326,7 +2326,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "178": {
       "id": 178,
       "front": "very",
       "back": "próprio",
@@ -2339,7 +2339,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "179": {
       "id": 179,
       "front": "split",
       "back": "dividir",
@@ -2352,7 +2352,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "180": {
       "id": 180,
       "front": "yet",
       "back": "até o momento / até agora",
@@ -2362,7 +2362,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "181": {
       "id": 181,
       "front": "intend",
       "back": "destinar",
@@ -2379,7 +2379,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "182": {
       "id": 182,
       "front": "shade",
       "back": "tom",
@@ -2392,7 +2392,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "183": {
       "id": 183,
       "front": "mess (something) up",
       "back": "estragar",
@@ -2405,7 +2405,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "184": {
       "id": 184,
       "front": "elbow",
       "back": "cotovelo",
@@ -2419,7 +2419,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "185": {
       "id": 185,
       "front": "stack",
       "back": "pilha",
@@ -2434,7 +2434,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "186": {
       "id": 186,
       "front": "cue",
       "back": "dica",
@@ -2448,7 +2448,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "187": {
       "id": 187,
       "front": "headway",
       "back": "progresso",
@@ -2462,7 +2462,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "188": {
       "id": 188,
       "front": "bottleneck",
       "back": "gargalo",
@@ -2475,7 +2475,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "189": {
       "id": 189,
       "front": "whereas",
       "back": "enquanto que / ao passo que (comparação)",
@@ -2488,7 +2488,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "190": {
       "id": 190,
       "front": "rail against/at",
       "back": "protestar contra",
@@ -2504,7 +2504,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "191": {
       "id": 191,
       "front": "indeed",
       "back": "de fato",
@@ -2514,7 +2514,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "192": {
       "id": 192,
       "front": "backward",
       "back": "para trás",
@@ -2530,7 +2530,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "193": {
       "id": 193,
       "front": "conversely",
       "back": "reciprocamente",
@@ -2543,7 +2543,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "194": {
       "id": 194,
       "front": "if so",
       "back": "se assim for / se esse for o caso",
@@ -2560,7 +2560,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "195": {
       "id": 195,
       "front": "back-and-forth",
       "back": "vai e vem",
@@ -2570,7 +2570,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "196": {
       "id": 196,
       "front": "forth",
       "back": "adiante / para frente",
@@ -2586,7 +2586,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "197": {
       "id": 197,
       "front": "meaningful",
       "back": "significativo",
@@ -2596,7 +2596,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "198": {
       "id": 198,
       "front": "suitable",
       "back": "adequado",
@@ -2609,7 +2609,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "199": {
       "id": 199,
       "front": "revenue",
       "back": "receita",
@@ -2623,7 +2623,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "200": {
       "id": 200,
       "front": "matter",
       "back": "questão / assunto; matéria",
@@ -2633,7 +2633,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "201": {
       "id": 201,
       "front": "borrow",
       "back": "pedir emprestado / emprestar",
@@ -2646,7 +2646,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "202": {
       "id": 202,
       "front": "scratch",
       "back": "arranhar",
@@ -2659,7 +2659,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "203": {
       "id": 203,
       "front": "against",
       "back": "se opor a / ser contra algo",
@@ -2672,7 +2672,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "204": {
       "id": 204,
       "front": "striking",
       "back": "impressionante",
@@ -2689,7 +2689,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "205": {
       "id": 205,
       "front": "posit",
       "back": "postular",
@@ -2702,7 +2702,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "206": {
       "id": 206,
       "front": "albeit",
       "back": "embora",
@@ -2718,7 +2718,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "207": {
       "id": 207,
       "front": "stare",
       "back": "encarar / olhar fixamente",
@@ -2731,7 +2731,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "208": {
       "id": 208,
       "front": "empower",
       "back": "conferir poder a",
@@ -2748,7 +2748,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "209": {
       "id": 209,
       "front": "stakeholders",
       "back": "partes interessadas",
@@ -2761,7 +2761,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "210": {
       "id": 210,
       "front": "it comes to",
       "back": "se trata de",
@@ -2771,7 +2771,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "211": {
       "id": 211,
       "front": "though",
       "back": "embora",
@@ -2784,7 +2784,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "212": {
       "id": 212,
       "front": "delightful",
       "back": "delicioso",
@@ -2797,7 +2797,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "213": {
       "id": 213,
       "front": "thus",
       "back": "portanto",
@@ -2810,7 +2810,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "214": {
       "id": 214,
       "front": "hence",
       "back": "consequentemente",
@@ -2823,7 +2823,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "215": {
       "id": 215,
       "front": "alas",
       "back": "infelizmente",
@@ -2840,7 +2840,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "216": {
       "id": 216,
       "front": "tackle",
       "back": "resolver",
@@ -2853,7 +2853,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "217": {
       "id": 217,
       "front": "downfall",
       "back": "ruína",
@@ -2868,7 +2868,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "218": {
       "id": 218,
       "front": "as long as",
       "back": "enquanto; contanto que",
@@ -2886,7 +2886,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "219": {
       "id": 219,
       "front": "throughout",
       "back": "por toda a parte / por todo",
@@ -2902,7 +2902,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "220": {
       "id": 220,
       "front": "in a bit",
       "back": "num momento",
@@ -2912,7 +2912,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "221": {
       "id": 221,
       "front": "juicy",
       "back": "suculento",
@@ -2925,7 +2925,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "222": {
       "id": 222,
       "front": "spot",
       "back": "localizar; local",
@@ -2939,7 +2939,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "223": {
       "id": 223,
       "front": "regarding",
       "back": "em relação a",
@@ -2952,7 +2952,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "224": {
       "id": 224,
       "front": "cluster",
       "back": "agrupar",
@@ -2965,7 +2965,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "225": {
       "id": 225,
       "front": "rip",
       "back": "rasgar",
@@ -2978,7 +2978,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "226": {
       "id": 226,
       "front": "revamp",
       "back": "renovar",
@@ -2991,7 +2991,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "227": {
       "id": 227,
       "front": "back then",
       "back": "naquela época",
@@ -3007,7 +3007,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "228": {
       "id": 228,
       "front": "behalf",
       "back": "favor",
@@ -3021,7 +3021,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "229": {
       "id": 229,
       "front": "mislead",
       "back": "enganar",
@@ -3037,7 +3037,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "230": {
       "id": 230,
       "front": "whimsical",
       "back": "extravagante",
@@ -3050,7 +3050,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "231": {
       "id": 231,
       "front": "approachable",
       "back": "acessível",
@@ -3063,7 +3063,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "232": {
       "id": 232,
       "front": "goof up",
       "back": "errar / vacilar",
@@ -3077,7 +3077,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "233": {
       "id": 233,
       "front": "baffle",
       "back": "desorientar / desnortear",
@@ -3093,7 +3093,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "234": {
       "id": 234,
       "front": "trustworthy",
       "back": "confiável",
@@ -3106,7 +3106,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "235": {
       "id": 235,
       "front": "establish",
       "back": "estabelecer",
@@ -3116,7 +3116,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "236": {
       "id": 236,
       "front": "bury",
       "back": "enterrar",
@@ -3129,7 +3129,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "237": {
       "id": 237,
       "front": "buried",
       "back": "enterrado",
@@ -3143,7 +3143,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "238": {
       "id": 238,
       "front": "warmth",
       "back": "cordialidade; calor",
@@ -3158,7 +3158,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "239": {
       "id": 239,
       "front": "wordy",
       "back": "prolixo",
@@ -3171,7 +3171,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "240": {
       "id": 240,
       "front": "at ease",
       "back": "à vontade",
@@ -3184,7 +3184,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "241": {
       "id": 241,
       "front": "wrap",
       "back": "embrulho",
@@ -3198,7 +3198,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "242": {
       "id": 242,
       "front": "wrap up",
       "back": "encerrar",
@@ -3215,7 +3215,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "243": {
       "id": 243,
       "front": "come across",
       "back": "se deparar com",
@@ -3233,7 +3233,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "244": {
       "id": 244,
       "front": "widespread",
       "back": "difundido",
@@ -3249,7 +3249,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "245": {
       "id": 245,
       "front": "rule of thumb",
       "back": "regra geral",
@@ -3259,7 +3259,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "246": {
       "id": 246,
       "front": "drawback",
       "back": "desvantagem",
@@ -3272,7 +3272,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "247": {
       "id": 247,
       "front": "inherent",
       "back": "inerente",
@@ -3285,7 +3285,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "248": {
       "id": 248,
       "front": "although",
       "back": "embora",
@@ -3295,7 +3295,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "249": {
       "id": 249,
       "front": "placeholder",
       "back": "espaço reservado",
@@ -3308,7 +3308,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "250": {
       "id": 250,
       "front": "across",
       "back": "através de",
@@ -3318,7 +3318,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "251": {
       "id": 251,
       "front": "bound",
       "back": "limite",
@@ -3331,7 +3331,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "252": {
       "id": 252,
       "front": "ongoing",
       "back": "contínuo / em andamento",
@@ -3344,7 +3344,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "253": {
       "id": 253,
       "front": "prompt",
       "back": "rápido / imediato",
@@ -3360,7 +3360,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "254": {
       "id": 254,
       "front": "disrupt",
       "back": "perturbar; quebrar",
@@ -3378,7 +3378,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "255": {
       "id": 255,
       "front": "primacy",
       "back": "prioridade",
@@ -3391,7 +3391,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "256": {
       "id": 256,
       "front": "query",
       "back": "consulta; pergunta / questão",
@@ -3407,7 +3407,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "257": {
       "id": 257,
       "front": "valuable",
       "back": "valioso",
@@ -3420,7 +3420,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "258": {
       "id": 258,
       "front": "literacy",
       "back": "alfabetização",
@@ -3433,7 +3433,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "259": {
       "id": 259,
       "front": "chore",
       "back": "tarefa",
@@ -3447,7 +3447,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "260": {
       "id": 260,
       "front": "obnoxious",
       "back": "desagradável",
@@ -3463,7 +3463,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "261": {
       "id": 261,
       "front": "else",
       "back": "outro; mais",
@@ -3483,7 +3483,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "262": {
       "id": 262,
       "front": "threshold",
       "back": "limite",
@@ -3493,7 +3493,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "263": {
       "id": 263,
       "front": "wander",
       "back": "vaguear",
@@ -3506,7 +3506,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "264": {
       "id": 264,
       "front": "hazard",
       "back": "perigo",
@@ -3516,7 +3516,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "265": {
       "id": 265,
       "front": "outsource",
       "back": "terceirizar",
@@ -3526,7 +3526,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "266": {
       "id": 266,
       "front": "hood",
       "back": "capô",
@@ -3539,7 +3539,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "267": {
       "id": 267,
       "front": "eager",
       "back": "ansioso",
@@ -3549,7 +3549,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "268": {
       "id": 268,
       "front": "asset",
       "back": "de ativos",
@@ -3559,7 +3559,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "269": {
       "id": 269,
       "front": "outsmart",
       "back": "ser mais esperto que",
@@ -3569,7 +3569,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "270": {
       "id": 270,
       "front": "at all",
       "back": "nenhum pouco; absolutamente",
@@ -3582,7 +3582,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "271": {
       "id": 271,
       "front": "marvelous",
       "back": "maravilhoso",
@@ -3592,7 +3592,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "272": {
       "id": 272,
       "front": "sludge",
       "back": "lodo",
@@ -3605,7 +3605,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "273": {
       "id": 273,
       "front": "scourge",
       "back": "flagelo / escória",
@@ -3618,7 +3618,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "274": {
       "id": 274,
       "front": "drill",
       "back": "furar",
@@ -3634,7 +3634,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "275": {
       "id": 275,
       "front": "stands true",
       "back": "permanece fiel",
@@ -3644,7 +3644,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "276": {
       "id": 276,
       "front": "hindsight",
       "back": "retrospectiva",
@@ -3657,7 +3657,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "277": {
       "id": 277,
       "front": "from the ground up",
       "back": "a partir do zero",
@@ -3667,7 +3667,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "278": {
       "id": 278,
       "front": "crawl",
       "back": "rastejar; vasculhar",
@@ -3683,7 +3683,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "279": {
       "id": 279,
       "front": "scrape",
       "back": "raspar",
@@ -3700,7 +3700,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "280": {
       "id": 280,
       "front": "even though",
       "back": "apesar do fato/ apesar de",
@@ -3713,7 +3713,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "281": {
       "id": 281,
       "front": "while",
       "back": "tempo",
@@ -3726,7 +3726,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "282": {
       "id": 282,
       "front": "branch",
       "back": "ramo",
@@ -3739,7 +3739,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "283": {
       "id": 283,
       "front": "doing away with (something)",
       "back": "acabar com",
@@ -3752,7 +3752,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "284": {
       "id": 284,
       "front": "glance",
       "back": "olhada; relance",
@@ -3762,7 +3762,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "285": {
       "id": 285,
       "front": "all in all",
       "back": "contudo",
@@ -3778,7 +3778,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "286": {
       "id": 286,
       "front": "jarring",
       "back": "chocante; dissonante",
@@ -3794,7 +3794,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "287": {
       "id": 287,
       "front": "sheer amount",
       "back": "enorme quantidade",
@@ -3804,7 +3804,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "288": {
       "id": 288,
       "front": "bit",
       "back": "pedaço",
@@ -3817,7 +3817,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "289": {
       "id": 289,
       "front": "forefront",
       "back": "primeiro plano",
@@ -3830,7 +3830,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "290": {
       "id": 290,
       "front": "strain",
       "back": "tensão",
@@ -3843,7 +3843,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "291": {
       "id": 291,
       "front": "stumble",
       "back": "tropeçar",
@@ -3856,7 +3856,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "292": {
       "id": 292,
       "front": "pinnacle",
       "back": "auge",
@@ -3866,7 +3866,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "293": {
       "id": 293,
       "front": "entice",
       "back": "seduzir",
@@ -3879,7 +3879,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "294": {
       "id": 294,
       "front": "nightmare",
       "back": "pesadelo",
@@ -3893,7 +3893,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "295": {
       "id": 295,
       "front": "latter",
       "back": "último / mais recente",
@@ -3910,7 +3910,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "296": {
       "id": 296,
       "front": "signage",
       "back": "sinalização",
@@ -3923,7 +3923,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "297": {
       "id": 297,
       "front": "relent",
       "back": "ceder",
@@ -3933,7 +3933,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "298": {
       "id": 298,
       "front": "fire sale",
       "back": "queima de estoque",
@@ -3943,7 +3943,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "299": {
       "id": 299,
       "front": "sorcery",
       "back": "feitiçaria",
@@ -3956,7 +3956,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "300": {
       "id": 300,
       "front": "straightforward",
       "back": "direto",
@@ -3969,7 +3969,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "301": {
       "id": 301,
       "front": "pretty much",
       "back": "praticamente",
@@ -3985,7 +3985,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "302": {
       "id": 302,
       "front": "fee",
       "back": "taxa",
@@ -3998,7 +3998,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "303": {
       "id": 303,
       "front": "heavy-handed",
       "back": "desastrado",
@@ -4012,7 +4012,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "304": {
       "id": 304,
       "front": "eye-catching",
       "back": "atraente",
@@ -4025,7 +4025,7 @@
       "repetitions": 11,
       "lang": "en"
     },
-    {
+    "305": {
       "id": 305,
       "front": "recipe",
       "back": "receita",
@@ -4039,7 +4039,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "306": {
       "id": 306,
       "front": "opinionated",
       "back": "teimoso",
@@ -4052,7 +4052,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "307": {
       "id": 307,
       "front": "the heck",
       "back": "diabos",
@@ -4066,7 +4066,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "308": {
       "id": 308,
       "front": "bundle",
       "back": "pacote; empacotar",
@@ -4080,7 +4080,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "309": {
       "id": 309,
       "front": "stand for",
       "back": "significa",
@@ -4096,7 +4096,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "310": {
       "id": 310,
       "front": "neat",
       "back": "limpo; arrumado",
@@ -4109,7 +4109,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "311": {
       "id": 311,
       "front": "you name it",
       "back": "o que você quiser; whatever you can think of (used to express the extent or variety of something).",
@@ -4122,7 +4122,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "312": {
       "id": 312,
       "front": "flavor",
       "back": "sabor",
@@ -4136,7 +4136,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "313": {
       "id": 313,
       "front": "bloat",
       "back": "inchar",
@@ -4152,7 +4152,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "314": {
       "id": 314,
       "front": "it turns out that",
       "back": "acontece que / parece que",
@@ -4170,7 +4170,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "315": {
       "id": 315,
       "front": "receipt",
       "back": "recibo",
@@ -4184,7 +4184,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "316": {
       "id": 316,
       "front": "mock",
       "back": "simulação",
@@ -4197,7 +4197,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "317": {
       "id": 317,
       "front": "nitty-gritty",
       "back": "o ponto",
@@ -4210,7 +4210,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "318": {
       "id": 318,
       "front": "chunk",
       "back": "parte / pedaço",
@@ -4223,7 +4223,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "319": {
       "id": 319,
       "front": "sprinkle",
       "back": "borrifar",
@@ -4236,7 +4236,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "320": {
       "id": 320,
       "front": "savvy",
       "back": "experiente",
@@ -4246,7 +4246,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "321": {
       "id": 321,
       "front": "sum up",
       "back": "resumir",
@@ -4259,7 +4259,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "322": {
       "id": 322,
       "front": "ruthless",
       "back": "implacável / cruel",
@@ -4272,7 +4272,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "323": {
       "id": 323,
       "front": "in handy",
       "back": "a calhar",
@@ -4282,7 +4282,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "324": {
       "id": 324,
       "front": "gloss",
       "back": "brilho",
@@ -4295,7 +4295,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "325": {
       "id": 325,
       "front": "defer",
       "back": "adiar",
@@ -4308,7 +4308,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "326": {
       "id": 326,
       "front": "statement",
       "back": "declaração",
@@ -4321,7 +4321,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "327": {
       "id": 327,
       "front": "closure",
       "back": "encerramento",
@@ -4334,7 +4334,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "328": {
       "id": 328,
       "front": "mindful",
       "back": "atento",
@@ -4347,7 +4347,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "329": {
       "id": 329,
       "front": "laid",
       "back": "colocado",
@@ -4360,7 +4360,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "330": {
       "id": 330,
       "front": "lay",
       "back": "colocar",
@@ -4373,7 +4373,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "331": {
       "id": 331,
       "front": "take in",
       "back": "assimilar",
@@ -4389,7 +4389,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "332": {
       "id": 332,
       "front": "error prone",
       "back": "propenso a erros",
@@ -4399,7 +4399,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "333": {
       "id": 333,
       "front": "middleman",
       "back": "intermediário",
@@ -4409,7 +4409,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "334": {
       "id": 334,
       "front": "rather",
       "back": "bastante",
@@ -4426,7 +4426,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "335": {
       "id": 335,
       "front": "drip",
       "back": "gota / gotejamento",
@@ -4439,7 +4439,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "336": {
       "id": 336,
       "front": "dummy",
       "back": "fictício / simulado",
@@ -4453,7 +4453,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "337": {
       "id": 337,
       "front": "windchill",
       "back": "sensação térmica",
@@ -4466,7 +4466,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "338": {
       "id": 338,
       "front": "stiff",
       "back": "duro / rígido",
@@ -4479,7 +4479,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "339": {
       "id": 339,
       "front": "beam",
       "back": "emitir / transmitir",
@@ -4492,7 +4492,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "340": {
       "id": 340,
       "front": "pity",
       "back": "pena",
@@ -4507,7 +4507,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "341": {
       "id": 341,
       "front": "grief",
       "back": "tristeza",
@@ -4522,7 +4522,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "342": {
       "id": 342,
       "front": "cough",
       "back": "tosse",
@@ -4535,7 +4535,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "343": {
       "id": 343,
       "front": "hand off",
       "back": "entregar (responsabilidade)",
@@ -4551,7 +4551,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "344": {
       "id": 344,
       "front": "yield",
       "back": "produção",
@@ -4564,7 +4564,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "345": {
       "id": 345,
       "front": "hinge on",
       "back": "depender de",
@@ -4577,7 +4577,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "346": {
       "id": 346,
       "front": "in a pinch",
       "back": "in a critical situation; if absolutely necessary.",
@@ -4594,7 +4594,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "347": {
       "id": 347,
       "front": "misuse",
       "back": "uso indevido",
@@ -4604,7 +4604,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "348": {
       "id": 348,
       "front": "gotcha",
       "back": "pegadinha",
@@ -4618,7 +4618,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "349": {
       "id": 349,
       "front": "stand",
       "back": "barraca / bancada",
@@ -4635,7 +4635,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "350": {
       "id": 350,
       "front": "perk",
       "back": "vantagem",
@@ -4649,7 +4649,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "351": {
       "id": 351,
       "front": "nested",
       "back": "aninhado",
@@ -4659,7 +4659,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "352": {
       "id": 352,
       "front": "whichever",
       "back": "qualquer... que/ o que ",
@@ -4676,7 +4676,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "353": {
       "id": 353,
       "front": "embed",
       "back": "incorporar",
@@ -4689,7 +4689,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "354": {
       "id": 354,
       "front": "it goes without saying",
       "back": "é evidente",
@@ -4702,7 +4702,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "355": {
       "id": 355,
       "front": "overhead",
       "back": "sobrecarga",
@@ -4715,7 +4715,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "356": {
       "id": 356,
       "front": "devise",
       "back": "inventar / criar",
@@ -4728,7 +4728,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "357": {
       "id": 357,
       "front": "curl",
       "back": "enrolar",
@@ -4741,7 +4741,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "358": {
       "id": 358,
       "front": "groundbreaking",
       "back": "inovador",
@@ -4754,7 +4754,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "359": {
       "id": 359,
       "front": "sales pitch",
       "back": "discurso de vendas",
@@ -4767,7 +4767,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "360": {
       "id": 360,
       "front": "cringe",
       "back": "encolher (medo)",
@@ -4780,7 +4780,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "361": {
       "id": 361,
       "front": "daily basis",
       "back": "diariamente",
@@ -4793,7 +4793,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "362": {
       "id": 362,
       "front": "splash page",
       "back": "página de apresentação",
@@ -4806,7 +4806,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "363": {
       "id": 363,
       "front": "bureau",
       "back": "departamento / escritório (governo)",
@@ -4819,7 +4819,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "364": {
       "id": 364,
       "front": "boilerplate",
       "back": "padrão; texto ou código que deve ser usado com pouca alteração",
@@ -4832,7 +4832,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "365": {
       "id": 365,
       "front": "outright",
       "back": "completamente; completo / definitivo",
@@ -4850,7 +4850,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "366": {
       "id": 366,
       "front": "inherit",
       "back": "herdar",
@@ -4863,7 +4863,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "367": {
       "id": 367,
       "front": "sting",
       "back": "doer",
@@ -4879,7 +4879,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "368": {
       "id": 368,
       "front": "pram",
       "back": "carrinho de bebê",
@@ -4892,7 +4892,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "369": {
       "id": 369,
       "front": "screw up",
       "back": "estragar",
@@ -4905,7 +4905,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "370": {
       "id": 370,
       "front": "ordeal",
       "back": "angustia / sofrimento",
@@ -4922,7 +4922,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "371": {
       "id": 371,
       "front": "back",
       "back": "apoiar",
@@ -4940,7 +4940,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "372": {
       "id": 372,
       "front": "undoubtedly",
       "back": "sem dúvida",
@@ -4953,7 +4953,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "373": {
       "id": 373,
       "front": "thus",
       "back": "assim",
@@ -4966,7 +4966,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "374": {
       "id": 374,
       "front": "mutter",
       "back": "murmurar",
@@ -4979,7 +4979,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "375": {
       "id": 375,
       "front": "bang",
       "back": "bater",
@@ -4992,7 +4992,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "376": {
       "id": 376,
       "front": "over",
       "back": "sobre",
@@ -5005,7 +5005,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "377": {
       "id": 377,
       "front": "order",
       "back": "encomenda; pedir",
@@ -5019,7 +5019,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "378": {
       "id": 378,
       "front": "credence",
       "back": "crédito",
@@ -5033,7 +5033,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "379": {
       "id": 379,
       "front": "craftsmanship",
       "back": "habilidade; artesanato",
@@ -5043,7 +5043,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "380": {
       "id": 380,
       "front": "over and over",
       "back": "repetidas vezes",
@@ -5053,7 +5053,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "381": {
       "id": 381,
       "front": "keen",
       "back": "entusiasmado",
@@ -5069,7 +5069,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "382": {
       "id": 382,
       "front": "eschew",
       "back": "evitar",
@@ -5085,7 +5085,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "383": {
       "id": 383,
       "front": "ruth",
       "back": "piedade",
@@ -5098,7 +5098,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "384": {
       "id": 384,
       "front": "overhaul",
       "back": "revisão; reformular",
@@ -5116,7 +5116,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "385": {
       "id": 385,
       "front": "void",
       "back": "vazio",
@@ -5129,7 +5129,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "386": {
       "id": 386,
       "front": "eye-opening",
       "back": "revelador",
@@ -5145,7 +5145,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "387": {
       "id": 387,
       "front": "the bulk of",
       "back": "maior parte de",
@@ -5158,7 +5158,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "388": {
       "id": 388,
       "front": "shelf life",
       "back": "vida útil",
@@ -5172,7 +5172,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "389": {
       "id": 389,
       "front": "entitle",
       "back": "dar direito",
@@ -5188,7 +5188,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "390": {
       "id": 390,
       "front": "it was about time",
       "back": "já era hora",
@@ -5198,7 +5198,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "391": {
       "id": 391,
       "front": "term",
       "back": "prazo",
@@ -5211,7 +5211,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "392": {
       "id": 392,
       "front": "rely on",
       "back": "confiar em",
@@ -5227,7 +5227,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "393": {
       "id": 393,
       "front": "ride",
       "back": "passeio",
@@ -5240,7 +5240,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "394": {
       "id": 394,
       "front": "take a look at",
       "back": "dê uma olhada; olhar",
@@ -5253,7 +5253,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "395": {
       "id": 395,
       "front": "realm",
       "back": "reino",
@@ -5266,7 +5266,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "396": {
       "id": 396,
       "front": "asap",
       "back": "assim que possível",
@@ -5279,7 +5279,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "397": {
       "id": 397,
       "front": "seamless",
       "back": "perfeito",
@@ -5292,7 +5292,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "398": {
       "id": 398,
       "front": "surpass",
       "back": "ultrapassar",
@@ -5305,7 +5305,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "399": {
       "id": 399,
       "front": "stitch",
       "back": "costurar",
@@ -5318,7 +5318,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "400": {
       "id": 400,
       "front": "subtle",
       "back": "sutil",
@@ -5331,7 +5331,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "401": {
       "id": 401,
       "front": "move away",
       "back": "afastar",
@@ -5344,7 +5344,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "402": {
       "id": 402,
       "front": "book",
       "back": "reservar",
@@ -5357,7 +5357,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "403": {
       "id": 403,
       "front": "hail",
       "back": "chamar",
@@ -5370,7 +5370,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "404": {
       "id": 404,
       "front": "stress",
       "back": "enfatizar",
@@ -5384,7 +5384,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "405": {
       "id": 405,
       "front": "plethora",
       "back": "infinidade",
@@ -5398,7 +5398,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "406": {
       "id": 406,
       "front": "get-go",
       "back": "início",
@@ -5412,7 +5412,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "407": {
       "id": 407,
       "front": "coin",
       "back": "cunhar",
@@ -5425,7 +5425,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "408": {
       "id": 408,
       "front": "boar",
       "back": "javali",
@@ -5438,7 +5438,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "409": {
       "id": 409,
       "front": "hut",
       "back": "cabana",
@@ -5451,7 +5451,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "410": {
       "id": 410,
       "front": "worthwhile",
       "back": "que vale a pena",
@@ -5464,7 +5464,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "411": {
       "id": 411,
       "front": "weave",
       "back": "tecer",
@@ -5477,7 +5477,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "412": {
       "id": 412,
       "front": "muddle",
       "back": "confusão / trapalhada",
@@ -5496,7 +5496,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "413": {
       "id": 413,
       "front": "nasty",
       "back": "desagradável",
@@ -5512,7 +5512,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "414": {
       "id": 414,
       "front": "meanwhile",
       "back": "enquanto isso",
@@ -5522,7 +5522,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "415": {
       "id": 415,
       "front": "swear",
       "back": "jurar",
@@ -5535,7 +5535,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "416": {
       "id": 416,
       "front": "ahead",
       "back": "adiante",
@@ -5548,7 +5548,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "417": {
       "id": 417,
       "front": "daunt",
       "back": "assustar / intimidar",
@@ -5564,7 +5564,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "418": {
       "id": 418,
       "front": "obtrusive",
       "back": "indiscreto",
@@ -5577,7 +5577,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "419": {
       "id": 419,
       "front": "harm",
       "back": "prejuízo; prejudicar",
@@ -5591,7 +5591,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "420": {
       "id": 420,
       "front": "payload",
       "back": "carga util",
@@ -5604,7 +5604,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "421": {
       "id": 421,
       "front": "pour",
       "back": "despejar",
@@ -5617,7 +5617,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "422": {
       "id": 422,
       "front": "even number",
       "back": "numero par",
@@ -5630,7 +5630,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "423": {
       "id": 423,
       "front": "spring",
       "back": "saltar; mola",
@@ -5645,7 +5645,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "424": {
       "id": 424,
       "front": "bother",
       "back": "preocupar; incomodar",
@@ -5661,7 +5661,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "425": {
       "id": 425,
       "front": "plumbing",
       "back": "encanamento",
@@ -5675,7 +5675,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "426": {
       "id": 426,
       "front": "pierce",
       "back": "perfurar",
@@ -5688,7 +5688,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "427": {
       "id": 427,
       "front": "excuse me",
       "back": "com licença",
@@ -5702,7 +5702,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "428": {
       "id": 428,
       "front": "assessment",
       "back": "avaliação",
@@ -5718,7 +5718,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "429": {
       "id": 429,
       "front": "recall",
       "back": "recordar",
@@ -5731,7 +5731,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "430": {
       "id": 430,
       "front": "tidy up",
       "back": "arrumar",
@@ -5747,7 +5747,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "431": {
       "id": 431,
       "front": "i had",
       "back": "eu tinha",
@@ -5757,7 +5757,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "432": {
       "id": 432,
       "front": "plain",
       "back": "simples",
@@ -5771,7 +5771,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "433": {
       "id": 433,
       "front": "embodiment",
       "back": "encarnação",
@@ -5785,7 +5785,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "434": {
       "id": 434,
       "front": "buildup",
       "back": "acumulação",
@@ -5803,7 +5803,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "435": {
       "id": 435,
       "front": "further",
       "back": "promover",
@@ -5819,7 +5819,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "436": {
       "id": 436,
       "front": "jaw",
       "back": "mandíbula",
@@ -5832,7 +5832,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "437": {
       "id": 437,
       "front": "dire",
       "back": "terrível",
@@ -5848,7 +5848,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "438": {
       "id": 438,
       "front": "overlook",
       "back": "negligenciar",
@@ -5861,7 +5861,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "439": {
       "id": 439,
       "front": "resemble",
       "back": "assemelhar / parecer",
@@ -5874,7 +5874,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "440": {
       "id": 440,
       "front": "bumpy",
       "back": "irregular",
@@ -5890,7 +5890,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "441": {
       "id": 441,
       "front": "takeaway",
       "back": "ponto chave; conclusão",
@@ -5900,7 +5900,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "442": {
       "id": 442,
       "front": "range",
       "back": "alcance",
@@ -5914,7 +5914,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "443": {
       "id": 443,
       "front": "squeeze",
       "back": "espremer",
@@ -5931,7 +5931,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "444": {
       "id": 444,
       "front": "a follow up",
       "back": "uma continuação",
@@ -5945,7 +5945,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "445": {
       "id": 445,
       "front": "succeed",
       "back": "ter êxito",
@@ -5958,7 +5958,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "446": {
       "id": 446,
       "front": "pool of",
       "back": "grupo de",
@@ -5971,7 +5971,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "447": {
       "id": 447,
       "front": "to state",
       "back": "afirmar; declarar",
@@ -5984,7 +5984,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "448": {
       "id": 448,
       "front": "regard",
       "back": "considerar",
@@ -6000,7 +6000,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "449": {
       "id": 449,
       "front": "yarn",
       "back": "fio",
@@ -6015,7 +6015,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "450": {
       "id": 450,
       "front": "counterpart",
       "back": "homólogo; parceiro",
@@ -6032,7 +6032,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "451": {
       "id": 451,
       "front": "worship",
       "back": "adoração / adorar",
@@ -6049,7 +6049,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "452": {
       "id": 452,
       "front": "loom",
       "back": "![](https://woolery.com/media/catalog/product/cache/1/image/767x/9df78eab33525d08d6e5fb8d27136e95/a/s/ash-jack-loom2.jpg)\ntear",
@@ -6063,7 +6063,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "453": {
       "id": 453,
       "front": "woe betide anyone",
       "back": "ai de qualquer pessoa",
@@ -6079,7 +6079,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "454": {
       "id": 454,
       "front": "reliable",
       "back": "confiável",
@@ -6092,7 +6092,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "455": {
       "id": 455,
       "front": "endeavor",
       "back": "esforço",
@@ -6109,7 +6109,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "456": {
       "id": 456,
       "front": "depart",
       "back": "partir / sair",
@@ -6122,7 +6122,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "457": {
       "id": 457,
       "front": "adhere",
       "back": "aderir",
@@ -6138,7 +6138,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "458": {
       "id": 458,
       "front": "ripe",
       "back": "maduro",
@@ -6154,7 +6154,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "459": {
       "id": 459,
       "front": "mortgage",
       "back": "hipoteca",
@@ -6167,7 +6167,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "460": {
       "id": 460,
       "front": "terrific",
       "back": "formidável",
@@ -6180,7 +6180,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "461": {
       "id": 461,
       "front": "in the meantime",
       "back": "enquanto isso",
@@ -6190,7 +6190,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "462": {
       "id": 462,
       "front": "broker",
       "back": "intermediário",
@@ -6207,7 +6207,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "463": {
       "id": 463,
       "front": "as well as (something)",
       "back": "assim como (algo)",
@@ -6223,7 +6223,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "464": {
       "id": 464,
       "front": "to provide",
       "back": "fornecer",
@@ -6236,7 +6236,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "465": {
       "id": 465,
       "front": "answer",
       "back": "atender; responder",
@@ -6249,7 +6249,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "466": {
       "id": 466,
       "front": "regrettably",
       "back": "lamentavelmente",
@@ -6265,7 +6265,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "467": {
       "id": 467,
       "front": "newcomer",
       "back": "recém-chegado",
@@ -6275,7 +6275,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "468": {
       "id": 468,
       "front": "beforehand",
       "back": "antecipadamente",
@@ -6291,7 +6291,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "469": {
       "id": 469,
       "front": "moreover",
       "back": "além disso",
@@ -6307,7 +6307,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "470": {
       "id": 470,
       "front": "been through",
       "back": "passou por",
@@ -6320,7 +6320,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "471": {
       "id": 471,
       "front": "bear in mind",
       "back": "ter em mente",
@@ -6333,7 +6333,7 @@
       "repetitions": 10,
       "lang": "en"
     },
-    {
+    "472": {
       "id": 472,
       "front": "get to it",
       "back": "começar a fazer isso",
@@ -6350,7 +6350,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "473": {
       "id": 473,
       "front": "stake",
       "back": "participação",
@@ -6369,7 +6369,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "474": {
       "id": 474,
       "front": "chuckle",
       "back": "a quiet or suppressed laugh",
@@ -6383,7 +6383,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "475": {
       "id": 475,
       "front": "pivot",
       "back": "sudden; rapid change of direction and focus",
@@ -6397,7 +6397,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "476": {
       "id": 476,
       "front": "handheld",
       "back": "portátil",
@@ -6413,7 +6413,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "477": {
       "id": 477,
       "front": "so as to",
       "back": "de modo a / a fim de / para",
@@ -6430,7 +6430,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "478": {
       "id": 478,
       "front": "injury",
       "back": "prejuízo",
@@ -6443,7 +6443,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "479": {
       "id": 479,
       "front": "take its toll",
       "back": "ter um efeito adverso",
@@ -6461,7 +6461,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "480": {
       "id": 480,
       "front": "depose",
       "back": "destituir / depor",
@@ -6474,7 +6474,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "481": {
       "id": 481,
       "front": "heir",
       "back": "herdeiro",
@@ -6487,7 +6487,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "482": {
       "id": 482,
       "front": "withdraw",
       "back": "retirar",
@@ -6500,7 +6500,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "483": {
       "id": 483,
       "front": "deal-breaker",
       "back": "a factor or issue that; if unresolved during negotiations, would cause one party to withdraw from a deal",
@@ -6513,7 +6513,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "484": {
       "id": 484,
       "front": "equity",
       "back": "capital próprio",
@@ -6530,7 +6530,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "485": {
       "id": 485,
       "front": "occur to",
       "back": "vir à mente",
@@ -6546,7 +6546,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "486": {
       "id": 486,
       "front": "ambush",
       "back": "emboscada",
@@ -6559,7 +6559,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "487": {
       "id": 487,
       "front": "it's not my call",
       "back": "não é minha decisão",
@@ -6569,7 +6569,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "488": {
       "id": 488,
       "front": "the balls on you",
       "back": "azar o seu",
@@ -6583,7 +6583,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "489": {
       "id": 489,
       "front": "shareholder",
       "back": "acionista",
@@ -6596,7 +6596,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "490": {
       "id": 490,
       "front": "leg",
       "back": "trecho / trajeto",
@@ -6613,7 +6613,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "491": {
       "id": 491,
       "front": "wriggle out",
       "back": "se safar / escapar",
@@ -6630,7 +6630,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "492": {
       "id": 492,
       "front": "headwind",
       "back": "vento contrário",
@@ -6643,7 +6643,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "493": {
       "id": 493,
       "front": "strike",
       "back": "ataque",
@@ -6657,7 +6657,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "494": {
       "id": 494,
       "front": "inquiry",
       "back": "inquérito",
@@ -6670,7 +6670,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "495": {
       "id": 495,
       "front": "foregoing",
       "back": "precedente / o que precede",
@@ -6687,7 +6687,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "496": {
       "id": 496,
       "front": "libel",
       "back": "difamar / difamação",
@@ -6701,7 +6701,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "497": {
       "id": 497,
       "front": "assess",
       "back": "avaliar",
@@ -6714,7 +6714,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "498": {
       "id": 498,
       "front": "peek",
       "back": "espiar",
@@ -6727,7 +6727,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "499": {
       "id": 499,
       "front": "astonish",
       "back": "surpreender",
@@ -6743,7 +6743,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "500": {
       "id": 500,
       "front": "trial",
       "back": "tentativa / teste",
@@ -6759,7 +6759,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "501": {
       "id": 501,
       "front": "toll",
       "back": "pedágio",
@@ -6772,7 +6772,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "502": {
       "id": 502,
       "front": "flatter",
       "back": "bajular / elogiar",
@@ -6785,7 +6785,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "503": {
       "id": 503,
       "front": "won't budge",
       "back": "não abrir mão",
@@ -6798,7 +6798,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "504": {
       "id": 504,
       "front": "i'm down",
       "back": "eu concordo com isso",
@@ -6812,7 +6812,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "505": {
       "id": 505,
       "front": "esteem",
       "back": "estima",
@@ -6828,7 +6828,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "506": {
       "id": 506,
       "front": "deem",
       "back": "considerar",
@@ -6844,7 +6844,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "507": {
       "id": 507,
       "front": "evince",
       "back": "evidenciar",
@@ -6857,7 +6857,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "508": {
       "id": 508,
       "front": "persecution",
       "back": "perseguição",
@@ -6870,7 +6870,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "509": {
       "id": 509,
       "front": "dissenter",
       "back": "dissidente",
@@ -6883,7 +6883,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "510": {
       "id": 510,
       "front": "outlying",
       "back": "distante",
@@ -6899,7 +6899,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "511": {
       "id": 511,
       "front": "concern",
       "back": "preocupação; interesse",
@@ -6916,7 +6916,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "512": {
       "id": 512,
       "front": "arouse",
       "back": "despertar",
@@ -6932,7 +6932,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "513": {
       "id": 513,
       "front": "amass",
       "back": "acumular",
@@ -6949,7 +6949,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "514": {
       "id": 514,
       "front": "undermine",
       "back": "minar",
@@ -6965,7 +6965,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "515": {
       "id": 515,
       "front": "altogether",
       "back": "completamente",
@@ -6981,7 +6981,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "516": {
       "id": 516,
       "front": "take the piss out",
       "back": "zombar",
@@ -6998,7 +6998,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "517": {
       "id": 517,
       "front": "feasibility",
       "back": "viabilidade",
@@ -7011,7 +7011,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "518": {
       "id": 518,
       "front": "silly",
       "back": "idiota",
@@ -7024,7 +7024,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "519": {
       "id": 519,
       "front": "leap",
       "back": "salto",
@@ -7037,7 +7037,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "520": {
       "id": 520,
       "front": "to spark",
       "back": "provocar / despertar",
@@ -7054,7 +7054,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "521": {
       "id": 521,
       "front": "have/take a stab",
       "back": "tentar fazer algo",
@@ -7070,7 +7070,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "522": {
       "id": 522,
       "front": "carry out",
       "back": "levar algo adiante",
@@ -7086,7 +7086,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "523": {
       "id": 523,
       "front": "to lay out",
       "back": "dispor / arranjar",
@@ -7099,7 +7099,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "524": {
       "id": 524,
       "front": "gist",
       "back": "essência; essencial",
@@ -7116,7 +7116,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "525": {
       "id": 525,
       "front": "glean",
       "back": "coletar",
@@ -7133,7 +7133,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "526": {
       "id": 526,
       "front": "draw attention",
       "back": "chamar atenção",
@@ -7150,7 +7150,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "527": {
       "id": 527,
       "front": "zero in",
       "back": "direcionar atenção",
@@ -7166,7 +7166,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "528": {
       "id": 528,
       "front": "issuer",
       "back": "emissor",
@@ -7182,7 +7182,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "529": {
       "id": 529,
       "front": "crown",
       "back": "coroa",
@@ -7196,7 +7196,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "530": {
       "id": 530,
       "front": "nail",
       "back": "pregar / prego",
@@ -7213,7 +7213,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "531": {
       "id": 531,
       "front": "upon",
       "back": "sobre",
@@ -7226,7 +7226,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "532": {
       "id": 532,
       "front": "overarching",
       "back": "abrangente",
@@ -7239,7 +7239,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "533": {
       "id": 533,
       "front": "in a nutshell",
       "back": "em poucas palavras",
@@ -7252,7 +7252,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "534": {
       "id": 534,
       "front": "spare",
       "back": "poupar",
@@ -7268,7 +7268,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "535": {
       "id": 535,
       "front": "lie",
       "back": "estar / ficar",
@@ -7284,7 +7284,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "536": {
       "id": 536,
       "front": "halt",
       "back": "parar",
@@ -7297,7 +7297,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "537": {
       "id": 537,
       "front": "draw near/close",
       "back": "aproximar-se",
@@ -7313,7 +7313,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "538": {
       "id": 538,
       "front": "renown",
       "back": "renome",
@@ -7329,7 +7329,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "539": {
       "id": 539,
       "front": "barely",
       "back": "mal / dificilmente",
@@ -7342,7 +7342,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "540": {
       "id": 540,
       "front": "accomplish",
       "back": "realizar / concluir",
@@ -7355,7 +7355,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "541": {
       "id": 541,
       "front": "set out",
       "back": "propor",
@@ -7372,7 +7372,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "542": {
       "id": 542,
       "front": "aptly",
       "back": "adequadamente / apropriadamente",
@@ -7385,7 +7385,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "543": {
       "id": 543,
       "front": "caveat",
       "back": "ressalva",
@@ -7403,7 +7403,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "544": {
       "id": 544,
       "front": "ingrain",
       "back": "enraizar /  impregnar / incorporar",
@@ -7419,7 +7419,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "545": {
       "id": 545,
       "front": "it wasn't until",
       "back": "foi depois / foi quando",
@@ -7435,7 +7435,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "546": {
       "id": 546,
       "front": "dull",
       "back": "chato",
@@ -7451,7 +7451,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "547": {
       "id": 547,
       "front": "finicky",
       "back": "minuciosa",
@@ -7464,7 +7464,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "548": {
       "id": 548,
       "front": "account",
       "back": "levar algo em conta",
@@ -7478,7 +7478,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "549": {
       "id": 549,
       "front": "cleanse",
       "back": "limpar",
@@ -7494,7 +7494,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "550": {
       "id": 550,
       "front": "stem",
       "back": "haste",
@@ -7508,7 +7508,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "551": {
       "id": 551,
       "front": "survey",
       "back": "inquérito / pesquisa / analisar / levantamento",
@@ -7525,7 +7525,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "552": {
       "id": 552,
       "front": "postpone",
       "back": "postergar",
@@ -7538,7 +7538,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "553": {
       "id": 553,
       "front": "foil",
       "back": "![](https://3fybkfrr10x3tgp41p45lr3a-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/v7htnoe.gif)\nfolha (metálica) / lâmina",
@@ -7552,7 +7552,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "554": {
       "id": 554,
       "front": "rapport",
       "back": "conexão (relacionamento)",
@@ -7566,7 +7566,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "555": {
       "id": 555,
       "front": "upfront",
       "back": "antecipado",
@@ -7581,7 +7581,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "556": {
       "id": 556,
       "front": "prospect",
       "back": "perspectiva",
@@ -7598,7 +7598,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "557": {
       "id": 557,
       "front": "crave",
       "back": "desejar / almejar",
@@ -7615,7 +7615,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "558": {
       "id": 558,
       "front": "savior",
       "back": "salvador",
@@ -7628,7 +7628,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "559": {
       "id": 559,
       "front": "drawer",
       "back": "gaveta",
@@ -7642,7 +7642,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "560": {
       "id": 560,
       "front": "resonate",
       "back": "ressoar",
@@ -7655,7 +7655,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "561": {
       "id": 561,
       "front": "take on",
       "back": "assumir",
@@ -7671,7 +7671,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "562": {
       "id": 562,
       "front": "soar",
       "back": "subir / voar",
@@ -7687,7 +7687,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "563": {
       "id": 563,
       "front": "sink",
       "back": "afundar",
@@ -7700,7 +7700,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "564": {
       "id": 564,
       "front": "gateway",
       "back": "porta de entrada",
@@ -7713,7 +7713,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "565": {
       "id": 565,
       "front": "neatly",
       "back": "ordenadamente / cuidadosamente",
@@ -7726,7 +7726,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "566": {
       "id": 566,
       "front": "fashion",
       "back": "forma",
@@ -7739,7 +7739,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "567": {
       "id": 567,
       "front": "factor (something) into",
       "back": "levar (algo) em conta",
@@ -7749,7 +7749,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "568": {
       "id": 568,
       "front": "overwhelming",
       "back": "esmagador",
@@ -7769,7 +7769,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "569": {
       "id": 569,
       "front": "tense",
       "back": "tempo (tempo verbal)",
@@ -7786,7 +7786,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "570": {
       "id": 570,
       "front": "along with",
       "back": "junto com",
@@ -7802,7 +7802,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "571": {
       "id": 571,
       "front": "take a toll",
       "back": "afetar",
@@ -7818,7 +7818,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "572": {
       "id": 572,
       "front": "mean",
       "back": "meio",
@@ -7832,7 +7832,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "573": {
       "id": 573,
       "front": "mercy",
       "back": "misericórdia",
@@ -7847,7 +7847,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "574": {
       "id": 574,
       "front": "beside",
       "back": "ao lado",
@@ -7860,7 +7860,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "575": {
       "id": 575,
       "front": "sparingly",
       "back": "com moderação",
@@ -7873,7 +7873,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "576": {
       "id": 576,
       "front": "transient",
       "back": "transitório / passageiro",
@@ -7889,7 +7889,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "577": {
       "id": 577,
       "front": "timely",
       "back": "oportuno",
@@ -7905,7 +7905,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "578": {
       "id": 578,
       "front": "degrade",
       "back": "rebaixar",
@@ -7919,7 +7919,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "579": {
       "id": 579,
       "front": "to depart from",
       "back": "afastar-se",
@@ -7935,7 +7935,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "580": {
       "id": 580,
       "front": "feature",
       "back": "característica",
@@ -7951,7 +7951,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "581": {
       "id": 581,
       "front": "pose",
       "back": "apresentar / constituir",
@@ -7969,7 +7969,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "582": {
       "id": 582,
       "front": "compound",
       "back": "compor",
@@ -7982,7 +7982,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "583": {
       "id": 583,
       "front": "a great deal of",
       "back": "uma grande quantidade de",
@@ -7992,7 +7992,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "584": {
       "id": 584,
       "front": "pervasive",
       "back": "dominante / penetrante",
@@ -8009,7 +8009,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "585": {
       "id": 585,
       "front": "boarding",
       "back": "embarque",
@@ -8022,7 +8022,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "586": {
       "id": 586,
       "front": "oddball",
       "back": "excêntrico",
@@ -8035,7 +8035,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "587": {
       "id": 587,
       "front": "bunch",
       "back": "grupo",
@@ -8048,7 +8048,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "588": {
       "id": 588,
       "front": "chill out",
       "back": "relaxar",
@@ -8061,7 +8061,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "589": {
       "id": 589,
       "front": "purpose",
       "back": "fim / propósito",
@@ -8075,7 +8075,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "590": {
       "id": 590,
       "front": "compliment",
       "back": "elogio",
@@ -8088,7 +8088,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "591": {
       "id": 591,
       "front": "whisper",
       "back": "sussurro / sussurrar",
@@ -8103,7 +8103,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "592": {
       "id": 592,
       "front": "sue",
       "back": "processar",
@@ -8116,7 +8116,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "593": {
       "id": 593,
       "front": "shatter",
       "back": "quebrar",
@@ -8129,7 +8129,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "594": {
       "id": 594,
       "front": "seasoned",
       "back": "experiente",
@@ -8142,7 +8142,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "595": {
       "id": 595,
       "front": "heed",
       "back": "atenção",
@@ -8160,7 +8160,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "596": {
       "id": 596,
       "front": "maneuver",
       "back": "manobra",
@@ -8174,7 +8174,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "597": {
       "id": 597,
       "front": "drift",
       "back": "deriva",
@@ -8187,7 +8187,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "598": {
       "id": 598,
       "front": "handy",
       "back": "útil / conveniente / acessível",
@@ -8200,7 +8200,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "599": {
       "id": 599,
       "front": "paramount",
       "back": "primordial",
@@ -8218,7 +8218,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "600": {
       "id": 600,
       "front": "rehearse",
       "back": "ensaiar",
@@ -8234,7 +8234,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "601": {
       "id": 601,
       "front": "commit",
       "back": "comprometer-se; cometer",
@@ -8247,7 +8247,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "602": {
       "id": 602,
       "front": "floss",
       "back": "fio dental / usar o fio dental",
@@ -8261,7 +8261,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "603": {
       "id": 603,
       "front": "payoff",
       "back": "recompensa",
@@ -8275,7 +8275,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "604": {
       "id": 604,
       "front": "ensure",
       "back": "garantir",
@@ -8288,7 +8288,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "605": {
       "id": 605,
       "front": "tray",
       "back": "bandeja",
@@ -8302,7 +8302,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "606": {
       "id": 606,
       "front": "allusion",
       "back": "alusão",
@@ -8315,7 +8315,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "607": {
       "id": 607,
       "front": "being able",
       "back": "poder / ser capaz",
@@ -8325,7 +8325,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "608": {
       "id": 608,
       "front": "may",
       "back": "pode / poder",
@@ -8338,7 +8338,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "609": {
       "id": 609,
       "front": "fiddle",
       "back": "adulterar / fraudar",
@@ -8355,7 +8355,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "610": {
       "id": 610,
       "front": "seldom",
       "back": "raramente",
@@ -8371,7 +8371,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "611": {
       "id": 611,
       "front": "desensitize",
       "back": "dessensibilizar",
@@ -8384,7 +8384,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "612": {
       "id": 612,
       "front": "surmount",
       "back": "![](http://www.mensagensonline.com.br/file/mensagem/mensagens/383/voce-pode-superar.jpg)**superar**",
@@ -8401,7 +8401,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "613": {
       "id": 613,
       "front": "binge",
       "back": "farra / bebedeira",
@@ -8418,7 +8418,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "614": {
       "id": 614,
       "front": "put off",
       "back": "adiar",
@@ -8434,7 +8434,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "615": {
       "id": 615,
       "front": "offset",
       "back": "compensar",
@@ -8451,7 +8451,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "616": {
       "id": 616,
       "front": "guise",
       "back": "disfarce",
@@ -8468,7 +8468,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "617": {
       "id": 617,
       "front": "falter",
       "back": "vacilar",
@@ -8484,7 +8484,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "618": {
       "id": 618,
       "front": "savor",
       "back": "saborear",
@@ -8500,7 +8500,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "619": {
       "id": 619,
       "front": "marvel",
       "back": "maravilhar / maravilha",
@@ -8514,7 +8514,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "620": {
       "id": 620,
       "front": "pat",
       "back": "bater de leve",
@@ -8529,7 +8529,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "621": {
       "id": 621,
       "front": "wired",
       "back": "ligado",
@@ -8545,7 +8545,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "622": {
       "id": 622,
       "front": "urge",
       "back": "impulso",
@@ -8559,7 +8559,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "623": {
       "id": 623,
       "front": "compliance",
       "back": "conformidade / acordo",
@@ -8572,7 +8572,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "624": {
       "id": 624,
       "front": "cater to (something / somebody)",
       "back": "satisfazer (algo / alguém)",
@@ -8589,7 +8589,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "625": {
       "id": 625,
       "front": "hoop",
       "back": "aro ![](http://virtualbmx.com.br/1073/aro-mob-one-preto.jpg)",
@@ -8607,7 +8607,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "626": {
       "id": 626,
       "front": "quieten down",
       "back": "acalme-se",
@@ -8621,7 +8621,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "627": {
       "id": 627,
       "front": "there's the rub",
       "back": "aí que está o problema",
@@ -8631,7 +8631,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "628": {
       "id": 628,
       "front": "unfulfilling",
       "back": "insatisfatório",
@@ -8647,7 +8647,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "629": {
       "id": 629,
       "front": "keel over",
       "back": "desmaiar",
@@ -8663,7 +8663,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "630": {
       "id": 630,
       "front": "unrelenting",
       "back": "implacável",
@@ -8680,7 +8680,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "631": {
       "id": 631,
       "front": "sought",
       "back": "buscou",
@@ -8694,7 +8694,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "632": {
       "id": 632,
       "front": "resolve",
       "back": "determinação",
@@ -8713,7 +8713,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "633": {
       "id": 633,
       "front": "it’s a given",
       "back": "é certo / é sabido",
@@ -8723,7 +8723,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "634": {
       "id": 634,
       "front": "shelf",
       "back": "prateleira",
@@ -8737,7 +8737,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "635": {
       "id": 635,
       "front": "queue",
       "back": "fila",
@@ -8750,7 +8750,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "636": {
       "id": 636,
       "front": "hollow",
       "back": "oco",
@@ -8763,7 +8763,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "637": {
       "id": 637,
       "front": "line",
       "back": "fila",
@@ -8777,7 +8777,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "638": {
       "id": 638,
       "front": "odds",
       "back": "probabilidades",
@@ -8791,7 +8791,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "639": {
       "id": 639,
       "front": "rub off",
       "back": "![](https://gartic.com.br/imgs/mural/er/eryckstange/contagiar.png)  \n**contagiar**",
@@ -8807,7 +8807,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "640": {
       "id": 640,
       "front": "strike up",
       "back": "começar (uma conversa / música)",
@@ -8824,7 +8824,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "641": {
       "id": 641,
       "front": "forkful",
       "back": "garfada",
@@ -8840,7 +8840,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "642": {
       "id": 642,
       "front": "slug it out",
       "back": "![](https://i.ytimg.com/vi/QeG1AV9aDIQ/hqdefault.jpg)enfrentar",
@@ -8857,7 +8857,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "643": {
       "id": 643,
       "front": "spent",
       "back": "exausto",
@@ -8871,7 +8871,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "644": {
       "id": 644,
       "front": "endure",
       "back": "![Endure](https://www.tom2tall.com/images/MichaelChitwoodAuthorSpeakerHumanitarian.png) suportar",
@@ -8888,7 +8888,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "645": {
       "id": 645,
       "front": "bottom line",
       "back": "balanço final / o essencial",
@@ -8906,7 +8906,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "646": {
       "id": 646,
       "front": "triple down",
       "back": "to double or significantly increase a risk; investment, or other commitment",
@@ -8919,7 +8919,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "647": {
       "id": 647,
       "front": "badly",
       "back": "gravemente",
@@ -8936,7 +8936,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "648": {
       "id": 648,
       "front": "give or take",
       "back": "mais ou menos",
@@ -8952,7 +8952,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "649": {
       "id": 649,
       "front": "flashy",
       "back": "chamativo",
@@ -8968,7 +8968,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "650": {
       "id": 650,
       "front": "comes down to",
       "back": "se resume a",
@@ -8981,7 +8981,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "651": {
       "id": 651,
       "front": "turn out",
       "back": "resultar",
@@ -8998,7 +8998,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "652": {
       "id": 652,
       "front": "storm",
       "back": "invadir",
@@ -9015,7 +9015,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "653": {
       "id": 653,
       "front": "hostages",
       "back": "reféns",
@@ -9028,7 +9028,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "654": {
       "id": 654,
       "front": "faucet",
       "back": "torneira",
@@ -9042,7 +9042,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "655": {
       "id": 655,
       "front": "eyelids",
       "back": "pálpebras",
@@ -9056,7 +9056,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "656": {
       "id": 656,
       "front": "get off the hook",
       "back": "fugir de algo / not be responsible for something",
@@ -9074,7 +9074,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "657": {
       "id": 657,
       "front": "hook",
       "back": "gancho",
@@ -9092,7 +9092,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "658": {
       "id": 658,
       "front": "temper",
       "back": "temperar",
@@ -9105,7 +9105,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "659": {
       "id": 659,
       "front": "smithereens",
       "back": "pedaços",
@@ -9123,7 +9123,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "660": {
       "id": 660,
       "front": "manage",
       "back": "conseguir",
@@ -9137,7 +9137,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "661": {
       "id": 661,
       "front": "propel",
       "back": "impulsionar",
@@ -9154,7 +9154,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "662": {
       "id": 662,
       "front": "sweat",
       "back": "suor",
@@ -9168,7 +9168,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "663": {
       "id": 663,
       "front": "hung over",
       "back": "ressaca",
@@ -9182,7 +9182,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "664": {
       "id": 664,
       "front": "hung",
       "back": "pendurado",
@@ -9196,7 +9196,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "665": {
       "id": 665,
       "front": "compel",
       "back": "obrigar",
@@ -9209,7 +9209,7 @@
       "repetitions": 9,
       "lang": "en"
     },
-    {
+    "666": {
       "id": 666,
       "front": "achievement",
       "back": "conquista",
@@ -9222,7 +9222,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "667": {
       "id": 667,
       "front": "forethought",
       "back": "premeditação",
@@ -9238,7 +9238,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "668": {
       "id": 668,
       "front": "circumvent",
       "back": "contornar",
@@ -9251,7 +9251,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "669": {
       "id": 669,
       "front": "stir up",
       "back": "agitar / provocar",
@@ -9267,7 +9267,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "670": {
       "id": 670,
       "front": "be fond of",
       "back": "gostar de alguém/algo; ter carinho por alguém",
@@ -9284,7 +9284,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "671": {
       "id": 671,
       "front": "envision",
       "back": "imaginar",
@@ -9297,7 +9297,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "672": {
       "id": 672,
       "front": "level out",
       "back": "![](https://thumbs.dreamstime.com/t/homem-que-olha-para-nivelar-ferramenta-12718062.jpg)**nivelar/ estabilizar**",
@@ -9313,7 +9313,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "673": {
       "id": 673,
       "front": "actualize",
       "back": "realizar",
@@ -9330,7 +9330,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "674": {
       "id": 674,
       "front": "plunge",
       "back": "![](http://i57.tinypic.com/2zq4ppj.jpg)**despencar / mergulhar**",
@@ -9349,7 +9349,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "675": {
       "id": 675,
       "front": "outweigh",
       "back": "superar / prevalecer sobre",
@@ -9365,7 +9365,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "676": {
       "id": 676,
       "front": "get around",
       "back": "contornar",
@@ -9378,7 +9378,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "677": {
       "id": 677,
       "front": "make it home",
       "back": "chegar em casa",
@@ -9394,7 +9394,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "678": {
       "id": 678,
       "front": "mush",
       "back": "papa",
@@ -9410,7 +9410,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "679": {
       "id": 679,
       "front": "rip *something* up",
       "back": "dividir algo em pedaços",
@@ -9423,7 +9423,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "680": {
       "id": 680,
       "front": "sacred",
       "back": "sagrado",
@@ -9436,7 +9436,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "681": {
       "id": 681,
       "front": "disguise",
       "back": "disfarce",
@@ -9449,7 +9449,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "682": {
       "id": 682,
       "front": "grieve",
       "back": "sofrer",
@@ -9466,7 +9466,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "683": {
       "id": 683,
       "front": "stubborn",
       "back": "teimoso",
@@ -9479,7 +9479,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "684": {
       "id": 684,
       "front": "squash",
       "back": "esmagar",
@@ -9497,7 +9497,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "685": {
       "id": 685,
       "front": "overwhelmed",
       "back": "sobrecarregado",
@@ -9513,7 +9513,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "686": {
       "id": 686,
       "front": "bypass",
       "back": "desviar / contornar",
@@ -9526,7 +9526,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "687": {
       "id": 687,
       "front": "reckless",
       "back": "imprudente",
@@ -9539,7 +9539,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "688": {
       "id": 688,
       "front": "dwell",
       "back": "morar / residir",
@@ -9555,7 +9555,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "689": {
       "id": 689,
       "front": "bearable",
       "back": "tolerável / suportável",
@@ -9571,7 +9571,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "690": {
       "id": 690,
       "front": "pang",
       "back": "![](http://comps.unlistedimages.com/ulcomp/CSP/CSP303/k3033770.jpg)**dor / pontada / angústia**",
@@ -9585,7 +9585,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "691": {
       "id": 691,
       "front": "rut",
       "back": "rotina",
@@ -9598,7 +9598,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "692": {
       "id": 692,
       "front": "term paper",
       "back": "trabalho de conclusão de curso",
@@ -9611,7 +9611,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "693": {
       "id": 693,
       "front": "tip",
       "back": "inclinar",
@@ -9627,7 +9627,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "694": {
       "id": 694,
       "front": "hokey",
       "back": "piegas",
@@ -9643,7 +9643,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "695": {
       "id": 695,
       "front": "crippling",
       "back": "![](https://thumbs.gfycat.com/DetailedFortunateCivet-size_restricted.gif)\n\nincapacitante / devastador",
@@ -9659,7 +9659,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "696": {
       "id": 696,
       "front": "snap out of (something)",
       "back": "sair",
@@ -9676,7 +9676,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "697": {
       "id": 697,
       "front": "foreboding",
       "back": "![](https://vidadesuporte.com.br/wp-content/uploads/2014/12/Suporte_1118.jpg)\n**pressentimento**",
@@ -9693,7 +9693,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "698": {
       "id": 698,
       "front": "cliffhanger",
       "back": "desfecho dramático: a story or a situation that is exciting because its ending or result is uncertain until it happens",
@@ -9703,7 +9703,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "699": {
       "id": 699,
       "front": "niggle",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/570406/595755389/stock-photo-tired-and-worried-business-man-at-workplace-in-office-holding-his-head-on-hands-after-late-night-595755389.jpg)\n**preocupar / irritar**",
@@ -9720,7 +9720,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "700": {
       "id": 700,
       "front": "by-product",
       "back": "subproduto",
@@ -9733,7 +9733,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "701": {
       "id": 701,
       "front": "undertake",
       "back": "encarregar-se de fazer algo",
@@ -9751,7 +9751,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "702": {
       "id": 702,
       "front": "vying",
       "back": "competindo",
@@ -9768,7 +9768,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "703": {
       "id": 703,
       "front": "scarf",
       "back": "![](https://img.memecdn.com/dat-scarf_c_4281981.jpg) cachecol",
@@ -9782,7 +9782,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "704": {
       "id": 704,
       "front": "refrain from",
       "back": "abster-se de",
@@ -9795,7 +9795,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "705": {
       "id": 705,
       "front": "take over",
       "back": "assumir o controle",
@@ -9805,7 +9805,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "706": {
       "id": 706,
       "front": "matter-of-factly",
       "back": "com naturalidade",
@@ -9818,7 +9818,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "707": {
       "id": 707,
       "front": "pillow",
       "back": "travesseiro",
@@ -9831,7 +9831,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "708": {
       "id": 708,
       "front": "tame",
       "back": "domar / manso",
@@ -9845,7 +9845,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "709": {
       "id": 709,
       "front": "plateau",
       "back": "platô\n> a period during which there are no large changes",
@@ -9855,7 +9855,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "710": {
       "id": 710,
       "front": "yardstick",
       "back": "ponto de referência",
@@ -9871,7 +9871,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "711": {
       "id": 711,
       "front": "bold",
       "back": "ousado",
@@ -9884,7 +9884,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "712": {
       "id": 712,
       "front": "role models",
       "back": "modelos a seguir / exemplos",
@@ -9894,7 +9894,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "713": {
       "id": 713,
       "front": "ground zero",
       "back": "marco zero",
@@ -9907,7 +9907,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "714": {
       "id": 714,
       "front": "unfathomable",
       "back": "incompreensível",
@@ -9923,7 +9923,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "715": {
       "id": 715,
       "front": "supply",
       "back": "fornecimento",
@@ -9936,7 +9936,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "716": {
       "id": 716,
       "front": "look after (someone)",
       "back": "cuidar de",
@@ -9953,7 +9953,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "717": {
       "id": 717,
       "front": "beverage",
       "back": "![](https://thumb9.shutterstock.com/display_pic_with_logo/137002/536563018/stock-photo-female-hand-rejecting-glass-with-alcoholic-beverage-on-blurred-background-536563018.jpg)\nbebida",
@@ -9967,7 +9967,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "718": {
       "id": 718,
       "front": "fulfilment",
       "back": "satisfação / realização",
@@ -9984,7 +9984,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "719": {
       "id": 719,
       "front": "does it take",
       "back": "é preciso",
@@ -9998,7 +9998,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "720": {
       "id": 720,
       "front": "quaint",
       "back": "pitoresco",
@@ -10011,7 +10011,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "721": {
       "id": 721,
       "front": "lattice",
       "back": "estrutura",
@@ -10024,7 +10024,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "722": {
       "id": 722,
       "front": "detach",
       "back": "desanexar",
@@ -10037,7 +10037,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "723": {
       "id": 723,
       "front": "career",
       "back": "carreira",
@@ -10050,7 +10050,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "724": {
       "id": 724,
       "front": "crux",
       "back": "cerne",
@@ -10068,7 +10068,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "725": {
       "id": 725,
       "front": "fasting",
       "back": "jejum",
@@ -10085,7 +10085,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "726": {
       "id": 726,
       "front": "bear",
       "back": "suportar",
@@ -10099,7 +10099,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "727": {
       "id": 727,
       "front": "cave",
       "back": "ceder",
@@ -10118,7 +10118,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "728": {
       "id": 728,
       "front": "flair",
       "back": "talento",
@@ -10132,7 +10132,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "729": {
       "id": 729,
       "front": "headache",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/614404/566085970/stock-photo-health-and-pain-stressed-exhausted-young-woman-having-strong-tension-headache-closeup-portrait-of-566085970.jpg)\ndor de cabeça",
@@ -10145,7 +10145,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "730": {
       "id": 730,
       "front": "cram",
       "back": "to try to learn a lot very quickly before an exam",
@@ -10162,7 +10162,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "731": {
       "id": 731,
       "front": "jaunt",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/1195679/402255919/stock-photo-killarney-ireland-april-th-tourists-enjoying-a-jaunting-car-tour-through-killarney-402255919.jpg)\npasseio",
@@ -10179,7 +10179,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "732": {
       "id": 732,
       "front": "stand for something",
       "back": "defender algo",
@@ -10193,7 +10193,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "733": {
       "id": 733,
       "front": "impart",
       "back": "transmitir",
@@ -10209,7 +10209,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "734": {
       "id": 734,
       "front": "push past",
       "back": "superar",
@@ -10225,7 +10225,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "735": {
       "id": 735,
       "front": "keener",
       "back": "mais forte",
@@ -10238,7 +10238,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "736": {
       "id": 736,
       "front": "at a moments notice",
       "back": "a qualquer instante",
@@ -10248,7 +10248,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "737": {
       "id": 737,
       "front": "tip",
       "back": "gorjeta",
@@ -10261,7 +10261,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "738": {
       "id": 738,
       "front": "blows up",
       "back": "![](https://thumb7.shutterstock.com/display_pic_with_logo/10654/265266407/stock-vector-cloud-explosion-with-orange-beam-light-265266407.jpg)\nexplodir algo",
@@ -10274,7 +10274,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "739": {
       "id": 739,
       "front": "bitch session",
       "back": "sessão de reclamação",
@@ -10290,7 +10290,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "740": {
       "id": 740,
       "front": "inflammatory",
       "back": "incendiário",
@@ -10303,7 +10303,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "741": {
       "id": 741,
       "front": "blurt out",
       "back": "![](http://teacher.scholastic.com/professional/classmgmt/images/disrupt1.jpg)\ndeixar escapar",
@@ -10317,7 +10317,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "742": {
       "id": 742,
       "front": "specifics",
       "back": "especificações / detalhes",
@@ -10330,7 +10330,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "743": {
       "id": 743,
       "front": "flat out",
       "back": "![](https://1.bp.blogspot.com/_DnFXJdKDLKU/TBfruAg7CfI/AAAAAAAAALE/T5p0TyUa6Jw/s1600/0186-a+todo+o+vapor%21.jpg)\na toda / a todo vapor",
@@ -10346,7 +10346,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "744": {
       "id": 744,
       "front": "snappy",
       "back": "![](https://thumb7.shutterstock.com/display_pic_with_logo/77577/547069297/stock-vector-angry-piranha-clipart-547069297.jpg)\nmal-humorado",
@@ -10363,7 +10363,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "745": {
       "id": 745,
       "front": "remark",
       "back": "observação / comentário",
@@ -10380,7 +10380,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "746": {
       "id": 746,
       "front": "livid",
       "back": "furioso",
@@ -10397,7 +10397,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "747": {
       "id": 747,
       "front": "gripe",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/1020994/658595440/stock-photo-angry-couple-claiming-and-shouting-to-an-office-worker-658595440.jpg)\nqueixa",
@@ -10415,7 +10415,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "748": {
       "id": 748,
       "front": "scam",
       "back": "![](https://i.ytimg.com/vi/OX1ufHYzI2A/maxresdefault.jpg)\ngolpe",
@@ -10428,7 +10428,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "749": {
       "id": 749,
       "front": "at odds with",
       "back": "em desacordo com",
@@ -10441,7 +10441,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "750": {
       "id": 750,
       "front": "hindrance",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/172361980/690040579/stock-vector-business-concept-as-a-full-energy-businessman-is-jumping-over-the-hurdles-it-means-performing-the-690040579.jpg)\nobstáculo",
@@ -10457,7 +10457,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "751": {
       "id": 751,
       "front": "besiege",
       "back": "cercar",
@@ -10470,7 +10470,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "752": {
       "id": 752,
       "front": "chowder",
       "back": "![](https://thumb9.shutterstock.com/display_pic_with_logo/564163/619694372/stock-photo-manhattan-clam-chowder-soup-close-up-on-the-table-vertical-view-from-above-619694372.jpg)\nsopa",
@@ -10487,7 +10487,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "753": {
       "id": 753,
       "front": "clam",
       "back": "![](https://www.terradouro.pt/wp-content/uploads/2017/07/ameijoas-1080x630.jpg)\nAmêijoa (um tipo de molusco)",
@@ -10503,7 +10503,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "754": {
       "id": 754,
       "front": "spoil",
       "back": "estragar",
@@ -10519,7 +10519,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "755": {
       "id": 755,
       "front": "nailed it",
       "back": "acertou em cheio",
@@ -10533,7 +10533,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "756": {
       "id": 756,
       "front": "quell",
       "back": "![](http://4.bp.blogspot.com/-Xho5P302V3g/U3RbN-_uKbI/AAAAAAAAj2U/y78hP5sSKY0/s1600/repressa%CC%83o-venezuela-dia+14:05:2014.jpg)\nreprimir",
@@ -10549,7 +10549,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "757": {
       "id": 757,
       "front": "rant",
       "back": "esbravejar",
@@ -10565,7 +10565,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "758": {
       "id": 758,
       "front": "gut",
       "back": "instinto",
@@ -10578,7 +10578,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "759": {
       "id": 759,
       "front": "candid",
       "back": "sincero",
@@ -10591,7 +10591,7 @@
       "repetitions": 8,
       "lang": "en"
     },
-    {
+    "760": {
       "id": 760,
       "front": "sway",
       "back": "influenciar",
@@ -10607,7 +10607,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "761": {
       "id": 761,
       "front": "harness",
       "back": "aproveitar",
@@ -10624,7 +10624,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "762": {
       "id": 762,
       "front": "pull the wool",
       "back": "**enganar / ludibriar**   \n*to deceive someone in order to prevent them from discovering something*",
@@ -10637,7 +10637,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "763": {
       "id": 763,
       "front": "steep",
       "back": "íngreme",
@@ -10653,7 +10653,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "764": {
       "id": 764,
       "front": "nudge",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/64768/375167296/stock-vector-a-giant-hand-pushing-at-business-executive-creative-vector-illustration-on-metaphor-for-giving-the-375167296.jpg)\nempurrão / cutucada",
@@ -10670,7 +10670,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "765": {
       "id": 765,
       "front": "venison",
       "back": "![](https://thumb9.shutterstock.com/display_pic_with_logo/3241910/727464565/stock-photo-cut-of-meat-set-poster-butcher-diagram-scheme-venison-vintage-typographic-hand-drawn-deer-727464565.jpg)\ncarne de veado",
@@ -10683,7 +10683,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "766": {
       "id": 766,
       "front": "farfetched",
       "back": "improvável",
@@ -10699,7 +10699,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "767": {
       "id": 767,
       "front": "con",
       "back": "trapaça; trapacear / enganar",
@@ -10713,7 +10713,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "768": {
       "id": 768,
       "front": "con artist",
       "back": "vigarista",
@@ -10726,7 +10726,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "769": {
       "id": 769,
       "front": "stack",
       "back": "empilhar",
@@ -10739,7 +10739,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "770": {
       "id": 770,
       "front": "pull one over on somebody",
       "back": "enganar ou passar a perna em alguém",
@@ -10752,7 +10752,7 @@
       "repetitions": 6,
       "lang": "en"
     },
-    {
+    "771": {
       "id": 771,
       "front": "go–to",
       "back": "recorre / quem recorrer",
@@ -10766,7 +10766,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "772": {
       "id": 772,
       "front": "grease",
       "back": "lubrificar",
@@ -10779,7 +10779,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "773": {
       "id": 773,
       "front": "gulf",
       "back": "![](https://thumb7.shutterstock.com/display_pic_with_logo/1996733/708514357/stock-vector-businessman-falls-into-the-abyss-crisis-bankruptcy-flat-design-vector-illustration-708514357.jpg)\nabismo",
@@ -10792,7 +10792,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "774": {
       "id": 774,
       "front": "short of (something)",
       "back": "não incluindo algo",
@@ -10805,7 +10805,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "775": {
       "id": 775,
       "front": "dismally",
       "back": "desanimado",
@@ -10818,7 +10818,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "776": {
       "id": 776,
       "front": "dash",
       "back": "traço / pitada",
@@ -10831,7 +10831,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "777": {
       "id": 777,
       "front": "attach",
       "back": "vincular; anexar",
@@ -10844,7 +10844,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "778": {
       "id": 778,
       "front": "plight",
       "back": "situação difícil",
@@ -10861,7 +10861,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "779": {
       "id": 779,
       "front": "limb",
       "back": "membro",
@@ -10874,7 +10874,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "780": {
       "id": 780,
       "front": "hardliners",
       "back": "intransigentes",
@@ -10887,7 +10887,7 @@
       "repetitions": 7,
       "lang": "en"
     },
-    {
+    "781": {
       "id": 781,
       "front": "standpoint",
       "back": "ponto de vista",
@@ -10903,7 +10903,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "782": {
       "id": 782,
       "front": "where you're headed",
       "back": "onde você está indo",
@@ -10920,7 +10920,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "783": {
       "id": 783,
       "front": "howl",
       "back": "grito / berro",
@@ -10933,7 +10933,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "784": {
       "id": 784,
       "front": "outage",
       "back": "interrupção",
@@ -10950,7 +10950,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "785": {
       "id": 785,
       "front": "thoroughness",
       "back": "minúcia / perfeição / rigor",
@@ -10968,7 +10968,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "786": {
       "id": 786,
       "front": "impending",
       "back": "iminente",
@@ -10981,7 +10981,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "787": {
       "id": 787,
       "front": "accrued",
       "back": "![](https://thumb1.shutterstock.com/display_pic_with_logo/1355392/566840350/stock-photo-accrued-interest-hand-writing-word-to-represent-the-meaning-of-financial-word-as-concept-a-word-566840350.jpg)\nacumulado",
@@ -10997,7 +10997,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "788": {
       "id": 788,
       "front": "watchout",
       "back": "cuidado",
@@ -11014,7 +11014,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "789": {
       "id": 789,
       "front": "patches",
       "back": "manchas",
@@ -11027,7 +11027,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "790": {
       "id": 790,
       "front": "acutely",
       "back": "extremamente",
@@ -11044,7 +11044,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "791": {
       "id": 791,
       "front": "fidgety",
       "back": "inquieto",
@@ -11057,7 +11057,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "792": {
       "id": 792,
       "front": "lap",
       "back": "colo",
@@ -11070,7 +11070,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "793": {
       "id": 793,
       "front": "in on a secret",
       "back": "contar um segredo",
@@ -11084,7 +11084,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "794": {
       "id": 794,
       "front": "blowing hot air",
       "back": "falando bobagem",
@@ -11098,7 +11098,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "795": {
       "id": 795,
       "front": "wounded",
       "back": "ferido",
@@ -11114,7 +11114,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "796": {
       "id": 796,
       "front": "hacksaw",
       "back": "serra",
@@ -11128,7 +11128,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "797": {
       "id": 797,
       "front": "waive",
       "back": "renunciar a",
@@ -11144,7 +11144,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "798": {
       "id": 798,
       "front": "cogency",
       "back": "irrefutável / convincente",
@@ -11157,7 +11157,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "799": {
       "id": 799,
       "front": "reasoning",
       "back": "raciocínio",
@@ -11171,7 +11171,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "800": {
       "id": 800,
       "front": "lay out",
       "back": "explicar / expor",
@@ -11185,7 +11185,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "801": {
       "id": 801,
       "front": "get rid of (something/someone)",
       "back": "livrar se de",
@@ -11195,7 +11195,7 @@
       "repetitions": 4,
       "lang": "en"
     },
-    {
+    "802": {
       "id": 802,
       "front": "buckle in",
       "back": "por os cintos",
@@ -11213,7 +11213,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "803": {
       "id": 803,
       "front": "putting together",
       "back": "montar",
@@ -11226,7 +11226,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "804": {
       "id": 804,
       "front": "elicit",
       "back": "extrair / arrancar",
@@ -11242,7 +11242,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "805": {
       "id": 805,
       "front": "wince",
       "back": "estremecer",
@@ -11259,7 +11259,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "806": {
       "id": 806,
       "front": "prior",
       "back": "prévio; antes",
@@ -11275,7 +11275,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "807": {
       "id": 807,
       "front": "stand clear of the doors",
       "back": "fique longe das portas",
@@ -11285,7 +11285,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "808": {
       "id": 808,
       "front": "deceive",
       "back": "enganar",
@@ -11298,7 +11298,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "809": {
       "id": 809,
       "front": "unassuming",
       "back": "modesto",
@@ -11314,7 +11314,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "810": {
       "id": 810,
       "front": "cheesy",
       "back": "cafona",
@@ -11331,7 +11331,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "811": {
       "id": 811,
       "front": "trite",
       "back": "banal",
@@ -11347,7 +11347,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "812": {
       "id": 812,
       "front": "dread",
       "back": "temer / ter medo",
@@ -11363,7 +11363,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "813": {
       "id": 813,
       "front": "lightly",
       "back": "levemente / sem levar a sério",
@@ -11376,7 +11376,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "814": {
       "id": 814,
       "front": "hunch",
       "back": "palpite",
@@ -11393,7 +11393,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "815": {
       "id": 815,
       "front": "struck",
       "back": "atingiu",
@@ -11410,7 +11410,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "816": {
       "id": 816,
       "front": "draw",
       "back": "atrair",
@@ -11423,7 +11423,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "817": {
       "id": 817,
       "front": "yield to",
       "back": "ceder à",
@@ -11439,7 +11439,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "818": {
       "id": 818,
       "front": "chauffeur",
       "back": "motorista",
@@ -11452,7 +11452,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "819": {
       "id": 819,
       "front": "Grammar:  \nverb + **out**",
       "back": "usually when applied to a verb involving speech; out involves the addressing of a group, normally a non-specific group, as in \"anyone who will listen.\". with other kinds of verbs the out functions mainly as an intensifier, often implying completeness of action.",
@@ -11462,7 +11462,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "820": {
       "id": 820,
       "front": "in lieu (of)",
       "back": "em vez de / em vez disso",
@@ -11472,7 +11472,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "821": {
       "id": 821,
       "front": "marquee",
       "back": "letreiro",
@@ -11486,7 +11486,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "822": {
       "id": 822,
       "front": "racing",
       "back": "correndo",
@@ -11504,7 +11504,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "823": {
       "id": 823,
       "front": "know something like the back of your hand",
       "back": "conhecer algo como a palma da sua mão",
@@ -11514,7 +11514,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "824": {
       "id": 824,
       "front": "bounce rate",
       "back": "taxa de rejeição",
@@ -11528,7 +11528,7 @@
       "repetitions": 5,
       "lang": "en"
     },
-    {
+    "825": {
       "id": 825,
       "front": "oatmeal",
       "back": "aveia",
@@ -11542,7 +11542,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "826": {
       "id": 826,
       "front": "allure",
       "back": "fascinação / atração",
@@ -11555,7 +11555,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "827": {
       "id": 827,
       "front": "hunker down",
       "back": "agachar",
@@ -11571,7 +11571,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "828": {
       "id": 828,
       "front": "construal",
       "back": "construção",
@@ -11584,7 +11584,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "829": {
       "id": 829,
       "front": "tricky",
       "back": "complicado",
@@ -11597,7 +11597,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "830": {
       "id": 830,
       "front": "get through",
       "back": "superar",
@@ -11610,7 +11610,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "831": {
       "id": 831,
       "front": "giving into",
       "back": "ceder ao",
@@ -11626,7 +11626,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "832": {
       "id": 832,
       "front": "doddle",
       "back": "moleza",
@@ -11642,7 +11642,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "833": {
       "id": 833,
       "front": "beckon",
       "back": "acenar",
@@ -11655,7 +11655,7 @@
       "repetitions": 2,
       "lang": "en"
     },
-    {
+    "834": {
       "id": 834,
       "front": "nevertheless",
       "back": "no entanto",
@@ -11671,7 +11671,7 @@
       "repetitions": 1,
       "lang": "en"
     },
-    {
+    "835": {
       "id": 835,
       "front": "spite of",
       "back": "apesar de",
@@ -11684,7 +11684,7 @@
       "repetitions": 3,
       "lang": "en"
     },
-    {
+    "836": {
       "id": 836,
       "front": "impair",
       "back": "prejudicar",
@@ -11693,7 +11693,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "837": {
       "id": 837,
       "front": "indulge",
       "back": "satisfazer / saciar",
@@ -11702,7 +11702,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "838": {
       "id": 838,
       "front": "selflessness",
       "back": "abnegação",
@@ -11711,7 +11711,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "839": {
       "id": 839,
       "front": "pint of beer",
       "back": "caneca de cerveja",
@@ -11720,7 +11720,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "840": {
       "id": 840,
       "front": "reruns",
       "back": "reprises",
@@ -11729,7 +11729,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "841": {
       "id": 841,
       "front": "garner",
       "back": "angariar",
@@ -11738,7 +11738,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "842": {
       "id": 842,
       "front": "trump",
       "back": "superar/sobrepor",
@@ -11747,7 +11747,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "843": {
       "id": 843,
       "front": "utterance",
       "back": "enunciado",
@@ -11756,7 +11756,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "844": {
       "id": 844,
       "front": "soap opera",
       "back": "novela",
@@ -11765,7 +11765,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "845": {
       "id": 845,
       "front": "binge on",
       "back": "devorar / ter compulsão por",
@@ -11774,7 +11774,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "846": {
       "id": 846,
       "front": "churn",
       "back": "agitar",
@@ -11783,7 +11783,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "847": {
       "id": 847,
       "front": "serve",
       "back": "saque (esportes com raquete)",
@@ -11792,7 +11792,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "848": {
       "id": 848,
       "front": "pinpoint",
       "back": "identificar",
@@ -11801,7 +11801,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "849": {
       "id": 849,
       "front": "as though",
       "back": "como se",
@@ -11810,7 +11810,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "850": {
       "id": 850,
       "front": "has just flown by",
       "back": "passou voando",
@@ -11819,7 +11819,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "851": {
       "id": 851,
       "front": "glaring",
       "back": "evidente",
@@ -11828,7 +11828,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "852": {
       "id": 852,
       "front": "feat",
       "back": "feito / façanha",
@@ -11837,7 +11837,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "853": {
       "id": 853,
       "front": "looser",
       "back": "mais solto",
@@ -11846,7 +11846,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "854": {
       "id": 854,
       "front": "high stake",
       "back": "alto risco",
@@ -11855,7 +11855,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "855": {
       "id": 855,
       "front": "prized",
       "back": "valorizado",
@@ -11864,7 +11864,7 @@
       "repetitions": 0,
       "lang": "en"
     },
-    {
+    "856": {
       "id": 856,
       "front": "padding",
       "back": "preenchimento",
@@ -11873,5 +11873,5 @@
       "repetitions": 0,
       "lang": "en"
     }
-  ]
+  }
 }

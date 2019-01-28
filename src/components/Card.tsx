@@ -4,23 +4,19 @@ import Icon from 'components/Icon';
 import Notes from 'components/Notes';
 import Tags from 'components/Tags';
 import { rgba } from 'polished';
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import {
-  colorPrimary,
-  colorRed,
-  colorSecondaryDarker,
-  colorSecondaryLigher,
-  colorYellow,
-} from 'style/theme';
+import { GoToNextCard } from 'state/review';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
-import reviewState, { GoToNextCard } from 'state/review';
+import { colorPrimary, colorRed, colorSecondaryDarker, colorSecondaryLigher, colorYellow } from 'style/theme';
 import { useOnChange } from 'utils/customHooks';
 
 type Props = {
   card: Card;
   pos: 'prev' | 'current' | 'next';
+  setIsFlipped: (isFlipped: boolean) => void;
+  isFlipped: boolean;
 };
 
 const zPos = {
@@ -69,7 +65,7 @@ const BackFace = styled.div<{ flipped: boolean; pos: Props['pos'] }>`
 `;
 
 const CardFaceContent = styled.div`
-  ${centerContent};
+  ${centerContentCollum};
 
   width: 100%;
 
@@ -77,13 +73,16 @@ const CardFaceContent = styled.div`
   font-weight: 300;
   min-height: 150px;
   text-align: center;
+  margin-bottom: 12px;
 
   img {
     width: 100%;
   }
 
   p {
-    margin: 8px 0;
+    width: 100%;
+    margin: 0;
+    padding: 8px;
   }
 `;
 
@@ -144,9 +143,8 @@ const BottomButtons = styled.div`
   }
 `;
 
-const Card = ({ card, pos }: Props) => {
+const Card = ({ card, pos, setIsFlipped, isFlipped }: Props) => {
   const words = card.back.split(';');
-  const [flipped, setFlipped] = useState(false);
 
   const WarnIcon = card.wrongReviews > 4 ? (
     <Icon name="warn" color={colorRed} size={24} />
@@ -154,19 +152,11 @@ const Card = ({ card, pos }: Props) => {
       undefined
     );
 
-  const resetFlip = useRef<number>(null);
-
-  useOnChange(pos, () => {
-    if (pos === 'next' || pos === 'prev') {
-      resetFlip.current = setTimeout(() => setFlipped(false));
-    }
-  });
-
   return (
     <>
-      <FrontFace flipped={flipped} pos={pos} onClick={() => setFlipped(true)}>
+      <FrontFace flipped={isFlipped} pos={pos} onClick={() => setIsFlipped(true)}>
         <TopIcons>
-          {words.length > 0 && (
+          {words.length > 1 && (
             <NumOfAnswers>
               {words.map((word, i) => (
                 <div key={i} />
@@ -181,7 +171,7 @@ const Card = ({ card, pos }: Props) => {
         <Tags tags={card.tags} />
       </FrontFace>
 
-      <BackFace flipped={flipped} pos={pos} onClick={() => {}}>
+      <BackFace flipped={isFlipped} pos={pos} onClick={() => {}}>
         <TopIcons>{WarnIcon}</TopIcons>
         <CardFaceContent>
           <ReactMarkdown source={card.back} />

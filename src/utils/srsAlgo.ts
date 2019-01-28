@@ -1,5 +1,5 @@
 import cardsState from 'state/cards';
-import { shuffle, timeToDate, time } from 'utils/genericUtils';
+import { shuffle, timeToDate, time, clamp, clampMin } from 'utils/genericUtils';
 
 /**
  * SRS Algorithm
@@ -12,6 +12,23 @@ type CardWithCoF = Card & {
 };
 
 const timeLimitIncrease = 3600 * (3 + 6) * 1000;
+const diffRate = 4;
+const highCofLimit = 1.5;
+const repetitionsIncrease: ObjectWithKey<Results, number> = {
+  success: 1,
+  hard: 0,
+  wrong: -1,
+};
+const diffIncrease: ObjectWithKey<Results, number> = {
+  success: -0.1,
+  hard: 0.05,
+  wrong: 0.2,
+};
+const highCofRepetitionIncrease: ObjectWithKey<Results, number> = {
+  success: 0,
+  hard: -1,
+  wrong: -2,
+};
 const idealDaysDiff = [
   0,
   1,
@@ -28,17 +45,6 @@ const idealDaysDiff = [
   720,
   1000,
 ];
-const diffRate = 4;
-const repetitionsIncrease: ObjectWithKey<Results, number> = {
-  success: 1,
-  hard: 0,
-  wrong: -1,
-};
-const diffIncrease: ObjectWithKey<Results, number> = {
-  success: -0.1,
-  hard: 0.05,
-  wrong: 0.2,
-};
 
 /**
  * get CoF of card
@@ -63,10 +69,10 @@ export function getCoF(
     (now - timeLimitIncrease - Date.parse(lastReview)) / (1000 * 3600 * 24)
   );
 
-  return (
-    dateDiff / idealDaysDiff[repetitions > 13 ? 13 : repetitions]
-    + diff * diffRate
-  );
+  return dateDiff > 0
+    ? dateDiff / idealDaysDiff[repetitions > 13 ? 13 : repetitions]
+        + clamp(diff, 0, 1) * diffRate
+    : 0;
 }
 
 export function calcCardsCoF(cards: Card[]) {
@@ -101,31 +107,41 @@ export function getCardsToReview(numOfCards: number, onlyNew: boolean) {
 
   return shuffle(
     cards
-      .reduce((acc: CardWithCoF[], card) => {
+      .reduce((acc: Card[], card) => {
         const cof = getCoF(card.repetitions, card.diff, card.lastReview);
 
         if (needsReview(cof)) {
-          acc.push({
-            ...card,
-            cof,
-          });
+          acc.push(card);
         }
 
         return acc;
       }, [])
-      .sort((a, b) => b.cof - a.cof) // descending
+      .sort((a, b) => {
+        const aCoF = getCoF(a.repetitions, a.diff, a.lastReview);
+        const bCoF = getCoF(b.repetitions, b.diff, b.lastReview);
+
+        return bCoF - aCoF; // descending
+      })
       .slice(0, numOfCards)
   );
 }
 
 export function processCardAnswer(card: Card, answer: Results): Card {
+  const cof = getCoF(card.repetitions, card.diff, card.lastReview);
+
   return {
     ...card,
     lastReview: timeToDate(Math.round((Date.now() - timeLimitIncrease) / 1000)),
     wrongReviews:
       answer === 'wrong' ? card.wrongReviews + 1 : card.wrongReviews,
-    repetitions: card.repetitions + repetitionsIncrease[answer],
-    diff: card.diff + diffIncrease[answer],
+    repetitions: clampMin(
+      card.repetitions
+        + (cof >= highCofLimit ? highCofRepetitionIncrease : repetitionsIncrease)[
+          answer
+        ],
+      0
+    ),
+    diff: clamp(card.diff + diffIncrease[answer], 0, 1),
   };
 }
 

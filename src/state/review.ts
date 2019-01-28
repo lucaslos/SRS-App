@@ -3,6 +3,7 @@ import { getCardsToReview, processReview } from 'utils/srsAlgo';
 import modalsState from 'state/modals';
 import { addUniqueToArray, getLastElem } from 'utils/genericUtils';
 import { number } from 'prop-types';
+import { pushCards } from 'state/cards';
 
 export type ReviewState = {
   numOfCards: number;
@@ -68,14 +69,23 @@ const reviewState = createStore<ReviewState, Actions>('review', {
         : state.reviewAgain,
       reviewPos: state.reviewPos + 1,
     }),
-    goToPrev: state => ({
-      ...state,
-      reviewAgain:
-        getLastElem(state.reviewAgain) === state.reviewCards[state.reviewPos].id
-          ? state.reviewAgain.slice(0, -1)
-          : state.reviewAgain,
-      reviewPos: state.reviewPos - 1,
-    }),
+    goToPrev: (state) => {
+      const allCards = [
+        ...state.reviewCards,
+        ...state.reviewAgain.map(id =>
+          state.reviewCards.find(card => id === card.id)
+        ),
+      ] as Card[];
+
+      return {
+        ...state,
+        reviewAgain:
+          getLastElem(state.reviewAgain) === allCards[state.reviewPos - 1].id
+            ? state.reviewAgain.slice(0, -1)
+            : state.reviewAgain,
+        reviewPos: state.reviewPos - 1,
+      };
+    },
     showDialog: (
       state,
       payload: {
@@ -121,6 +131,9 @@ export function endReview() {
     results,
     startTime
   );
+
+  pushCards(updatedCards);
+
   reviewState.setKey('ended', true);
   reviewState.setKey('endReport', {
     total: updatedCards.length,

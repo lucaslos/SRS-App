@@ -26,27 +26,38 @@ function getRepetitions(diff, groupId) {
   return +data.group.find(group => group.id === groupId).repetitions;
 }
 
+const cards = {};
+
+data.card
+  .filter(card => card && englishGroups.includes(card.group_id))
+  .map(card => ({
+    id: id++,
+    front: card.front.replace(',', ';'),
+    back: card.back.replace(',', ';'),
+    ...(card.tags && { tags: card.tags }),
+    ...(card.notes && { notes: card.notes }),
+    ...(card.lastView && { lastReview: card.lastView }),
+    wrongReviews: card.wrongViews,
+    diff: card.difficulty,
+    repetitions: getRepetitions(card.difficulty, card.group_id),
+    lang: 'en',
+  }))
+  .forEach((card) => {
+    cards[card.id] = card;
+  });
+
 const output = {
-  cards: data.card
-    .filter(card => card && englishGroups.includes(card.group_id))
-    .map(card => ({
-      id: id++,
-      front: card.front.replace(',', ';'),
-      back: card.back.replace(',', ';'),
-      ...(card.tags && { tags: card.tags }),
-      ...(card.notes && { notes: card.notes }),
-      ...(card.lastView && { lastReview: card.lastView }),
-      wrongReviews: card.wrongViews,
-      diff: card.difficulty,
-      repetitions: getRepetitions(card.difficulty, card.group_id),
-      lang: 'en',
-    })),
+  cards,
 };
 
-console.log(output.cards.length);
+console.log(Object.keys(output.cards).length);
 
-fs.writeFile(path.join(__dirname, outputFile), JSON.stringify(output, null, 2), (err) => {
-  if (err) throw err;
+fs.writeFile(
+  path.join(__dirname, outputFile),
+  JSON.stringify(output, null, 2),
+  (err) => {
+    if (err) throw err;
 
-  console.log('File converted!');
-});
+    console.log('File converted!');
+  }
+);

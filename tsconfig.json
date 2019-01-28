@@ -20,6 +20,7 @@
         "*",
       ]
     },
+    "typeRoots": ["node_modulues/@types"]
   },
   "exclude": [
     "docs",

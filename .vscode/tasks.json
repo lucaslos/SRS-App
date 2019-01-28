@@ -29,7 +29,10 @@
     {
       "type": "npm",
       "script": "firebase-dev",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }

@@ -10,6 +10,8 @@ import { colorSecondaryDarker, colorPrimary } from 'style/theme';
 type ReviewStepper = {
   numOfCards: number;
   pos: number;
+  onBack: genericFunction;
+  showBackButton: boolean;
 };
 
 const Button = styled.div`
@@ -38,10 +40,10 @@ const Container = styled.div`
   }
 `;
 
-const ReviewStepper = ({ numOfCards, pos }: ReviewStepper) => (
+const ReviewStepper = ({ numOfCards, pos, onBack, showBackButton }: ReviewStepper) => (
   <Container>
-    {pos > 1 && (
-      <Button onClick={() => reviewState.dispatch('goToPrev')}>
+    {showBackButton && (
+      <Button onClick={onBack}>
         <Icon name="arrow-back" />
       </Button>
     )}
