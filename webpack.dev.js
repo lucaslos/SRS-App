@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+// const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 module.exports = {
   mode: 'development',
@@ -52,12 +52,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-    }),
-    new ForkTsCheckerWebpackPlugin({
-      checkSyntacticErrors: true,
-      silent: true,
-      async: true,
-      formatter: typescriptFormatter,
     }),
   ],
 

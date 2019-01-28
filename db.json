@@ -9,6 +9,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -22,6 +23,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -34,6 +36,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -46,6 +49,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -55,6 +59,7 @@
       "back": "série de",
       "lastReview": "2018-05-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -67,6 +72,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -79,6 +85,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -92,6 +99,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -104,6 +112,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -116,6 +125,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -128,6 +138,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -140,6 +151,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -152,6 +164,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -164,6 +177,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -173,6 +187,7 @@
       "back": "insatisfatório",
       "lastReview": "2018-09-11",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -185,6 +200,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -194,18 +210,20 @@
       "back": "cliente",
       "lastReview": "2018-09-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 17,
       "front": "break down",
-      "back": "quebrar, desmembrar / dividir",
+      "back": "quebrar; desmembrar / dividir",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -215,6 +233,7 @@
       "back": "essas / esses",
       "lastReview": "2018-09-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -227,19 +246,21 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 20,
       "front": "around",
-      "back": "por aí, ao redor",
+      "back": "por aí; ao redor",
       "tags": [
         "preposition",
         "adverb"
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -252,6 +273,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -265,6 +287,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -278,6 +301,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -287,6 +311,7 @@
       "back": "reunir",
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -302,6 +327,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -317,6 +343,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -329,6 +356,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -341,6 +369,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -353,6 +382,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -362,6 +392,7 @@
       "back": "encolher",
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -374,6 +405,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -386,6 +418,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -398,6 +431,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -407,6 +441,7 @@
       "back": "retratar",
       "lastReview": "2018-08-27",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -419,6 +454,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -431,6 +467,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -440,6 +477,7 @@
       "back": "declaradamente",
       "lastReview": "2018-08-21",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -452,6 +490,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -465,6 +504,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -474,6 +514,7 @@
       "back": "me leve a mal",
       "lastReview": "2018-08-21",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -483,6 +524,7 @@
       "back": "superestimado",
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -492,6 +534,7 @@
       "back": "poderoso",
       "lastReview": "2018-08-21",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -507,6 +550,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -519,6 +563,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -531,6 +576,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -543,6 +589,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -555,6 +602,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -567,6 +615,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -579,6 +628,7 @@
       ],
       "lastReview": "2018-04-25",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -588,6 +638,7 @@
       "back": "uma inesperada e frequentemente desagradável descoberta ou mudança de eventos",
       "lastReview": "2018-04-25",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -600,6 +651,7 @@
       ],
       "lastReview": "2018-04-28",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -612,6 +664,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -627,6 +680,7 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -639,18 +693,20 @@
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 55,
       "front": "tie",
-      "back": "vincular, amarrar",
+      "back": "vincular; amarrar",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-04-22",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -663,6 +719,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -675,6 +732,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -687,6 +745,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -699,6 +758,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -711,13 +771,14 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 61,
       "front": "fulfill",
-      "back": "cumprir, preencher",
+      "back": "cumprir; preencher",
       "tags": [
         "verb",
         "isn't so obvious"
@@ -727,6 +788,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -739,6 +801,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -751,6 +814,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -763,6 +827,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -778,6 +843,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 8,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -790,6 +856,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -799,6 +866,7 @@
       "back": "aumentar de nível",
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -814,6 +882,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 10,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -826,18 +895,20 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 70,
       "front": "I’d",
-      "back": "i had, I would",
+      "back": "i had; I would",
       "tags": [
         "aux. verb"
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -850,6 +921,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -862,6 +934,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -874,6 +947,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -886,6 +960,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -901,6 +976,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -913,6 +989,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -929,6 +1006,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -944,6 +1022,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -960,6 +1039,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -976,6 +1056,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 14,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -989,6 +1070,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1004,6 +1086,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1017,6 +1100,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1029,6 +1113,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1043,6 +1128,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1056,6 +1142,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1068,6 +1155,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1080,6 +1168,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1089,6 +1178,7 @@
       "back": "solução alternativa",
       "lastReview": "2018-08-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1098,13 +1188,14 @@
       "back": "editar",
       "lastReview": "2018-08-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 91,
       "front": "abide",
-      "back": "cumprir, habitar",
+      "back": "cumprir; habitar",
       "tags": [
         "verb"
       ],
@@ -1113,6 +1204,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 11,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1125,6 +1217,7 @@
       ],
       "lastReview": "2018-08-20",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1141,13 +1234,14 @@
       ],
       "lastReview": "2018-08-20",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 94,
       "front": "sweeping",
-      "back": "decisivo, amplo",
+      "back": "decisivo; amplo",
       "tags": [
         "adjective"
       ],
@@ -1157,6 +1251,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 17,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1169,6 +1264,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1178,6 +1274,7 @@
       "back": "inferior",
       "lastReview": "2018-08-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1187,6 +1284,7 @@
       "back": "negligência",
       "lastReview": "2018-08-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1196,6 +1294,7 @@
       "back": "ficar com",
       "lastReview": "2018-08-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1205,6 +1304,7 @@
       "back": "vaidade",
       "lastReview": "2018-08-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1221,6 +1321,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1234,6 +1335,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1246,13 +1348,14 @@
       ],
       "lastReview": "2018-04-29",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 103,
       "front": "which",
-      "back": "qual, cujo",
+      "back": "qual; cujo",
       "tags": [
         "pronoun",
         "determiner"
@@ -1262,6 +1365,7 @@
       ],
       "lastReview": "2018-06-01",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1277,6 +1381,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1290,6 +1395,7 @@
       ],
       "lastReview": "2018-04-29",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1303,6 +1409,7 @@
       ],
       "lastReview": "2018-04-29",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1315,6 +1422,7 @@
       ],
       "lastReview": "2018-04-29",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1327,6 +1435,7 @@
       ],
       "lastReview": "2018-05-10",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1336,6 +1445,7 @@
       "back": "embelezar",
       "lastReview": "2018-04-29",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1348,6 +1458,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1360,6 +1471,7 @@
       ],
       "lastReview": "2018-07-22",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1372,6 +1484,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1381,6 +1494,7 @@
       "back": "sempre tão",
       "lastReview": "2018-07-16",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1393,6 +1507,7 @@
       ],
       "lastReview": "2018-07-18",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1405,6 +1520,7 @@
       ],
       "lastReview": "2018-07-22",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1417,6 +1533,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1430,6 +1547,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1439,6 +1557,7 @@
       "back": "não dito",
       "lastReview": "2018-07-18",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1448,6 +1567,7 @@
       "back": "delinear",
       "lastReview": "2018-07-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -1461,6 +1581,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -1473,6 +1594,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1488,6 +1610,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1500,6 +1623,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1512,6 +1636,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 13,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1521,6 +1646,7 @@
       "back": "nunca se contentar",
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1533,6 +1659,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1542,6 +1669,7 @@
       "back": "lança luz",
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1555,6 +1683,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1567,6 +1696,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1581,6 +1711,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -1595,6 +1726,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 8,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -1604,6 +1736,7 @@
       "back": "perde a noção do",
       "lastReview": "2018-06-08",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1613,6 +1746,7 @@
       "back": "a noção do tempo",
       "lastReview": "2018-06-08",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1625,6 +1759,7 @@
       ],
       "lastReview": "2018-06-11",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1637,6 +1772,7 @@
       ],
       "lastReview": "2018-06-11",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1649,6 +1785,7 @@
       ],
       "lastReview": "2018-06-14",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1661,6 +1798,7 @@
       ],
       "lastReview": "2018-06-08",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1676,6 +1814,7 @@
       ],
       "lastReview": "2018-06-22",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1688,6 +1827,7 @@
       ],
       "lastReview": "2018-06-08",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1700,6 +1840,7 @@
       ],
       "lastReview": "2018-06-08",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1713,6 +1854,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1725,6 +1867,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1740,6 +1883,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1749,6 +1893,7 @@
       "back": "ter ido embora",
       "lastReview": "2018-09-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1758,6 +1903,7 @@
       "back": "no sentido horário",
       "lastReview": "2018-09-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1770,6 +1916,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1782,6 +1929,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1794,6 +1942,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1812,6 +1961,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1821,6 +1971,7 @@
       "back": "caso contrário",
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1833,6 +1984,7 @@
       ],
       "lastReview": "2018-08-24",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1848,6 +2000,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1857,6 +2010,7 @@
       "back": "subjacente",
       "lastReview": "2018-08-21",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1869,6 +2023,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1881,6 +2036,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1893,6 +2049,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1905,6 +2062,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1914,6 +2072,7 @@
       "back": "entendi",
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1927,6 +2086,7 @@
       ],
       "lastReview": "2018-06-25",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1939,6 +2099,7 @@
       ],
       "lastReview": "2018-06-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1951,6 +2112,7 @@
       ],
       "lastReview": "2018-06-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1960,6 +2122,7 @@
       "back": "continuar com",
       "lastReview": "2018-06-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1972,6 +2135,7 @@
       ],
       "lastReview": "2018-06-29",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1981,6 +2145,7 @@
       "back": "lugar algum",
       "lastReview": "2018-06-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -1993,6 +2158,7 @@
       ],
       "lastReview": "2018-06-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2009,6 +2175,7 @@
       ],
       "lastReview": "2018-06-29",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2021,6 +2188,7 @@
       ],
       "lastReview": "2018-06-22",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2033,6 +2201,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2046,6 +2215,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2058,6 +2228,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2070,6 +2241,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2083,6 +2255,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2095,6 +2268,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2107,13 +2281,14 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 175,
       "front": "as",
-      "back": "como, enquanto, tão",
+      "back": "como; enquanto, tão",
       "notes": [
         "Especially as old as Nana was",
         "She works as a waitress.",
@@ -2121,6 +2296,7 @@
       ],
       "lastReview": "2018-08-27",
       "wrongReviews": 18,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2133,6 +2309,7 @@
       ],
       "lastReview": "2018-08-21",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2145,6 +2322,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 20,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2157,6 +2335,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2169,6 +2348,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2178,6 +2358,7 @@
       "back": "até o momento / até agora",
       "lastReview": "2018-06-11",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2194,6 +2375,7 @@
       ],
       "lastReview": "2018-06-25",
       "wrongReviews": 14,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2206,6 +2388,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2218,6 +2401,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2231,6 +2415,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2245,6 +2430,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2258,6 +2444,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2271,6 +2458,7 @@
       ],
       "lastReview": "2018-06-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2283,6 +2471,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2295,6 +2484,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 10,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2310,6 +2500,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2319,6 +2510,7 @@
       "back": "de fato",
       "lastReview": "2018-05-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2334,6 +2526,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2346,6 +2539,7 @@
       ],
       "lastReview": "2018-05-28",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2362,6 +2556,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2371,6 +2566,7 @@
       "back": "vai e vem",
       "lastReview": "2018-05-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2386,6 +2582,7 @@
       ],
       "lastReview": "2018-05-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2395,6 +2592,7 @@
       "back": "significativo",
       "lastReview": "2018-09-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2407,6 +2605,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2420,15 +2619,17 @@
       ],
       "lastReview": "2018-09-19",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
     {
       "id": 200,
       "front": "matter",
-      "back": "questão / assunto, matéria",
+      "back": "questão / assunto; matéria",
       "lastReview": "2018-09-16",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2441,6 +2642,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2453,6 +2655,7 @@
       ],
       "lastReview": "2018-09-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2465,6 +2668,7 @@
       ],
       "lastReview": "2018-09-19",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2481,6 +2685,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 5,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -2493,6 +2698,7 @@
       ],
       "lastReview": "2018-09-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2508,6 +2714,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 10,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -2520,6 +2727,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -2536,6 +2744,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2548,6 +2757,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2557,6 +2767,7 @@
       "back": "se trata de",
       "lastReview": "2018-09-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2569,6 +2780,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2581,6 +2793,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2593,6 +2806,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2605,6 +2819,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2621,6 +2836,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2633,6 +2849,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -2647,13 +2864,14 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 218,
       "front": "as long as",
-      "back": "enquanto, contanto que",
+      "back": "enquanto; contanto que",
       "tags": [
         "adverb",
         "conjunction"
@@ -2664,6 +2882,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 22,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2679,6 +2898,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 9,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -2688,6 +2908,7 @@
       "back": "num momento",
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -2700,19 +2921,21 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 222,
       "front": "spot",
-      "back": "localizar, local",
+      "back": "localizar; local",
       "tags": [
         "verb",
         "noun"
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2725,6 +2948,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 11,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2737,6 +2961,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2749,6 +2974,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2761,6 +2987,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2776,6 +3003,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2789,6 +3017,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2804,6 +3033,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2816,6 +3046,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -2828,6 +3059,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2841,6 +3073,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2856,6 +3089,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 9,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -2868,6 +3102,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2877,6 +3112,7 @@
       "back": "estabelecer",
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -2889,6 +3125,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 5,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -2902,13 +3139,14 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
     {
       "id": 238,
       "front": "warmth",
-      "back": "cordialidade, calor",
+      "back": "cordialidade; calor",
       "tags": [
         "noun",
         "uncountable",
@@ -2916,6 +3154,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2928,6 +3167,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2940,6 +3180,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2953,6 +3194,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -2969,6 +3211,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -2986,6 +3229,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 12,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -3001,6 +3245,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -3010,6 +3255,7 @@
       "back": "regra geral",
       "lastReview": "2018-09-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3022,6 +3268,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 12,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -3034,6 +3281,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3043,6 +3291,7 @@
       "back": "embora",
       "lastReview": "2018-09-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3055,6 +3304,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3064,6 +3314,7 @@
       "back": "através de",
       "lastReview": "2018-09-20",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3076,6 +3327,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3088,6 +3340,7 @@
       ],
       "lastReview": "2018-09-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3103,13 +3356,14 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 3,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
     {
       "id": 254,
       "front": "disrupt",
-      "back": "perturbar, quebrar",
+      "back": "perturbar; quebrar",
       "tags": [
         "business",
         "verb"
@@ -3120,6 +3374,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3132,13 +3387,14 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
     {
       "id": 256,
       "front": "query",
-      "back": "consulta, pergunta / questão",
+      "back": "consulta; pergunta / questão",
       "tags": [
         "noun"
       ],
@@ -3147,6 +3403,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 10,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3159,6 +3416,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3171,6 +3429,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3184,6 +3443,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3199,13 +3459,14 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 10,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 261,
       "front": "else",
-      "back": "outro, mais",
+      "back": "outro; mais",
       "tags": [
         "idioms",
         "adjective",
@@ -3218,6 +3479,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 15,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3227,6 +3489,7 @@
       "back": "limite",
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3239,6 +3502,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3248,6 +3512,7 @@
       "back": "perigo",
       "lastReview": "2018-12-02",
       "wrongReviews": 5,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3257,6 +3522,7 @@
       "back": "terceirizar",
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3269,6 +3535,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3278,6 +3545,7 @@
       "back": "ansioso",
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3287,6 +3555,7 @@
       "back": "de ativos",
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3296,18 +3565,20 @@
       "back": "ser mais esperto que",
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
     {
       "id": 270,
       "front": "at all",
-      "back": "nenhum pouco, absolutamente",
+      "back": "nenhum pouco; absolutamente",
       "notes": [
         "And apparently it doesn't affect you at all."
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 5,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3317,6 +3588,7 @@
       "back": "maravilhoso",
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3329,6 +3601,7 @@
       ],
       "lastReview": "2018-08-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3341,6 +3614,7 @@
       ],
       "lastReview": "2018-08-01",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3356,6 +3630,7 @@
       ],
       "lastReview": "2018-08-01",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3365,6 +3640,7 @@
       "back": "permanece fiel",
       "lastReview": "2018-08-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3377,6 +3653,7 @@
       ],
       "lastReview": "2018-08-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3386,13 +3663,14 @@
       "back": "a partir do zero",
       "lastReview": "2018-08-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 278,
       "front": "crawl",
-      "back": "rastejar, vasculhar",
+      "back": "rastejar; vasculhar",
       "tags": [
         "verb"
       ],
@@ -3401,6 +3679,7 @@
       ],
       "lastReview": "2018-08-07",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3417,6 +3696,7 @@
       ],
       "lastReview": "2018-08-07",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3429,6 +3709,7 @@
       ],
       "lastReview": "2018-08-07",
       "wrongReviews": 10,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3441,6 +3722,7 @@
       ],
       "lastReview": "2018-08-01",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3453,6 +3735,7 @@
       ],
       "lastReview": "2018-08-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -3465,15 +3748,17 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 284,
       "front": "glance",
-      "back": "olhada, relance",
+      "back": "olhada; relance",
       "lastReview": "2018-07-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3489,13 +3774,14 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 286,
       "front": "jarring",
-      "back": "chocante, dissonante",
+      "back": "chocante; dissonante",
       "tags": [
         "adjective"
       ],
@@ -3504,6 +3790,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3513,6 +3800,7 @@
       "back": "enorme quantidade",
       "lastReview": "2018-07-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3525,6 +3813,7 @@
       ],
       "lastReview": "2018-07-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3537,6 +3826,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3549,6 +3839,7 @@
       ],
       "lastReview": "2018-07-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3561,6 +3852,7 @@
       ],
       "lastReview": "2018-07-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3570,6 +3862,7 @@
       "back": "auge",
       "lastReview": "2018-07-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3582,6 +3875,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3595,6 +3889,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3611,6 +3906,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -3623,6 +3919,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3632,6 +3929,7 @@
       "back": "ceder",
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3641,6 +3939,7 @@
       "back": "queima de estoque",
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3653,6 +3952,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3665,6 +3965,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3680,6 +3981,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 7,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3692,6 +3994,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3705,6 +4008,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3717,6 +4021,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 11,
       "lang": "en"
     },
@@ -3730,6 +4035,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3742,6 +4048,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3755,19 +4062,21 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
     {
       "id": 308,
       "front": "bundle",
-      "back": "pacote, empacotar",
+      "back": "pacote; empacotar",
       "tags": [
         "verb",
         "noun"
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3783,30 +4092,33 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
     {
       "id": 310,
       "front": "neat",
-      "back": "limpo, arrumado",
+      "back": "limpo; arrumado",
       "tags": [
         "adjective"
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
     {
       "id": 311,
       "front": "you name it",
-      "back": "o que você quiser, whatever you can think of (used to express the extent or variety of something).",
+      "back": "o que você quiser; whatever you can think of (used to express the extent or variety of something).",
       "tags": [
         "phrase"
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3820,6 +4132,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3835,6 +4148,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3852,6 +4166,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3865,6 +4180,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -3877,6 +4193,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3889,6 +4206,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3901,6 +4219,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -3913,6 +4232,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -3922,6 +4242,7 @@
       "back": "experiente",
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3934,6 +4255,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -3946,6 +4268,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3955,6 +4278,7 @@
       "back": "a calhar",
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3967,6 +4291,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3979,6 +4304,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -3991,6 +4317,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4003,6 +4330,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4015,6 +4343,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4027,6 +4356,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4039,6 +4369,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4054,6 +4385,7 @@
       ],
       "lastReview": "2018-07-18",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4063,6 +4395,7 @@
       "back": "propenso a erros",
       "lastReview": "2018-07-08",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4072,6 +4405,7 @@
       "back": "intermediário",
       "lastReview": "2018-07-08",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4088,6 +4422,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4100,6 +4435,7 @@
       ],
       "lastReview": "2018-07-08",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4113,6 +4449,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4125,6 +4462,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4137,6 +4475,7 @@
       ],
       "lastReview": "2018-05-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4149,6 +4488,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4163,6 +4503,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4177,6 +4518,7 @@
       ],
       "lastReview": "2018-06-06",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4189,6 +4531,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4204,6 +4547,7 @@
       ],
       "lastReview": "2018-06-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4216,6 +4560,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4228,6 +4573,7 @@
       ],
       "lastReview": "2018-06-06",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4244,6 +4590,7 @@
       ],
       "lastReview": "2018-09-19",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4253,6 +4600,7 @@
       "back": "uso indevido",
       "lastReview": "2018-09-11",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4266,6 +4614,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4282,6 +4631,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4295,6 +4645,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4304,6 +4655,7 @@
       "back": "aninhado",
       "lastReview": "2018-09-11",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4320,6 +4672,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4332,6 +4685,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4344,6 +4698,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4356,6 +4711,7 @@
       ],
       "lastReview": "2018-09-11",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4368,6 +4724,7 @@
       ],
       "lastReview": "2018-09-19",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4380,6 +4737,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4392,6 +4750,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4404,6 +4763,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4416,6 +4776,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4428,6 +4789,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4440,6 +4802,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4452,25 +4815,27 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 364,
       "front": "boilerplate",
-      "back": "padrão, texto ou código que deve ser usado com pouca alteração",
+      "back": "padrão; texto ou código que deve ser usado com pouca alteração",
       "tags": [
         "noun"
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 365,
       "front": "outright",
-      "back": "completamente, completo / definitivo",
+      "back": "completamente; completo / definitivo",
       "tags": [
         "adverb",
         "adjective"
@@ -4481,6 +4846,7 @@
       ],
       "lastReview": "2018-08-02",
       "wrongReviews": 11,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4493,6 +4859,7 @@
       ],
       "lastReview": "2018-07-20",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4508,6 +4875,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4520,6 +4888,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4532,6 +4901,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4548,6 +4918,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 15,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4565,6 +4936,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4577,6 +4949,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4589,6 +4962,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4601,6 +4975,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4613,6 +4988,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -4625,19 +5001,21 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 377,
       "front": "order",
-      "back": "encomenda, pedir",
+      "back": "encomenda; pedir",
       "tags": [
         "noun",
         "verb"
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4651,15 +5029,17 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 379,
       "front": "craftsmanship",
-      "back": "habilidade, artesanato",
+      "back": "habilidade; artesanato",
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4669,6 +5049,7 @@
       "back": "repetidas vezes",
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4684,6 +5065,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4699,6 +5081,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 8,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -4711,13 +5094,14 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 384,
       "front": "overhaul",
-      "back": "revisão, reformular",
+      "back": "revisão; reformular",
       "tags": [
         "verb",
         "noun"
@@ -4728,6 +5112,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 14,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -4740,6 +5125,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4755,6 +5141,7 @@
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4767,6 +5154,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 13,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4780,6 +5168,7 @@
       ],
       "lastReview": "2018-07-31",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4795,6 +5184,7 @@
       ],
       "lastReview": "2018-07-31",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4804,6 +5194,7 @@
       "back": "já era hora",
       "lastReview": "2018-07-28",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4816,6 +5207,7 @@
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4831,6 +5223,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4843,18 +5236,20 @@
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 394,
       "front": "take a look at",
-      "back": "dê uma olhada, olhar",
+      "back": "dê uma olhada; olhar",
       "tags": [
         "phrase"
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4867,6 +5262,7 @@
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4879,6 +5275,7 @@
       ],
       "lastReview": "2018-07-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4891,6 +5288,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4903,6 +5301,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4915,6 +5314,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4927,6 +5327,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4939,6 +5340,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4951,6 +5353,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4963,6 +5366,7 @@
       ],
       "lastReview": "2018-06-09",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4976,6 +5380,7 @@
       ],
       "lastReview": "2018-06-11",
       "wrongReviews": 11,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -4989,6 +5394,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5002,6 +5408,7 @@
       ],
       "lastReview": "2018-06-06",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5014,6 +5421,7 @@
       ],
       "lastReview": "2018-05-25",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5026,6 +5434,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5038,6 +5447,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5050,6 +5460,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5062,6 +5473,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -5080,6 +5492,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 12,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -5095,6 +5508,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 10,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5104,6 +5518,7 @@
       "back": "enquanto isso",
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5116,6 +5531,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5128,6 +5544,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5143,6 +5560,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 9,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -5155,19 +5573,21 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 419,
       "front": "harm",
-      "back": "prejuízo, prejudicar",
+      "back": "prejuízo; prejudicar",
       "tags": [
         "verb",
         "noun"
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5180,6 +5600,7 @@
       ],
       "lastReview": "2018-09-08",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5192,6 +5613,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5204,13 +5626,14 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 423,
       "front": "spring",
-      "back": "saltar, mola",
+      "back": "saltar; mola",
       "tags": [
         "verb",
         "noun",
@@ -5218,13 +5641,14 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 424,
       "front": "bother",
-      "back": "preocupar, incomodar",
+      "back": "preocupar; incomodar",
       "tags": [
         "verb"
       ],
@@ -5233,6 +5657,7 @@
       ],
       "lastReview": "2018-09-05",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5246,6 +5671,7 @@
       ],
       "lastReview": "2018-09-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5258,6 +5684,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5271,6 +5698,7 @@
       ],
       "lastReview": "2018-09-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5286,6 +5714,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5298,6 +5727,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5313,6 +5743,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5322,6 +5753,7 @@
       "back": "eu tinha",
       "lastReview": "2018-08-03",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5335,6 +5767,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5348,6 +5781,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5365,6 +5799,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5380,6 +5815,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5392,6 +5828,7 @@
       ],
       "lastReview": "2018-08-03",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5407,6 +5844,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5419,6 +5857,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5431,6 +5870,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5446,15 +5886,17 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 441,
       "front": "takeaway",
-      "back": "ponto chave, conclusão",
+      "back": "ponto chave; conclusão",
       "lastReview": "2018-11-16",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5468,6 +5910,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5484,6 +5927,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5497,6 +5941,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5509,6 +5954,7 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5521,18 +5967,20 @@
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 447,
       "front": "to state",
-      "back": "afirmar, declarar",
+      "back": "afirmar; declarar",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-11-16",
       "wrongReviews": 6,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5548,6 +5996,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5562,13 +6011,14 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 450,
       "front": "counterpart",
-      "back": "homólogo, parceiro",
+      "back": "homólogo; parceiro",
       "tags": [
         "noun"
       ],
@@ -5578,6 +6028,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5594,6 +6045,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5607,6 +6059,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -5622,6 +6075,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5634,6 +6088,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5650,6 +6105,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5662,6 +6118,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5677,6 +6134,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5692,6 +6150,7 @@
       ],
       "lastReview": "2018-12-02",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5704,6 +6163,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5716,6 +6176,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5725,6 +6186,7 @@
       "back": "enquanto isso",
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5741,6 +6203,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5756,6 +6219,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5768,18 +6232,20 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
     {
       "id": 465,
       "front": "answer",
-      "back": "atender, responder",
+      "back": "atender; responder",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5795,6 +6261,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5804,6 +6271,7 @@
       "back": "recém-chegado",
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5819,6 +6287,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5834,6 +6303,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5846,6 +6316,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5858,6 +6329,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 10,
       "lang": "en"
     },
@@ -5874,6 +6346,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -5892,6 +6365,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5905,19 +6379,21 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 475,
       "front": "pivot",
-      "back": "sudden, rapid change of direction and focus",
+      "back": "sudden; rapid change of direction and focus",
       "tags": [
         "verb",
         "phrase"
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5933,6 +6409,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5949,6 +6426,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5961,6 +6439,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -5978,6 +6457,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -5990,6 +6470,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6002,6 +6483,7 @@
       ],
       "lastReview": "2018-11-06",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6014,18 +6496,20 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 483,
       "front": "deal-breaker",
-      "back": "a factor or issue that, if unresolved during negotiations, would cause one party to withdraw from a deal",
+      "back": "a factor or issue that; if unresolved during negotiations, would cause one party to withdraw from a deal",
       "tags": [
         "phrase"
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6042,6 +6526,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6057,6 +6542,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6069,6 +6555,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6078,6 +6565,7 @@
       "back": "não é minha decisão",
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6091,6 +6579,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6103,6 +6592,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6119,6 +6609,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6135,6 +6626,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6147,6 +6639,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6160,6 +6653,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6172,6 +6666,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6188,6 +6683,7 @@
       ],
       "lastReview": "2018-11-02",
       "wrongReviews": 8,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -6201,6 +6697,7 @@
       ],
       "lastReview": "2018-09-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6213,6 +6710,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6225,6 +6723,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6240,6 +6739,7 @@
       ],
       "lastReview": "2018-09-22",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6255,6 +6755,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6267,6 +6768,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6279,6 +6781,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6291,6 +6794,7 @@
       ],
       "lastReview": "2018-09-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6304,6 +6808,7 @@
       ],
       "lastReview": "2018-09-18",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6319,6 +6824,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6334,6 +6840,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6346,6 +6853,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6358,6 +6866,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6370,6 +6879,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6385,13 +6895,14 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
     {
       "id": 511,
       "front": "concern",
-      "back": "preocupação, interesse",
+      "back": "preocupação; interesse",
       "tags": [
         "noun"
       ],
@@ -6401,6 +6912,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6416,6 +6928,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6432,6 +6945,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6447,6 +6961,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -6462,6 +6977,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 10,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6478,6 +6994,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -6490,6 +7007,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6502,6 +7020,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 5,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -6514,6 +7033,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6530,6 +7050,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6545,6 +7066,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 4,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -6560,6 +7082,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 11,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -6572,13 +7095,14 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
     {
       "id": 524,
       "front": "gist",
-      "back": "essência, essencial",
+      "back": "essência; essencial",
       "tags": [
         "noun"
       ],
@@ -6588,6 +7112,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6604,6 +7129,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 6,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -6620,6 +7146,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6635,6 +7162,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6650,6 +7178,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6663,6 +7192,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -6679,6 +7209,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6691,6 +7222,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -6703,6 +7235,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6715,6 +7248,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6730,6 +7264,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6745,6 +7280,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -6757,6 +7293,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -6772,6 +7309,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -6787,6 +7325,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6799,6 +7338,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6811,6 +7351,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6827,6 +7368,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6839,6 +7381,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6856,6 +7399,7 @@
       ],
       "lastReview": "2018-09-06",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6871,6 +7415,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6886,6 +7431,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6901,6 +7447,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6913,6 +7460,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6926,6 +7474,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6941,6 +7490,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6954,6 +7504,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6970,6 +7521,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6982,6 +7534,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -6995,6 +7548,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7008,6 +7562,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7022,6 +7577,7 @@
       ],
       "lastReview": "2018-08-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7038,6 +7594,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7054,6 +7611,7 @@
       ],
       "lastReview": "2018-08-23",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7066,6 +7624,7 @@
       ],
       "lastReview": "2018-08-31",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7079,6 +7638,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7091,6 +7651,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7106,6 +7667,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7121,6 +7683,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7133,6 +7696,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7145,6 +7709,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7157,6 +7722,7 @@
       ],
       "lastReview": "2018-08-02",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7169,6 +7735,7 @@
       ],
       "lastReview": "2018-07-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7178,6 +7745,7 @@
       "back": "levar (algo) em conta",
       "lastReview": "2018-07-26",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7197,6 +7765,7 @@
       ],
       "lastReview": "2018-08-07",
       "wrongReviews": 12,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7213,6 +7782,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7228,6 +7798,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7243,6 +7814,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7256,6 +7828,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7270,6 +7843,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7282,6 +7856,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7294,6 +7869,7 @@
       ],
       "lastReview": "2018-07-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7309,6 +7885,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7324,6 +7901,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7337,6 +7915,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7352,6 +7931,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7367,6 +7947,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7384,6 +7965,7 @@
       ],
       "lastReview": "2018-07-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7396,6 +7978,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7405,6 +7988,7 @@
       "back": "uma grande quantidade de",
       "lastReview": "2018-07-09",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7421,6 +8005,7 @@
       ],
       "lastReview": "2018-07-22",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7433,6 +8018,7 @@
       ],
       "lastReview": "2018-07-16",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7445,6 +8031,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7457,6 +8044,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7469,6 +8057,7 @@
       ],
       "lastReview": "2018-07-09",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7482,6 +8071,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -7494,6 +8084,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -7508,6 +8099,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7520,6 +8112,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7532,6 +8125,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7544,6 +8138,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7561,6 +8156,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7574,6 +8170,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7586,6 +8183,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7598,6 +8196,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -7615,6 +8214,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7630,18 +8230,20 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
     {
       "id": 601,
       "front": "commit",
-      "back": "comprometer-se, cometer",
+      "back": "comprometer-se; cometer",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-08-18",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7655,6 +8257,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7668,6 +8271,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7680,6 +8284,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7693,6 +8298,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7705,6 +8311,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7714,6 +8321,7 @@
       "back": "poder / ser capaz",
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7726,6 +8334,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7742,6 +8351,7 @@
       ],
       "lastReview": "2018-08-15",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -7757,6 +8367,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7769,6 +8380,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7785,6 +8397,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -7801,6 +8414,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -7816,6 +8430,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -7832,6 +8447,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7848,6 +8464,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7863,6 +8480,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -7878,6 +8496,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7891,6 +8510,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -7905,6 +8525,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7920,6 +8541,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -7933,6 +8555,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7945,6 +8568,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7961,6 +8585,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7978,6 +8603,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -7991,6 +8617,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8000,6 +8627,7 @@
       "back": "aí que está o problema",
       "lastReview": "2018-09-07",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8015,6 +8643,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8030,6 +8659,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8046,6 +8676,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8059,6 +8690,7 @@
       ],
       "lastReview": "2018-09-07",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8077,6 +8709,7 @@
       ],
       "lastReview": "2018-09-16",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8086,6 +8719,7 @@
       "back": "é certo / é sabido",
       "lastReview": "2018-09-07",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8099,6 +8733,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8111,6 +8746,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8123,6 +8759,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8136,6 +8773,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8149,6 +8787,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 4,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -8164,6 +8803,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 5,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -8180,6 +8820,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 7,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -8195,6 +8836,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8211,6 +8853,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 5,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8224,6 +8867,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 4,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -8240,6 +8884,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -8257,18 +8902,20 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 646,
       "front": "triple down",
-      "back": "to double or significantly increase a risk, investment, or other commitment",
+      "back": "to double or significantly increase a risk; investment, or other commitment",
       "tags": [
         "phrase"
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8285,6 +8932,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8300,6 +8948,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -8315,6 +8964,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8327,6 +8977,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8343,6 +8994,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 8,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8359,6 +9011,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8371,6 +9024,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8384,6 +9038,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8397,6 +9052,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8414,6 +9070,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8431,6 +9088,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8443,6 +9101,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8460,6 +9119,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8473,6 +9133,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8489,6 +9150,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8502,6 +9164,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8515,6 +9178,7 @@
       ],
       "lastReview": "2018-08-15",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8528,6 +9192,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8540,6 +9205,7 @@
       ],
       "lastReview": "2018-08-12",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 9,
       "lang": "en"
     },
@@ -8552,6 +9218,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -8567,6 +9234,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -8579,6 +9247,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8594,13 +9263,14 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
     {
       "id": 670,
       "front": "be fond of",
-      "back": "gostar de alguém/algo, ter carinho por alguém",
+      "back": "gostar de alguém/algo; ter carinho por alguém",
       "tags": [
         "verb",
         "phrase"
@@ -8610,6 +9280,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8622,6 +9293,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8637,6 +9309,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -8653,6 +9326,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -8671,6 +9345,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -8686,6 +9361,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -8698,6 +9374,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -8713,6 +9390,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8728,6 +9406,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8740,6 +9419,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8752,6 +9432,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8764,6 +9445,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8780,6 +9462,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8792,6 +9475,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 7,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -8809,6 +9493,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8824,6 +9509,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8836,6 +9522,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8848,6 +9535,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8863,6 +9551,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8878,6 +9567,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8891,6 +9581,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8903,6 +9594,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8915,6 +9607,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8930,6 +9623,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8945,6 +9639,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -8960,6 +9655,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8976,6 +9672,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -8992,6 +9689,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9001,6 +9699,7 @@
       "back": "desfecho dramático: a story or a situation that is exciting because its ending or result is uncertain until it happens",
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9017,6 +9716,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 13,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9029,6 +9729,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9046,6 +9747,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 11,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -9062,6 +9764,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9075,6 +9778,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 5,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9087,6 +9791,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 4,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9096,6 +9801,7 @@
       "back": "assumir o controle",
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9108,6 +9814,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9120,6 +9827,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9133,6 +9841,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9142,6 +9851,7 @@
       "back": "platô\n> a period during which there are no large changes",
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9157,6 +9867,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9169,6 +9880,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9178,6 +9890,7 @@
       "back": "modelos a seguir / exemplos",
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9190,6 +9903,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9205,6 +9919,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9217,6 +9932,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9233,6 +9949,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9246,6 +9963,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9262,6 +9980,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9275,6 +9994,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9287,6 +10007,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9299,6 +10020,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9311,6 +10033,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9323,6 +10046,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9340,6 +10064,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9356,6 +10081,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9369,6 +10095,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9387,6 +10114,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9400,6 +10128,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 6,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9412,6 +10141,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9428,6 +10158,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9444,6 +10175,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9457,6 +10189,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9472,6 +10205,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9487,6 +10221,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9499,6 +10234,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9508,6 +10244,7 @@
       "back": "a qualquer instante",
       "lastReview": "2018-11-03",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9520,6 +10257,7 @@
       ],
       "lastReview": "2018-11-03",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9532,6 +10270,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9547,6 +10286,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9559,6 +10299,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9572,6 +10313,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9584,6 +10326,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9599,6 +10342,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 10,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9615,6 +10359,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 11,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9631,6 +10376,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9647,6 +10393,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9664,6 +10411,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9676,6 +10424,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -9688,6 +10437,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9703,6 +10453,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -9715,6 +10466,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9731,6 +10483,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9746,6 +10499,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9761,6 +10515,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9774,6 +10529,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9789,6 +10545,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 8,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9804,6 +10561,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 7,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9816,6 +10574,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9828,6 +10587,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 8,
       "lang": "en"
     },
@@ -9843,6 +10603,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 6,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9859,6 +10620,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 18,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9871,6 +10633,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9886,6 +10649,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9902,6 +10666,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9914,6 +10679,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9929,19 +10695,21 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
     {
       "id": 767,
       "front": "con",
-      "back": "trapaça, trapacear / enganar",
+      "back": "trapaça; trapacear / enganar",
       "tags": [
         "verb",
         "noun"
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -9954,6 +10722,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9966,6 +10735,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9978,6 +10748,7 @@
       ],
       "lastReview": "2018-11-05",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 6,
       "lang": "en"
     },
@@ -9991,6 +10762,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10003,6 +10775,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10015,6 +10788,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10027,6 +10801,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10039,6 +10814,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10051,18 +10827,20 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
     {
       "id": 777,
       "front": "attach",
-      "back": "vincular, anexar",
+      "back": "vincular; anexar",
       "tags": [
         "verb"
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10079,6 +10857,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 5,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10091,6 +10870,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10103,6 +10883,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 7,
       "lang": "en"
     },
@@ -10118,6 +10899,7 @@
       ],
       "lastReview": "2018-11-13",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10134,6 +10916,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10146,6 +10929,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10162,6 +10946,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 3,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10179,6 +10964,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 13,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -10191,6 +10977,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10206,6 +10993,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10222,6 +11010,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10234,6 +11023,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10250,6 +11040,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10262,6 +11053,7 @@
       ],
       "lastReview": "2018-11-04",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10274,6 +11066,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10287,6 +11080,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10300,6 +11094,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10315,6 +11110,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10328,6 +11124,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10343,6 +11140,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10355,6 +11153,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 3,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10368,6 +11167,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10381,6 +11181,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10390,6 +11191,7 @@
       "back": "livrar se de",
       "lastReview": "2018-11-22",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 4,
       "lang": "en"
     },
@@ -10407,6 +11209,7 @@
       ],
       "lastReview": "2018-11-22",
       "wrongReviews": 5,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10419,6 +11222,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10434,6 +11238,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -10450,13 +11255,14 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 7,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
     {
       "id": 806,
       "front": "prior",
-      "back": "prévio, antes",
+      "back": "prévio; antes",
       "tags": [
         "adjective"
       ],
@@ -10465,6 +11271,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10474,6 +11281,7 @@
       "back": "fique longe das portas",
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10486,6 +11294,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10501,6 +11310,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 7,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -10517,6 +11327,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10532,6 +11343,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10547,6 +11359,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10559,6 +11372,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10575,6 +11389,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 8,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -10591,6 +11406,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 5,
+      "diff": 1,
       "repetitions": 0,
       "lang": "en"
     },
@@ -10603,6 +11419,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10618,6 +11435,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 3,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10630,15 +11448,17 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
     {
       "id": 819,
       "front": "Grammar:  \nverb + **out**",
-      "back": "usually when applied to a verb involving speech, out involves the addressing of a group, normally a non-specific group, as in \"anyone who will listen.\". with other kinds of verbs the out functions mainly as an intensifier, often implying completeness of action.",
+      "back": "usually when applied to a verb involving speech; out involves the addressing of a group, normally a non-specific group, as in \"anyone who will listen.\". with other kinds of verbs the out functions mainly as an intensifier, often implying completeness of action.",
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10648,6 +11468,7 @@
       "back": "em vez de / em vez disso",
       "lastReview": "2018-12-01",
       "wrongReviews": 6,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10661,6 +11482,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10678,6 +11500,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10687,6 +11510,7 @@
       "back": "conhecer algo como a palma da sua mão",
       "lastReview": "2018-12-01",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10700,6 +11524,7 @@
       ],
       "lastReview": "2018-12-01",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 5,
       "lang": "en"
     },
@@ -10713,6 +11538,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10725,6 +11551,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0.25,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10740,6 +11567,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10752,6 +11580,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 1,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10764,6 +11593,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 2,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10776,6 +11606,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 4,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10791,6 +11622,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 4,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10806,6 +11638,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 5,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -10818,6 +11651,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 3,
+      "diff": 0.5,
       "repetitions": 2,
       "lang": "en"
     },
@@ -10833,6 +11667,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 8,
+      "diff": 0.75,
       "repetitions": 1,
       "lang": "en"
     },
@@ -10845,6 +11680,7 @@
       ],
       "lastReview": "2018-11-28",
       "wrongReviews": 0,
+      "diff": 0,
       "repetitions": 3,
       "lang": "en"
     },
@@ -10852,189 +11688,189 @@
       "id": 836,
       "front": "impair",
       "back": "prejudicar",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 837,
       "front": "indulge",
       "back": "satisfazer / saciar",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 838,
       "front": "selflessness",
       "back": "abnegação",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 839,
       "front": "pint of beer",
       "back": "caneca de cerveja",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 840,
       "front": "reruns",
       "back": "reprises",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 841,
       "front": "garner",
       "back": "angariar",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 842,
       "front": "trump",
       "back": "superar/sobrepor",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 843,
       "front": "utterance",
       "back": "enunciado",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 844,
       "front": "soap opera",
       "back": "novela",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 845,
       "front": "binge on",
       "back": "devorar / ter compulsão por",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 846,
       "front": "churn",
       "back": "agitar",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 847,
       "front": "serve",
       "back": "saque (esportes com raquete)",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 848,
       "front": "pinpoint",
       "back": "identificar",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 849,
       "front": "as though",
       "back": "como se",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 850,
       "front": "has just flown by",
       "back": "passou voando",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 851,
       "front": "glaring",
       "back": "evidente",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 852,
       "front": "feat",
       "back": "feito / façanha",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 853,
       "front": "looser",
       "back": "mais solto",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 854,
       "front": "high stake",
       "back": "alto risco",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 855,
       "front": "prized",
       "back": "valorizado",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     },
     {
       "id": 856,
       "front": "padding",
       "back": "preenchimento",
-      "lastReview": "",
       "wrongReviews": 0,
-      "repetitions": "0",
+      "diff": 0,
+      "repetitions": 0,
       "lang": "en"
     }
   ]

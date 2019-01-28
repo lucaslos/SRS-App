@@ -11,6 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "noEmit": true,
+    "keyofStringsOnly": true,
 
     "baseUrl": ".", // This must be specified if "paths" is set
     "paths": {
@@ -23,6 +24,7 @@
   "exclude": [
     "docs",
     "dist",
+    "resources",
     "node_modules",
     "**/node_modules/*",
   ],

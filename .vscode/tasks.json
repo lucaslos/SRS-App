@@ -25,6 +25,11 @@
       "type": "npm",
       "script": "typesync",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "firebase-dev",
+      "problemMatcher": []
     }
   ]
 }

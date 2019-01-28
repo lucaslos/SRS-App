@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "npm run firebase-dev && node scripts/dev-server.js",
+    "dev": "node scripts/dev-server.js",
     "serve": "start http://localhost:5050 && node scripts/prod-server.js",
     "build": "webpack --progress --profile --json > stats.json",
     "build-patch": "npm version patch && webpack --progress --profile --json > stats.json",
@@ -37,12 +37,6 @@
     "@emotion/styled": "^10.0.6",
     "@firebase/app": "^0.3.8",
     "@firebase/database": "^0.3.11",
-    "@types/node": "^10.12.18",
-    "@types/react": "^16.7.20",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-hot-loader": "^4.1.0",
-    "@types/react-router-dom": "^4.3.1",
-    "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^1.0.0",
     "@typescript-eslint/parser": "^1.0.0",
     "awesome-typescript-loader": "^5.2.1",
@@ -74,7 +68,9 @@
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.8.0-alpha.1",
     "react-hot-loader": "^4.6.3",
+    "react-markdown": "^4.0.6",
     "react-router-dom": "^4.3.1",
+    "react-use": "^5.2.1",
     "source-map-loader": "^0.2.4",
     "svgo-sync": "^0.5.1",
     "terser-webpack-plugin": "^1.2.1",
@@ -83,8 +79,5 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-hot-middleware": "^2.24.3",
     "webpack-merge": "^4.2.1"
-  },
-  "eslintIgnore": [
-    "docs/"
-  ]
+  }
 }

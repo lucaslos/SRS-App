@@ -9,11 +9,10 @@
       ],
       "plugins": [
         ["emotion", { "sourceMap": true }],
-        "polished",
         "react-hot-loader/babel",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-optional-chaining",
+        // "@babel/plugin-proposal-optional-chaining",
       ]
     },
     "production": {
@@ -25,10 +24,9 @@
       ],
       "plugins": [
         "emotion",
-        "polished",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-optional-chaining",
+        // "@babel/plugin-proposal-optional-chaining",
       ]
     }
   }
