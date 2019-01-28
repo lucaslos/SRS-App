@@ -13,3 +13,20 @@ export const centerContent = css`
   justify-content: center;
   align-items: center;
 `;
+
+export const centerContentCollum = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const show = css`
+  opacity: 1;
+  visibility: visible;
+`;
+
+export const hide = css`
+  opacity: 0;
+  visibility: hidden;
+`;

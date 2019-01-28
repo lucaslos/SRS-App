@@ -1,13 +1,15 @@
-import { createStore, setKey } from 'lib/hookstore';
+import { createStore } from 'lib/hookstore';
 import app from 'utils/firebase';
 
-function initialize() {
-  createStore('cards', {
-    state: {
-      cards: [],
-    },
-  });
+export type CardsState = {
+  cards: Card[];
 }
+
+const cardsState = createStore<CardsState>('cards', {
+  state: {
+    cards: [],
+  },
+});
 
 // load cards
 app
@@ -15,7 +17,10 @@ app
   .ref('/cards/')
   .once('value')
   .then((response) => {
-    setKey('cards', 'cards', response.val());
+    cardsState.setKey('cards', response.val());
+  }, (err) => {
+    alert('Error: firebase fetch');
+    console.log(err);
   });
 
-export default initialize;
+export default cardsState;

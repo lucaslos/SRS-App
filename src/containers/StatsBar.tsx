@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { secondaryLigher } from 'style/colors';
+import { colorSecondaryLigher } from 'style/theme';
 import { rgba } from 'polished';
 
 const Container = styled.div`
@@ -10,7 +10,7 @@ const Container = styled.div`
   right: 0;
   bottom: 0;
 
-  background: ${rgba(secondaryLigher, 0.9)};
+  background: ${rgba(colorSecondaryLigher, 0.9)};
 `;
 
 const StatsBar = ({  }) => {

@@ -1,3 +1,3 @@
-import cards from 'state/cards';
-
-cards();
+import 'state/cards';
+import 'state/review';
+import 'state/modals';

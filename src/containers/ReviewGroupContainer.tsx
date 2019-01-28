@@ -1,9 +1,10 @@
-import * as React from 'react';
 import styled from '@emotion/styled';
 import ReviewGroup from 'components/ReviewGroup';
-import { centerContent } from 'style/modifiers';
 import { useStore } from 'lib/hookstore';
-import { calcCardsCoF } from 'utils/srsAlgo';
+import * as React from 'react';
+import { showReviewDialog } from 'state/review';
+import { centerContent } from 'style/modifiers';
+import { calcCardsCoF, needsReview } from 'utils/srsAlgo';
 
 const Container = styled.div`
   position: absolute;
@@ -24,26 +25,67 @@ const GroupsContainer = styled.div`
 `;
 
 const CardsGroups = () => {
-  const [cards] = useStore('cards', 'cards');
+  const [cards] = useStore<Card[]>('cards', 'cards');
 
   const [reviewedCards, newCards] = calcCardsCoF(cards);
 
-  const needsReview = reviewedCards.filter(card => card.cof >= 1);
+  const cardsNeedsReview = reviewedCards.filter(card => needsReview(card.cof));
 
   return (
     <Container>
       <GroupsContainer>
-        {needsReview.length > 10 && <ReviewGroup label="Review 10" warn />}
-        {needsReview.length > 20 && <ReviewGroup label="Review 20" warn />}
-        {needsReview.length > 30 && <ReviewGroup label="Review 30" warn />}
-        {needsReview.length > 0 && (
-          <ReviewGroup label={`Review All (${needsReview.length})`} warn />
+        {cardsNeedsReview.length > 10 && (
+          <ReviewGroup
+            label="Review 10"
+            warn
+            handleClick={() => showReviewDialog(10)}
+          />
         )}
-        {newCards.length > 10 && <ReviewGroup label="Review 10 New" />}
-        {newCards.length > 20 && <ReviewGroup label="Review 20 New" />}
-        {newCards.length > 30 && <ReviewGroup label="Review 30 New" />}
+        {cardsNeedsReview.length > 20 && (
+          <ReviewGroup
+            label="Review 20"
+            warn
+            handleClick={() => showReviewDialog(20)}
+          />
+        )}
+        {cardsNeedsReview.length > 30 && (
+          <ReviewGroup
+            label="Review 30"
+            warn
+            handleClick={() => showReviewDialog(30)}
+          />
+        )}
+        {cardsNeedsReview.length > 0 && (
+          <ReviewGroup
+            label={`Review All (${cardsNeedsReview.length})`}
+            warn
+            handleClick={() => showReviewDialog(cardsNeedsReview.length)}
+          />
+        )}
+        {/* new cards */}
+        {newCards.length > 10 && (
+          <ReviewGroup
+            label="Review 10 New"
+            handleClick={() => showReviewDialog(10, true)}
+          />
+        )}
+        {newCards.length > 20 && (
+          <ReviewGroup
+            label="Review 20 New"
+            handleClick={() => showReviewDialog(20, true)}
+          />
+        )}
+        {newCards.length > 30 && (
+          <ReviewGroup
+            label="Review 30 New"
+            handleClick={() => showReviewDialog(30, true)}
+          />
+        )}
         {newCards.length > 0 && (
-          <ReviewGroup label={`Review All New (${newCards.length})`} />
+          <ReviewGroup
+            label={`Review All New (${newCards.length})`}
+            handleClick={() => showReviewDialog(newCards.length, true)}
+          />
         )}
       </GroupsContainer>
     </Container>

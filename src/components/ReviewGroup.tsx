@@ -1,15 +1,16 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { centerContent, fillContainer } from 'style/modifiers';
-import { primary, redColor, secondary } from 'style/colors';
+import { colorPrimary, colorRed, colorSecondary } from 'style/theme';
 import { rgba, cover } from 'polished';
 import css from '@emotion/css';
 
 type ContainerColors = 'red' | 'primary';
 
-type ReviewGroup = {
+interface ReviewGroup {
   label: string;
   warn?: boolean;
+  handleClick: () => any;
 }
 
 const Container = styled.div`
@@ -31,10 +32,10 @@ const Container = styled.div`
 const bgGradient = ({ red }: { red: boolean }) => css`
   background: linear-gradient(
       130deg,
-      ${red ? redColor : primary} 0%,
-      ${rgba(red ? redColor : primary, 0)} 110%
+      ${red ? colorRed : colorPrimary} 0%,
+      ${rgba(red ? colorRed : colorPrimary, 0)} 110%
     ),
-    ${secondary};
+    ${colorSecondary};
 `;
 
 const Bg = styled.div`
@@ -49,9 +50,9 @@ const Bg = styled.div`
   }
 `;
 
-const ReviewGroup = ({ label, warn = false }: ReviewGroup) => {
+const ReviewGroup = ({ label, warn = false, handleClick }: ReviewGroup) => {
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <Bg red={warn} />
       <span>
         {label}

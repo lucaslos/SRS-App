@@ -1,9 +1,9 @@
 import { css } from '@emotion/core';
 import { rgba, tint, lighten } from 'polished';
-import { secondary, secondaryDarker } from 'style/colors';
+import { colorSecondary, colorSecondaryDarker } from 'style/theme';
 
-const background = secondaryDarker;
-const thumb = lighten(0.16, secondary);
+const background = colorSecondaryDarker;
+const thumb = lighten(0.16, colorSecondary);
 
 export default css`
   ::-webkit-scrollbar {

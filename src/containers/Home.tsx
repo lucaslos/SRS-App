@@ -2,7 +2,7 @@ import * as React from 'react';
 import Icon from 'components/Icon';
 import styled from '@emotion/styled';
 import { fillContainer, centerContent } from 'style/modifiers';
-import { secondary, primary, secondaryDarker } from 'style/colors';
+import { colorSecondary, colorPrimary, colorSecondaryDarker } from 'style/theme';
 import { circle } from 'style/mixins';
 import css from '@emotion/css';
 import CardsGroups from 'containers/ReviewGroupContainer';
@@ -11,7 +11,7 @@ import StatsBar from 'containers/StatsBar';
 const Container = styled.section`
   ${fillContainer};
   ${centerContent};
-  background-color: ${secondary};
+  background-color: ${colorSecondary};
 `;
 
 const topButton = css`
@@ -25,7 +25,7 @@ const topButton = css`
   transition: 160ms;
 
   &:hover {
-    background-color: ${secondaryDarker};
+    background-color: ${colorSecondaryDarker};
   }
 `;
 
@@ -37,13 +37,13 @@ const LogoWrapper = styled.div`
 const Home = () => (
   <Container>
     <div css={css(topButton, { left: 38 })}>
-      <Icon name="card-list" color={primary} />
+      <Icon name="card-list" color={colorPrimary} />
     </div>
     <LogoWrapper>
-      <Icon name="logo" color={primary} size={48} />
+      <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
     <div css={css(topButton, { right: 38 })}>
-      <Icon name="add-circle" color={primary} />
+      <Icon name="add-circle" color={colorPrimary} />
     </div>
 
     <CardsGroups />

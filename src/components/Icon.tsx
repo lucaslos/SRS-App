@@ -1,16 +1,24 @@
 import iconsSet from 'data/icons.json';
 import * as React from 'react';
+import { colorPrimary } from 'style/theme';
 
-interface Icon {
-  name: string;
+type JsonIcon = {
+  viewBox: string;
+  paths?: anyObject[];
+  rects?: anyObject[];
+  colors?: anyObject[];
+};
+
+type Icon = {
+  name: keyof typeof iconsSet;
   color?: string;
   size?: number;
-}
+};
 
-const Icon = ({ name, color = '#fff', size = 32 }: Icon) => {
+const Icon = ({ name, color = colorPrimary, size = 32 }: Icon) => {
   if (!iconsSet[name]) throw new Error(`Icon ${name} do not exists`);
 
-  const { viewBox, paths, rects, colors } = iconsSet[name];
+  const { viewBox, paths, rects, colors }: JsonIcon = iconsSet[name];
 
   return (
     <svg
@@ -31,13 +39,8 @@ const Icon = ({ name, color = '#fff', size = 32 }: Icon) => {
             fillRule={pathElem.evenodd ? 'evenodd' : undefined}
             clipRule={pathElem.evenodd ? 'evenodd' : undefined}
           />
-        ))
-      }
-      {rects &&
-        rects.map(rectElem => (
-          <rect />
-        ))
-      }
+        ))}
+      {/* {rects && rects.map(rectElem => <rect />)} */}
     </svg>
   );
 };

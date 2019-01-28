@@ -23,7 +23,7 @@ function getRepetitions(diff, groupId) {
     return difficulty[diff];
   }
 
-  return data.group.find(group => group.id === groupId).repetitions;
+  return +data.group.find(group => group.id === groupId).repetitions;
 }
 
 const output = {
@@ -31,12 +31,13 @@ const output = {
     .filter(card => card && englishGroups.includes(card.group_id))
     .map(card => ({
       id: id++,
-      front: card.front,
-      back: card.back,
+      front: card.front.replace(',', ';'),
+      back: card.back.replace(',', ';'),
       ...(card.tags && { tags: card.tags }),
       ...(card.notes && { notes: card.notes }),
-      lastReview: card.lastView,
+      ...(card.lastView && { lastReview: card.lastView }),
       wrongReviews: card.wrongViews,
+      diff: card.difficulty,
       repetitions: getRepetitions(card.difficulty, card.group_id),
       lang: 'en',
     })),
