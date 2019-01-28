@@ -7,20 +7,35 @@ import devtools from './devtools';
 // TODO: remove the max callbacks, use for
 // TODO: test unmount remove setter
 // IDEA: create hook for get multiple keys from store at same
+// IDEA: improve type inference
 
-type Subscribe = {
-  (prev: genericObject, current: genericObject, action?: string | genericObject): void;
+type State = {
+  [index: string]: Serializable;
 };
 
-type StoreConfig = {
+type Subscribe = {
+  (
+    prev: anyObject,
+    current: anyObject,
+    action?: string | anyObject
+  ): void;
+};
+
+type Payload = { [index: string]: Serializable };
+
+type Reducers<T, A extends string = ListOfString> = {
+  [K in A]: (state: T, payload?: Payload) => T;
+};
+
+export type StoreConfig<T extends State, A extends ListOfString> = {
   state: T;
-  reducers?: object;
+  reducers?: Reducers<T, A>;
   subscriber?: Subscribe;
 };
 
-type Store = {
+type Store<T extends State> = {
   state: T;
-  reducers: genericObject;
+  reducers?: Reducers<T>;
   setters: Setter[];
   subscribers: Subscribe[];
 };
@@ -30,7 +45,7 @@ type Setter = {
   callback: genericFunction;
 };
 
-let stores: { [index: string]: Store } = {};
+let stores: { [index: string]: Store<any> } = {};
 
 const devToolsMiddeware = process.env.NODE_ENV === 'development' &&
   typeof window !== 'undefined' &&
@@ -38,21 +53,21 @@ const devToolsMiddeware = process.env.NODE_ENV === 'development' &&
 
 /**
  * Creates a new store
- * @param {String} name - The store namespace. not required if you're not using multiple stores within the same app.
+ * @param {String} name - The store namespace.
  * @param {Object} config - An object containing the store setup
  * @param {*} config.state [{}] - The store initial state. It can be of any type.
  * @param {*} confg.reducer [{}] The reducers handlers.
  * @param {*} confg.subscribers [{}] Initial subscriber.
  */
-export function createStore(
+export function createStore<T extends State, A extends string = ListOfString>(
   name: string,
-  { state, reducers = {}, subscriber }: StoreConfig
+  { state, reducers, subscriber }: StoreConfig<T, A>
 ) {
   if (stores[name]) {
     throw new Error(`Store ${name} already exists`);
   }
 
-  const store: Store = {
+  const store = {
     state,
     reducers,
     setters: [],
@@ -61,20 +76,27 @@ export function createStore(
 
   if (devToolsMiddeware) {
     store.subscribers.push(
-      devToolsMiddeware(name, state, (newState: genericObject) => {
+      devToolsMiddeware(name, state, (newState: anyObject) => {
         setState(getStore(name), newState);
       })
     );
   }
 
   stores = { ...stores, [name]: store };
-  return store;
+
+  return {
+    getState: () => getState<T>(name),
+    setKey: <K extends keyof T>(key: K, value: typeof state[K]) => setKey<T>(name, key, value),
+    dispatch: <P = Payload>(type: A, payload?: P) => dispatch(name, type, payload),
+    subscribe: (callback: genericFunction) => subscribe(name, callback),
+    useStore: <K extends keyof T>(key: K) => useStore<T[K]>(name, key),
+  };
 }
 
 function setState(
-  store: Store,
-  newState: genericObject,
-  action?: string | genericObject
+  store: Store<anyObject>,
+  newState: anyObject,
+  action?: string | anyObject
 ) {
   for (let i = 0; i < store.setters.length; i++) {
     const setter = store.setters[i];
@@ -93,8 +115,8 @@ function setState(
   }
 }
 
-function getStore(name: string) {
-  const store = stores[name];
+function getStore<T extends State>(name: string) {
+  const store: Store<T> = stores[name];
   if (!store) {
     throw new Error(`Store ${name} does not exist`);
   }
@@ -106,20 +128,32 @@ function getStore(name: string) {
  * Returns the state for the selected store
  * @param {String} name - The namespace for the wanted store
  */
-export function getState(name: string) {
-  return getStore(name).state;
+export function getState<T extends State>(name: string): T {
+  return getStore<T>(name).state;
 }
 
-export function dispatch(name: string, type: string, payload: genericObject) {
-  const store = getStore(name);
+export function dispatch<T extends State>(
+  name: string,
+  type: string,
+  payload?: anyObject
+) {
+  const store = getStore<T>(name);
 
-  const newState = store.reducers[type](store.state, payload);
+  if (store.reducers && !store.reducers[type]) {
+    throw new Error(`Action ${type} does not exist on store ${name}`);
+  }
 
-  setState(store, newState, { type: `${name}.${type}`, ...payload });
+  const newState = store.reducers && store.reducers[type](store.state, payload);
+
+  if (newState) setState(store, newState, { type: `${name}.${type}`, ...payload });
 }
 
-export function setKey(name: string, key: string, value: any) {
-  const store = getStore(name);
+export function setKey<T extends State>(
+  name: string,
+  key: keyof T,
+  value: any
+) {
+  const store = getStore<T>(name);
 
   const newState = { ...store.state, [key]: value };
 
@@ -133,10 +167,13 @@ export function setKey(name: string, key: string, value: any) {
  * @param {String} name - The namespace for the wanted store
  * @param {String} key - The wanted state key
  */
-export function useStore(name: string, key: string) {
+export function useStore<T extends Serializable>(
+  name: string,
+  key: string
+): [T, (value: T) => T, () => T] {
   const store = getStore(name);
 
-  const [state, set] = useState(store.state[key]);
+  const [state, set] = useState(store.state[key] as T);
 
   useEffect(() => {
     store.setters.push({
@@ -145,7 +182,9 @@ export function useStore(name: string, key: string) {
     });
 
     return () => {
-      store.setters = store.setters.filter((setter: Setter) => setter.callback !== set);
+      store.setters = store.setters.filter(
+        (setter: Setter) => setter.callback !== set
+      );
     };
   }, []);
 
@@ -153,7 +192,7 @@ export function useStore(name: string, key: string) {
     throw new Error(`Key '${key}' for the store '${name}' does not exist`);
   }
 
-  const getter = () => getState(name)[key];
+  const getter = () => getState(name)[key] as T;
 
   return [state, (value: any) => setKey(name, key, value), getter];
 }
@@ -180,6 +219,8 @@ export function subscribe(name: string, callback: Subscribe) {
   }
 
   return () => {
-    store.subscribers = store.subscribers.filter(subscriber => subscriber !== callback);
+    store.subscribers = store.subscribers.filter(
+      subscriber => subscriber !== callback
+    );
   };
 }

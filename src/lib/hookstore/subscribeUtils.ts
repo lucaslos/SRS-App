@@ -1,5 +1,5 @@
 // TODO: test if it is performant
-export function getIfKeyChangeTo(prev: genericObject, current: genericObject) {
+export function getIfKeyChangeTo(prev: anyObject, current: anyObject) {
   return (key: string | string[], target: string | any[], callback: genericFunction) => {
     if (Array.isArray(key)) {
       let hasChanged = false;
@@ -35,7 +35,7 @@ export function getIfKeyChangeTo(prev: genericObject, current: genericObject) {
 }
 
 // IDEA: simplify with upper function
-export function getIfKeyChange(prev: genericObject, current: genericObject) {
+export function getIfKeyChange(prev: anyObject, current: anyObject) {
   return (key: string | string[], callback: genericFunction) => {
     if (Array.isArray(key)) {
       let hasChanged = false;
