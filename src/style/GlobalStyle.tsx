@@ -20,9 +20,11 @@ const GlobalStyle = () => {
   const [getDebugLayout, setDebugLayout] = useGetSet(false);
 
   useEffect(() => {
-    hotkey('shift+d', () => {
-      setDebugLayout(!getDebugLayout());
-    });
+    if (process.env.NODE_ENV === 'development') {
+      hotkey('shift+d', () => {
+        setDebugLayout(!getDebugLayout());
+      });
+    }
   }, []);
 
   return (
@@ -32,6 +34,7 @@ const GlobalStyle = () => {
           boxSizing: 'border-box',
           transform: 'translate3d(0, 0, 0)',
           userSelect: 'none',
+          margin: 0,
         },
         'html, body, #app': {
           position: 'absolute',

@@ -95,6 +95,7 @@
         "functions": "ignore"
       }
     ],
+    "arrow-parens": 0,
     "quotes": 0,
     "function-paren-newline": 0,
     "operator-linebreak": [
@@ -148,6 +149,7 @@
       }
     ],
     "react/destructuring-assignment": 0,
+    "react/jsx-closing-tag-location": 0,
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/click-events-have-key-events": 0,

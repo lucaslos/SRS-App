@@ -50,7 +50,7 @@ export const useForceUpdate = () => {
 };
 
 export function useOnChange<T>(value: T, callBack: (last: T) => void) {
-  const last = usePrevious(value);
+  const last = usePrevious(value, value);
 
   useEffect(() => {
     if (value !== last) {

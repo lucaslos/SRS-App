@@ -8,4 +8,6 @@ export const colorRed = '#E53558';
 export const colorYellow = '#E5DE35';
 
 /* fonts */
+export const fontPrimary = 'Open Sans';
+export const fontSecondary = 'Source Sans Pro';
 export const fontDecorative = 'Source Code Pro';

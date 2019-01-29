@@ -2,7 +2,7 @@ import css from '@emotion/css';
 import styled from '@emotion/styled';
 import Icon from 'components/Icon';
 import Notes from 'components/Notes';
-import Tags from 'components/Tags';
+import CardTags from 'components/CardTags';
 import { rgba } from 'polished';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -91,8 +91,9 @@ const NumOfAnswers = styled.div`
   height: 10px;
 
   div {
-    margin-right: 5px;
     ${circle(10)};
+    margin-right: 5px;
+    float: right;
     border: 2px solid ${colorRed};
   }
 `;
@@ -168,7 +169,7 @@ const Card = ({ card, pos, setIsFlipped, isFlipped }: Props) => {
         <CardFaceContent>
           <ReactMarkdown source={card.front} />
         </CardFaceContent>
-        <Tags tags={card.tags} />
+        <CardTags tags={card.tags} />
       </FrontFace>
 
       <BackFace flipped={isFlipped} pos={pos} onClick={() => {}}>

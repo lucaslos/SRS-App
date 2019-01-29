@@ -7,6 +7,7 @@ import { circle } from 'style/mixins';
 import css from '@emotion/css';
 import CardsGroups from 'containers/ReviewGroupContainer';
 import StatsBar from 'containers/StatsBar';
+import modalsState from 'state/modals';
 
 const Container = styled.section`
   ${fillContainer};
@@ -42,7 +43,7 @@ const Home = () => (
     <LogoWrapper>
       <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
-    <div css={css(topButton, { right: 38 })}>
+    <div css={css(topButton, { right: 38 })} onClick={() => modalsState.setKey('addCards', true)}>
       <Icon name="add-circle" color={colorPrimary} />
     </div>
 

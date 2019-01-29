@@ -42,11 +42,11 @@ const Container = styled.div`
 
 const ReviewStepper = ({ numOfCards, pos, onBack, showBackButton }: ReviewStepper) => (
   <Container>
-    {showBackButton && (
-      <Button onClick={onBack}>
+    <Button onClick={onBack}>
+      {showBackButton && (
         <Icon name="arrow-back" />
-      </Button>
-    )}
+      )}
+    </Button>
     <span>
       {pos}/{numOfCards}
     </span>

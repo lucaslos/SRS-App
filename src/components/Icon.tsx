@@ -27,7 +27,7 @@ const Icon = ({ name, color = colorPrimary, size = 32 }: Icon) => {
         width: size,
         fill: color,
       }}
-      // className="icon"
+      className="icon"
       viewBox={viewBox}
     >
       {paths &&

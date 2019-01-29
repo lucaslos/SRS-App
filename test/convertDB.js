@@ -18,6 +18,10 @@ const difficulty = {
   1: 0,
 };
 
+function getGroupById(groupId) {
+  return data.group.find(group => group.id === groupId);
+}
+
 function getRepetitions(diff, groupId) {
   if (diff > 0) {
     return difficulty[diff];
@@ -37,6 +41,7 @@ data.card
     ...(card.tags && { tags: card.tags }),
     ...(card.notes && { notes: card.notes }),
     ...(card.lastView && { lastReview: card.lastView }),
+    ...(card.createdAt && { createdAt: card.createdAt }),
     wrongReviews: card.wrongViews,
     diff: card.difficulty,
     repetitions: getRepetitions(card.difficulty, card.group_id),
