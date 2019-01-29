@@ -19,7 +19,7 @@ type Props = {
 };
 
 const cardEmpty: Card = {
-  id: 0,
+  id: '0',
   back: '',
   front: '',
   notes: [],

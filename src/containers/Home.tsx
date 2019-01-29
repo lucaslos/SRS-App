@@ -2,7 +2,11 @@ import * as React from 'react';
 import Icon from 'components/Icon';
 import styled from '@emotion/styled';
 import { fillContainer, centerContent } from 'style/modifiers';
-import { colorSecondary, colorPrimary, colorSecondaryDarker } from 'style/theme';
+import {
+  colorSecondary,
+  colorPrimary,
+  colorSecondaryDarker,
+} from 'style/theme';
 import { circle } from 'style/mixins';
 import css from '@emotion/css';
 import CardsGroups from 'containers/ReviewGroupContainer';
@@ -37,13 +41,19 @@ const LogoWrapper = styled.div`
 
 const Home = () => (
   <Container>
-    <div css={css(topButton, { left: 38 })}>
+    <div
+      css={css(topButton, { left: 38 })}
+      onClick={() => modalsState.setKey('cardsList', true)}
+    >
       <Icon name="card-list" color={colorPrimary} />
     </div>
     <LogoWrapper>
       <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
-    <div css={css(topButton, { right: 38 })} onClick={() => modalsState.setKey('addCards', true)}>
+    <div
+      css={css(topButton, { right: 38 })}
+      onClick={() => modalsState.setKey('addCards', true)}
+    >
       <Icon name="add-circle" color={colorPrimary} />
     </div>
 

@@ -35,7 +35,7 @@ const cards = {};
 data.card
   .filter(card => card && englishGroups.includes(card.group_id))
   .map(card => ({
-    id: id++,
+    id: `${id++}`,
     front: card.front.replace(',', ';'),
     back: card.back.replace(',', ';'),
     ...(card.tags && { tags: card.tags }),

@@ -52,8 +52,8 @@ const AddCardsModal = () => {
     setShow(false);
   }
 
-  function handleUpdateCard(id: number, card: Card) {
-    setCardsToAdd(replaceAt(cardsToAdd, id, card));
+  function handleUpdateCard(id: string, card: Card) {
+    setCardsToAdd(replaceAt(cardsToAdd, parseInt(id, 10), card));
   }
 
   function showEditModal(id: number) {
@@ -105,7 +105,7 @@ const AddCardsModal = () => {
       <EditCardModal
         show={showEditCard}
         card={cardsToAdd[editCardId]}
-        cardId={editCardId}
+        cardId={editCardId.toString()}
         newCard
         handleUpdateCard={handleUpdateCard}
         handleClose={() => setShowEditCard(false)}

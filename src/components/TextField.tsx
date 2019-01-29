@@ -13,10 +13,10 @@ import { useOnChange } from 'utils/customHooks';
 export type HandleChange = (value: string | number, id?: string) => void;
 
 type Props = {
-  label: string;
-  handleChange: HandleChange;
-  handleIsValidChange: (isValid: boolean, id?: string) => void;
-  value?: string | number;
+  label?: string;
+  handleChange: (value: string | number, id?: string) => void;
+  handleIsValidChange?: (isValid: boolean, id?: string) => void;
+  value: string | number;
   validations?: {
     regex: RegExp;
     showErrorIfMatch: boolean;
@@ -28,7 +28,7 @@ type Props = {
   multiLine?: boolean;
   required?: boolean;
   hideErrors?: boolean;
-  placeholder?: boolean;
+  usePlaceholder?: boolean;
   maxlength?: number;
   className?: string;
   max?: number;
@@ -129,7 +129,7 @@ const TextField = ({
   width = '140px',
   type = 'text',
   timeout = 50,
-  placeholder = true,
+  usePlaceholder = false,
   multiLine = false,
   requiredErrorMsg = "This field can't be blank",
   minErrorMsg = 'The value must be higher than',
@@ -140,6 +140,8 @@ const TextField = ({
   const inputId = useRef(`${Date.now() + Math.random()}`);
 
   function checkIfIsValid() {
+    if (!handleIsValidChange) return;
+
     const inputLenght = `${value}`.trim().length;
     let fieldIsValid = true;
     let errorMsg: typeof displayError = [];
@@ -190,6 +192,7 @@ const TextField = ({
     onBlur: updateValue,
     onChange: updateValue,
     maxLength: maxlength,
+    placeholder: usePlaceholder && label ? label : undefined,
   };
 
   return (
@@ -200,7 +203,7 @@ const TextField = ({
         ) : (
           <input type={type} max={max} min={min} step={step} {...inputProps} />
         )}
-        <label htmlFor={inputId.current}>{label}</label>
+        {label && !usePlaceholder && <label htmlFor={inputId.current}>{label}</label>}
       </div>
       {!isValid && !hideErrors && (
         <div className="validation-error">

@@ -12,6 +12,7 @@ interface Button {
   left?: boolean;
   smallRound?: boolean;
   disabled?: boolean;
+  color?: string;
 }
 
 type StyleProps = Omit<Button, 'onClick' | 'label'>;
@@ -23,7 +24,6 @@ const style = css`
   line-height: 44px;
   padding: 0 16px;
 
-  color: ${colorPrimary};
   text-transform: uppercase;
 
   border-radius: 4px;
@@ -56,6 +56,7 @@ const dynamicStyle = (props: StyleProps) =>
     float: ${props.right ? 'right' : props.left ? 'left' : undefined};
     opacity: ${props.disabled && 0.4};
     pointer-events: ${props.disabled && 'none'};
+    color: ${props.color};
   `;
 
 export const ButtonWrapper = styled.div<StyleProps>`
@@ -65,12 +66,21 @@ export const ButtonWrapper = styled.div<StyleProps>`
   ${dynamicStyle};
 `;
 
-const Button = ({ disabled, label, onClick, right, left, smallRound }: Button) => (
+const Button = ({
+  disabled,
+  label,
+  onClick,
+  right,
+  left,
+  smallRound,
+  color = colorPrimary,
+}: Button) => (
   <ButtonWrapper
     onClick={onClick}
     right={right}
     left={left}
     disabled={disabled}
+    color={color}
     smallRound={smallRound}
     className={cx('button', { left, right })}
   >

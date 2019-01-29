@@ -5,6 +5,7 @@ import Review from 'containers/Review';
 import ReviewReport from 'containers/ReviewReport';
 import AddCardsModal from 'containers/AddCardsModal';
 import { listenToCardsChange } from 'state/cards';
+import CardsList from 'containers/CardsList';
 
 const App = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
       <Review />
       <ReviewReport />
       <AddCardsModal />
+      <CardsList />
     </>
   );
 };

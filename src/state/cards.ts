@@ -100,4 +100,22 @@ export function pushNewCards(cards: Card[]) {
   pushCards([], cards, []);
 }
 
+export function pushUpdateCard(card: Card) {
+  pushCards([card]);
+}
+
+export function pushDeleteCard(id: Card['id']) {
+  pushCards([], [], [id]);
+}
+
+export function getCardById(id: Card['id'], cards: Card[] = cardsState.getState().cards) {
+  const findedcard = cards.find(card => card.id === id);
+
+  if (findedcard) {
+    return findedcard;
+  }
+
+  throw new Error(`Card of id: ${id} not exists`);
+}
+
 export default cardsState;

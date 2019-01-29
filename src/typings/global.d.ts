@@ -42,7 +42,7 @@ type SecondArgument<T> = T extends (
 
 /* state */
 type Card = {
-  id: number | string;
+  id: string;
   front: string;
   back: string;
   tags?: string[];

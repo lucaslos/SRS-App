@@ -51,8 +51,12 @@ export const bottomButtonsWrapperStyle = css`
 
   width: 100%;
 
-  .button {
+  .button.right {
     margin-left: 16px;
+  }
+
+  .button.left {
+    margin-right: 16px;
   }
 `;
 
@@ -80,11 +84,11 @@ const CloseButton = styled.div`
   z-index: 1;
 
   position: absolute;
-  top: 38px;
-  right: 38px;
+  top: 20px;
+  right: 20px;
 
   cursor: pointer;
-  transition: 160ms;
+  transition: 240ms;
   background-color: ${colorSecondary};
 
   &:hover {

@@ -1,17 +1,23 @@
 import styled from '@emotion/styled';
 import Icon from 'components/Icon';
-import { rgba } from 'polished';
+import { rgba, ellipsis } from 'polished';
 import React from 'react';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
-import { colorPrimary, colorSecondary, fontDecorative, colorSecondaryDarker, colorRed } from 'style/theme';
+import {
+  colorPrimary,
+  colorSecondary,
+  fontDecorative,
+  colorSecondaryDarker,
+  colorRed,
+} from 'style/theme';
 
 type CardTile = {
   onClick: genericFunction;
   onDelete: genericFunction;
   front: string;
   back: string;
-}
+};
 
 export const TilesWrapper = styled.div`
   ${centerContent};
@@ -51,6 +57,10 @@ const Container = styled.div`
     font-family: ${fontDecorative};
     color: ${colorSecondaryDarker};
     cursor: pointer;
+
+    div {
+      ${ellipsis()}
+    }
   }
 
   .front {
@@ -80,21 +90,16 @@ const Container = styled.div`
   }
 `;
 
-const CardTile = ({ onClick, onDelete, front, back }: CardTile) => {
-
-
-  return (
-    <Container>
-      <div className="faces" onClick={onClick}>
-        <div className="front">{front}</div>
-        <div className="back">{back}</div>
-      </div>
-      <div
-        className="delete-card"
-        onClick={onDelete}
-      ><Icon name="delete" color={colorSecondary} size={28} /></div>
-    </Container>
+const CardTile = ({ onClick, onDelete, front, back }: CardTile) => (
+  <Container>
+    <div className="faces" onClick={onClick}>
+      <div className="front">{front}</div>
+      <div className="back">{back}</div>
+    </div>
+    <div className="delete-card" onClick={onDelete}>
+      <Icon name="delete" color={colorSecondary} size={28} />
+    </div>
+  </Container>
   );
-};
 
 export default CardTile;

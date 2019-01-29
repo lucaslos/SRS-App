@@ -58,7 +58,7 @@ const StatsBar = () => {
   const oneMonthBeforeTimestamp = Date.now() - 2592000000;
   const cardsAddPerWeek = Math.round(
     cards.filter(
-      card => card.createdAt && card.createdAt > oneMonthBeforeTimestamp
+      card => card.createdAt && card.repetitions && card.createdAt > oneMonthBeforeTimestamp
     ).length / 4.34
   );
 
