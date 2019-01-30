@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.ebeb6037491f49303eaf84cb45cbb97b.js"
+  "precache-manifest.2443f2add9067d1bb2f70979be64d6f0.js"
 );
 
 workbox.skipWaiting();
@@ -29,5 +29,6 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, workbox.strategies.cacheFirst(), 'GET');
-workbox.routing.registerRoute(/images/, workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, workbox.strategies.cacheFirst({ "cacheName":"googleFonts", plugins: [new workbox.expiration.Plugin({"maxEntries":30,"maxAgeSeconds":31536000,"purgeOnQuotaError":false})] }), 'GET');
+workbox.routing.registerRoute(/^https:\/\/use.typekit.net.com\/(.*)/, workbox.strategies.cacheFirst({ "cacheName":"typekitFont", plugins: [new workbox.expiration.Plugin({"maxEntries":30,"maxAgeSeconds":31536000,"purgeOnQuotaError":false})] }), 'GET');
+workbox.routing.registerRoute("/static/", workbox.strategies.cacheFirst(), 'GET');

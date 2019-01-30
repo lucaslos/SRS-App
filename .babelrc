@@ -2,21 +2,32 @@
   "env": {
     "development": {
       "presets": [
-        "react",
-        ["es2015", { "modules": false }]
+        "@babel/typescript",
+        "@babel/env",
+        ["@babel/preset-react", { "development": true }],
+        "@emotion/babel-preset-css-prop"
       ],
       "plugins": [
+        ["emotion", { "sourceMap": true }],
         "react-hot-loader/babel",
-        "transform-class-properties",
-        "transform-object-rest-spread"
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        // "@babel/plugin-proposal-optional-chaining",
       ]
     },
     "production": {
   	  "presets": [
-  	    "react",
-  	    ["es2015", { "modules": true }]
-  	  ],
-      "plugins": ["transform-class-properties", "transform-object-rest-spread"]
+        "@babel/typescript",
+        "@babel/env",
+  	    "@babel/preset-react",
+        "@emotion/babel-preset-css-prop"
+      ],
+      "plugins": [
+        "emotion",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        // "@babel/plugin-proposal-optional-chaining",
+      ]
     }
   }
 }

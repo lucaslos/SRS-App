@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { findDOMNode } from "react-dom";
 import PropTypes from "prop-types";
-import flow from "lodash/flow";
 
 const ItemTypes = { TAG: "tag" };
 

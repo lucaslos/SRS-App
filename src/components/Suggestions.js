@@ -17,17 +17,6 @@ const maybeScrollSuggestionIntoView = (suggestionEl, suggestionsContainer) => {
 };
 
 class Suggestions extends Component {
-  static propTypes = {
-    query: PropTypes.string.isRequired,
-    selectedIndex: PropTypes.number.isRequired,
-    suggestions: PropTypes.array.isRequired,
-    handleClick: PropTypes.func.isRequired,
-    handleHover: PropTypes.func.isRequired,
-    minQueryLength: PropTypes.number,
-    shouldRenderSuggestions: PropTypes.func,
-    classNames: PropTypes.object,
-  };
-
   shouldComponentUpdate = nextProps => {
     const { props } = this;
     const shouldRenderSuggestions =
