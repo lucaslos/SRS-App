@@ -13,6 +13,7 @@ interface Container {
 
 interface Modal extends Container {
   handleClose?: genericFunction;
+  onClick?: genericFunction;
 }
 
 export const BoxCloseButtonStyle = styled.div`
@@ -78,7 +79,7 @@ const Container = styled.div`
   }
 `;
 
-const CloseButton = styled.div`
+export const TopButton = styled.div`
   ${centerContent};
   ${circle(52)}
   z-index: 1;
@@ -111,12 +112,12 @@ export const inputsRowWrapperStyle = css`
   }
 `;
 
-const Modal: SFC<Modal> = ({ children, active, handleClose }) => (
-  <Container active={active}>
+const Modal: SFC<Modal> = ({ children, active, handleClose, onClick }) => (
+  <Container active={active} onClick={onClick}>
     {handleClose && (
-      <CloseButton onClick={handleClose}>
+      <TopButton onClick={handleClose}>
         <Icon name="close" color={colorPrimary} />
-      </CloseButton>
+      </TopButton>
     )}
     {children}
   </Container>

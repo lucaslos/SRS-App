@@ -6,10 +6,15 @@ import CardTags from 'components/CardTags';
 import { rgba } from 'polished';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { GoToNextCard } from 'state/review';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
-import { colorPrimary, colorRed, colorSecondaryDarker, colorSecondaryLigher, colorYellow } from 'style/theme';
+import {
+  colorPrimary,
+  colorRed,
+  colorSecondaryDarker,
+  colorSecondaryLigher,
+  colorYellow,
+} from 'style/theme';
 import { useOnChange } from 'utils/customHooks';
 
 type Props = {
@@ -17,6 +22,9 @@ type Props = {
   pos: 'prev' | 'current' | 'next';
   setIsFlipped: (isFlipped: boolean) => void;
   isFlipped: boolean;
+  goToNext: (anwser: Results, id: Card['id']) => void;
+  handleAddNote: (note: string) => void;
+  handleAddImage: (imgUrl: string) => void;
 };
 
 const zPos = {
@@ -144,7 +152,15 @@ const BottomButtons = styled.div`
   }
 `;
 
-const Card = ({ card, pos, setIsFlipped, isFlipped }: Props) => {
+const Card = ({
+  card,
+  pos,
+  setIsFlipped,
+  isFlipped,
+  goToNext,
+  handleAddNote,
+  handleAddImage,
+}: Props) => {
   const words = card.back.split(';');
 
   const WarnIcon = card.wrongReviews > 4 ? (
@@ -153,9 +169,35 @@ const Card = ({ card, pos, setIsFlipped, isFlipped }: Props) => {
       undefined
     );
 
+  function onDrop(e: React.DragEvent) {
+    e.preventDefault();
+
+    if (e.dataTransfer.types.includes('text/plain')) {
+      if (
+        e.dataTransfer.getData('Text').match(/(\.png|\.jpg|\.jpeg|\.gif)$/g)
+      ) {
+        // add img
+        handleAddNote(e.dataTransfer.getData('Text'));
+      } else {
+        // add note
+        handleAddImage(e.dataTransfer.getData('Text'));
+      }
+    }
+  }
+
+  function onDragOver(e: React.DragEvent) {
+    e.preventDefault();
+
+    e.dataTransfer.dropEffect = 'copy';
+  }
+
   return (
     <>
-      <FrontFace flipped={isFlipped} pos={pos} onClick={() => setIsFlipped(true)}>
+      <FrontFace
+        flipped={isFlipped}
+        pos={pos}
+        onClick={() => setIsFlipped(true)}
+      >
         <TopIcons>
           {words.length > 1 && (
             <NumOfAnswers>
@@ -172,20 +214,25 @@ const Card = ({ card, pos, setIsFlipped, isFlipped }: Props) => {
         <CardTags tags={card.tags} />
       </FrontFace>
 
-      <BackFace flipped={isFlipped} pos={pos} onClick={() => {}}>
+      <BackFace
+        flipped={isFlipped}
+        pos={pos}
+        onDragOver={onDragOver}
+        onDrop={onDrop}
+      >
         <TopIcons>{WarnIcon}</TopIcons>
         <CardFaceContent>
           <ReactMarkdown source={card.back} />
         </CardFaceContent>
         {card.notes && card.notes.length > 0 && <Notes notes={card.notes} />}
         <BottomButtons>
-          <div onClick={() => GoToNextCard('wrong', card.id)}>
+          <div onClick={() => goToNext('wrong', card.id)}>
             <Icon name="close" color={colorRed} />
           </div>
-          <div onClick={() => GoToNextCard('hard', card.id)}>
+          <div onClick={() => goToNext('hard', card.id)}>
             <Icon name="check" color={colorYellow} />
           </div>
-          <div onClick={() => GoToNextCard('success', card.id)}>
+          <div onClick={() => goToNext('success', card.id)}>
             <Icon name="double-check" color={colorPrimary} />
           </div>
         </BottomButtons>

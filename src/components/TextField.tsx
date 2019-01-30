@@ -35,7 +35,7 @@ type Props = {
   lines?: number;
   step?: number;
   min?: number;
-  type?: 'number' | 'text' | 'date';
+  type?: 'number' | 'text' | 'date' | 'password';
   timeout?: number;
   requiredErrorMsg?: string;
   minErrorMsg?: string;
@@ -140,8 +140,6 @@ const TextField = ({
   const inputId = useRef(`${Date.now() + Math.random()}`);
 
   function checkIfIsValid() {
-    if (!handleIsValidChange) return;
-
     const inputLenght = `${value}`.trim().length;
     let fieldIsValid = true;
     let errorMsg: typeof displayError = [];
@@ -171,7 +169,7 @@ const TextField = ({
 
     setDisplayError(errorMsg);
     setIsValid(fieldIsValid);
-    handleIsValidChange(fieldIsValid, id);
+    if (handleIsValidChange) handleIsValidChange(fieldIsValid, id);
   }
 
   function updateValue(

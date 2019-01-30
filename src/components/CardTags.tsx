@@ -24,7 +24,7 @@ const colors: { [k: string]: { bg: string; color?: string } } = {
 
 const Container = styled.div`
   /* position: relative; */
-  height: 32px;
+  /* height: 32px; */
   /* width: 100%; */
   margin: 12px;
   margin-right: 0;

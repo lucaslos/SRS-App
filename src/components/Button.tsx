@@ -7,7 +7,7 @@ import { cx } from 'utils/cx';
 
 interface Button {
   label: string;
-  onClick: () => any;
+  onClick: genericFunction;
   right?: boolean;
   left?: boolean;
   smallRound?: boolean;
@@ -41,7 +41,6 @@ const roundStyle = css`
   font-size: 14px;
   line-height: 28px;
   border-radius: 28px;
-  color: ${colorSecondary};
   font-weight: 400;
 
   background-color: ${rgba(colorPrimary, 0.8)};

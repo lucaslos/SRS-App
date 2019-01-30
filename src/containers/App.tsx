@@ -6,22 +6,20 @@ import ReviewReport from 'containers/ReviewReport';
 import AddCardsModal from 'containers/AddCardsModal';
 import { listenToCardsChange } from 'state/cards';
 import CardsList from 'containers/CardsList';
+import Login from 'containers/Login';
+import LoadingCards from 'containers/LoadingCards';
 
-const App = () => {
-  useEffect(() => {
-    listenToCardsChange();
-  }, []);
-
-  return (
-    <>
-      <Home />
-      <ReviewDialog />
-      <Review />
-      <ReviewReport />
-      <AddCardsModal />
-      <CardsList />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Home />
+    <ReviewDialog />
+    <Review />
+    <ReviewReport />
+    <AddCardsModal />
+    <CardsList />
+    <LoadingCards />
+    <Login />
+  </>
+);
 
 export default App;

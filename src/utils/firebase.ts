@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
+import 'firebase/auth';
 import { isDev } from 'utils/genericUtils';
 
 const devConfig = {
@@ -15,6 +16,46 @@ const prodConfig = {
   messagingSenderId: '982649992026',
 };
 
-const app = firebase.initializeApp(isDev ? devConfig : prodConfig);
+export function login(user: string, pass: string, onErr: (err: any) => void) {
+  if (typeof user !== 'string' || typeof pass !== 'string') throw new Error('User or password not defined');
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(user, pass)
+    .then(() => {
+      localStorage.pass = pass;
+      localStorage.user = user;
+    })
+    .catch(err => {
+      if (err) {
+        localStorage.removeItem('pass');
+        localStorage.removeItem('user');
+
+        onErr(err);
+      }
+    });
+}
+
+window.firebaseLogOut = () => {
+  localStorage.removeItem('pass');
+  localStorage.removeItem('user');
+
+  firebase
+    .auth()
+    .signOut()
+    .then(
+      () => {
+        console.log('SignOut successful!');
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+};
+
+const testAuth = true;
+
+export const firebaseDev = isDev && !testAuth;
+const app = firebase.initializeApp(firebaseDev ? devConfig : prodConfig);
 
 export default app;

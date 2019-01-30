@@ -118,13 +118,13 @@ export function GoToNextCard(result: Results, id: string | number) {
 
   reviewState.dispatch('goToNext', { result, id });
 
-  if (reviewPos + 1 === reviewCards.length + reviewAgain.length) {
+  if (result === 'success' && reviewPos + 1 === reviewCards.length + reviewAgain.length) {
     endReview();
   }
 }
 
 export function endReview() {
-  const { results, reviewCards, startTime } = reviewState.getState();
+  const { results, reviewCards, startTime, cardsToDelete } = reviewState.getState();
 
   const { updatedCards, fails, hard, success, time } = processReview(
     reviewCards,
@@ -132,7 +132,7 @@ export function endReview() {
     startTime
   );
 
-  pushCards(updatedCards);
+  pushCards(updatedCards, [], cardsToDelete);
 
   reviewState.setKey('ended', true);
   reviewState.setKey('endReport', {

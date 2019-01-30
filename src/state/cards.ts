@@ -16,12 +16,10 @@ export type CardsState = {
 const cardsState = createStore<CardsState>('cards', {
   state: {
     cards: [],
-    waitingForUpdate: false,
+    waitingForUpdate: true,
     mostUsedTags: [],
   },
 });
-
-const cardsRef = app.database().ref('/cards/');
 
 function getSuggestions(cards: Card[]) {
   let suggestions: string[] = [];
@@ -37,10 +35,13 @@ function getSuggestions(cards: Card[]) {
 
 /* update state on db change */
 export function listenToCardsChange() {
+  const cardsRef = app.database().ref(`${window.userId}/cards/`);
+
+  cardsRef.off();
   cardsRef.on('value', response => {
-    const cardsResponse: cardsResponse = (response as NonNullable<
-      typeof response
-    >).val();
+    if (!response || !response.val()) throw new Error('Error on fetch cards');
+
+    const cardsResponse: cardsResponse = response.val();
     const transformedCards = Object.keys(cardsResponse).map(
       id => cardsResponse[id]
     );
@@ -64,22 +65,22 @@ export function pushCards(
   const updates: anyObject<Card | NewCard | null> = {};
 
   toUpdate.forEach(card => {
-    updates[`/cards/${card.id}`] = card;
+    updates[`${window.userId}/cards/${card.id}`] = card;
   });
 
   if (toDelete) toDelete.forEach(id => {
-      updates[`/cards/${id}`] = null;
+      updates[`${window.userId}/cards/${id}`] = null;
     });
 
   if (toCreate) toCreate.forEach(card => {
       const newCardId = app
         .database()
         .ref()
-        .child('cards')
+        .child(`${window.userId}/cards`)
         .push().key;
 
       if (newCardId) {
-        updates[`/cards/${newCardId}`] = {
+        updates[`${window.userId}/cards/${newCardId}`] = {
           ...card,
           id: newCardId,
           createdAt: Date.now(),

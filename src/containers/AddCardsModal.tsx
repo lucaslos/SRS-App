@@ -65,7 +65,10 @@ const AddCardsModal = () => {
     <>
       <Modal active={show}>
         <div css={boxStyle}>
-          <h1>Add {cardsToAdd.length || ''} card{cardsToAdd.length === 1 ? '' : 's'}</h1>
+          <h1>
+            Add {cardsToAdd.length || ''} card
+            {cardsToAdd.length === 1 ? '' : 's'}
+          </h1>
           <BoxCloseButton onClose={handleClose} />
           <TilesWrapper>
             {cardsToAdd.map((card, i) => (
@@ -81,10 +84,16 @@ const AddCardsModal = () => {
           <AddCardsButtonsWrapper>
             <Button
               label="add card"
+              color={colorSecondary}
               smallRound
               onClick={() => setShowAddCard(true)}
             />
-            <Button label="paste cards" smallRound onClick={handleClose} />
+            <Button
+              label="paste cards"
+              color={colorSecondary}
+              smallRound
+              onClick={handleClose}
+            />
           </AddCardsButtonsWrapper>
           <div css={bottomButtonsWrapperStyle}>
             <Button

@@ -1,4 +1,4 @@
-import iconsSet from 'data/icons.json';
+import iconsSet from 'data/icons.ts';
 import * as React from 'react';
 import { colorPrimary } from 'style/theme';
 

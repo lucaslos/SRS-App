@@ -32,14 +32,6 @@ type Serializable = | string
 
 type ListOfString = keyof anyObject;
 
-type SecondArgument<T> = T extends (
-  arg1: any,
-  arg2: infer U,
-  ...args: any[]
-) => any
-  ? U
-  : any;
-
 /* state */
 type Card = {
   id: string;
@@ -64,3 +56,9 @@ type ReactTagInputResult = {
   id: number;
   text: string;
 }[]
+
+/* user */
+interface Window {
+  userId: firebase.User['uid'];
+  firebaseLogOut: () => void;
+}

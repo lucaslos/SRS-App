@@ -27,25 +27,8 @@ const GroupsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const Loading = styled.div<{ show: boolean }>`
-  ${fillContainer};
-  background-color: ${rgba(colorSecondary, 0.5)};
-  text-align: center;
-  padding-top: 24px;
-  font-size: 24px;
-
-  font-family: ${fontDecorative};
-  color: ${colorPrimary};
-
-  transition: 240ms;
-
-  visibility: ${props => (props.show ? 'visible' : 'hidden')};
-  opacity: ${props => (props.show ? 1 : 0)};
-`;
-
 const CardsGroups = () => {
   const [cards] = cardsState.useStore('cards');
-  const [isLoading] = cardsState.useStore('waitingForUpdate');
 
   const [reviewedCards, newCards] = calcCardsCoF(cards);
 
@@ -108,7 +91,6 @@ const CardsGroups = () => {
           />
         )}
       </GroupsContainer>
-      <Loading show={isLoading}>Loading...</Loading>
     </Container>
   );
 };

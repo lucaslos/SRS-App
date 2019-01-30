@@ -47,20 +47,22 @@ data.card
     repetitions: getRepetitions(card.difficulty, card.group_id),
     lang: 'en',
   }))
-  .forEach((card) => {
+  .forEach(card => {
     cards[card.id] = card;
   });
 
 const output = {
-  cards,
+  nb6fUZ3QSZcDtTlsqMHCr4Vbvou2: {
+    cards,
+  },
 };
 
-console.log(Object.keys(output.cards).length);
+console.log(Object.keys(output.nb6fUZ3QSZcDtTlsqMHCr4Vbvou2.cards).length);
 
 fs.writeFile(
   path.join(__dirname, outputFile),
   JSON.stringify(output, null, 2),
-  (err) => {
+  err => {
     if (err) throw err;
 
     console.log('File converted!');
