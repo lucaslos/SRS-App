@@ -12,6 +12,7 @@ import {
   fontSecondary,
 } from 'style/theme';
 import { showPopUp } from 'utils/review';
+import { mqMobile } from 'style/mediaQueries';
 
 type Props = {
   show: boolean;
@@ -46,6 +47,17 @@ const Item = styled.div`
     background: ${rgba(colorSecondary, 0.6)};
   }
 
+  ${mqMobile} {
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+
+    .icon {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
   .icon {
     display: inline-block;
     vertical-align: middle;
@@ -75,6 +87,10 @@ const QuickAddTag = styled.div`
   cursor: pointer;
 
   transition: 240ms;
+
+  ${mqMobile} {
+    padding: 6px 10px;
+  }
 
   b {
     font-weight: 600;
@@ -106,9 +122,16 @@ const Container = styled.div<Pick<Props, 'show'>>`
   padding-top: 24px;
   padding-bottom: 16px;
   padding-right: 16px;
+  height: auto;
+  max-height: 100%;
+  overflow-y: auto;
 
   transform: ${props =>
     (props.show ? 'translate3d(0, 0, 0)' : 'translate3d(0, -100%, 0)')};
+
+  ${mqMobile} {
+    padding-left: 52px;
+  }
 `;
 
 const ReviewMenu = ({

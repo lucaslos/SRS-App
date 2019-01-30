@@ -1,21 +1,15 @@
 import css from '@emotion/css';
 import styled from '@emotion/styled';
+import CardTags from 'components/CardTags';
 import Icon from 'components/Icon';
 import Notes from 'components/Notes';
-import CardTags from 'components/CardTags';
-import { rgba } from 'polished';
-import React, { useEffect, useRef, useState } from 'react';
+import { rgba, clearFix } from 'polished';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { mqMobile } from 'style/mediaQueries';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
-import {
-  colorPrimary,
-  colorRed,
-  colorSecondaryDarker,
-  colorSecondaryLigher,
-  colorYellow,
-} from 'style/theme';
-import { useOnChange } from 'utils/customHooks';
+import { colorPrimary, colorRed, colorSecondaryDarker, colorSecondaryLigher, colorYellow } from 'style/theme';
 
 type Props = {
   card: Card;
@@ -34,12 +28,14 @@ const zPos = {
 };
 
 const faceStyle = css`
-  ${centerContentCollum};
+  /* ${centerContentCollum}; */
 
   position: absolute;
   width: 430px;
   max-height: 100%;
+  max-width: calc(100% - 14px * 2);
   backface-visibility: hidden;
+  overflow-y: auto;
 
   background-color: ${colorSecondaryLigher};
   transform-style: preserve-3d;
@@ -82,6 +78,11 @@ const CardFaceContent = styled.div`
   min-height: 150px;
   text-align: center;
   margin-bottom: 12px;
+  flex-shrink: 0;
+
+  ${mqMobile} {
+    font-size: 26px;
+  }
 
   img {
     width: 100%;
@@ -112,6 +113,7 @@ const TopIcons = styled.div`
   margin-top: 12px;
   margin-bottom: 8px;
   margin-left: -16px;
+  flex-shrink: 0;
 
   > * {
     margin-left: 16px;
@@ -127,6 +129,7 @@ const BottomButtons = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-shrink: 0;
 
   div {
     height: 60px;

@@ -4,6 +4,7 @@ import { centerContent, fillContainer } from 'style/modifiers';
 import { colorPrimary, colorRed, colorSecondary } from 'style/theme';
 import { rgba, cover } from 'polished';
 import css from '@emotion/css';
+import { mqMobile } from 'style/mediaQueries';
 
 type ContainerColors = 'red' | 'primary';
 
@@ -27,6 +28,12 @@ const Container = styled.div`
   cursor: pointer;
 
   border-radius: 4px;
+
+  ${mqMobile} {
+    height: 100px;
+    margin: 8px;
+    width: calc(100% - 18px * 2);
+  }
 `;
 
 const bgGradient = ({ red }: { red: boolean }) => css`

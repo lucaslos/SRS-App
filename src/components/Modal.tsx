@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 import Icon from 'components/Icon';
 import { rgba } from 'polished';
 import React, { SFC } from 'react';
-import { circle } from 'style/mixins';
+import { circle, rectSize } from 'style/mixins';
 import { centerContent, centerContentCollum, fillContainer, hide, show } from 'style/modifiers';
 import { colorPrimary, colorSecondary, colorSecondaryDarker, colorSecondaryLigher } from 'style/theme';
+import { mqMobile } from 'style/mediaQueries';
 
 interface Container {
   active: boolean;
@@ -39,6 +40,7 @@ export const boxStyle = css`
   ${centerContentCollum};
   /* height: 220px; */
   max-height: calc(100% - 12px * 2);
+  max-width: calc(100% - 12px * 2);
   width: 560px;
   /* overflow-y: auto; */
 
@@ -82,7 +84,7 @@ const Container = styled.div`
 export const TopButton = styled.div`
   ${centerContent};
   ${circle(52)}
-  z-index: 1;
+  /* z-index: 1; */
 
   position: absolute;
   top: 20px;
@@ -91,6 +93,16 @@ export const TopButton = styled.div`
   cursor: pointer;
   transition: 240ms;
   background-color: ${colorSecondary};
+
+  ${mqMobile} {
+    ${circle(42)}
+    top: 8px;
+    right: 8px;
+
+    .icon {
+      ${rectSize(24)};
+    }
+  }
 
   &:hover {
     background-color: ${colorSecondaryDarker};
@@ -110,16 +122,22 @@ export const inputsRowWrapperStyle = css`
   > * {
     margin-right: 18px;
   }
+
+  ${mqMobile} {
+    .text-field-container {
+      width: 100px;
+    }
+  }
 `;
 
 const Modal: SFC<Modal> = ({ children, active, handleClose, onClick }) => (
   <Container active={active} onClick={onClick}>
+    {children}
     {handleClose && (
       <TopButton onClick={handleClose}>
         <Icon name="close" color={colorPrimary} />
       </TopButton>
     )}
-    {children}
   </Container>
 );
 

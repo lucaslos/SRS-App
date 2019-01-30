@@ -11,6 +11,7 @@ const Box = styled.div`
   ${centerContentCollum};
   height: 220px;
   width: 320px;
+  max-width: 100%;
   padding-bottom: 50px;
 
   background-color: ${colorSecondaryLigher};

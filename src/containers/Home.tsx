@@ -12,6 +12,7 @@ import css from '@emotion/css';
 import CardsGroups from 'containers/ReviewGroupContainer';
 import StatsBar from 'containers/StatsBar';
 import modalsState from 'state/modals';
+import { mqMobile } from 'style/mediaQueries';
 
 const Container = styled.section`
   ${fillContainer};
@@ -32,17 +33,25 @@ const topButton = css`
   &:hover {
     background-color: ${colorSecondaryDarker};
   }
+
+  ${mqMobile} {
+    top: 10px;
+  }
 `;
 
 const LogoWrapper = styled.div`
   position: absolute;
   top: 40px;
+
+  ${mqMobile} {
+    top: 12px;
+  }
 `;
 
 const Home = () => (
   <Container>
     <div
-      css={css(topButton, { left: 38 })}
+      css={[topButton, { left: 38, [mqMobile]: { left: 10 } }]}
       onClick={() => modalsState.setKey('cardsList', true)}
     >
       <Icon name="card-list" color={colorPrimary} />
@@ -51,7 +60,7 @@ const Home = () => (
       <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
     <div
-      css={css(topButton, { right: 38 })}
+      css={[topButton, { right: 38, [mqMobile]: { right: 10 } }]}
       onClick={() => modalsState.setKey('addCards', true)}
     >
       <Icon name="add-circle" color={colorPrimary} />

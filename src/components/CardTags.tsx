@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { colorPrimary, colorSecondaryDarker } from 'style/theme';
+import { centerContent } from 'style/modifiers';
 
 type Tags = {
   tags?: string[];
@@ -23,11 +24,14 @@ const colors: { [k: string]: { bg: string; color?: string } } = {
 };
 
 const Container = styled.div`
+  ${centerContent};
+  flex-wrap: wrap;
+  width: 100%;
   /* position: relative; */
   /* height: 32px; */
   /* width: 100%; */
-  margin: 12px;
-  margin-right: 0;
+  padding: 12px 12px 8px;
+  padding-right: 0;
 `;
 
 const Tag = styled.div<{ color: string }>`
@@ -41,6 +45,7 @@ const Tag = styled.div<{ color: string }>`
   letter-spacing: 1px;
   vertical-align: middle;
   margin-right: 12px;
+  margin-bottom: 8px;
 
   background-color: ${props =>
     (colors[props.color] && colors[props.color].bg) || colorPrimary};

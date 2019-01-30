@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 import ReviewGroup from 'components/ReviewGroup';
-import { useStore } from 'lib/hookstore';
 import * as React from 'react';
-import { showReviewDialog } from 'state/review';
-import { centerContent, fillContainer } from 'style/modifiers';
-import { calcCardsCoF, needsReview } from 'utils/srsAlgo';
 import cardsState from 'state/cards';
-import { rgba } from 'polished';
-import { colorSecondary, fontDecorative, colorPrimary } from 'style/theme';
+import { showReviewDialog } from 'state/review';
+import { centerContent } from 'style/modifiers';
+import { calcCardsCoF, needsReview } from 'utils/srsAlgo';
+import { mqMobile } from 'style/mediaQueries';
 
 const Container = styled.div`
   position: absolute;
@@ -19,6 +17,10 @@ const Container = styled.div`
   overflow-y: auto;
 
   padding-bottom: 72px;
+
+  ${mqMobile} {
+    top: 76px;
+  }
 `;
 
 const GroupsContainer = styled.div`

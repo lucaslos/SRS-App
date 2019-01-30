@@ -9,6 +9,8 @@ import {
   colorRed,
 } from 'style/theme';
 import { useOnChange } from 'utils/customHooks';
+import { mqMobile } from 'style/mediaQueries';
+import { ellipsis } from 'polished';
 
 export type HandleChange = (value: string | number, id?: string) => void;
 
@@ -65,6 +67,11 @@ const Container = styled.div`
 
   input {
     height: 44px;
+
+    ${mqMobile} {
+      height: 36px;
+      font-size: 14px;
+    }
   }
 
   .invalid {
@@ -87,6 +94,10 @@ const Container = styled.div`
 
     resize: none;
     font-size: 16px;
+
+    ${mqMobile} {
+      font-size: 14px;
+    }
   }
 
   label {
@@ -100,6 +111,12 @@ const Container = styled.div`
     font-family: ${fontDecorative};
     color: ${colorPrimary};
     background: ${colorSecondaryLigher};
+    ${ellipsis()}
+
+    ${mqMobile} {
+      font-size: 9px;
+      left: 4px;
+    }
   }
 
   .validation-error {

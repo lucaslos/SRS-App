@@ -14,17 +14,22 @@ import { centerContent } from 'style/modifiers';
 import { colorPrimary } from 'style/theme';
 import { useOnChange } from 'utils/customHooks';
 import { replaceAt } from 'utils/genericUtils';
+import { mqMobile } from 'style/mediaQueries';
 
 const CardsContainer = styled.div`
   ${centerContent};
 
   position: absolute;
-  top: 0;
+  top: 50px;
   bottom: 82px;
   right: 0;
   left: 0;
 
   transition: opacity 240ms;
+
+  ${mqMobile} {
+    bottom: 62px;
+  }
 
   perspective: 500px;
   /* transform-style: preserve-3d; */
@@ -199,6 +204,7 @@ const Review = () => {
           pos={reviewPos + 1}
           showBackButton={cardsIsFlipped[reviewPos] || reviewPos > 0}
           onBack={handleBack}
+          front={allCards[reviewPos] && allCards[reviewPos].front}
         />
       </Modal>
       {show && (
@@ -213,7 +219,7 @@ const Review = () => {
             onClickDelete={showDeleteConfimationDialog}
           />
           <TopButton
-            css={{ right: 'auto', left: 20, backgroundColor: 'transparent' }}
+            css={{ right: 'auto', left: 20, backgroundColor: 'transparent', [mqMobile]: { left: 10 } }}
             onClick={() => setShowMenu(!showMenu)}
           >
             <Icon

@@ -8,6 +8,7 @@ import { fontDecorative, colorPrimary, colorSecondary, colorSecondaryDarker, col
 import { rgba } from 'polished';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
+import { mqMobile } from 'style/mediaQueries';
 
 const style = css`
   ${centerContentCollum};
@@ -53,6 +54,12 @@ const style = css`
     outline: none;
     border: 0;
     background: ${rgba(colorPrimary, 0.5)};
+
+    ${mqMobile} {
+      height: 28px;
+      font-size: 14px;
+      line-height: 27px;
+    }
   }
 
   input {
@@ -62,6 +69,11 @@ const style = css`
       font-size: 16px;
       font-family: 'Source Sans Pro';
       color: ${colorSecondaryDarker};
+
+      ${mqMobile} {
+        font-size: 14px;
+        line-height: 27px;
+      }
     }
   }
 
@@ -73,7 +85,7 @@ const style = css`
   }
 
   .ReactTags__tags, .ReactTags__selected {
-    /* overflow-y: auto; */
+    overflow-y: auto;
 
     height: 100%;
   }

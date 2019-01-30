@@ -4,11 +4,13 @@ import {
   colorSecondaryLigher,
   fontDecorative,
   colorPrimary,
+  fontSecondary,
 } from 'style/theme';
 import { rgba } from 'polished';
 import cardsState from 'state/cards';
 import { centerContent } from 'style/modifiers';
 import { calcCardsCoF, getCoF } from 'utils/srsAlgo';
+import { mqMobile } from 'style/mediaQueries';
 
 const Container = styled.div`
   ${centerContent};
@@ -24,6 +26,12 @@ const Container = styled.div`
 
   background: ${rgba(colorSecondaryLigher, 0.9)};
 
+  ${mqMobile} {
+    font-size: 14px;
+    font-family: ${fontSecondary};
+    letter-spacing: 1px;
+  }
+
   div {
     width: 1.5px;
     height: 24px;
@@ -32,6 +40,10 @@ const Container = styled.div`
     background-color: ${colorPrimary};
     margin: 0 20px;
     opacity: 0.5;
+
+    ${mqMobile} {
+      margin: 0 6px;
+    }
   }
 `;
 

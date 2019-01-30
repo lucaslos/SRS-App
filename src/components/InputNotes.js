@@ -7,6 +7,7 @@ import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
 import { colorPrimary, colorRed, colorSecondaryDarker, fontDecorative, colorSecondary } from 'style/theme';
 import css from '@emotion/css';
+import { mqMobile } from 'style/mediaQueries';
 
 const style = css`
   ${centerContentCollum};
@@ -49,6 +50,11 @@ const style = css`
     font-size: 14px;
     color: ${colorPrimary};
     background-color: ${rgba(colorSecondary, 0.8)};
+
+    ${mqMobile} {
+      /* padding: 4px; */
+      font-size: 12px;
+    }
   }
 
   input {
