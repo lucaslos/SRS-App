@@ -12,7 +12,8 @@
     "build-major": "npm version major && webpack --progress --profile --json > stats.json",
     "typesync": "typesync && npm i",
     "firebase-dev": "firebase-server -p 5555 -f ./db.json",
-    "create-icon-set": "node scripts/create-icon-set.js"
+    "create-icon-set": "node scripts/create-icon-set.js",
+    "build-no-stats": "webpack --progress"
   },
   "author": "Lucas Santos",
   "dependencies": {
@@ -74,7 +75,6 @@
     "react-hot-loader": "^4.6.3",
     "react-markdown": "^4.0.6",
     "react-router-dom": "^4.3.1",
-    "react-use": "^5.2.1",
     "source-map-loader": "^0.2.4",
     "svgo-sync": "^0.5.1",
     "terser-webpack-plugin": "^1.2.1",
@@ -82,6 +82,7 @@
     "typescript-eslint-parser": "^22.0.0",
     "webpack-dev-server": "^3.1.14",
     "webpack-hot-middleware": "^2.24.3",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "workbox-webpack-plugin": "^3.6.3"
   }
 }

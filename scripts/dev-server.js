@@ -27,7 +27,7 @@ const options = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   },
   setup(app) {
-    app.use('/static', express.static('docs/Ym13IG1vYmlsaXR5IHByb2plY3Q=/static'));
+    app.use('/static', express.static('docs/static'));
   },
   before(app, server) {
     // This lets us fetch source contents from webpack for the error overlay
