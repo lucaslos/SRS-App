@@ -1,6 +1,7 @@
 {
     "name": "SRS App",
-    "short_name": "SRS App",
+    "short_name": "index.html",
+    "start_url": ".",
     "icons": [
         {
             "src": "static/images/favicons/android-chrome-192x192.png",
