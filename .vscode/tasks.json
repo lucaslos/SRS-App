@@ -33,6 +33,11 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
+    },
+    {
+      "type": "npm",
+      "script": "build-no-stats",
+      "problemMatcher": []
     }
   ]
 }

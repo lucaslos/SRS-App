@@ -1,7 +1,6 @@
 const path = require('path');
 const express = require('express');
-
-const name = 'Navigation Hub';
+const { name, version } = require('../package.json');
 
 const app = express();
 
@@ -26,7 +25,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <h1>
-          <a href="/${name.replace(' ', '_')}/">${name}</a>
+          <a href="/${name.replace(' ', '_')}/">${name} v${version}</a>
         </h1>
       </body>
     </html>

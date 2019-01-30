@@ -7,26 +7,25 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const folder = 'docs/Ym13IG1vYmlsaXR5IHByb2plY3Q=';
+const folder = 'docs/';
 
 module.exports = {
   mode: 'production',
 
   entry: [
-    './src/index.js',
-    './style/main.scss',
+    './src/index.tsx',
+    // './style/main.scss',
   ],
 
   output: {
     path: path.join(__dirname, folder),
     filename: '[name].[contenthash:8].js',
-    // publicPath: '/Ym13IGRhdGEgdml6dWFsaXphdGlvbg==/',
   },
 
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(j|t)sx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -42,6 +41,7 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     modules: [
       path.join(__dirname, 'src'),
       'node_modules',
@@ -82,6 +82,7 @@ module.exports = {
             comments: false,
             // Turned on because emoji and regex is not minified properly using default
             // https://github.com/facebook/create-react-app/issues/2488
+            // eslint-disable-next-line @typescript-eslint/camelcase
             ascii_only: true,
           },
         },
@@ -96,7 +97,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: Infinity,
-      minSize: 0,
+      minSize: 30 * 1000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
@@ -119,6 +120,7 @@ module.exports = {
       `${folder}/main*.js`,
       `${folder}/*style*.css`,
       `${folder}/*runtime*.js`,
+      `${folder}/*vendors*.js`,
       `${folder}/npm*.js`,
       `${folder}/precache-manifest*.js`,
     ]),
@@ -152,25 +154,29 @@ module.exports = {
       globDirectory: folder,
       runtimeCaching: [
         {
-          urlPattern: new RegExp('^https://use.typekit.net.com/(.*)'),
-          handler: 'cacheFirst',
-        },
-        {
-          urlPattern: new RegExp('^https://api.mapbox.com(.*)'),
-          handler: 'cacheFirst',
-        },
-        {
-          urlPattern: new RegExp('^https://tiles.mapbox.com/(.*)'),
+          urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
           handler: 'cacheFirst',
           options: {
-            cacheName: 'mapTiles',
+            cacheName: 'googleFonts',
             expiration: {
-              maxEntries: 40,
+              maxEntries: 30,
+              maxAgeSeconds: 60 * 60 * 24 * 365,
             },
           },
         },
         {
-          urlPattern: new RegExp('static'),
+          urlPattern: new RegExp('^https://use.typekit.net.com/(.*)'),
+          handler: 'cacheFirst',
+          options: {
+            cacheName: 'typekitFont',
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 60 * 60 * 24 * 365,
+            },
+          },
+        },
+        {
+          urlPattern: '/static/',
           handler: 'cacheFirst',
         },
       ],
