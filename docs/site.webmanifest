@@ -1,6 +1,6 @@
 {
     "name": "SRS App",
-    "short_name": "index.html",
+    "short_name": "SRS App",
     "start_url": ".",
     "icons": [
         {
