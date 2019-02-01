@@ -32,7 +32,7 @@ const highCofRepetitionIncrease: ObjectWithKey<Results, number> = {
   wrong: -2,
 };
 const idealDaysDiff = [
-  0,
+  1,
   1,
   4,
   7,
@@ -63,7 +63,7 @@ export function getCoF(
   lastReview?: string,
   dateIncrease: number = 0
 ) {
-  if (repetitions === 0 || !lastReview) return -1;
+  if (!lastReview) return -1;
 
   const now = Date.now() + dateIncrease;
 
