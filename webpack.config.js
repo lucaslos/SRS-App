@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
-// const WebpackBar = require('webpackbar');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -19,7 +19,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, folder),
-    filename: '[name].[chunkhash:8].js',
+    filename: '[name].[contenthash:8].js',
   },
 
   module: {
@@ -116,6 +116,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
     new CleanWebpackPlugin([
       `${folder}/main*.js`,
       `${folder}/*style*.css`,
