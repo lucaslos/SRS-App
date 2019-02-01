@@ -7,6 +7,8 @@ import { centerContent } from 'style/modifiers';
 import Icon from 'components/Icon';
 import { colorSecondaryDarker, colorPrimary } from 'style/theme';
 import { mqMobile } from 'style/mediaQueries';
+import { rgba } from 'polished';
+import removeMd from 'remove-markdown';
 
 type ReviewStepper = {
   numOfCards: number;
@@ -50,13 +52,14 @@ function textToSpeech(text: string, lang = 'en-US') {
   const msg = new SpeechSynthesisUtterance();
 
   const voices = window.speechSynthesis.getVoices();
-  msg.voice = voices.find(
+  const googleVoice = voices.find(
     voice => voice.voiceURI.includes('Google') && voice.lang === lang
-  ) as SpeechSynthesisVoice; // Note: some voices don't support altering params
-  msg.volume = 1; // 0 to 1
+  );
 
+  if (googleVoice) msg.voice = googleVoice;
+  msg.volume = 1; // 0 to 1
   msg.pitch = 1; // 0 to 2
-  msg.text = text;
+  msg.text = removeMd(text);
   msg.lang = lang;
 
   speechSynthesis.speak(msg);
@@ -69,17 +72,42 @@ const ReviewStepper = ({
   showBackButton,
   front,
 }: ReviewStepper) => (
-  <Container>
-    <Button onClick={onBack}>
-      {showBackButton && <Icon name="arrow-back" />}
-    </Button>
-    <span>
-      {pos}/{numOfCards}
-    </span>
-    <Button onClick={() => textToSpeech(front)}>
-      <Icon name="sound" />
-    </Button>
-  </Container>
+  <>
+    <Container>
+      <Button onClick={onBack}>
+        {showBackButton && <Icon name="arrow-back" />}
+      </Button>
+      <span>
+        {pos}/{numOfCards}
+      </span>
+      <Button onClick={() => textToSpeech(front)}>
+        <Icon name="sound" />
+      </Button>
+    </Container>
+    <div
+      css={css`
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+
+        overflow: hidden;
+      `}
+    >
+      <div
+        css={css`
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: -100%;
+          background: ${rgba(colorPrimary, 0.5)};
+          transition: 240ms;
+        `}
+        style={{ transform: `translate3d(${(pos / numOfCards) * 100}%, 0, 0)` }}
+      />
+    </div>
+  </>
 );
 
 export default ReviewStepper;
