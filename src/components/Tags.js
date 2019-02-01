@@ -12,9 +12,10 @@ import { mqMobile } from 'style/mediaQueries';
 
 const style = css`
   ${centerContentCollum};
+  position: relative;
   width: 100%;
   padding: 0 16px;
-  z-index: 1;
+  z-index: 5;
   min-height: 110px;
 
   header {
@@ -85,8 +86,8 @@ const style = css`
   }
 
   .ReactTags__tags, .ReactTags__selected {
-    overflow-y: auto;
-
+    /* overflow-y: auto; */
+    z-index: 10;
     height: 100%;
   }
 
