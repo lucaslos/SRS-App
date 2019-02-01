@@ -1,7 +1,7 @@
 import css from '@emotion/css';
 import styled from '@emotion/styled';
 import Icon from 'components/Icon';
-import { rgba } from 'polished';
+import { rgba, clearFix } from 'polished';
 import React, { SFC } from 'react';
 import { circle, rectSize } from 'style/mixins';
 import { centerContent, centerContentCollum, fillContainer, hide, show } from 'style/modifiers';
@@ -51,6 +51,7 @@ export const boxStyle = css`
 export const bottomButtonsWrapperStyle = css`
   /* height: 44px; */
   padding: 16px;
+  ${clearFix()};
 
   width: 100%;
 
@@ -73,7 +74,7 @@ const Container = styled.div`
 
   h1 {
     width: 100%;
-    padding: 24px 32px;
+    padding: 24px 24px;
     font-size: 20px;
     font-weight: 400;
 
