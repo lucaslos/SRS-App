@@ -78,13 +78,13 @@ const Review = () => {
 
   function showEditModal() {
     setShowMenu(false);
-    setEditCardId(cards[reviewPos].id);
+    setEditCardId(allCards[reviewPos].id);
     setShowEditCard(true);
   }
 
   function showDeleteConfimationDialog() {
     setShowMenu(false);
-    setDeleteCardId(cards[reviewPos].id);
+    setDeleteCardId(allCards[reviewPos].id);
     setShowDeleteDialog(true);
   }
 
@@ -111,11 +111,13 @@ const Review = () => {
   }
 
   function handleAddTag(tag: string) {
-    const card = cards[reviewPos];
+    const cardId = allCards[reviewPos].id;
+    const card = getCardById(cardId, cards);
+    const cardPos = cards.findIndex(revCard => revCard.id === cardId);
     const newTags = [...(card.tags ? card.tags : []), tag];
 
     setReviewCards(
-      replaceAt(cards, reviewPos, {
+      replaceAt(cards, cardPos, {
         ...card,
         tags: newTags,
       })
@@ -123,11 +125,13 @@ const Review = () => {
   }
 
   function handleRemoveTag(tag: string) {
-    const card = cards[reviewPos];
+    const cardId = allCards[reviewPos].id;
+    const card = getCardById(cardId, cards);
+    const cardPos = cards.findIndex(revCard => revCard.id === cardId);
     const newTags = card.tags!.filter(cardTag => cardTag !== tag);
 
     setReviewCards(
-      replaceAt(cards, reviewPos, {
+      replaceAt(cards, cardPos, {
         ...card,
         tags: newTags,
       })
@@ -135,11 +139,13 @@ const Review = () => {
   }
 
   function handleAddNote(note: string) {
-    const card = cards[reviewPos];
+    const cardId = allCards[reviewPos].id;
+    const card = getCardById(cardId, cards);
+    const cardPos = cards.findIndex(revCard => revCard.id === cardId);
     const newNotes = [...(card.notes ? card.notes : []), note];
 
     setReviewCards(
-      replaceAt(cards, reviewPos, {
+      replaceAt(cards, cardPos, {
         ...card,
         notes: newNotes,
       })
@@ -147,10 +153,12 @@ const Review = () => {
   }
 
   function handleAddImage(imgUrl: string) {
-    const card = cards[reviewPos];
+    const cardId = allCards[reviewPos].id;
+    const card = getCardById(cardId, cards);
+    const cardPos = cards.findIndex(revCard => revCard.id === cardId);
 
     setReviewCards(
-      replaceAt(cards, reviewPos, {
+      replaceAt(cards, cardPos, {
         ...card,
         back: `![](${imgUrl})\n${card.back}`,
       })
