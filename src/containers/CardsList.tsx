@@ -1,18 +1,29 @@
 import React, { useState, useMemo } from 'react';
 import styled from '@emotion/styled';
-import Modal, { boxStyle, BoxCloseButton, inputsRowWrapperStyle } from 'components/Modal';
+import Modal, {
+  boxStyle,
+  BoxCloseButton,
+  inputsRowWrapperStyle,
+} from 'components/Modal';
 import modalsState from 'state/modals';
 import CardTile, { TilesWrapper } from 'components/CardTile';
-import cardsState, { pushUpdateCard, getCardById, pushDeleteCard } from 'state/cards';
+import cardsState, {
+  pushUpdateCard,
+  getCardById,
+  pushDeleteCard,
+} from 'state/cards';
 import EditCardModal from 'containers/EditCardModal';
-import { useOnChange } from 'utils/customHooks';
+import { useOnChange, useThrottle } from 'utils/customHooks';
 import { centerContent } from 'style/modifiers';
-import { colorPrimary } from 'style/theme';
+import { colorPrimary, fontDecorative } from 'style/theme';
 import { rgba } from 'polished';
 import TextField from 'components/TextField';
 import DeleteCardModal from 'components/DeleteCardModal';
+import css from '@emotion/css';
 
 type Props = {};
+
+const defaultQuery = '@sort-last @all';
 
 const CardsList = () => {
   const [show, setShow] = modalsState.useStore('cardsList');
@@ -22,12 +33,12 @@ const CardsList = () => {
   const [searchLimit, setSearchLimit] = useState(30);
   const [deleteCardId, setDeleteCardId] = useState<Card['id'] | false>(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [query, setQuery] = useState<string>('@all');
+  const [query, setQuery] = useState<string>(defaultQuery);
 
   useOnChange(show, () => {
     if (!show) {
       setSearchLimit(30);
-      setQuery('@all');
+      setQuery(defaultQuery);
     }
   });
 
@@ -46,6 +57,7 @@ const CardsList = () => {
   }
 
   function showEditModal(id: Card['id']) {
+    console.log(getCardById(id, cards));
     setEditCardId(id);
     setShowEditCard(true);
   }
@@ -72,34 +84,95 @@ const CardsList = () => {
     }
   `;
 
-  const queryRegex = new RegExp(query);
+  const queryString = query
+    .replace(/@new|@sort-last|@showBack|@dupli-front/g, '')
+    .trim();
+  const queryRegex = new RegExp(queryString);
+  const sortByLast = query.match('@sort-last');
+  const showAll = query.match('@all');
+  const newOnly = query.match('@new');
+  const showBack = query.match('@show-back');
+  const filterDuplicatedFront = query.match('@dupli-front');
+  const filterDuplicatedBack = query.match('@dupli-back');
+  const searchTags = '@all @new @show-back @sort-last @dupli-front @dupli-back';
+
+  const throttledQuery = useThrottle(query, 1000);
 
   const cardsResult = useMemo(
     () =>
-      cards
-        .filter(
-          card =>
-            show &&
-            (query === '@all'
-              || JSON.stringify([
-                card.front,
-                card.back,
-              ]).match(queryRegex))
-        ),
-    [query, cards, show, searchLimit, queryRegex]
+      (show
+        ? cards
+            .filter(card => {
+              const isNew = newOnly
+                ? card.repetitions === 0 || !card.lastReview
+                : true;
+
+              const frontIsDuplicated = filterDuplicatedFront
+                ? cards.some(
+                    cardToCheck =>
+                      card.id !== cardToCheck.id &&
+                      cardToCheck.front.trim() === card.front.trim()
+                  )
+                : true;
+
+              const backIsDuplicated = filterDuplicatedBack
+                ? cards.some(
+                    cardToCheck =>
+                      card.id !== cardToCheck.id &&
+                      cardToCheck.back.trim() === card.back.trim()
+                  )
+                : true;
+
+              return (
+                (showAll
+                  || JSON.stringify([card.front, card.back]).match(queryRegex)) &&
+                isNew && frontIsDuplicated && backIsDuplicated
+              );
+            })
+            .sort((a, b) => {
+              const aCreatedAt = a.createdAt || -1;
+              const bCreatedAt = b.createdAt || -1;
+
+              if (sortByLast) {
+                return bCreatedAt - aCreatedAt;
+              }
+
+              return 0;
+            })
+        : []),
+    [throttledQuery, cards, show, searchLimit]
   );
 
   return (
     <>
       <Modal active={show} handleClose={() => setShow(false)}>
         <div css={boxStyle}>
-          <h1>Search Cards</h1>
+          <h1>
+            Search Cards{' '}
+            {cardsResult.length > 0
+              ? `－ Results: ${cardsResult.length}`
+              : undefined}
+          </h1>
+          <div
+            css={css`
+              padding: 0 24px;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              width: 100%;
+              font-weight: 300;
+              margin-bottom: 8px;
+              margin-top: -16px;
+              color: #ddd;
+            `}
+          >
+            Search Tags: {searchTags}
+          </div>
           <div css={inputsRowWrapperStyle}>
             <TextField
               value={query}
-              label="Search"
+              label="Type to search"
               usePlaceholder
-              handleChange={(value) => setQuery(value as string)}
+              handleChange={value => setQuery(value as string)}
             />
           </div>
           <TilesWrapper css={{ marginBottom: 16 }}>
@@ -107,7 +180,7 @@ const CardsList = () => {
               <CardTile
                 key={i}
                 front={card.front}
-                back={card.back}
+                back={showBack ? card.back : '---'}
                 onClick={() => showEditModal(card.id)}
                 onDelete={() => showDeleteConfimationDialog(card.id)}
               />
@@ -122,14 +195,20 @@ const CardsList = () => {
       </Modal>
       <EditCardModal
         show={showEditCard}
-        card={show && editCardId !== false && cards.find(card => card.id === editCardId)}
+        card={
+          show &&
+          editCardId !== false &&
+          cards.find(card => card.id === editCardId)
+        }
         cardId={editCardId}
         newCard
         handleUpdateCard={handleUpdateCard}
         handleClose={() => setShowEditCard(false)}
       />
       <DeleteCardModal
-        cardId={deleteCardId !== false ? getCardById(deleteCardId, cards).front : ''}
+        cardId={
+          deleteCardId !== false ? getCardById(deleteCardId, cards).front : ''
+        }
         onClose={() => setShowDeleteDialog(false)}
         onDelete={handleDeleteCard}
         show={show && showDeleteDialog}
