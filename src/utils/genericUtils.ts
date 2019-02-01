@@ -39,7 +39,11 @@ export function timeToDate(timeStamp: number) {
   return `${yyyy}-${addZero(mm)}-${addZero(dd)}`;
 }
 
-export function addUniqueObjToArray<T extends anyObject = anyObject>(unique: T, array: T[], key = 'id') {
+export function addUniqueObjToArray<T extends anyObject = anyObject>(
+  unique: T,
+  array: T[],
+  key = 'id'
+) {
   if (array.some(currElem => unique[key] === currElem[key])) {
     return array;
   }
