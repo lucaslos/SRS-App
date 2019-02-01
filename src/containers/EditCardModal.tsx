@@ -12,6 +12,7 @@ import cardsState from 'state/cards';
 import css from '@emotion/css';
 import { useOnChange } from 'utils/customHooks';
 import { getCoF } from 'utils/srsAlgo';
+import { timeToDate } from 'utils/genericUtils';
 
 type Props = {
   show: boolean;
@@ -66,7 +67,8 @@ const EditCardModal = ({
 
   const someValueIsDiff = JSON.stringify(cardProps) !== JSON.stringify(card);
 
-  const cof = cardProps && getCoF(cardProps.repetitions, cardProps.diff, cardProps.lastReview);
+  const cof = cardProps &&
+    getCoF(cardProps.repetitions, cardProps.diff, cardProps.lastReview);
 
   useOnChange(show, () => {
     if (show === true) {
@@ -123,8 +125,20 @@ const EditCardModal = ({
 
   return (
     <Modal active={show}>
-      <div css={boxStyle}>
-        <h1>Edit card {cof ? `- COF: ${cof.toFixed(2)}` : ''}</h1>
+      <div css={[boxStyle, { overflowY: 'auto', display: 'block' }]}>
+        <h1>Edit card</h1>
+        <h2
+          css={css`
+            font-size: 14px;
+            margin-top: -12px;
+            width: 100%;
+            padding: 0 24px;
+            margin-bottom: 14px;
+          `}
+        >
+          {cof !== false ? `CoF: ${cof.toFixed(2)} －` : ''} Created:{' '}
+          {card && card.createdAt ? new Date(card.createdAt).toLocaleString() : 'Null'}
+        </h2>
         {cardProps && (
           <>
             <div css={inputsRowWrapperStyle}>
@@ -161,7 +175,7 @@ const EditCardModal = ({
               <TextField
                 id="lastReview"
                 value={cardProps.lastReview as NonNullable<Card['lastReview']>}
-                required={newCard}
+                // required={newCard}
                 type="date"
                 width="170px"
                 handleChange={handleInputChange}
