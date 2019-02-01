@@ -19,7 +19,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, folder),
-    filename: '[name].[contenthash:8].js',
+    filename: '[name].[chunkhash:8].js',
   },
 
   module: {
