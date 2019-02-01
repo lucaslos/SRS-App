@@ -166,7 +166,7 @@ const Card = ({
 }: Props) => {
   const words = card.back.split(';');
 
-  const WarnIcon = card.wrongReviews > 4 ? (
+  const WarnIcon = card.wrongReviews > 4 || card.diff > 0.4 ? (
     <Icon name="warn" color={colorRed} size={24} />
     ) : (
       undefined
@@ -179,11 +179,11 @@ const Card = ({
       if (
         e.dataTransfer.getData('Text').match(/(\.png|\.jpg|\.jpeg|\.gif)$/g)
       ) {
-        // add img
-        handleAddNote(e.dataTransfer.getData('Text'));
-      } else {
         // add note
         handleAddImage(e.dataTransfer.getData('Text'));
+      } else {
+        // add img
+        handleAddNote(e.dataTransfer.getData('Text'));
       }
     }
   }
@@ -193,6 +193,8 @@ const Card = ({
 
     e.dataTransfer.dropEffect = 'copy';
   }
+
+  const hasImageInBack = card.back.match(/\[\]\(.+\)/); // ![](${imgUrl})
 
   return (
     <>
@@ -210,6 +212,7 @@ const Card = ({
             </NumOfAnswers>
           )}
           {WarnIcon}
+          {hasImageInBack && <Icon name="image" size={24} />}
         </TopIcons>
         <CardFaceContent>
           <ReactMarkdown source={card.front} />
