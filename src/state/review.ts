@@ -12,6 +12,7 @@ export type ReviewState = {
   reviewPos: number;
   results: anyObject<Results>;
   reviewAgain: Card['id'][];
+  ignoreInReviewAgainCount: Card['id'][];
   cardsToDelete: Card['id'][];
   ended: boolean;
   startTime: number;
@@ -34,6 +35,7 @@ const reviewState = createStore<ReviewState, Actions>('review', {
     reviewPos: -1,
     results: {},
     cardsToDelete: [],
+    ignoreInReviewAgainCount: [],
     reviewAgain: [],
     startTime: 0,
     ended: false,
@@ -52,6 +54,7 @@ const reviewState = createStore<ReviewState, Actions>('review', {
       results: {},
       cardsToDelete: [],
       reviewAgain: [],
+      ignoreInReviewAgainCount: [],
       startTime: Date.now(),
       ended: false,
     }),
@@ -60,11 +63,13 @@ const reviewState = createStore<ReviewState, Actions>('review', {
       {
         results,
         reviewAgain,
-      }: { results: anyObject<Results>; reviewAgain: Card['id'][] }
+        ignoreInReviewAgainCount,
+      }: { results: anyObject<Results>; reviewAgain: Card['id'][]; ignoreInReviewAgainCount: Card['id'][] }
     ) => ({
       ...state,
       results,
       reviewAgain,
+      ignoreInReviewAgainCount,
       reviewPos: state.reviewPos + 1,
     }),
     goToPrev: state => {
@@ -117,12 +122,14 @@ export function GoToNextCard(result: Results, id: string) {
     results,
     reviewCards,
     reviewAgain,
+    ignoreInReviewAgainCount,
   } = reviewState.getState();
 
   const reviewEnd = reviewPos + 1 === reviewCards.length + reviewAgain.length;
 
   let addResults: typeof results = {};
   let addReviewAgain: typeof reviewAgain = [];
+  let addIgnoreInReviewAgainCount: typeof ignoreInReviewAgainCount = [];
 
   const lastResult = results[id];
   const resultIsWorst = !lastResult
@@ -138,10 +145,12 @@ export function GoToNextCard(result: Results, id: string) {
   if (['wrong', 'hard'].includes(result)) {
     if (reviewEnd && reviewCards.length > 2) {
       const randomCards = shuffle(reviewCards.filter(card => card.id !== id));
+      addIgnoreInReviewAgainCount = [randomCards[0].id, randomCards[1].id];
 
       addReviewAgain = [randomCards[0].id, randomCards[1].id, id];
     } else if (reviewEnd && reviewCards.length > 1) {
       const randomCards = shuffle(reviewCards.filter(card => card.id !== id));
+      addIgnoreInReviewAgainCount = [randomCards[0].id];
 
       addReviewAgain = [randomCards[0].id, id];
     } else {
@@ -152,6 +161,7 @@ export function GoToNextCard(result: Results, id: string) {
   reviewState.dispatch('goToNext', {
     results: { ...results, ...addResults },
     reviewAgain: [...reviewAgain, ...addReviewAgain],
+    ignoreInReviewAgainCount: [...ignoreInReviewAgainCount, ...addIgnoreInReviewAgainCount],
   });
 
   if (result === 'success' && reviewEnd) {
@@ -165,6 +175,7 @@ export function endReview() {
     reviewCards,
     startTime,
     cardsToDelete,
+    ignoreInReviewAgainCount,
     reviewAgain,
   } = reviewState.getState();
 
@@ -173,6 +184,7 @@ export function endReview() {
     results,
     startTime,
     reviewAgain,
+    ignoreInReviewAgainCount,
   );
 
   pushCards(updatedCards, [], cardsToDelete);

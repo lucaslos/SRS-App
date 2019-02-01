@@ -1,5 +1,12 @@
 import cardsState from 'state/cards';
-import { shuffle, timeToDate, time, clamp, clampMin, isDev } from 'utils/genericUtils';
+import {
+  shuffle,
+  timeToDate,
+  time,
+  clamp,
+  clampMin,
+  isDev,
+} from 'utils/genericUtils';
 
 /**
  * SRS Algorithm
@@ -81,7 +88,7 @@ export function calcCardsCoF(cards: Card[]) {
   const newCards: CardWithCoF[] = [];
   const reviewed: CardWithCoF[] = [];
 
-  cards.forEach((card) => {
+  cards.forEach(card => {
     const cof = getCoF(card.repetitions, card.diff, card.lastReview);
 
     if (cof === -1) {
@@ -128,7 +135,11 @@ export function getCardsToReview(numOfCards: number, onlyNew: boolean) {
   );
 }
 
-export function processCardAnswer(card: Card, answer: Results, reviewsAgain: number): Card {
+export function processCardAnswer(
+  card: Card,
+  answer: Results,
+  reviewsAgain: number
+): Card {
   const cof = getCoF(card.repetitions, card.diff, card.lastReview);
 
   let reviewsAgainDiffIncrease = 0;
@@ -137,12 +148,19 @@ export function processCardAnswer(card: Card, answer: Results, reviewsAgain: num
     if (answer === 'hard') {
       reviewsAgainDiffIncrease = (reviewsAgain - 1) * reviewAgainHardIncrease;
     } else if (answer === 'wrong') {
-      reviewsAgainDiffIncrease = ((reviewsAgain - 1) ** 2) * reviewAgainWrongIncrease;
+      reviewsAgainDiffIncrease = (reviewsAgain - 1) ** 2 * reviewAgainWrongIncrease;
     }
   }
 
   if (isDev) {
-    console.log({ answer, diffIncrease: diffIncrease[answer], reviewsAgainDiffIncrease, reviewsAgain, cof, card });
+    console.log({
+      answer,
+      diffIncrease: diffIncrease[answer],
+      reviewsAgainDiffIncrease,
+      reviewsAgain,
+      cof,
+      card,
+    });
   }
 
   return {
@@ -157,7 +175,14 @@ export function processCardAnswer(card: Card, answer: Results, reviewsAgain: num
         ],
       1
     ),
-    diff: Math.round(clamp(card.diff + diffIncrease[answer] + reviewsAgainDiffIncrease, 0, 1) * 100) / 100,
+    diff:
+      Math.round(
+        clamp(
+          card.diff + diffIncrease[answer] + reviewsAgainDiffIncrease,
+          0,
+          1
+        ) * 100
+      ) / 100,
   };
 }
 
@@ -166,16 +191,22 @@ export function processReview(
   answers: anyObject<Results>,
   startTime: number,
   reviewAgain: Card['id'][],
+  ignoreInReviewAgainCount: Card['id'][]
 ) {
   const updatedCards = cards.map(card =>
-    processCardAnswer(card, answers[card.id], reviewAgain.filter(id => id === card.id).length)
+    processCardAnswer(
+      card,
+      answers[card.id],
+      reviewAgain.filter(id => id === card.id).length
+        - ignoreInReviewAgainCount.filter(id => id === card.id).length
+    )
   );
 
   let success = 0;
   let fails = 0;
   let hard = 0;
 
-  Object.keys(answers).forEach((id) => {
+  Object.keys(answers).forEach(id => {
     if (answers[id] === 'hard') hard++;
     if (answers[id] === 'wrong') fails++;
     if (answers[id] === 'success') success++;
