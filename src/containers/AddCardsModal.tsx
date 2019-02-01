@@ -10,11 +10,12 @@ import React, { useState } from 'react';
 import modalsState from 'state/modals';
 import reviewState from 'state/review';
 import { centerContent } from 'style/modifiers';
-import { colorSecondary } from 'style/theme';
+import { colorSecondary, colorYellow, fontDecorative } from 'style/theme';
 import CardTile, { TilesWrapper } from 'components/CardTile';
 import EditCardModal from 'containers/EditCardModal';
 import { replaceAt } from 'utils/genericUtils';
 import cardsState, { pushNewCards } from 'state/cards';
+import css from '@emotion/css';
 
 const AddCardsButtonsWrapper = styled.div`
   ${centerContent};
@@ -61,6 +62,12 @@ const AddCardsModal = () => {
     setShowEditCard(true);
   }
 
+  const frontIsDuplicated = cardsToAdd.filter(newCard =>
+    cardsState
+      .getState()
+      .cards.some(card => card.front.trim() === newCard.front.trim())
+  );
+
   return (
     <>
       <Modal active={show}>
@@ -81,6 +88,32 @@ const AddCardsModal = () => {
               />
             ))}
           </TilesWrapper>
+          {frontIsDuplicated.length > 0 && (
+            <div
+              css={css`
+                margin-top: 12px;
+                margin-bottom: 8px;
+                font-size: 16px;
+                font-weight: 300;
+                color: ${colorYellow};
+
+                strong {
+                  font-family: ${fontDecorative};
+                }
+              `}
+            >
+              Duplicated front text:{' '}
+              <strong>
+                {frontIsDuplicated
+                  .map(card =>
+                    (card.front.length > 30
+                      ? `${card.front.substr(0, 30)}...`
+                      : card.front)
+                  )
+                  .join(', ')}
+              </strong>
+            </div>
+          )}
           <AddCardsButtonsWrapper>
             <Button
               label="add card"
