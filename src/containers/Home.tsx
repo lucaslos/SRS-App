@@ -13,6 +13,7 @@ import CardsGroups from 'containers/ReviewGroupContainer';
 import StatsBar from 'containers/StatsBar';
 import modalsState from 'state/modals';
 import { mqMobile } from 'style/mediaQueries';
+import { version } from '../../package.json';
 
 const Container = styled.section`
   ${fillContainer};
@@ -56,7 +57,7 @@ const Home = () => (
     >
       <Icon name="card-list" color={colorPrimary} />
     </div>
-    <LogoWrapper>
+    <LogoWrapper title={version}>
       <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
     <div
