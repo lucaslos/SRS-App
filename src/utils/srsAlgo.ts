@@ -1,5 +1,5 @@
 import cardsState from 'state/cards';
-import { shuffle, timeToDate, time, clamp, clampMin } from 'utils/genericUtils';
+import { shuffle, timeToDate, time, clamp, clampMin, isDev } from 'utils/genericUtils';
 
 /**
  * SRS Algorithm
@@ -14,6 +14,8 @@ type CardWithCoF = Card & {
 const timeLimitIncrease = 3600 * (3 + 6) * 1000;
 const diffRate = 4;
 const highCofLimit = 1.5;
+const reviewAgainHardIncrease = 0.01;
+const reviewAgainWrongIncrease = 0.02;
 const repetitionsIncrease: ObjectWithKey<Results, number> = {
   success: 1,
   hard: 0,
@@ -126,8 +128,22 @@ export function getCardsToReview(numOfCards: number, onlyNew: boolean) {
   );
 }
 
-export function processCardAnswer(card: Card, answer: Results): Card {
+export function processCardAnswer(card: Card, answer: Results, reviewsAgain: number): Card {
   const cof = getCoF(card.repetitions, card.diff, card.lastReview);
+
+  let reviewsAgainDiffIncrease = 0;
+
+  if (reviewsAgain > 1) {
+    if (answer === 'hard') {
+      reviewsAgainDiffIncrease = (reviewsAgain - 1) * reviewAgainHardIncrease;
+    } else if (answer === 'wrong') {
+      reviewsAgainDiffIncrease = ((reviewsAgain - 1) ** 2) * reviewAgainWrongIncrease;
+    }
+  }
+
+  if (isDev) {
+    console.log({ answer, diffIncrease: diffIncrease[answer], reviewsAgainDiffIncrease, reviewsAgain, cof, card });
+  }
 
   return {
     ...card,
@@ -139,19 +155,20 @@ export function processCardAnswer(card: Card, answer: Results): Card {
         + (cof >= highCofLimit ? highCofRepetitionIncrease : repetitionsIncrease)[
           answer
         ],
-      0
+      1
     ),
-    diff: clamp(card.diff + diffIncrease[answer], 0, 1),
+    diff: Math.round(clamp(card.diff + diffIncrease[answer] + reviewsAgainDiffIncrease, 0, 1) * 100) / 100,
   };
 }
 
 export function processReview(
   cards: Card[],
   answers: anyObject<Results>,
-  startTime: number
+  startTime: number,
+  reviewAgain: Card['id'][],
 ) {
   const updatedCards = cards.map(card =>
-    processCardAnswer(card, answers[card.id])
+    processCardAnswer(card, answers[card.id], reviewAgain.filter(id => id === card.id).length)
   );
 
   let success = 0;
@@ -172,73 +189,3 @@ export function processReview(
     time: time(Date.now() - startTime),
   };
 }
-
-// export function processGroupReview(cards, repetitions, deleteCards, group, revisionDuration) {
-//   let wrongCardsCounter = 0;
-//   let newRepetitions = parseInt(repetitions, 10);
-
-//   // processa dificuldade dos cards
-//   const newCards = cards.map((card) => {
-//     let difficulty = card.difficulty;
-//     let wrongViews = card.wrongViews;
-//     const answer = card.answer;
-
-//     // precessa nova dificuldade
-//     if (answer === 0) {
-//       wrongViews++;
-//       wrongCardsCounter++;
-
-//       if (difficulty !== 0 || wrongViews <= 2) {
-//         difficulty += 0.25;
-
-//         // se erros do card forrem +2 e difficulty == 0
-//       } else {
-//         difficulty += 0.75;
-//       }
-//       // se card for acertado
-//     } else if (answer === 1) {
-//       difficulty -= 0.25;
-//       // se for meio acerto
-//     } else {
-//       difficulty = difficulty <= 0.25 ? 0.25 : difficulty - 0.25;
-//     }
-
-//     difficulty = limitRange(difficulty, 0, 1);
-
-//     return Object.assign({}, card, {
-//       difficulty,
-//       wrongViews,
-//       lastView: timeToDate(Math.round((+new Date() - srsAlgo.timeLimitIncrease) / 1000)),
-//       edited: true,
-//       tags: card.tags,
-//       notes: card.notes,
-//     });
-//   });
-
-//   // calcula novas repetições
-//   const wrongRate = wrongCardsCounter / cards.length;
-
-//   if (wrongRate === 1) {
-//     newRepetitions = 1;
-//   } else if (wrongRate > 0.7) {
-//     newRepetitions -= 4;
-//   } else if (wrongRate > 0.4) {
-//     newRepetitions -= 3;
-//   } else if (wrongRate > 0.3) {
-//     newRepetitions -= 2;
-//   } else if (wrongRate <= 0.18) {
-//     newRepetitions += 1;
-//   }
-
-//   newRepetitions = newRepetitions < 1 ? 1 : newRepetitions;
-
-//   // log
-//   logReview.add(group, wrongRate, wrongCardsCounter, repetitions, cards.length, revisionDuration);
-
-//   return {
-//     cards: newCards,
-//     repetitions: newRepetitions,
-//     lastview: timeToDate(Math.round((+new Date() - srsAlgo.timeLimitIncrease) / 1000)),
-//     deleteCards,
-//   };
-// }

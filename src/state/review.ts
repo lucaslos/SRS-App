@@ -1,7 +1,7 @@
 import { createStore } from 'lib/hookstore';
 import { getCardsToReview, processReview } from 'utils/srsAlgo';
 import modalsState from 'state/modals';
-import { addUniqueToArray, getLastElem } from 'utils/genericUtils';
+import { addUniqueToArray, getLastElem, shuffle } from 'utils/genericUtils';
 import { number } from 'prop-types';
 import { pushCards } from 'state/cards';
 
@@ -55,21 +55,19 @@ const reviewState = createStore<ReviewState, Actions>('review', {
       startTime: Date.now(),
       ended: false,
     }),
-    goToNext: (state, { id, result }: { result: Results; id: string }) => ({
+    goToNext: (
+      state,
+      {
+        results,
+        reviewAgain,
+      }: { results: anyObject<Results>; reviewAgain: Card['id'][] }
+    ) => ({
       ...state,
-      results:
-        state.reviewPos !== -1 && !state.reviewAgain.includes(id)
-          ? {
-              ...state.results,
-              [id]: result,
-            }
-          : state.results,
-      reviewAgain: ['wrong', 'hard'].includes(result)
-        ? [...state.reviewAgain, id]
-        : state.reviewAgain,
+      results,
+      reviewAgain,
       reviewPos: state.reviewPos + 1,
     }),
-    goToPrev: (state) => {
+    goToPrev: state => {
       const allCards = [
         ...state.reviewCards,
         ...state.reviewAgain.map(id =>
@@ -113,23 +111,68 @@ export function showReviewDialog(
   modalsState.setKey('reviewDialog', true);
 }
 
-export function GoToNextCard(result: Results, id: string | number) {
-  const { reviewPos, reviewCards, reviewAgain } = reviewState.getState();
+export function GoToNextCard(result: Results, id: string) {
+  const {
+    reviewPos,
+    results,
+    reviewCards,
+    reviewAgain,
+  } = reviewState.getState();
 
-  reviewState.dispatch('goToNext', { result, id });
+  const reviewEnd = reviewPos + 1 === reviewCards.length + reviewAgain.length;
 
-  if (result === 'success' && reviewPos + 1 === reviewCards.length + reviewAgain.length) {
+  let addResults: typeof results = {};
+  let addReviewAgain: typeof reviewAgain = [];
+
+  const lastResult = results[id];
+  const resultIsWorst = !lastResult
+    || (lastResult === 'success' && (result === 'hard' || result === 'wrong'))
+    || (lastResult === 'hard' && result === 'wrong');
+
+  if (reviewPos !== -1 && resultIsWorst) {
+    addResults = {
+      [id]: result,
+    };
+  }
+
+  if (['wrong', 'hard'].includes(result)) {
+    if (reviewEnd && reviewCards.length > 2) {
+      const randomCards = shuffle(reviewCards.filter(card => card.id !== id));
+
+      addReviewAgain = [randomCards[0].id, randomCards[1].id, id];
+    } else if (reviewEnd && reviewCards.length > 1) {
+      const randomCards = shuffle(reviewCards.filter(card => card.id !== id));
+
+      addReviewAgain = [randomCards[0].id, id];
+    } else {
+      addReviewAgain = [id];
+    }
+  }
+
+  reviewState.dispatch('goToNext', {
+    results: { ...results, ...addResults },
+    reviewAgain: [...reviewAgain, ...addReviewAgain],
+  });
+
+  if (result === 'success' && reviewEnd) {
     endReview();
   }
 }
 
 export function endReview() {
-  const { results, reviewCards, startTime, cardsToDelete } = reviewState.getState();
+  const {
+    results,
+    reviewCards,
+    startTime,
+    cardsToDelete,
+    reviewAgain,
+  } = reviewState.getState();
 
   const { updatedCards, fails, hard, success, time } = processReview(
     reviewCards,
     results,
-    startTime
+    startTime,
+    reviewAgain,
   );
 
   pushCards(updatedCards, [], cardsToDelete);
