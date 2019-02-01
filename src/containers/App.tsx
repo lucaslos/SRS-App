@@ -8,6 +8,7 @@ import { listenToCardsChange } from 'state/cards';
 import CardsList from 'containers/CardsList';
 import Login from 'containers/Login';
 import LoadingCards from 'containers/LoadingCards';
+import VersionModal from 'containers/VersionModal';
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
     <AddCardsModal />
     <CardsList />
     <LoadingCards />
+    <VersionModal />
     <Login />
   </>
 );

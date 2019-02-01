@@ -5,6 +5,7 @@ type ModalsState = {
   review: boolean;
   addCards: boolean;
   cardsList: boolean;
+  version: boolean;
 }
 
 const modalsState = createStore<ModalsState>('modals', {
@@ -13,6 +14,7 @@ const modalsState = createStore<ModalsState>('modals', {
     review: false,
     addCards: false,
     cardsList: false,
+    version: false,
   },
 });
 

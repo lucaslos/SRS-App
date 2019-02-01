@@ -2,12 +2,12 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Root from 'Root';
 import 'state';
-import { version, name } from '../package.json';
+// import { version, name } from '../package.json';
 import 'utils/firebase';
 
 /* production only code */
 if (process.env.NODE_ENV === 'production') {
-  console.log(`${name} v${version}`);
+  // console.log(`${name} v${version}`);
 
   // register service worker
   if ('serviceWorker' in navigator) {

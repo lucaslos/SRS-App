@@ -13,7 +13,6 @@ import CardsGroups from 'containers/ReviewGroupContainer';
 import StatsBar from 'containers/StatsBar';
 import modalsState from 'state/modals';
 import { mqMobile } from 'style/mediaQueries';
-import { version } from '../../package.json';
 import { firebaseDev } from 'utils/firebase';
 
 const Container = styled.section`
@@ -45,6 +44,8 @@ const LogoWrapper = styled.div`
   position: absolute;
   top: 40px;
 
+  cursor: pointer;
+
   ${mqMobile} {
     top: 12px;
   }
@@ -59,7 +60,7 @@ const Home = () => (
     >
       <Icon name="card-list" color={colorPrimary} />
     </div>
-    <LogoWrapper title={version}>
+    <LogoWrapper onClick={() => modalsState.setKey('version', true)}>
       <Icon name="logo" color={colorPrimary} size={48} />
     </LogoWrapper>
     <div
