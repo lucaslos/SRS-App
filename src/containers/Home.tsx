@@ -14,6 +14,7 @@ import StatsBar from 'containers/StatsBar';
 import modalsState from 'state/modals';
 import { mqMobile } from 'style/mediaQueries';
 import { firebaseDev } from 'utils/firebase';
+import { isDev } from 'utils/genericUtils';
 
 const Container = styled.section`
   ${fillContainer};
@@ -53,7 +54,11 @@ const LogoWrapper = styled.div`
 
 const Home = () => (
   <Container>
-    {firebaseDev && <div css={{ position: 'absolute', top: 2, left: 2, fontSize: 9 }}>Firebase dev</div>}
+    {isDev && (
+      <div css={{ position: 'absolute', top: 2, left: 2, fontSize: 9 }}>
+        Firebase {firebaseDev ? 'Dev Mode' : 'Production'}
+      </div>
+    )}
     <div
       css={[topButton, { left: 38, [mqMobile]: { left: 10 } }]}
       onClick={() => modalsState.setKey('cardsList', true)}

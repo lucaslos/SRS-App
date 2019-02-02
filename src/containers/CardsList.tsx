@@ -85,16 +85,17 @@ const CardsList = () => {
   `;
 
   const queryString = query
-    .replace(/@new|@sort-last|@showBack|@dupli-front/g, '')
+    .replace(/@new|@sort-last|@showBack|@dupli-front|@dupli-back|@not-new/g, '')
     .trim();
   const queryRegex = new RegExp(queryString);
   const sortByLast = query.match('@sort-last');
   const showAll = query.match('@all');
   const newOnly = query.match('@new');
+  const notNew = query.match('@not-new');
   const showBack = query.match('@show-back');
   const filterDuplicatedFront = query.match('@dupli-front');
   const filterDuplicatedBack = query.match('@dupli-back');
-  const searchTags = '@all @new @show-back @sort-last @dupli-front @dupli-back';
+  const searchTags = '@all @new @show-back @sort-last @dupli-front @dupli-back @not-new';
 
   const throttledQuery = useThrottle(query, 1000);
 
@@ -103,9 +104,9 @@ const CardsList = () => {
       (show
         ? cards
             .filter(card => {
-              const isNew = newOnly
-                ? card.repetitions === 0 || !card.lastReview
-                : true;
+              const isNotNew = notNew ? card.lastReview : true;
+
+              const isNew = newOnly ? !card.lastReview : true;
 
               const frontIsDuplicated = filterDuplicatedFront
                 ? cards.some(
@@ -125,13 +126,14 @@ const CardsList = () => {
 
               return (
                 (showAll
-                  || JSON.stringify({
-                    front: card.front,
-                    back: card.back,
-                    repetitions: card.repetitions,
-                    lastReview: card.lastReview,
-                  }).match(queryRegex)) &&
-                isNew && frontIsDuplicated && backIsDuplicated
+                  || (queryString &&
+                    `f=${card.front} b=${card.back} r=${card.repetitions} lr=${
+                      card.lastReview
+                    }`.match(queryRegex))) &&
+                isNew &&
+                frontIsDuplicated &&
+                backIsDuplicated &&
+                isNotNew
               );
             })
             .sort((a, b) => {

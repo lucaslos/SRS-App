@@ -12,6 +12,8 @@ import { centerContent } from 'style/modifiers';
 import { calcCardsCoF, getCoF, needsReview } from 'utils/srsAlgo';
 import { mqMobile } from 'style/mediaQueries';
 
+const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
 const Container = styled.div`
   ${centerContent};
   position: absolute;
@@ -60,9 +62,9 @@ const StatsBar = () => {
       3600 * 24 * 2 * 1000
     );
 
-    if (needsReview(cof) && card.repetitions !== 0) {
+    if (cof > 1) {
       cardsPrevisionNextDay++;
-    } else if (cof === 1 && card.repetitions !== 0) {
+    } else if (cof === 1) {
       cardsPrevisionNext2Days++;
     }
   });
@@ -70,9 +72,14 @@ const StatsBar = () => {
   const oneMonthBeforeTimestamp = Date.now() - 2592000000;
   const cardsAddPerWeek = Math.round(
     cards.filter(
-      card => card.createdAt && card.repetitions && card.createdAt > oneMonthBeforeTimestamp
+      card =>
+        card.createdAt &&
+        card.repetitions &&
+        card.createdAt > oneMonthBeforeTimestamp
     ).length / 4.34
   );
+
+  const today = new Date();
 
   return (
     <Container>
@@ -85,10 +92,8 @@ const StatsBar = () => {
       </span>
       <div />
       <span>
-        Prevision{' '}
-        <b>
-          {cardsPrevisionNextDay}-{cardsPrevisionNext2Days}
-        </b>
+        {daysOfWeek[(today.getDay() + 1) % 7]} <b>{cardsPrevisionNextDay}</b>{' '}
+        {daysOfWeek[(today.getDay() + 2) % 7]} <b>{cardsPrevisionNext2Days}</b>
       </span>
     </Container>
   );

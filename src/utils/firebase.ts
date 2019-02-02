@@ -53,7 +53,7 @@ window.firebaseLogOut = () => {
     );
 };
 
-const testAuth = false;
+const testAuth = true;
 
 export const firebaseDev = isDev && !testAuth;
 const app = firebase.initializeApp(firebaseDev ? devConfig : prodConfig);
