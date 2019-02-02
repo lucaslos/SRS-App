@@ -125,7 +125,12 @@ const CardsList = () => {
 
               return (
                 (showAll
-                  || JSON.stringify([card.front, card.back]).match(queryRegex)) &&
+                  || JSON.stringify({
+                    front: card.front,
+                    back: card.back,
+                    repetitions: card.repetitions,
+                    lastReview: card.lastReview,
+                  }).match(queryRegex)) &&
                 isNew && frontIsDuplicated && backIsDuplicated
               );
             })

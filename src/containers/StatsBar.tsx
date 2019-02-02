@@ -9,7 +9,7 @@ import {
 import { rgba } from 'polished';
 import cardsState from 'state/cards';
 import { centerContent } from 'style/modifiers';
-import { calcCardsCoF, getCoF } from 'utils/srsAlgo';
+import { calcCardsCoF, getCoF, needsReview } from 'utils/srsAlgo';
 import { mqMobile } from 'style/mediaQueries';
 
 const Container = styled.div`
@@ -60,7 +60,7 @@ const StatsBar = () => {
       3600 * 24 * 2 * 1000
     );
 
-    if (cof > 1 && card.repetitions !== 0) {
+    if (needsReview(cof) && card.repetitions !== 0) {
       cardsPrevisionNextDay++;
     } else if (cof === 1 && card.repetitions !== 0) {
       cardsPrevisionNext2Days++;
