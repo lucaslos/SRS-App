@@ -148,7 +148,7 @@ module.exports = {
     }),
     new workboxPlugin.GenerateSW({
       swDest: 'sw.js',
-      // exclude: ['index.html'],
+      exclude: ['index.html'],
       clientsClaim: true,
       skipWaiting: true,
       importWorkboxFrom: 'cdn',
@@ -179,6 +179,10 @@ module.exports = {
         {
           urlPattern: '/static/',
           handler: 'cacheFirst',
+        },
+        {
+          urlPattern: '/index.html',
+          handler: 'networkFirst',
         },
       ],
     }),
