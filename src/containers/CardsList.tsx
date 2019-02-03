@@ -84,20 +84,20 @@ const CardsList = () => {
     }
   `;
 
-  const queryString = query
+  const throttledQuery = useThrottle(query, 1000);
+
+  const queryString = throttledQuery
     .replace(/@new|@sort-last|@showBack|@dupli-front|@dupli-back|@not-new/g, '')
     .trim();
-  const queryRegex = new RegExp(queryString);
-  const sortByLast = query.match('@sort-last');
-  const showAll = query.match('@all');
-  const newOnly = query.match('@new');
-  const notNew = query.match('@not-new');
-  const showBack = query.match('@show-back');
-  const filterDuplicatedFront = query.match('@dupli-front');
-  const filterDuplicatedBack = query.match('@dupli-back');
+  const queryRegex = new RegExp(queryString, 'i');
+  const sortByLast = throttledQuery.match('@sort-last');
+  const showAll = throttledQuery.match('@all');
+  const newOnly = throttledQuery.match('@new');
+  const notNew = throttledQuery.match('@not-new');
+  const showBack = throttledQuery.match('@show-back');
+  const filterDuplicatedFront = throttledQuery.match('@dupli-front');
+  const filterDuplicatedBack = throttledQuery.match('@dupli-back');
   const searchTags = '@all @new @show-back @sort-last @dupli-front @dupli-back @not-new';
-
-  const throttledQuery = useThrottle(query, 1000);
 
   const cardsResult = useMemo(
     () =>
@@ -126,10 +126,10 @@ const CardsList = () => {
 
               return (
                 (showAll
-                  || (queryString &&
-                    `f=${card.front} b=${card.back} r=${card.repetitions} lr=${
+                  || (throttledQuery &&
+                    `-f=${card.front}-b=${card.back}-r=${card.repetitions}-lr=${
                       card.lastReview
-                    }`.match(queryRegex))) &&
+                    }-t=${card.tags ? card.tags.join(',') : ''}-`.match(queryRegex))) &&
                 isNew &&
                 frontIsDuplicated &&
                 backIsDuplicated &&
