@@ -210,8 +210,9 @@ const EditCardModal = ({
                 handleTagInputChange(tags.map(tag => tag.text), 'tags')
               }
               tags={
-                cardProps.tags &&
-                cardProps.tags.map((note, i) => ({ id: i, text: note }))
+                cardProps.tags
+                  ? cardProps.tags.map((note, i) => ({ id: i, text: note }))
+                  : []
               }
               tagsSuggestion={tagsSuggestion}
             />
@@ -220,8 +221,9 @@ const EditCardModal = ({
                 handleTagInputChange(tags.map(tag => tag.text), 'notes')
               }
               notes={
-                cardProps.notes &&
-                cardProps.notes.map((note, i) => ({ id: i, text: note }))
+                cardProps.notes
+                  ? cardProps.notes.map((note, i) => ({ id: i, text: note }))
+                  : []
               }
             />
           </>
