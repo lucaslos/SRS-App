@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.6766975002466920bcbe52c16171b17d.js"
+  "precache-manifest.7934bc8f7fdead5cfe34402e3d5fdc88.js"
 );
 
 workbox.skipWaiting();
@@ -31,4 +31,5 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, workbox.strategies.cacheFirst({ "cacheName":"googleFonts", plugins: [new workbox.expiration.Plugin({"maxEntries":30,"maxAgeSeconds":31536000,"purgeOnQuotaError":false})] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/use.typekit.net.com\/(.*)/, workbox.strategies.cacheFirst({ "cacheName":"typekitFont", plugins: [new workbox.expiration.Plugin({"maxEntries":30,"maxAgeSeconds":31536000,"purgeOnQuotaError":false})] }), 'GET');
-workbox.routing.registerRoute("/static/", workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute("static", workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute("index.html", workbox.strategies.networkFirst(), 'GET');

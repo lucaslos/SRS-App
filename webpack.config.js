@@ -177,11 +177,11 @@ module.exports = {
           },
         },
         {
-          urlPattern: '/static/',
+          urlPattern: 'static',
           handler: 'cacheFirst',
         },
         {
-          urlPattern: '/index.html',
+          urlPattern: 'index.html',
           handler: 'networkFirst',
         },
       ],
