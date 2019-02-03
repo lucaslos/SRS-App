@@ -61,20 +61,14 @@ const Review = () => {
   }
 
   function handleBack() {
-    if (cardsIsFlipped[reviewPos]) {
-      setIsFlipped(reviewPos, false);
-    } else {
-      setIsFlipped(reviewPos - 1, false);
-      setIsFlipped(reviewPos + 1, false);
-      reviewState.dispatch('goToPrev');
+    if (reviewPos !== 0) {
+      if (cardsIsFlipped[reviewPos]) {
+        setIsFlipped(reviewPos, false);
+      } else {
+        reviewState.dispatch('goToPrev');
+      }
     }
   }
-
-  useOnChange(reviewPos, () => {
-    if (reviewPos === 0) {
-      setCardsIsFlipped([false]);
-    }
-  });
 
   function showEditModal() {
     setShowMenu(false);
@@ -107,7 +101,7 @@ const Review = () => {
 
   function goToNext(answer: Results, id: Card['id']) {
     GoToNextCard(answer, id);
-    // setShowMenu(false);
+    setCardsIsFlipped(Array(allCards.length).fill(false));
   }
 
   function handleAddTag(tag: string) {
