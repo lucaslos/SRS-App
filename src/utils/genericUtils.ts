@@ -28,8 +28,10 @@ export function replaceAt<T>(array: T[], index: number, value: T) {
   return ret;
 }
 
+const timezoneOffset = new Date().getTimezoneOffset();
+
 export function timeToDate(timeStamp: number) {
-  const date = new Date(timeStamp * 1000);
+  const date = new Date((timeStamp + timezoneOffset * 60) * 1000);
   const dd = date.getDate();
   const mm = date.getMonth() + 1;
   const yyyy = date.getFullYear();
@@ -40,7 +42,7 @@ export function timeToDate(timeStamp: number) {
 }
 
 export function timeToDateBr(timeStamp: number) {
-  const date = new Date(timeStamp * 1000);
+  const date = new Date((timeStamp + timezoneOffset * 60) * 1000);
   const dd = date.getDate();
   const mm = date.getMonth() + 1;
   const yyyy = date.getFullYear();

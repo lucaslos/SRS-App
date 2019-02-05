@@ -8,6 +8,7 @@ import {
   isDev,
   timeToDateBr,
 } from 'utils/genericUtils';
+import { hot } from 'react-hot-loader';
 
 /**
  * SRS Algorithm
@@ -92,7 +93,7 @@ export function getNextDayToReview(
 ) {
   if (!lastReview) return 'New';
 
-  const dateDiff = (1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions];
+  const dateDiff = Math.ceil((1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions]);
 
   const nextReview = Date.parse(lastReview) + dateDiff * 1000 * 3600 * 24;
 
