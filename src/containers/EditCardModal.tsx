@@ -11,8 +11,8 @@ import InputNotes from 'components/InputNotes.js';
 import cardsState from 'state/cards';
 import css from '@emotion/css';
 import { useOnChange } from 'utils/customHooks';
-import { getCoF } from 'utils/srsAlgo';
-import { timeToDate } from 'utils/genericUtils';
+import { getCoF, getNextDayToReview } from 'utils/srsAlgo';
+import { timeToDate, timeToDateBr } from 'utils/genericUtils';
 
 type Props = {
   show: boolean;
@@ -134,10 +134,12 @@ const EditCardModal = ({
             width: 100%;
             padding: 0 24px;
             margin-bottom: 14px;
+            font-weight: 300;
           `}
         >
           {cof !== false ? `CoF: ${cof.toFixed(2)} －` : ''} Created:{' '}
-          {card && card.createdAt ? new Date(card.createdAt).toLocaleString() : 'Null'}
+          {card && card.createdAt ? timeToDateBr(card.createdAt / 1000) : 'Null'}
+          {' － Next Review: '}{cardProps ? getNextDayToReview(cardProps.repetitions, cardProps.diff, cardProps.lastReview) : ''}
         </h2>
         {cardProps && (
           <>

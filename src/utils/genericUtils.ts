@@ -39,6 +39,17 @@ export function timeToDate(timeStamp: number) {
   return `${yyyy}-${addZero(mm)}-${addZero(dd)}`;
 }
 
+export function timeToDateBr(timeStamp: number) {
+  const date = new Date(timeStamp * 1000);
+  const dd = date.getDate();
+  const mm = date.getMonth() + 1;
+  const yyyy = date.getFullYear();
+
+  const addZero = (i: number) => (i < 10 ? `0${i}` : i);
+
+  return `${addZero(dd)}/${addZero(mm)}/${yyyy}`;
+}
+
 export function addUniqueObjToArray<T extends anyObject = anyObject>(
   unique: T,
   array: T[],

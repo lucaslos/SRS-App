@@ -20,6 +20,7 @@ import { rgba } from 'polished';
 import TextField from 'components/TextField';
 import DeleteCardModal from 'components/DeleteCardModal';
 import css from '@emotion/css';
+import { getCoF } from 'utils/srsAlgo';
 
 type Props = {};
 
@@ -87,17 +88,21 @@ const CardsList = () => {
   const throttledQuery = useThrottle(query, 1000);
 
   const queryString = throttledQuery
-    .replace(/@new|@sort-last|@showBack|@dupli-front|@dupli-back|@not-new/g, '')
+    .replace(/@new|@sort-last|@show-back|@reverse|@review-tomorrow|@dupli-front|@sort-rep|@sort-diff|@dupli-back|@not-new/g, '')
     .trim();
   const queryRegex = new RegExp(queryString, 'i');
   const sortByLast = throttledQuery.match('@sort-last');
+  const sortByDiff = throttledQuery.match('@sort-diff');
+  const sortByRepetitions = throttledQuery.match('@sort-rep');
+  const sortReverse = throttledQuery.match('@reverse');
   const showAll = throttledQuery.match('@all');
   const newOnly = throttledQuery.match('@new');
   const notNew = throttledQuery.match('@not-new');
   const showBack = throttledQuery.match('@show-back');
+  const revTomorrow = throttledQuery.match('@review-tomorrow');
   const filterDuplicatedFront = throttledQuery.match('@dupli-front');
   const filterDuplicatedBack = throttledQuery.match('@dupli-back');
-  const searchTags = '@all @new @show-back @sort-last @dupli-front @dupli-back @not-new';
+  const searchTags = '@all @new @show-back @sort-last @sort-diff @sort-rep @reverse @dupli-front @dupli-back @not-new @review-tomorrow';
 
   const cardsResult = useMemo(
     () =>
@@ -124,6 +129,10 @@ const CardsList = () => {
                   )
                 : true;
 
+              const isToReviewTom = revTomorrow
+                ? getCoF(card.repetitions, card.diff, card.lastReview, 3600 * 24 * 1000) >= 1
+                : true;
+
               return (
                 (showAll
                   || (throttledQuery &&
@@ -133,15 +142,23 @@ const CardsList = () => {
                 isNew &&
                 frontIsDuplicated &&
                 backIsDuplicated &&
-                isNotNew
+                isNotNew && isToReviewTom
               );
             })
             .sort((a, b) => {
-              const aCreatedAt = a.createdAt || -1;
-              const bCreatedAt = b.createdAt || -1;
-
               if (sortByLast) {
-                return bCreatedAt - aCreatedAt;
+                const aCreatedAt = a.createdAt || -1;
+                const bCreatedAt = b.createdAt || -1;
+
+                return sortReverse ? aCreatedAt - bCreatedAt : bCreatedAt - aCreatedAt;
+              }
+
+              if (sortByDiff) {
+                return sortReverse ? a.diff - b.diff : b.diff - a.diff;
+              }
+
+              if (sortByRepetitions) {
+                return sortReverse ? a.repetitions - b.repetitions : b.repetitions - a.repetitions;
               }
 
               return 0;

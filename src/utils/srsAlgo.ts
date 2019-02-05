@@ -6,6 +6,7 @@ import {
   clamp,
   clampMin,
   isDev,
+  timeToDateBr,
 } from 'utils/genericUtils';
 
 /**
@@ -82,6 +83,25 @@ export function getCoF(
     ? dateDiff / idealDaysDiff[repetitions > 13 ? 13 : repetitions]
         + clamp(diff, 0, 1) * diffRate
     : 0;
+}
+
+export function getNextDayToReview(
+  repetitions: number,
+  diff: number,
+  lastReview?: string,
+) {
+  if (!lastReview) return 'New';
+
+  const dateDiff = (1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions];
+
+  const nextReview = Date.parse(lastReview) + dateDiff * 1000 * 3600 * 24;
+
+  const interval = 1000 * 60 * 60 * 24;
+  const today = Math.floor(Date.now() / interval) * interval;
+
+  if (nextReview <= today) return 'Today';
+
+  return timeToDateBr(nextReview / 1000);
 }
 
 export function calcCardsCoF(cards: Card[]) {
