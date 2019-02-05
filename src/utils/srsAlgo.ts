@@ -93,7 +93,7 @@ export function getNextDayToReview(
 ) {
   if (!lastReview) return 'New';
 
-  const dateDiff = Math.ceil((1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions]);
+  const dateDiff = clampMin((1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions], 1);
 
   const nextReview = Date.parse(lastReview) + dateDiff * 1000 * 3600 * 24;
 
