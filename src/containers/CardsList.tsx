@@ -88,11 +88,12 @@ const CardsList = () => {
   const throttledQuery = useThrottle(query, 1000);
 
   const queryString = throttledQuery
-    .replace(/@new|@sort-last|@show-back|@reverse|@review-tomorrow|@dupli-front|@sort-rep|@sort-diff|@dupli-back|@not-new/g, '')
+    .replace(/@new|@sort-last|@show-back|@reverse|@sort-wrong-review|@review-tomorrow|@dupli-front|@sort-rep|@sort-diff|@dupli-back|@not-new/g, '')
     .trim();
   const queryRegex = new RegExp(queryString, 'i');
   const sortByLast = throttledQuery.match('@sort-last');
   const sortByDiff = throttledQuery.match('@sort-diff');
+  const sortWrongReview = throttledQuery.match('@sort-wrong-review');
   const sortByRepetitions = throttledQuery.match('@sort-rep');
   const sortReverse = throttledQuery.match('@reverse');
   const showAll = throttledQuery.match('@all');
@@ -102,7 +103,7 @@ const CardsList = () => {
   const revTomorrow = throttledQuery.match('@review-tomorrow');
   const filterDuplicatedFront = throttledQuery.match('@dupli-front');
   const filterDuplicatedBack = throttledQuery.match('@dupli-back');
-  const searchTags = '@all @new @show-back @sort-last @sort-diff @sort-rep @reverse @dupli-front @dupli-back @not-new @review-tomorrow';
+  const searchTags = '@all @new @show-back @sort-last @sort-wrong-review @sort-diff @sort-rep @reverse @dupli-front @dupli-back @not-new @review-tomorrow';
 
   const cardsResult = useMemo(
     () =>
@@ -161,6 +162,10 @@ const CardsList = () => {
                 return sortReverse ? a.repetitions - b.repetitions : b.repetitions - a.repetitions;
               }
 
+              if (sortWrongReview) {
+                return sortReverse ? a.wrongReviews - b.wrongReviews : b.wrongReviews - a.wrongReviews;
+              }
+
               return 0;
             })
         : []),
@@ -189,7 +194,7 @@ const CardsList = () => {
               color: #ddd;
             `}
           >
-            Search Tags: {searchTags}
+            {searchTags}
           </div>
           <div css={inputsRowWrapperStyle}>
             <TextField
