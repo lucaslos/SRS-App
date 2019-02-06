@@ -55,17 +55,26 @@ const StatsBar = () => {
   let cardsPrevisionNextDay = 0;
   let cardsPrevisionNext2Days = 0;
   cards.forEach(card => {
-    const cof = getCoF(
+    const cofTom = getCoF(
       card.repetitions,
       card.diff,
       card.lastReview,
-      3600 * 24 * 2 * 1000
+      3600 * 24 * 1 * 1000
     );
 
-    if (cof > 1) {
+    if (cofTom >= 1) {
       cardsPrevisionNextDay++;
-    } else if (cof === 1) {
-      cardsPrevisionNext2Days++;
+    } else {
+      const cofAfterTom = getCoF(
+        card.repetitions,
+        card.diff,
+        card.lastReview,
+        3600 * 24 * 2 * 1000
+      );
+
+      if (cofAfterTom >= 1) {
+        cardsPrevisionNext2Days++;
+      }
     }
   });
 

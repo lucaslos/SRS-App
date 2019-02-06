@@ -7,6 +7,7 @@ import {
   clampMin,
   isDev,
   timeToDateBr,
+  clampMax,
 } from 'utils/genericUtils';
 import { hot } from 'react-hot-loader';
 
@@ -21,8 +22,8 @@ type CardWithCoF = Card & {
 };
 
 const timeLimitIncrease = 3600 * (3 + 6) * 1000;
-const diffRate = 4;
-const highCofLimit = 1.5;
+const diffRate = 3.5;
+const highCofLimit = 1.7;
 const reviewAgainHardIncrease = 0.01;
 const reviewAgainWrongIncrease = 0.02;
 const repetitionsIncrease: ObjectWithKey<Results, number> = {
@@ -39,6 +40,11 @@ const highCofRepetitionIncrease: ObjectWithKey<Results, number> = {
   success: 0,
   hard: -1,
   wrong: -2,
+};
+const highRepetitionIncrease: ObjectWithKey<Results, number> = {
+  success: 0,
+  hard: 0.5,
+  wrong: 0.2,
 };
 const idealDaysDiff = [
   1,
@@ -89,11 +95,14 @@ export function getCoF(
 export function getNextDayToReview(
   repetitions: number,
   diff: number,
-  lastReview?: string,
+  lastReview?: string
 ) {
   if (!lastReview) return 'New';
 
-  const dateDiff = clampMin((1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions], 1);
+  const dateDiff = clampMin(
+    (1 - diff * diffRate) * idealDaysDiff[repetitions > 13 ? 13 : repetitions],
+    1
+  );
 
   const nextReview = Date.parse(lastReview) + dateDiff * 1000 * 3600 * 24;
 
@@ -163,21 +172,25 @@ export function processCardAnswer(
 ): Card {
   const cof = getCoF(card.repetitions, card.diff, card.lastReview);
 
+  // add diff proportionally to wrong/hard review in a same review section
   let reviewsAgainDiffIncrease = 0;
-
   if (reviewsAgain > 1) {
     if (answer === 'hard') {
       reviewsAgainDiffIncrease = (reviewsAgain - 1) * reviewAgainHardIncrease;
     } else if (answer === 'wrong') {
-      reviewsAgainDiffIncrease = (reviewsAgain - 1) ** 2 * reviewAgainWrongIncrease;
+      reviewsAgainDiffIncrease = ((reviewsAgain - 1) ** 2) * reviewAgainWrongIncrease;
     }
   }
+
+  // add diff proportionally to repetitions
+  const highRepetDiffIncrease = ((clampMax(card.repetitions, 10) / 10) ** 2) * highRepetitionIncrease[answer];
 
   if (isDev) {
     console.log({
       answer,
       diffIncrease: diffIncrease[answer],
       reviewsAgainDiffIncrease,
+      highRepetDiffIncrease,
       reviewsAgain,
       cof,
       card,
@@ -199,7 +212,10 @@ export function processCardAnswer(
     diff:
       Math.round(
         clamp(
-          card.diff + diffIncrease[answer] + reviewsAgainDiffIncrease,
+          card.diff
+            + diffIncrease[answer]
+            + reviewsAgainDiffIncrease
+            + highRepetDiffIncrease,
           0,
           1
         ) * 100
