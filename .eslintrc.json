@@ -103,7 +103,7 @@
       "before",
       {
         "overrides": {
-          "=": "none",
+          "=": "after",
           "&&": "ignore"
         }
       }

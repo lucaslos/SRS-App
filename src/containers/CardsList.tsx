@@ -103,7 +103,7 @@ const CardsList = () => {
   const revTomorrow = throttledQuery.match('@review-tomorrow');
   const filterDuplicatedFront = throttledQuery.match('@dupli-front');
   const filterDuplicatedBack = throttledQuery.match('@dupli-back');
-  const searchTags = '@all @new @show-back @sort-last @sort-wrong-review @sort-diff @sort-rep @reverse @dupli-front @dupli-back @not-new @review-tomorrow';
+  const searchTags = '@all @new @show-back @sort-last @sort-wrong-review @sort-diff @sort-rep @reverse @dupli-front @dupli-back @not-new @review-tomorrow -f -b -d -r -lr -wr';
 
   const cardsResult = useMemo(
     () =>
@@ -137,9 +137,9 @@ const CardsList = () => {
               return (
                 (showAll
                   || (throttledQuery &&
-                    `-f=${card.front}-b=${card.back}-r=${card.repetitions}-lr=${
+                    `-f=${card.front}-b=${card.back} -d=${card.diff} -r=${card.repetitions}-lr=${
                       card.lastReview
-                    }-t=${card.tags ? card.tags.join(',') : ''}-`.match(queryRegex))) &&
+                    }-wr=${card.wrongReviews}-`.match(queryRegex))) &&
                 isNew &&
                 frontIsDuplicated &&
                 backIsDuplicated &&

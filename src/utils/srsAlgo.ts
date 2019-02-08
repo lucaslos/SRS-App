@@ -9,7 +9,6 @@ import {
   timeToDateBr,
   clampMax,
 } from 'utils/genericUtils';
-import { hot } from 'react-hot-loader';
 
 /**
  * SRS Algorithm
@@ -23,7 +22,7 @@ type CardWithCoF = Card & {
 
 const timeLimitIncrease = 3600 * (3 + 6) * 1000;
 const diffRate = 3.5;
-const highCofLimit = 1.7;
+const highCofLimit = 2;
 const reviewAgainHardIncrease = 0.01;
 const reviewAgainWrongIncrease = 0.02;
 const repetitionsIncrease: ObjectWithKey<Results, number> = {
@@ -32,7 +31,7 @@ const repetitionsIncrease: ObjectWithKey<Results, number> = {
   wrong: -1,
 };
 const diffIncrease: ObjectWithKey<Results, number> = {
-  success: -0.1,
+  success: -0.2,
   hard: 0.05,
   wrong: 0.2,
 };
@@ -44,7 +43,7 @@ const highCofRepetitionIncrease: ObjectWithKey<Results, number> = {
 const highRepetitionIncrease: ObjectWithKey<Results, number> = {
   success: 0,
   hard: 0.5,
-  wrong: 0.2,
+  wrong: 0.5,
 };
 const idealDaysDiff = [
   1,
@@ -178,12 +177,14 @@ export function processCardAnswer(
     if (answer === 'hard') {
       reviewsAgainDiffIncrease = (reviewsAgain - 1) * reviewAgainHardIncrease;
     } else if (answer === 'wrong') {
-      reviewsAgainDiffIncrease = ((reviewsAgain - 1) ** 2) * reviewAgainWrongIncrease;
+      reviewsAgainDiffIncrease =
+        (reviewsAgain - 1) ** 2 * reviewAgainWrongIncrease;
     }
   }
 
   // add diff proportionally to repetitions
-  const highRepetDiffIncrease = ((clampMax(card.repetitions, 10) / 10) ** 2) * highRepetitionIncrease[answer];
+  const highRepetDiffIncrease =
+    (clampMax(card.repetitions, 10) / 10) ** 2 * highRepetitionIncrease[answer];
 
   if (isDev) {
     console.log({
@@ -196,6 +197,9 @@ export function processCardAnswer(
       card,
     });
   }
+
+  const oneRepetitionSuccessDiffDecrease =
+    card.repetitions === 1 && answer === 'success' ? -0.6 : 0;
 
   return {
     ...card,
@@ -215,6 +219,7 @@ export function processCardAnswer(
           card.diff
             + diffIncrease[answer]
             + reviewsAgainDiffIncrease
+            + oneRepetitionSuccessDiffDecrease
             + highRepetDiffIncrease,
           0,
           1
