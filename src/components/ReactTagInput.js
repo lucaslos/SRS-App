@@ -292,6 +292,7 @@ class ReactTags extends Component {
             name={inputName}
             id={inputId}
             maxLength={maxLength}
+            name="tag-input"
           />
 
           <Suggestions
