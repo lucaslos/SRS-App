@@ -39,6 +39,13 @@ const CardsGroups = () => {
   return (
     <Container>
       <GroupsContainer>
+        {/* {cardsNeedsReview.length > 5 && (
+          <ReviewGroup
+            label="Review 5"
+            warn
+            handleClick={() => showReviewDialog(5)}
+          />
+        )} */}
         {cardsNeedsReview.length > 10 && (
           <ReviewGroup
             label="Review 10"
@@ -68,22 +75,22 @@ const CardsGroups = () => {
           />
         )}
         {/* new cards */}
+        {newCards.length > 2 && (
+          <ReviewGroup
+            label="Review 2 New"
+            handleClick={() => showReviewDialog(2, true)}
+          />
+        )}
+        {newCards.length > 5 && (
+          <ReviewGroup
+            label="Review 5 New"
+            handleClick={() => showReviewDialog(5, true)}
+          />
+        )}
         {newCards.length > 10 && (
           <ReviewGroup
             label="Review 10 New"
             handleClick={() => showReviewDialog(10, true)}
-          />
-        )}
-        {newCards.length > 20 && (
-          <ReviewGroup
-            label="Review 20 New"
-            handleClick={() => showReviewDialog(20, true)}
-          />
-        )}
-        {newCards.length > 30 && (
-          <ReviewGroup
-            label="Review 30 New"
-            handleClick={() => showReviewDialog(30, true)}
           />
         )}
         {newCards.length > 0 && (
