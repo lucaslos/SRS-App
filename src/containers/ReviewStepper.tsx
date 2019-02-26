@@ -74,8 +74,11 @@ const ReviewStepper = ({
 }: ReviewStepper) => (
   <>
     <Container>
-      <Button onClick={onBack}>
-        {showBackButton && <Icon name="arrow-back" />}
+      <Button
+        onClick={onBack}
+        css={{ visibility: showBackButton ? 'visible' : 'hidden' }}
+      >
+        <Icon name="arrow-back" />
       </Button>
       <span>
         {pos}/{numOfCards}

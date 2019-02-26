@@ -61,7 +61,7 @@ const Review = () => {
   }
 
   function handleBack() {
-    if (reviewPos !== 0) {
+    if (!(reviewPos === 0 && !cardsIsFlipped[0])) {
       if (cardsIsFlipped[reviewPos]) {
         setIsFlipped(reviewPos, false);
       } else {
@@ -211,6 +211,18 @@ const Review = () => {
       </Modal>
       {show && (
         <>
+          <EditCardModal
+            show={showEditCard}
+            card={
+              show &&
+              editCardId !== false &&
+              cards.find(card => card.id === editCardId)
+            }
+            cardId={editCardId}
+            newCard
+            handleUpdateCard={handleUpdateCard}
+            handleClose={() => setShowEditCard(false)}
+          />
           <ReviewMenu
             show={showMenu}
             card={allCards[reviewPos]}
@@ -229,18 +241,6 @@ const Review = () => {
               color={colorPrimary}
             />
           </TopButton>
-          <EditCardModal
-            show={showEditCard}
-            card={
-              show &&
-              editCardId !== false &&
-              cards.find(card => card.id === editCardId)
-            }
-            cardId={editCardId}
-            newCard
-            handleUpdateCard={handleUpdateCard}
-            handleClose={() => setShowEditCard(false)}
-          />
           <DeleteCardModal
             cardId={
               deleteCardId !== false
