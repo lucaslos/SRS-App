@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
+import hotkeys, { KeyHandler } from 'hotkeys-js';
 
 // export const useClickOutside = (callBack) => {
 //   const ref = useRef(null);
@@ -108,3 +109,11 @@ export const useThrottle = <T>(value: T, limit: number) => {
 
   return throttledValue;
 };
+
+export function useShortCut(shortcut: string, callback: KeyHandler, inputs?: ReadonlyArray<any>) {
+  useEffect(() => {
+    hotkeys(shortcut, callback);
+
+    return () => hotkeys.unbind(shortcut, callback);
+  }, inputs);
+}
