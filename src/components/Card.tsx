@@ -227,7 +227,7 @@ const Card = ({
         onDrop={onDrop}
       >
         <TopIcons>{WarnIcon}</TopIcons>
-        <CardFaceContent>
+        <CardFaceContent css={{ p: { userSelect: 'text' }}}>
           <ReactMarkdown source={card.back} />
         </CardFaceContent>
         {card.notes && card.notes.length > 0 && <Notes notes={card.notes} />}

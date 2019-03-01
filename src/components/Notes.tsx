@@ -29,6 +29,10 @@ const Note = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  span {
+    user-select: text;
+  }
 `;
 
 const Notes = ({ notes = [] }: Notes) => (
