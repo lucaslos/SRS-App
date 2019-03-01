@@ -1,5 +1,4 @@
 import css from '@emotion/css';
-import styled from '@emotion/styled';
 import Button from 'components/Button';
 import Modal, {
   bottomButtonsWrapperStyle,
@@ -7,15 +6,11 @@ import Modal, {
   inputsRowWrapperStyle,
 } from 'components/Modal';
 import TextField from 'components/TextField';
-import firebase from 'firebase/app';
+import firebase from '@firebase/app';
 import React, { useEffect, useState } from 'react';
 import { listenToCardsChange } from 'state/cards';
 import { colorPrimary, colorRed, fontDecorative } from 'style/theme';
 import { firebaseDev, login as loginUser } from 'utils/firebase';
-
-type Props = {};
-
-const Container = styled.div``;
 
 const h2Style = css`
   width: 100%;
@@ -84,7 +79,7 @@ const Login = () => {
     // listen to changes in login state
     if (!firebaseDev) {
       try {
-        firebase.auth().onAuthStateChanged(
+        firebase.auth!().onAuthStateChanged(
           loggedUser => {
             setIsLogging(false);
 

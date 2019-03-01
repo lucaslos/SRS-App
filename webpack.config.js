@@ -155,6 +155,10 @@ module.exports = {
       globDirectory: folder,
       runtimeCaching: [
         {
+          urlPattern: new RegExp('^https://www.gstatic.com/firebasejs/(.*)'),
+          handler: 'cacheFirst',
+        },
+        {
           urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
           handler: 'cacheFirst',
           options: {

@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
+import firebase from '@firebase/app';
+import '@firebase/database';
+import '@firebase/auth';
 import { isDev } from 'utils/genericUtils';
 
 const devConfig = {
@@ -20,7 +20,7 @@ export function login(user: string, pass: string, onErr: (err: any) => void) {
   if (typeof user !== 'string' || typeof pass !== 'string') throw new Error('User or password not defined');
 
   firebase
-    .auth()
+    .auth!()
     .signInWithEmailAndPassword(user, pass)
     .then(() => {
       localStorage.pass = pass;
@@ -41,7 +41,7 @@ window.firebaseLogOut = () => {
   localStorage.removeItem('user');
 
   firebase
-    .auth()
+    .auth!()
     .signOut()
     .then(
       () => {
@@ -53,7 +53,7 @@ window.firebaseLogOut = () => {
     );
 };
 
-const testAuth = false;
+const testAuth = true;
 
 export const firebaseDev = isDev && !testAuth;
 const app = firebase.initializeApp(firebaseDev ? devConfig : prodConfig);
