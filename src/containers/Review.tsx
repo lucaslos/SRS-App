@@ -6,13 +6,13 @@ import Modal, { TopButton } from 'components/Modal';
 import ReviewMenu from 'components/ReviewMenu';
 import EditCardModal from 'containers/EditCardModal';
 import ReviewStepper from 'containers/ReviewStepper';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getCardById } from 'state/cards';
 import modalsState from 'state/modals';
 import reviewState, { GoToNextCard } from 'state/review';
 import { centerContent } from 'style/modifiers';
 import { colorPrimary } from 'style/theme';
-import { useOnChange } from 'utils/customHooks';
+import { useOnChange, useShortCut } from 'utils/customHooks';
 import { replaceAt } from 'utils/genericUtils';
 import { mqMobile } from 'style/mediaQueries';
 
@@ -55,6 +55,7 @@ const Review = () => {
   ) as Card[];
 
   const allCards = [...cards, ...reviewAgainCards];
+  const show = reviewPos >= 0 && !reviewEnded;
 
   function setIsFlipped(pos: typeof reviewPos, isFlipped: boolean) {
     setCardsIsFlipped(replaceAt(cardsIsFlipped, pos, isFlipped));
@@ -104,7 +105,22 @@ const Review = () => {
     setCardsIsFlipped(Array(allCards.length).fill(false));
   }
 
+  function handleToggleTag(tag: string) {
+    if (!show) return;
+
+    const cardId = allCards[reviewPos].id;
+    const card = getCardById(cardId, cards);
+
+    if (card.tags && card.tags.includes(tag)) {
+      handleRemoveTag(tag);
+    } else {
+      handleAddTag(tag);
+    }
+  }
+
   function handleAddTag(tag: string) {
+    if (!show) return;
+
     const cardId = allCards[reviewPos].id;
     const card = getCardById(cardId, cards);
     const cardPos = cards.findIndex(revCard => revCard.id === cardId);
@@ -119,6 +135,8 @@ const Review = () => {
   }
 
   function handleRemoveTag(tag: string) {
+    if (!show) return;
+
     const cardId = allCards[reviewPos].id;
     const card = getCardById(cardId, cards);
     const cardPos = cards.findIndex(revCard => revCard.id === cardId);
@@ -159,8 +177,6 @@ const Review = () => {
     );
   }
 
-  const show = reviewPos >= 0 && !reviewEnded;
-
   useOnChange(show, () => {
     if (!show) {
       setCardsIsFlipped([]);
@@ -169,6 +185,18 @@ const Review = () => {
     } else {
       window.onbeforeunload = () => ('Are you sure?');
     }
+  });
+
+  useShortCut('n', () => {
+    handleToggleTag('noun');
+  });
+
+  useShortCut('a', () => {
+    handleToggleTag('adjective');
+  });
+
+  useShortCut('v', () => {
+    handleToggleTag('verb');
   });
 
   return (
