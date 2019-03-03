@@ -36,10 +36,6 @@ const Warn = styled.div`
   font-size: 16px;
   font-weight: 300;
   color: ${colorYellow};
-
-  strong {
-    font-family: ${fontDecorative};
-  }
 `;
 
 const AddCardsModal = () => {
@@ -128,6 +124,10 @@ const AddCardsModal = () => {
                 key={i}
                 front={card.front}
                 back={card.back}
+                highlight={
+                  frontIsDuplicated.some(dupli => dupli.front === card.front)
+                  || backIsDuplicated.some(dupli => dupli.front === card.front)
+                }
                 onClick={() => showEditModal(i)}
                 onDelete={() => handleDeleteCard(i)}
               />
@@ -173,7 +173,7 @@ const AddCardsModal = () => {
                       cursor: pointer;
 
                       &:after {
-                        content: ",";
+                        content: ", ";
                       }
 
                       &:last-of-type:after {

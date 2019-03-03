@@ -10,6 +10,7 @@ import {
   fontDecorative,
   colorSecondaryDarker,
   colorRed,
+  colorYellow,
 } from 'style/theme';
 
 type CardTile = {
@@ -17,6 +18,7 @@ type CardTile = {
   onDelete: genericFunction;
   front: string;
   back: string;
+  highlight: boolean;
 };
 
 export const TilesWrapper = styled.div`
@@ -36,11 +38,12 @@ export const TilesWrapper = styled.div`
   overflow-y: auto;
 `;
 
-const Container = styled.div`
+const Container = styled.div<Pick<CardTile, 'highlight'>>`
   ${centerContent};
   background: ${rgba(colorPrimary, 0.6)};
   border-radius: 4px;
   height: 55px;
+  border: ${props => (props.highlight ? `2px solid ${colorYellow}` : '0')};
 
   .faces {
     ${centerContentCollum};
@@ -90,8 +93,14 @@ const Container = styled.div`
   }
 `;
 
-const CardTile = ({ onClick, onDelete, front, back }: CardTile) => (
-  <Container>
+const CardTile = ({
+  onClick,
+  onDelete,
+  front,
+  back,
+  highlight = false,
+}: CardTile) => (
+  <Container highlight={highlight}>
     <div className="faces" onClick={onClick}>
       <div className="front">{front}</div>
       <div className="back">{back}</div>
@@ -100,6 +109,6 @@ const CardTile = ({ onClick, onDelete, front, back }: CardTile) => (
       <Icon name="delete" color={colorSecondary} size={28} />
     </div>
   </Container>
-  );
+);
 
 export default CardTile;
