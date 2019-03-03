@@ -18,7 +18,7 @@ type CardTile = {
   onDelete: genericFunction;
   front: string;
   back: string;
-  highlight: boolean;
+  highlight?: boolean;
 };
 
 export const TilesWrapper = styled.div`
