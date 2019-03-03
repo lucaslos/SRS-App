@@ -51,5 +51,5 @@ export function filterCardsFromGoogleTranslate(pastedContent: string) {
     }
   }
 
-  return newCards.slice(0, wordsLimit);
+  return newCards;
 }
