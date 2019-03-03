@@ -141,15 +141,17 @@ const AddCardsModal = () => {
                   <span
                     key={i}
                     onClick={() => showCardDialog(card)}
-                    css={{
-                      cursor: 'pointer',
-                      '&:after': {
-                        content: ',',
-                      },
-                      '&:last-of-type:after': {
-                        content: '',
-                      },
-                    }}
+                    css={css`
+                      cursor: pointer;
+
+                      &:after {
+                        content: ", ";
+                      }
+
+                      &:last-of-type:after {
+                        content: "";
+                      }
+                    `}
                   >
                     {card.front.length > 30
                       ? `${card.front.substr(0, 30)}...`
@@ -167,15 +169,17 @@ const AddCardsModal = () => {
                   <span
                     key={i}
                     onClick={() => showCardDialog(card)}
-                    css={{
-                      cursor: 'pointer',
-                      '&:after': {
-                        content: ',',
-                      },
-                      '&:last-of-type:after': {
-                        content: '',
-                      },
-                    }}
+                    css={css`
+                      cursor: pointer;
+
+                      &:after {
+                        content: ",";
+                      }
+
+                      &:last-of-type:after {
+                        content: "";
+                      }
+                    `}
                   >
                     {card.back.length > 30
                       ? `${card.back.substr(0, 30)}...`
