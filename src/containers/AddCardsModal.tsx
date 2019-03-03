@@ -126,7 +126,7 @@ const AddCardsModal = () => {
                 back={card.back}
                 highlight={
                   frontIsDuplicated.some(dupli => dupli.front === card.front)
-                  || backIsDuplicated.some(dupli => dupli.front === card.front)
+                  || backIsDuplicated.some(dupli => dupli.back === card.back)
                 }
                 onClick={() => showEditModal(i)}
                 onDelete={() => handleDeleteCard(i)}
