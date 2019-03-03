@@ -18,7 +18,7 @@ type CardTile = {
   onDelete: genericFunction;
   front: string;
   back: string;
-  highlight?: boolean;
+  highlight?: string;
 };
 
 export const TilesWrapper = styled.div`
@@ -43,7 +43,7 @@ const Container = styled.div<Pick<CardTile, 'highlight'>>`
   background: ${rgba(colorPrimary, 0.6)};
   border-radius: 4px;
   height: 55px;
-  border: ${props => (props.highlight ? `2px solid ${colorYellow}` : '0')};
+  border: ${props => (props.highlight ? `2px solid ${props.highlight}` : '0')};
   order: ${props => (props.highlight ? `-1` : '0')};
 
   .faces {
@@ -99,7 +99,7 @@ const CardTile = ({
   onDelete,
   front,
   back,
-  highlight = false,
+  highlight = '',
 }: CardTile) => (
   <Container highlight={highlight}>
     <div className="faces" onClick={onClick}>

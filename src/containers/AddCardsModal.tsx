@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import cardsState, { pushNewCards } from 'state/cards';
 import modalsState from 'state/modals';
 import { centerContent } from 'style/modifiers';
-import { colorSecondary, colorYellow, fontDecorative } from 'style/theme';
+import { colorSecondary, colorYellow, fontDecorative, colorRed } from 'style/theme';
 import { replaceAt } from 'utils/genericUtils';
 import { filterCardsFromGoogleTranslate } from 'utils/googleTranslate';
 
@@ -126,7 +126,12 @@ const AddCardsModal = () => {
                 back={card.back}
                 highlight={
                   frontIsDuplicated.some(dupli => dupli.front === card.front)
-                  || backIsDuplicated.some(dupli => dupli.back === card.back)
+                    ? colorRed
+                    : (
+                      backIsDuplicated.some(dupli => dupli.back === card.back)
+                        ? colorYellow
+                        : ''
+                    )
                 }
                 onClick={() => showEditModal(i)}
                 onDelete={() => handleDeleteCard(i)}
