@@ -44,6 +44,7 @@ const Container = styled.div<Pick<CardTile, 'highlight'>>`
   border-radius: 4px;
   height: 55px;
   border: ${props => (props.highlight ? `2px solid ${colorYellow}` : '0')};
+  order: ${props => (props.highlight ? `-1` : '0')};
 
   .faces {
     ${centerContentCollum};
