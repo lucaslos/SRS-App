@@ -3,7 +3,6 @@
     "development": {
       "presets": [
         "@babel/typescript",
-        "@babel/env",
         ["@babel/preset-react", { "development": true }],
         "@emotion/babel-preset-css-prop"
       ],
@@ -11,21 +10,28 @@
         ["emotion", { "sourceMap": true }],
         "react-hot-loader/babel",
         "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-object-rest-spread"
         // "@babel/plugin-proposal-optional-chaining",
       ]
     },
     "production": {
-  	  "presets": [
+      "presets": [
         "@babel/typescript",
-        "@babel/env",
-  	    "@babel/preset-react",
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "browsers": ["last 2 Chrome versions"]
+            }
+          }
+        ],
+        "@babel/preset-react",
         "@emotion/babel-preset-css-prop"
       ],
       "plugins": [
         "emotion",
         "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-object-rest-spread"
         // "@babel/plugin-proposal-optional-chaining",
       ]
     }

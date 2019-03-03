@@ -37,5 +37,6 @@
     "redux"
   ],
   "search.usePCRE2": true,
-  "eslint.enable": true
+  "eslint.enable": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
