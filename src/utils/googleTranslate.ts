@@ -1,7 +1,7 @@
 import cardsState from 'state/cards';
 import removeMd from 'remove-markdown';
 
-const wordsLimit = 20;
+const wordsLimit = 30;
 
 function parseJSON<T = any>(string: string): T | false {
   try {
@@ -21,7 +21,7 @@ export function filterCardsFromGoogleTranslate(pastedContent: string) {
 
   const newCards: Card[] = [];
 
-  for (let i = 0; i < wordsLimit; i++) {
+  for (let i = 0; i < words.length; i++) {
     const word = words[i];
     const backLines = word.back.split('\n');
     const back = (backLines.length === 1 ? backLines[0] : backLines[1])
@@ -51,5 +51,5 @@ export function filterCardsFromGoogleTranslate(pastedContent: string) {
     }
   }
 
-  return newCards;
+  return newCards.slice(0, wordsLimit);
 }
