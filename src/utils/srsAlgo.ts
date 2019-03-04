@@ -94,7 +94,8 @@ export function getCoF(
 export function getNextDayToReview(
   repetitions: number,
   diff: number,
-  lastReview?: string
+  lastReview?: string,
+  formatDate = true,
 ) {
   if (!lastReview) return 'New';
 
@@ -110,7 +111,7 @@ export function getNextDayToReview(
 
   if (nextReview <= today) return 'Today';
 
-  return timeToDateBr(nextReview / 1000);
+  return formatDate ? timeToDateBr(nextReview / 1000) : nextReview;
 }
 
 export function calcCardsCoF(cards: Card[]) {

@@ -74,7 +74,7 @@ export function pushCards(
 
   if (toCreate) toCreate.forEach(card => {
       const newCardId = app
-        .database()
+        .database!()
         .ref()
         .child(`${window.userId}/cards`)
         .push().key;
@@ -92,7 +92,7 @@ export function pushCards(
     });
 
   app
-    .database()
+    .database!()
     .ref()
     .update(updates);
 }

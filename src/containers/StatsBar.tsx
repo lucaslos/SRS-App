@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styled from '@emotion/styled';
 import {
   colorSecondaryLigher,
@@ -11,11 +10,12 @@ import cardsState from 'state/cards';
 import { centerContent } from 'style/modifiers';
 import { calcCardsCoF, getCoF, needsReview } from 'utils/srsAlgo';
 import { mqMobile } from 'style/mediaQueries';
+import NextDaysGraph from 'components/NextDaysGraph';
+import React, { useState } from 'react';
 
 const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 const Container = styled.div`
-  ${centerContent};
   position: absolute;
   height: 60px;
   left: 0;
@@ -26,7 +26,15 @@ const Container = styled.div`
   font-weight: 300;
   color: ${colorPrimary};
 
+  transition: 240ms ease-out;
+
   background: ${rgba(colorSecondaryLigher, 0.9)};
+`;
+
+const StatsWrapper = styled.div`
+  ${centerContent};
+  width: 100%;
+  height: 60px;
 
   ${mqMobile} {
     font-size: 14px;
@@ -44,7 +52,7 @@ const Container = styled.div`
     opacity: 0.5;
 
     ${mqMobile} {
-      margin: 0 6px;
+      margin: 0 10px;
     }
   }
 `;
@@ -54,7 +62,18 @@ const StatsBar = () => {
 
   let cardsPrevisionNextDay = 0;
   let cardsPrevisionNext2Days = 0;
-  cards.forEach(card => {
+
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+
+    const cofToday = getCoF(
+      card.repetitions,
+      card.diff,
+      card.lastReview,
+    );
+
+    if (cofToday >= 1) continue;
+
     const cofTom = getCoF(
       card.repetitions,
       card.diff,
@@ -76,7 +95,7 @@ const StatsBar = () => {
         cardsPrevisionNext2Days++;
       }
     }
-  });
+  }
 
   const oneMonthBeforeTimestamp = Date.now() - 2592000000;
   const cardsAddPerWeek = Math.round(
@@ -90,20 +109,25 @@ const StatsBar = () => {
 
   const today = new Date();
 
+  const [showGraph, setShowGraph] = useState(false);
+
   return (
-    <Container>
-      <span>
-        Cards <b>{cards.length}</b>
-      </span>
-      <div />
-      <span>
-        Add per week <b>{cardsAddPerWeek}</b>
-      </span>
-      <div />
-      <span>
-        {daysOfWeek[(today.getDay() + 1) % 7]} <b>{cardsPrevisionNextDay}</b>{' '}
-        {daysOfWeek[(today.getDay() + 2) % 7]} <b>{cardsPrevisionNext2Days}</b>
-      </span>
+    <Container css={{ height: showGraph ? 320 : undefined }}>
+      <StatsWrapper>
+        <span>
+          Cards <b>{cards.length}</b>
+        </span>
+        <div />
+        <span>
+          Add per week <b>{cardsAddPerWeek}</b>
+        </span>
+        <div />
+        <span css={{ cursor: 'pointer' }} onClick={() => setShowGraph(!showGraph)}>
+          {daysOfWeek[(today.getDay() + 1) % 7]} <b>{cardsPrevisionNextDay}</b>{' '}
+          {daysOfWeek[(today.getDay() + 2) % 7]} <b>{cardsPrevisionNext2Days}</b>
+        </span>
+      </StatsWrapper>
+      {showGraph && <NextDaysGraph cards={cards} />}
     </Container>
   );
 };
