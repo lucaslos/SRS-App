@@ -66,30 +66,17 @@ const DateLabel = styled.div`
 const NextDaysGraph = ({ cards }: Props) => {
   const daysLimit = 50;
 
-  const nextReviews = cards
-    .map(card => ({
-      nextReview: getNextDayToReview(
-        card.repetitions,
-        card.diff,
-        card.lastReview,
-        false
-      ),
-    }))
-    .filter(card => typeof card.nextReview === 'number')
-    .sort((a, b) => (a.nextReview as number) - (b.nextReview as number))
-    .map(card => ({
-      nextReview: timeToDate((card.nextReview as number) / 1000),
-    }));
-
   const days: { date: string; cards: number }[] = Array(daysLimit).fill(0);
   let maxCardInADay = 0;
+  let cardsBefore = 0;
 
   for (let i = 0; i < daysLimit; i++) {
     const now = Date.now();
-    const date = timeToDate(now / 1000 + i * 60 * 60 * 24);
 
-    const cardsInTheDay = nextReviews.filter(day => day.nextReview === date)
-      .length;
+    const cardsInTheDay = cards.filter(card => getCoF(card.repetitions, card.diff, card.lastReview, 3600 * 24 * (i + 1) * 1000) >= 1)
+      .length - cardsBefore;
+
+    cardsBefore += cardsInTheDay;
 
     if (maxCardInADay < cardsInTheDay) maxCardInADay = cardsInTheDay;
 
