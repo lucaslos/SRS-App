@@ -68,13 +68,28 @@ const NextDaysGraph = ({ cards }: Props) => {
 
   const days: { date: string; cards: number }[] = Array(daysLimit).fill(0);
   let maxCardInADay = 0;
-  let cardsBefore = 0;
+  let cardsBefore = cards.filter(
+    card =>
+      getCoF(
+        card.repetitions,
+        card.diff,
+        card.lastReview
+      ) >= 1
+  ).length;
 
   for (let i = 0; i < daysLimit; i++) {
     const now = Date.now();
 
-    const cardsInTheDay = cards.filter(card => getCoF(card.repetitions, card.diff, card.lastReview, 3600 * 24 * (i + 1) * 1000) >= 1)
-      .length - cardsBefore;
+    const cardsInTheDay =
+      cards.filter(
+        card =>
+          getCoF(
+            card.repetitions,
+            card.diff,
+            card.lastReview,
+            3600 * 24 * (i + 1) * 1000
+          ) >= 1
+      ).length - cardsBefore;
 
     cardsBefore += cardsInTheDay;
 
