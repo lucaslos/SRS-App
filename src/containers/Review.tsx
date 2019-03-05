@@ -94,6 +94,7 @@ const Review = () => {
       setDeleteCardId(false);
       setShowDeleteDialog(false);
       setReviewCards(cards.filter(card => card.id !== deleteCardId));
+      setCardsIsFlipped(Array(allCards.length).fill(false));
 
       setCardsToDelete([...cardsToDelete, deleteCardId]);
       setCardsToReviewAgain(reviewAgain.filter(id => id !== deleteCardId));
