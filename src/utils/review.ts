@@ -13,7 +13,7 @@ const showPopUpsUrls = {
 export function showPopUp(url: keyof typeof showPopUpsUrls, query: string) {
   const urlToOpen = `${showPopUpsUrls[url]}${query}`;
   const title = 'SRS Popup';
-  const w = 500;
+  const w = 400;
   const h = 600;
 
   // Fixes dual-screen position Most browsers Firefox

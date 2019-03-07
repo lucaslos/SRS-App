@@ -13,6 +13,7 @@ import {
 } from 'style/theme';
 import { showPopUp } from 'utils/review';
 import { mqMobile } from 'style/mediaQueries';
+import { useShortCut } from 'utils/customHooks';
 
 type Props = {
   show: boolean;
@@ -148,6 +149,14 @@ const ReviewMenu = ({
   function openPopUp(url: Parameters<typeof showPopUp>[0]) {
     showPopUp(url, card.front);
   }
+
+  useShortCut('c', () => {
+    if (flipped) openPopUp('cambridgeTranslation');
+  });
+
+  useShortCut('r', () => {
+    if (flipped) openPopUp('contextReverso');
+  });
 
   return (
     <Container show={show}>
