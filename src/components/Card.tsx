@@ -54,7 +54,7 @@ const FrontFace = styled.div<{ flipped: boolean; pos: Props['pos'] }>`
   ${faceStyle}
 
   transform: translate3d(0, 0, ${props => zPos[props.pos]})
-    rotateX(${props => (props.flipped ? 180 : 0)}deg);
+    rotateX(${props => (props.flipped || props.pos === 'prev' ? 180 : 0)}deg);
   opacity: ${props => (zPos[props.pos] === 0 ? 1 : 0)};
 `;
 
@@ -62,7 +62,7 @@ const BackFace = styled.div<{ flipped: boolean; pos: Props['pos'] }>`
   ${faceStyle};
 
   transform: translate3d(0, 0, ${props => zPos[props.pos]})
-    rotateX(${props => (props.flipped ? 0 : -180)}deg);
+    rotateX(${props => (props.flipped || props.pos === 'prev' ? 0 : -180)}deg);
   opacity: ${props => (props.flipped && zPos[props.pos] === 0 ? 1 : 0)};
   visibility: ${props => (props.flipped ? 'visible' : 'hidden')};
   cursor: auto;
