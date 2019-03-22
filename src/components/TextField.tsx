@@ -33,11 +33,12 @@ type Props = {
   usePlaceholder?: boolean;
   maxlength?: number;
   className?: string;
+  autocomplete?: string;
   max?: number;
   lines?: number;
   step?: number;
   min?: number;
-  type?: 'number' | 'text' | 'date' | 'password';
+  type?: 'number' | 'text' | 'date' | 'password' | 'email';
   timeout?: number;
   requiredErrorMsg?: string;
   minErrorMsg?: string;
@@ -146,6 +147,7 @@ const TextField = ({
   width = '140px',
   type = 'text',
   timeout = 50,
+  autocomplete,
   usePlaceholder = false,
   multiLine = false,
   requiredErrorMsg = "This field can't be blank",
@@ -204,6 +206,7 @@ const TextField = ({
   const inputProps = {
     id: inputId.current,
     value,
+    autoComplete: autocomplete,
     onBlur: updateValue,
     onChange: updateValue,
     maxLength: maxlength,

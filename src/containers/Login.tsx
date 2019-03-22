@@ -112,7 +112,7 @@ const Login = () => {
       }
     }
 
-    const connectedRef = firebase.database().ref('.info/connected');
+    const connectedRef = firebase.database!().ref('.info/connected');
     connectedRef.on('value', snap => {
       if (snap && snap.val()) {
         setIsConnected(true);
@@ -155,29 +155,34 @@ const Login = () => {
       >
         <h1>Login</h1>
         <h2 css={h2Style}>Atention! Don&apos;t reuse any of your passwords!</h2>
-        <div css={inputsRowWrapperStyle}>
-          <TextField
-            handleChange={(value: string) => {
-              setUser(value);
-              setLoginError('');
-            }}
-            label="User"
-            value={user}
-            required
-          />
-        </div>
-        <div css={inputsRowWrapperStyle}>
-          <TextField
-            handleChange={(value: string) => {
-              setPass(value);
-              setLoginError('');
-            }}
-            label="Password"
-            type="password"
-            value={pass}
-            required
-          />
-        </div>
+        <form css={{ width: '100%' }}>
+          <div css={inputsRowWrapperStyle}>
+            <TextField
+              handleChange={(value: string) => {
+                setUser(value);
+                setLoginError('');
+              }}
+              autocomplete="username"
+              label="User"
+              type="email"
+              value={user}
+              required
+            />
+          </div>
+          <div css={inputsRowWrapperStyle}>
+            <TextField
+              handleChange={(value: string) => {
+                setPass(value);
+                setLoginError('');
+              }}
+              label="Password"
+              autocomplete="password"
+              type="password"
+              value={pass}
+              required
+            />
+          </div>
+        </form>
         {loginError && <div css={errorStyle}>Error: {loginError}</div>}
         {/* <div id="recaptcha" /> */}
         <div css={bottomButtonsWrapperStyle}>
