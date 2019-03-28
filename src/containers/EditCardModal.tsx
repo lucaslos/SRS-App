@@ -4,7 +4,7 @@ import Modal, {
   boxStyle,
   inputsRowWrapperStyle,
 } from 'components/Modal';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import TextField, { HandleChange } from 'components/TextField';
 import Tags from 'components/Tags.js';
 import InputNotes from 'components/InputNotes.js';
@@ -13,15 +13,28 @@ import css from '@emotion/css';
 import { useOnChange } from 'utils/customHooks';
 import { getCoF, getNextDayToReview } from 'utils/srsAlgo';
 import { timeToDate, timeToDateBr } from 'utils/genericUtils';
+import styled from '@emotion/styled';
+import { colorYellow } from 'style/theme';
 
 type Props = {
   show: boolean;
   handleClose: () => void;
   cardId: Card['id'] | false;
   card?: Card | false;
+  allCards?: Card[];
   newCard?: boolean;
   handleUpdateCard: (id: Card['id'], card: Card) => void;
 };
+
+const H2 = styled.h2<{ warn: boolean }>`
+  font-size: 14px;
+  margin-top: -12px;
+  width: 100%;
+  padding: 0 24px;
+  margin-bottom: 14px;
+  font-weight: 300;
+  color: ${props => props.warn && colorYellow}
+`;
 
 const cardEmpty: Card = {
   id: '0',
@@ -53,6 +66,7 @@ const EditCardModal = ({
   show,
   handleClose,
   cardId,
+  allCards,
   newCard,
   card,
   handleUpdateCard,
@@ -67,7 +81,8 @@ const EditCardModal = ({
 
   const someValueIsDiff = JSON.stringify(cardProps) !== JSON.stringify(card);
 
-  const cof = cardProps &&
+  const cof =
+    cardProps &&
     getCoF(cardProps.repetitions, cardProps.diff, cardProps.lastReview);
 
   useOnChange(show, () => {
@@ -123,24 +138,50 @@ const EditCardModal = ({
     }
   }
 
+  const frontIsDuplicated = useMemo(
+    () =>
+      cardProps &&
+      cardsState
+        .getState()
+        .cards.some(
+          cardToCheck =>
+            cardProps.id !== cardToCheck.id &&
+            cardToCheck.front.trim() === cardProps.front.trim()
+        ),
+    [cardProps && cardProps.front]
+  );
+
+  const backIsDuplicated = useMemo(
+    () =>
+      cardProps &&
+      cardsState
+        .getState()
+        .cards.some(
+          cardToCheck =>
+            cardProps.id !== cardToCheck.id &&
+            cardToCheck.back.trim() === cardProps.back.trim()
+        ),
+    [cardProps && cardProps.back]
+  );
+
   return (
     <Modal active={show}>
       <div css={[boxStyle, { overflowY: 'auto', display: 'block' }]}>
         <h1>Edit card</h1>
-        <h2
-          css={css`
-            font-size: 14px;
-            margin-top: -12px;
-            width: 100%;
-            padding: 0 24px;
-            margin-bottom: 14px;
-            font-weight: 300;
-          `}
-        >
+        <H2>
           {cof !== false ? `CoF: ${cof.toFixed(2)} －` : ''} Created:{' '}
-          {card && card.createdAt ? timeToDateBr(card.createdAt / 1000) : 'Null'}
-          {' － Next Review: '}{cardProps ? getNextDayToReview(cardProps.repetitions, cardProps.diff, cardProps.lastReview) : ''}
-        </h2>
+          {card && card.createdAt
+            ? timeToDateBr(card.createdAt / 1000)
+            : 'Null'}
+          {' － Next Review: '}
+          {cardProps
+            ? getNextDayToReview(
+                cardProps.repetitions,
+                cardProps.diff,
+                cardProps.lastReview
+              )
+            : ''}
+        </H2>
         {cardProps && (
           <>
             <div css={inputsRowWrapperStyle}>
@@ -207,6 +248,9 @@ const EditCardModal = ({
                 label="Back"
               />
             </div>
+            {(frontIsDuplicated || backIsDuplicated) &&
+              <H2 warn>{`${frontIsDuplicated ? 'Front is Duplicated! ' : ''}${backIsDuplicated ? 'Back is Duplicated! ' : ''}`}</H2>
+            }
             <Tags
               handleChange={(any: any, tags: ReactTagInputResult) =>
                 handleTagInputChange(tags.map(tag => tag.text), 'tags')
