@@ -98,14 +98,12 @@ const StatsBar = () => {
   }
 
   const oneMonthBeforeTimestamp = Date.now() - 2592000000;
-  const cardsAddPerWeek = Math.round(
-    cards.filter(
-      card =>
-        card.createdAt &&
-        card.repetitions &&
-        card.createdAt > oneMonthBeforeTimestamp
-    ).length / 4.34
-  );
+  const cardsAddPerWeek = cards.filter(
+    card =>
+      card.createdAt &&
+      card.repetitions &&
+      card.createdAt > oneMonthBeforeTimestamp
+  ).length;
 
   const today = new Date();
 
@@ -118,8 +116,8 @@ const StatsBar = () => {
           Cards <b>{cards.length}</b>
         </span>
         <div />
-        <span>
-          Add per week <b>{cardsAddPerWeek}</b>
+        <span title={cardsAddPerWeek.toFixed(2)}>
+          Add per week <b>{Math.round(cardsAddPerWeek / 4.34)}</b>
         </span>
         <div />
         <span css={{ cursor: 'pointer' }} onClick={() => setShowGraph(!showGraph)}>
