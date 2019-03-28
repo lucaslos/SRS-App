@@ -236,7 +236,9 @@ const CardsList = () => {
       />
       <DeleteCardModal
         cardId={
-          deleteCardId !== false ? getCardById(deleteCardId, cards).front : ''
+          deleteCardId !== false
+            ? `${getCardById(deleteCardId, cards).front} | ${getCardById(deleteCardId, cards).back}`
+            : ''
         }
         onClose={() => setShowDeleteDialog(false)}
         onDelete={handleDeleteCard}

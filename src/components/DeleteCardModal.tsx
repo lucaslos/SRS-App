@@ -13,6 +13,20 @@ type Props = {
   onClose: genericFunction;
 };
 
+const Description = styled.h2`
+  width: 100%;
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  vertical-align: bottom;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  flex-shrink: 0;
+`;
+
 const DeleteCardModal = ({ show, cardId, onDelete, onClose }: Props) => (
   <Modal active={show}>
     <div css={[boxStyle, { width: 330 }]}>
@@ -20,11 +34,14 @@ const DeleteCardModal = ({ show, cardId, onDelete, onClose }: Props) => (
         <h1
           css={css`
             padding: 0 !important;
-            margin: 8px 0 30px 8px !important;
+            margin: 8px 0 18px 8px !important;
           `}
         >
-          Delete card - <span css={[ellipsis(140), { verticalAlign: 'bottom' }]}>{cardId}</span>?
+          Delete card?
         </h1>
+        <Description title={cardId}>{cardId}</Description>
+      </div>
+      <div css={bottomButtonsWrapperStyle}>
         <Button color={colorRed} label="Delete" right onClick={onDelete} />
         <Button label="cancel" left onClick={onClose} />
       </div>
