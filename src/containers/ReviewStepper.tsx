@@ -9,12 +9,14 @@ import { colorSecondaryDarker, colorPrimary } from 'style/theme';
 import { mqMobile } from 'style/mediaQueries';
 import { rgba } from 'polished';
 import removeMd from 'remove-markdown';
+import textToSpeech from 'utils/textToSpeech';
 
 type ReviewStepper = {
   numOfCards: number;
   pos: number;
   onBack: genericFunction;
   showBackButton: boolean;
+  TTSAfterReview: boolean;
   front: string;
 };
 
@@ -48,28 +50,21 @@ const Container = styled.div`
   }
 `;
 
-function textToSpeech(text: string, lang = 'en-US') {
-  const msg = new SpeechSynthesisUtterance();
+const SoundBadge = styled.div`
+  ${circle(4)};
+  position: absolute;
+  top: 12px;
+  right: 12px;
 
-  const voices = window.speechSynthesis.getVoices();
-  const googleVoice = voices.find(
-    voice => voice.voiceURI.includes('Google') && voice.lang === lang
-  );
-
-  if (googleVoice) msg.voice = googleVoice;
-  msg.volume = 1; // 0 to 1
-  msg.pitch = 1; // 0 to 2
-  msg.text = removeMd(text);
-  msg.lang = lang;
-
-  speechSynthesis.speak(msg);
-}
+  background: ${colorPrimary};
+`;
 
 const ReviewStepper = ({
   numOfCards,
   pos,
   onBack,
   showBackButton,
+  TTSAfterReview,
   front,
 }: ReviewStepper) => (
   <>
@@ -84,6 +79,7 @@ const ReviewStepper = ({
         {pos}/{numOfCards}
       </span>
       <Button onClick={() => textToSpeech(front)}>
+        {TTSAfterReview && <SoundBadge />}
         <Icon name="sound" />
       </Button>
     </Container>

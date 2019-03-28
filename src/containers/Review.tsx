@@ -15,6 +15,7 @@ import { colorPrimary } from 'style/theme';
 import { useOnChange, useShortCut } from 'utils/customHooks';
 import { replaceAt } from 'utils/genericUtils';
 import { mqMobile } from 'style/mediaQueries';
+import textToSpeech from 'utils/textToSpeech';
 
 const CardsContainer = styled.div`
   ${centerContent};
@@ -49,6 +50,7 @@ const Review = () => {
   const [deleteCardId, setDeleteCardId] = useState<Card['id'] | false>(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [TTSAfterReview, setTTSAfterReview] = useState(true);
 
   const reviewAgainCards = reviewAgain.map(id =>
     cards.find(card => id === card.id)
@@ -102,6 +104,11 @@ const Review = () => {
   }
 
   function goToNext(answer: Results, id: Card['id']) {
+    if (TTSAfterReview) {
+      const card = getCardById(allCards[reviewPos].id, cards);
+      textToSpeech(card.front);
+    }
+
     GoToNextCard(answer, id);
     setCardsIsFlipped(Array(allCards.length).fill(false));
   }
@@ -200,6 +207,10 @@ const Review = () => {
     handleToggleTag('verb');
   });
 
+  useShortCut('m', () => {
+    setTTSAfterReview(!TTSAfterReview);
+  });
+
   return (
     <>
       <Modal active={show} onClick={() => setShowMenu(false)}>
@@ -235,6 +246,7 @@ const Review = () => {
           pos={reviewPos + 1}
           showBackButton={cardsIsFlipped[reviewPos] || reviewPos > 0}
           onBack={handleBack}
+          TTSAfterReview={TTSAfterReview}
           front={allCards[reviewPos] && allCards[reviewPos].front}
         />
       </Modal>
