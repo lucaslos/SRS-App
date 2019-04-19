@@ -35,7 +35,7 @@ function getSuggestions(cards: Card[]) {
 
 /* update state on db change */
 export function listenToCardsChange() {
-  const cardsRef = app.database().ref(`${window.userId}/cards/`);
+  const cardsRef = app.database!().ref(`${window.userId}/cards/`);
 
   cardsRef.off();
   cardsRef.on('value', response => {
