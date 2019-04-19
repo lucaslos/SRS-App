@@ -98,7 +98,7 @@ const StatsBar = () => {
   }
 
   const oneMonthBeforeTimestamp = Date.now() - 2592000000;
-  const cardsAddPerWeek = cards.filter(
+  const cardsAddLastMonth = cards.filter(
     card =>
       card.createdAt &&
       card.repetitions &&
@@ -116,8 +116,10 @@ const StatsBar = () => {
           Cards <b>{cards.length}</b>
         </span>
         <div />
-        <span title={cardsAddPerWeek.toFixed(2)}>
-          Add per week <b>{Math.round(cardsAddPerWeek / 4.34)}</b>
+        <span
+          title={`Add last month: ${cardsAddLastMonth}\nAdd per week: ${(cardsAddLastMonth / 4.34).toFixed(3)}`}
+        >
+          Add per week <b>{Math.round(cardsAddLastMonth / 4.34 * 10) / 10}</b>
         </span>
         <div />
         <span css={{ cursor: 'pointer' }} onClick={() => setShowGraph(!showGraph)}>
