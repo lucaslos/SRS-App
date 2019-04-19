@@ -93,6 +93,10 @@ const CardFaceContent = styled.div`
     margin: 0;
     padding: 8px;
   }
+
+  blockquote {
+    font-size: 24px;
+  }
 `;
 
 const NumOfAnswers = styled.div`
