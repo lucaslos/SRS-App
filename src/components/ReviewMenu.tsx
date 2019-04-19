@@ -209,7 +209,7 @@ const ReviewMenu = ({
       </ItensWrapper>
       <QuickAddTagsWrapper>
         {suggestedTags.slice(0, 10).map(tag => {
-          const added = card.tags && card.tags.includes(tag);
+          const added = card && card.tags && card.tags.includes(tag);
 
           return (
             <QuickAddTag

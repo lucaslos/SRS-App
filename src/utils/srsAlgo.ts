@@ -204,7 +204,7 @@ export function processCardAnswer(
 
   return {
     ...card,
-    createdAt: !card.lastReview ? Date.now() : card.createdAt,
+    ...(!card.lastReview && { createdAt: Date.now() }),
     lastReview: timeToDate(Math.round((Date.now() - timeLimitIncrease) / 1000)),
     wrongReviews:
       answer === 'wrong' ? card.wrongReviews + 1 : card.wrongReviews,
