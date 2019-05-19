@@ -94,6 +94,15 @@ const Review = () => {
   const allCards = [...cards, ...reviewAgainCards];
   const show = reviewPos >= 0 && !reviewEnded;
 
+  function getTimerDuration() {
+    const card = allCards[reviewPos];
+    if (card) {
+      return 5 + (card.back.split(';').length - 1) * 4;
+    }
+
+    return 5;
+  }
+
   function setIsFlipped(pos: typeof reviewPos, isFlipped: boolean) {
     clearTimeout(timerRef.current);
     setCardsIsFlipped(replaceAt(cardsIsFlipped, pos, isFlipped));
@@ -103,6 +112,11 @@ const Review = () => {
     if (!(reviewPos === 0 && !cardsIsFlipped[0])) {
       if (cardsIsFlipped[reviewPos]) {
         setIsFlipped(reviewPos, false);
+
+        clearTimeout(timerRef.current);
+        timerRef.current = window.setTimeout(() => {
+          setIsFlipped(reviewPos, true);
+        }, getTimerDuration() * 1000);
       } else {
         reviewState.dispatch('goToPrev');
       }
@@ -222,15 +236,6 @@ const Review = () => {
     );
   }
 
-  function getTimerDuration() {
-    const card = allCards[reviewPos];
-    if (card) {
-      return 5 + (card.back.split(';').length - 1) * 3.5;
-    }
-
-    return 5;
-  }
-
   useOnChange(show, () => {
     if (!show) {
       setCardsIsFlipped([]);
@@ -243,6 +248,7 @@ const Review = () => {
 
   useOnChange(reviewPos, () => {
     if (reviewPos > -1 && !cardsIsFlipped[reviewPos]) {
+      clearTimeout(timerRef.current);
       timerRef.current = window.setTimeout(() => {
         setIsFlipped(reviewPos, true);
       }, getTimerDuration() * 1000);
