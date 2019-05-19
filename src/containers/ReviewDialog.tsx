@@ -48,7 +48,7 @@ const ReviewDialog = () => {
           Review {numOfCards} {reviewingNew ? 'New ' : ''}cards
         </span>
         <span css={{ fontSize: 16, fontWeight: 300 }}>
-          Estimated Time: {numOfCards * 0.5}min
+          Estimated Time: {Math.round(numOfCards * (6 / 60) * 10) / 10}min
         </span>
 
         <ButtonsWrapper>

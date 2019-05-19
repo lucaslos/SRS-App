@@ -6,7 +6,7 @@ import Modal, { TopButton } from 'components/Modal';
 import ReviewMenu from 'components/ReviewMenu';
 import EditCardModal from 'containers/EditCardModal';
 import ReviewStepper from 'containers/ReviewStepper';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getCardById } from 'state/cards';
 import modalsState from 'state/modals';
 import reviewState, { GoToNextCard } from 'state/review';
@@ -16,6 +16,17 @@ import { useOnChange, useShortCut } from 'utils/customHooks';
 import { replaceAt } from 'utils/genericUtils';
 import { mqMobile } from 'style/mediaQueries';
 import textToSpeech from 'utils/textToSpeech';
+import { keyframes } from '@emotion/core';
+
+const TimerAnimation = keyframes`
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 const CardsContainer = styled.div`
   ${centerContent};
@@ -37,12 +48,34 @@ const CardsContainer = styled.div`
   overflow: hidden;
 `;
 
+const TimerBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+
+  & div {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: ${colorPrimary};
+
+    animation: ${TimerAnimation} 5s linear;
+  }
+`;
+
 const Review = () => {
   const [reviewDialog] = modalsState.useStore('reviewDialog');
   const [cards, setReviewCards] = reviewState.useStore('reviewCards');
-  const [reviewAgain, setCardsToReviewAgain] = reviewState.useStore('reviewAgain');
+  const [reviewAgain, setCardsToReviewAgain] = reviewState.useStore(
+    'reviewAgain'
+  );
   const [reviewEnded] = reviewState.useStore('ended');
-  const [cardsToDelete, setCardsToDelete] = reviewState.useStore('cardsToDelete');
+  const [cardsToDelete, setCardsToDelete] = reviewState.useStore(
+    'cardsToDelete'
+  );
   const [reviewPos, setReviewPos] = reviewState.useStore('reviewPos');
   const [cardsIsFlipped, setCardsIsFlipped] = useState<boolean[]>([]);
   const [showEditCard, setShowEditCard] = useState(false);
@@ -51,6 +84,8 @@ const Review = () => {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [TTSAfterReview, setTTSAfterReview] = useState(true);
+  const [timerIsEnabled, setTimerIsEnabled] = useState(false);
+  const timerRef = useRef<number>();
 
   const reviewAgainCards = reviewAgain.map(id =>
     cards.find(card => id === card.id)
@@ -60,6 +95,7 @@ const Review = () => {
   const show = reviewPos >= 0 && !reviewEnded;
 
   function setIsFlipped(pos: typeof reviewPos, isFlipped: boolean) {
+    clearTimeout(timerRef.current);
     setCardsIsFlipped(replaceAt(cardsIsFlipped, pos, isFlipped));
   }
 
@@ -110,6 +146,7 @@ const Review = () => {
     }
 
     GoToNextCard(answer, id);
+
     setCardsIsFlipped(Array(allCards.length).fill(false));
   }
 
@@ -185,13 +222,42 @@ const Review = () => {
     );
   }
 
+  function getTimerDuration() {
+    const card = allCards[reviewPos];
+    if (card) {
+      return 5 + (card.back.split(';').length - 1) * 3.5;
+    }
+
+    return 5;
+  }
+
   useOnChange(show, () => {
     if (!show) {
       setCardsIsFlipped([]);
       setCardsToDelete([]);
       window.onbeforeunload = null;
     } else {
-      window.onbeforeunload = () => ('Are you sure?');
+      window.onbeforeunload = () => 'Are you sure?';
+    }
+  });
+
+  useOnChange(reviewPos, () => {
+    if (reviewPos > -1 && !cardsIsFlipped[reviewPos]) {
+      timerRef.current = window.setTimeout(() => {
+        setIsFlipped(reviewPos, true);
+      }, getTimerDuration() * 1000);
+    }
+  });
+
+  useOnChange(timerIsEnabled, () => {
+    if (timerIsEnabled) {
+      if (!cardsIsFlipped[reviewPos]) {
+        timerRef.current = window.setTimeout(() => {
+          setIsFlipped(reviewPos, true);
+        }, getTimerDuration() * 1000);
+      }
+    } else {
+      clearTimeout(timerRef.current);
     }
   });
 
@@ -211,9 +277,24 @@ const Review = () => {
     setTTSAfterReview(!TTSAfterReview);
   });
 
+  useShortCut('t', () => {
+    setTimerIsEnabled(!timerIsEnabled);
+  });
+
   return (
     <>
       <Modal active={show} onClick={() => setShowMenu(false)}>
+        {timerIsEnabled && (
+          <TimerBar>
+            <div
+              key={`${reviewPos}-${!cardsIsFlipped[reviewPos]}`}
+              style={{
+                animation: cardsIsFlipped[reviewPos] ? 'none' : undefined,
+                animationDuration: `${getTimerDuration()}s`,
+              }}
+            />
+          </TimerBar>
+        )}
         <TopButton onClick={() => setReviewPos(-1)}>
           <Icon name="close" color={colorPrimary} />
         </TopButton>
@@ -274,7 +355,12 @@ const Review = () => {
             onClickDelete={showDeleteConfimationDialog}
           />
           <TopButton
-            css={{ right: 'auto', left: 20, backgroundColor: 'transparent', [mqMobile]: { left: 10 } }}
+            css={{
+              right: 'auto',
+              left: 20,
+              backgroundColor: 'transparent',
+              [mqMobile]: { left: 10 },
+            }}
             onClick={() => setShowMenu(!showMenu)}
           >
             <Icon
