@@ -80,7 +80,7 @@
     "source-map-loader": "^0.2.4",
     "svgo-sync": "^0.5.1",
     "terser-webpack-plugin": "^1.2.3",
-    "typescript": "^3.3.3333",
+    "typescript": "^3.5.0-rc",
     "typescript-eslint-parser": "^22.0.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-hot-middleware": "^2.24.3",
