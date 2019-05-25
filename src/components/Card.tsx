@@ -4,7 +4,7 @@ import CardTags from 'components/CardTags';
 import Icon from 'components/Icon';
 import Notes from 'components/Notes';
 import { rgba, clearFix } from 'polished';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { mqMobile } from 'style/mediaQueries';
 import { circle } from 'style/mixins';

@@ -85,6 +85,7 @@ const Review = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [TTSAfterReview, setTTSAfterReview] = useState(true);
   const [timerIsEnabled, setTimerIsEnabled] = useState(false);
+  const [blockInteravity, setBlockInteravity] = useState(false);
   const timerRef = useRef<number>();
 
   const reviewAgainCards = reviewAgain.map(id =>
@@ -108,15 +109,21 @@ const Review = () => {
     setCardsIsFlipped(replaceAt(cardsIsFlipped, pos, isFlipped));
   }
 
+  function triggerTimer() {
+    clearTimeout(timerRef.current);
+    if (timerIsEnabled) {
+      timerRef.current = window.setTimeout(() => {
+        setIsFlipped(reviewPos, true);
+      }, getTimerDuration() * 1000);
+    }
+  }
+
   function handleBack() {
     if (!(reviewPos === 0 && !cardsIsFlipped[0])) {
       if (cardsIsFlipped[reviewPos]) {
         setIsFlipped(reviewPos, false);
 
-        clearTimeout(timerRef.current);
-        timerRef.current = window.setTimeout(() => {
-          setIsFlipped(reviewPos, true);
-        }, getTimerDuration() * 1000);
+        triggerTimer();
       } else {
         reviewState.dispatch('goToPrev');
       }
@@ -156,12 +163,19 @@ const Review = () => {
   function goToNext(answer: Results, id: Card['id']) {
     if (TTSAfterReview) {
       const card = getCardById(allCards[reviewPos].id, cards);
-      textToSpeech(card.front);
+
+      setBlockInteravity(true);
+      textToSpeech(card.front, 'en-US', () => {
+        setBlockInteravity(false);
+        GoToNextCard(answer, id);
+
+        setCardsIsFlipped(Array(allCards.length).fill(false));
+      });
+    } else {
+      GoToNextCard(answer, id);
+
+      setCardsIsFlipped(Array(allCards.length).fill(false));
     }
-
-    GoToNextCard(answer, id);
-
-    setCardsIsFlipped(Array(allCards.length).fill(false));
   }
 
   function handleToggleTag(tag: string) {
@@ -247,20 +261,15 @@ const Review = () => {
   });
 
   useOnChange(reviewPos, () => {
-    if (reviewPos > -1 && !cardsIsFlipped[reviewPos]) {
-      clearTimeout(timerRef.current);
-      timerRef.current = window.setTimeout(() => {
-        setIsFlipped(reviewPos, true);
-      }, getTimerDuration() * 1000);
+    if (reviewPos > -1 && !cardsIsFlipped[reviewPos] && timerIsEnabled) {
+      triggerTimer();
     }
   });
 
   useOnChange(timerIsEnabled, () => {
     if (timerIsEnabled) {
       if (!cardsIsFlipped[reviewPos]) {
-        timerRef.current = window.setTimeout(() => {
-          setIsFlipped(reviewPos, true);
-        }, getTimerDuration() * 1000);
+        triggerTimer();
       }
     } else {
       clearTimeout(timerRef.current);
@@ -304,7 +313,9 @@ const Review = () => {
         <TopButton onClick={() => setReviewPos(-1)}>
           <Icon name="close" color={colorPrimary} />
         </TopButton>
-        <CardsContainer>
+        <CardsContainer
+          style={{ pointerEvents: blockInteravity ? 'none' : undefined }}
+        >
           {(reviewDialog || reviewPos > -1) &&
             allCards.map((card, i) => {
               const props = {
