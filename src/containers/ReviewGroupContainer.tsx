@@ -75,16 +75,16 @@ const CardsGroups = () => {
           />
         )}
         {/* new cards */}
-        {newCards.length > 2 && (
+        {newCards.length > 3 && (
           <ReviewGroup
-            label="Review 2 New"
-            handleClick={() => showReviewDialog(2, true)}
+            label="Review 3 New"
+            handleClick={() => showReviewDialog(3, true)}
           />
         )}
-        {newCards.length > 5 && (
+        {newCards.length > 6 && (
           <ReviewGroup
-            label="Review 5 New"
-            handleClick={() => showReviewDialog(5, true)}
+            label="Review 6 New"
+            handleClick={() => showReviewDialog(6, true)}
           />
         )}
         {newCards.length > 10 && (
