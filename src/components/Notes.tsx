@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { colorPrimary, colorSecondary } from 'style/theme';
 import { rgba } from 'polished';
 import { centerContent } from 'style/modifiers';
+import textToSpeech from 'utils/textToSpeech';
+import Icon from 'components/Icon';
 
 type Notes = {
   notes?: string[];
@@ -33,12 +35,30 @@ const Note = styled.div`
   span {
     user-select: text;
   }
+
+  .tts-button {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    margin-right: 4px;
+    opacity: 0.5;
+    transition: ease-out 0.16s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
 const Notes = ({ notes = [] }: Notes) => (
   <Container>
     {notes.map(note => (
-      <Note key={note}><span>{note}</span></Note>
+      <Note key={note}>
+        <span>{note}</span>
+        <div className="tts-button" onClick={() => textToSpeech(note)}>
+          <Icon name="sound" size={24} />
+        </div>
+      </Note>
     ))}
   </Container>
 );
