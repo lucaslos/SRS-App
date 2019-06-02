@@ -40,7 +40,8 @@ const Note = styled.div`
     cursor: pointer;
     height: 24px;
     width: 24px;
-    margin-right: 4px;
+    margin-left: 8px;
+    margin-left: 4px;
     opacity: 0.5;
     transition: ease-out 0.16s;
 
