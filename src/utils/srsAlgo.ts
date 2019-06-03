@@ -95,7 +95,7 @@ export function getNextDayToReview(
   repetitions: number,
   diff: number,
   lastReview?: string,
-  formatDate = true,
+  formatDate = true
 ) {
   if (!lastReview) return 'New';
 
@@ -200,7 +200,9 @@ export function processCardAnswer(
   }
 
   const oneRepetitionSuccessDiffDecrease =
-    card.repetitions === 1 && answer === 'success' ? -0.6 : 0;
+    card.repetitions === 1 && (answer === 'success' || answer === 'hard')
+      ? -0.6
+      : 0;
 
   return {
     ...card,
@@ -211,7 +213,7 @@ export function processCardAnswer(
     repetitions: clampMin(
       card.repetitions
         + (cof >= highCofLimit ? highCofRepetitionIncrease : repetitionsIncrease)[
-          answer
+          answer === 'hard' && card.repetitions === 1 ? 'success' : answer
         ],
       1
     ),
