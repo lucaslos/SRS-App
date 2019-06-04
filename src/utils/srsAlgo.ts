@@ -187,23 +187,12 @@ export function processCardAnswer(
   const highRepetDiffIncrease =
     (clampMax(card.repetitions, 10) / 10) ** 2 * highRepetitionIncrease[answer];
 
-
-  console.log({
-    answer,
-    diffIncrease: diffIncrease[answer],
-    reviewsAgainDiffIncrease,
-    highRepetDiffIncrease,
-    reviewsAgain,
-    cof,
-    card,
-  });
-
   const oneRepetitionSuccessDiffDecrease =
     card.repetitions === 1 && (answer === 'success' || answer === 'hard')
       ? -0.6
       : 0;
 
-  return {
+  const result = {
     ...card,
     ...(!card.lastReview && { createdAt: Date.now() }),
     lastReview: timeToDate(Math.round((Date.now() - timeLimitIncrease) / 1000)),
@@ -229,6 +218,20 @@ export function processCardAnswer(
         ) * 100
       ) / 100,
   };
+
+  console.log({
+    answer,
+    diffIncrease: diffIncrease[answer],
+    reviewsAgainDiffIncrease,
+    highRepetDiffIncrease,
+    reviewsAgain,
+    oneRepetitionSuccessDiffDecrease,
+    cof,
+    cardBefore: card,
+    cardAfter: result,
+  });
+
+  return result;
 }
 
 export function processReview(
