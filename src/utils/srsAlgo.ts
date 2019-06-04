@@ -187,17 +187,16 @@ export function processCardAnswer(
   const highRepetDiffIncrease =
     (clampMax(card.repetitions, 10) / 10) ** 2 * highRepetitionIncrease[answer];
 
-  if (isDev) {
-    console.log({
-      answer,
-      diffIncrease: diffIncrease[answer],
-      reviewsAgainDiffIncrease,
-      highRepetDiffIncrease,
-      reviewsAgain,
-      cof,
-      card,
-    });
-  }
+
+  console.log({
+    answer,
+    diffIncrease: diffIncrease[answer],
+    reviewsAgainDiffIncrease,
+    highRepetDiffIncrease,
+    reviewsAgain,
+    cof,
+    card,
+  });
 
   const oneRepetitionSuccessDiffDecrease =
     card.repetitions === 1 && (answer === 'success' || answer === 'hard')
