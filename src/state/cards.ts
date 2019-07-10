@@ -73,8 +73,7 @@ export function pushCards(
     });
 
   if (toCreate) toCreate.forEach(card => {
-      const newCardId = app
-        .database!()
+      const newCardId = app.database!()
         .ref()
         .child(`${window.userId}/cards`)
         .push().key;
@@ -91,8 +90,7 @@ export function pushCards(
       }
     });
 
-  app
-    .database!()
+  app.database!()
     .ref()
     .update(updates);
 }
@@ -109,7 +107,10 @@ export function pushDeleteCard(id: Card['id']) {
   pushCards([], [], [id]);
 }
 
-export function getCardById(id: Card['id'], cards: Card[] = cardsState.getState().cards) {
+export function getCardById(
+  id: Card['id'],
+  cards: Card[] = cardsState.getState().cards
+) {
   const findedcard = cards.find(card => card.id === id);
 
   if (findedcard) {
@@ -117,6 +118,16 @@ export function getCardById(id: Card['id'], cards: Card[] = cardsState.getState(
   }
 
   throw new Error(`Card of id: ${id} not exists`);
+}
+
+export async function copyCardsJSON() {
+  try {
+    await navigator.clipboard.writeText(
+      JSON.stringify(cardsState.getState().cards)
+    );
+  } catch (err) {
+    console.error('Could not copy text', err);
+  }
 }
 
 export default cardsState;
