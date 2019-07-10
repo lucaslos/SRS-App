@@ -3,8 +3,9 @@ const webpack = require('webpack');
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
 const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
 const express = require('express');
+const portfinder = require('portfinder');
 
-const port = 5000;
+portfinder.basePort = 5000;
 
 const config = require('../webpack.dev');
 
@@ -41,6 +42,8 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, options);
 
-server.listen(port, '0.0.0.0', () => {
-  console.log(`Dev server listening on port ${port}`);
+portfinder.getPort((err, port) => {
+  server.listen(port, '0.0.0.0', () => {
+    console.log(`Dev server listening on port ${port}`);
+  });
 });
