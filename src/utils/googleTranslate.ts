@@ -12,42 +12,34 @@ function parseJSON<T = any>(string: string): T | false {
   }
 }
 
-export function filterCardsFromGoogleTranslate(pastedContent: string) {
+export function filterImport(pastedContent: string) {
   const { cards } = cardsState.getState();
 
-  const words = parseJSON<{ front: string; back: string }[]>(pastedContent);
+  const words = parseJSON<
+    { front: string; back: string; notes?: string[]; tags: string[] }[]
+  >(pastedContent);
 
   if (!words || !words[0] || !words[0].back) return false;
 
   const newCards: Card[] = [];
 
   for (let i = 0; i < words.length; i++) {
-    const word = words[i];
-    const backLines = word.back.split('\n');
-    const back = (backLines.length === 1 ? backLines[0] : backLines[1])
-      .trim()
-      .toLowerCase();
-    const front = word.front
-      .replace('#', '')
-      .trim()
-      .toLowerCase();
+    const { front, back, notes, tags } = words[i];
 
-    if (
-      !cards.some(card => card.front === front && card.back === back)
-    ) {
+    if (!cards.some(card => card.front === front && card.back === back)) {
       newCards.push({
         id: '0',
         back,
         front,
-        notes: [],
-        tags: [],
+        notes: notes && notes.length > 0 ? notes : [],
+        tags: tags && tags.length > 0 ? tags : [],
         diff: 0,
         lang: 'en',
         wrongReviews: 0,
         repetitions: 0,
       });
     } else {
-      console.log(`${word.front}|${word.back} is duplicated.`);
+      alert(`${front}⇢${back} is duplicated.`);
     }
   }
 

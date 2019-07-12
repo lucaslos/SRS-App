@@ -15,7 +15,7 @@ import modalsState from 'state/modals';
 import { centerContent } from 'style/modifiers';
 import { colorSecondary, colorYellow, fontDecorative, colorRed } from 'style/theme';
 import { replaceAt } from 'utils/genericUtils';
-import { filterCardsFromGoogleTranslate } from 'utils/googleTranslate';
+import { filterImport } from 'utils/googleTranslate';
 
 const AddCardsButtonsWrapper = styled.div`
   ${centerContent};
@@ -79,7 +79,7 @@ const AddCardsModal = () => {
     navigator.clipboard
       .readText()
       .then(text => {
-        const importedCards = filterCardsFromGoogleTranslate(text);
+        const importedCards = filterImport(text);
 
         if (importedCards) {
           setCardsToAdd(importedCards);
