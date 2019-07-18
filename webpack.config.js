@@ -12,10 +12,11 @@ const folder = 'docs/';
 module.exports = {
   mode: 'production',
 
-  entry: [
-    './src/index.tsx',
-    // './style/main.scss',
-  ],
+  entry: {
+    main: './src/index.tsx',
+    ccaeList: './src/data/CCAE.json',
+    oxfordList: './src/data/oxford3000-5000.json',
+  },
 
   output: {
     path: path.join(__dirname, folder),
