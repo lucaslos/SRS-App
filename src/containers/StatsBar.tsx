@@ -62,6 +62,7 @@ const StatsBar = () => {
 
   let cardsPrevisionNextDay = 0;
   let cardsPrevisionNext2Days = 0;
+  let numOfCards = 0;
 
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
@@ -71,6 +72,8 @@ const StatsBar = () => {
       card.diff,
       card.lastReview,
     );
+
+    if (card.repetitions) numOfCards++;
 
     if (cofToday >= 1) continue;
 
@@ -113,7 +116,7 @@ const StatsBar = () => {
     <Container css={{ height: showGraph ? 320 : undefined }}>
       <StatsWrapper>
         <span>
-          Cards <b>{cards.length}</b>
+          Cards <b>{numOfCards}</b>
         </span>
         <div />
         <span
