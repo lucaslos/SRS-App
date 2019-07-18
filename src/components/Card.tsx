@@ -4,12 +4,21 @@ import CardTags from 'components/CardTags';
 import Icon from 'components/Icon';
 import Notes from 'components/Notes';
 import { rgba, clearFix } from 'polished';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { mqMobile } from 'style/mediaQueries';
+import ccaeList from 'data/CCAE.json';
+import oxfordList from 'data/oxford3000-5000.json';
 import { circle } from 'style/mixins';
 import { centerContent, centerContentCollum } from 'style/modifiers';
-import { colorPrimary, colorRed, colorSecondaryDarker, colorSecondaryLigher, colorYellow } from 'style/theme';
+import {
+  colorPrimary,
+  colorRed,
+  colorSecondaryDarker,
+  colorSecondaryLigher,
+  colorYellow,
+  fontDecorative,
+} from 'style/theme';
 
 type Props = {
   card: Card;
@@ -20,6 +29,11 @@ type Props = {
   handleAddNote: (note: string) => void;
   handleAddImage: (imgUrl: string) => void;
 };
+
+const ccaeListWithRank = ccaeList.map((word, i) => ({
+  word,
+  pos: i + 1,
+}));
 
 const zPos = {
   prev: '-500px',
@@ -159,6 +173,17 @@ const BottomButtons = styled.div`
   }
 `;
 
+const LevelTag = styled.div`
+  background: ${colorPrimary};
+  color: ${colorSecondaryDarker};
+  font-family: ${fontDecorative};
+  text-transform: uppercase;
+  padding: 2px 6px;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 14px;
+`;
+
 const Card = ({
   card,
   pos,
@@ -170,8 +195,9 @@ const Card = ({
 }: Props) => {
   const words = card.back.split(';');
 
-  const WarnIcon = card.wrongReviews > 4 || card.diff > 0.4 ? (
-    <Icon name="warn" color={colorRed} size={24} />
+  const WarnIcon =
+    card.wrongReviews > 4 || card.diff > 0.4 ? (
+      <Icon name="warn" color={colorRed} size={24} />
     ) : (
       undefined
     );
@@ -200,6 +226,19 @@ const Card = ({
 
   const hasImageInBack = card.back.match(/\[\]\(.+\)/); // ![](${imgUrl})
 
+  const oxfordListWord = useMemo(
+    () => (card.front ? oxfordList.filter(word => word.w === card.front) : []),
+    [card.front]
+  );
+
+  const ccaeListWord = useMemo(
+    () =>
+      (card.front
+        ? ccaeListWithRank.filter(word => word.word === card.front)
+        : []),
+    [card.front]
+  );
+
   return (
     <>
       <FrontFace
@@ -208,6 +247,17 @@ const Card = ({
         onClick={() => setIsFlipped(true)}
       >
         <TopIcons>
+          {WarnIcon}
+          {hasImageInBack && <Icon name="image" size={24} />}
+          {oxfordListWord.map((level, i) => (
+            <LevelTag title={level.p} key={i}>{level.c}</LevelTag>
+          ))}
+          {ccaeListWord.map((level, i) => (
+            <LevelTag key={i}>Top {level.pos}</LevelTag>
+          ))}
+        </TopIcons>
+        <CardFaceContent>
+          <ReactMarkdown source={card.front} />
           {words.length > 1 && (
             <NumOfAnswers>
               {words.map((word, i) => (
@@ -215,11 +265,6 @@ const Card = ({
               ))}
             </NumOfAnswers>
           )}
-          {WarnIcon}
-          {hasImageInBack && <Icon name="image" size={24} />}
-        </TopIcons>
-        <CardFaceContent>
-          <ReactMarkdown source={card.front} />
         </CardFaceContent>
         <CardTags tags={card.tags} />
       </FrontFace>
@@ -231,7 +276,7 @@ const Card = ({
         onDrop={onDrop}
       >
         <TopIcons>{WarnIcon}</TopIcons>
-        <CardFaceContent css={{ p: { userSelect: 'text' }}}>
+        <CardFaceContent css={{ p: { userSelect: 'text' } }}>
           <ReactMarkdown source={card.back} />
         </CardFaceContent>
         {card.notes && card.notes.length > 0 && <Notes notes={card.notes} />}
