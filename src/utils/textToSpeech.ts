@@ -1,6 +1,6 @@
 import removeMd from 'remove-markdown';
 
-export default function textToSpeech(text: string, lang = 'en-US', onEnd?: () => any) {
+export default function textToSpeech(text: string, lang = 'en-US', onEnd?: () => any, onError?: () => any) {
   const msg = new SpeechSynthesisUtterance();
 
   const voices = window.speechSynthesis.getVoices();
@@ -18,5 +18,8 @@ export default function textToSpeech(text: string, lang = 'en-US', onEnd?: () =>
 
   if (onEnd) {
     msg.onend = onEnd;
+  }
+  if (onError) {
+    msg.onerror = onError;
   }
 }

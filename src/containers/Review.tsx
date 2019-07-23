@@ -170,6 +170,12 @@ const Review = () => {
         GoToNextCard(answer, id);
 
         setCardsIsFlipped(Array(allCards.length).fill(false));
+      }, () => {
+        alert('Error on tts');
+        setBlockInteravity(true);
+        GoToNextCard(answer, id);
+
+        setCardsIsFlipped(Array(allCards.length).fill(false));
       });
     } else {
       GoToNextCard(answer, id);
