@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig",
+  "exclude": ["src", "stories", "utils"],
+  "files": ["src/index.tsx"],
+}

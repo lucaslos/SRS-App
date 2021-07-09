@@ -1,14 +1,29 @@
-import * as React from 'react';
-import { hot } from 'react-hot-loader';
+import { MatchRoute, pathIntegration, Router } from '@rturnq/solid-router';
+import App from '@src/pages/App';
+import Home from '@src/pages/home/home';
+import Login from '@src/pages/login/login';
+import { authStore } from '@src/stores/auth';
+import { GlobalStyles } from '@src/style/global';
 
-import App from 'containers/App';
-import GlobalStyle from 'style/GlobalStyle';
+const Root = () => {
+  return (
+    <>
+      <GlobalStyles />
+      <Router integration={pathIntegration()}>
+        <Switch>
+          <Match when={authStore.authState === 'loading'}>...</Match>
 
-const Root = () => (
-  <>
-    <GlobalStyle />
-    <App />
-  </>
-);
+          <Match when={authStore.authState === 'loggedOut'}>
+            <Login />
+          </Match>
 
-export default hot(module)(Root);
+          <Match when>
+            <App />
+          </Match>
+        </Switch>
+      </Router>
+    </>
+  );
+};
+
+export default Root;

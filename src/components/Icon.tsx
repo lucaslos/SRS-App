@@ -1,48 +1,45 @@
-import iconsSet from 'data/icons.ts';
-import * as React from 'react';
-import { colorPrimary } from 'style/theme';
+import { iconsSvg, Icons } from '@src/data/icons'
+import { fillContainer } from '@src/style/helpers/fillContainer'
+import { parseUnit } from '@utils/parseUnit'
+import { css } from 'solid-styled-components'
 
-type JsonIcon = {
-  viewBox: string;
-  paths?: anyObject[];
-  rects?: anyObject[];
-  colors?: anyObject[];
-};
+export const style = css`
+  position: relative;
+  color: currentColor;
+  height: var(--icon-size, 24px);
+  width: var(--icon-size, 24px);
 
-type Icon = {
-  name: keyof typeof iconsSet;
-  color?: string;
-  size?: number;
-};
+  svg {
+    display: block;
+    ${fillContainer};
+  }
+`
 
-const Icon = ({ name, color = colorPrimary, size = 32 }: Icon) => {
-  if (!iconsSet[name]) throw new Error(`Icon ${name} do not exists`);
+type IconProps = {
+  name: Icons
+  class?: string
+  color?: string
+  size?: number
+}
 
-  const { viewBox, paths, rects, colors }: JsonIcon = iconsSet[name];
+const Icon = (props: IconProps) => {
+  const icon = iconsSvg[props.name]
+
+  if (import.meta.env.DEV && !icon)
+    throw new Error(`Icon ${props.name} do not exists`)
 
   return (
-    <svg
-      css={{
-        height: size,
-        width: size,
-        fill: color,
-      }}
-      className="icon"
-      viewBox={viewBox}
-    >
-      {paths &&
-        paths.map((pathElem, i) => (
-          <path
-            key={i}
-            d={pathElem.d}
-            opacity={pathElem.opacity}
-            fillRule={pathElem.evenodd ? 'evenodd' : undefined}
-            clipRule={pathElem.evenodd ? 'evenodd' : undefined}
-          />
-        ))}
-      {/* {rects && rects.map(rectElem => <rect />)} */}
-    </svg>
-  );
-};
+    <div
+      class={`icon ${props.class || ''} ${style}`}
+      style={
+        {
+          color: props.color,
+          '--icon-size': props.size && parseUnit(props.size),
+        } as any
+      }
+      innerHTML={icon}
+    />
+  )
+}
 
-export default Icon;
+export default Icon

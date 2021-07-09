@@ -1,31 +1,8 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import Root from 'Root';
-import 'state';
-// import { version, name } from '../package.json';
-import 'utils/firebase';
+import { render } from 'solid-js/web';
 
-/* production only code */
-if (process.env.NODE_ENV === 'production') {
-  // console.log(`${name} v${version}`);
+import '@src/style/reset.css';
+import Root from '@src/Root';
 
-  // register service worker
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('sw.js')
-        .then((registration) => {
-          console.log('SW registered: ', registration);
-        })
-        .catch((registrationError) => {
-          console.log('SW registration failed: ', registrationError);
-        });
-    });
-  }
-}
+// addGoogleFonts();
 
-if (module.hot) {
-  module.hot.accept('../package.json', () => {});
-}
-
-ReactDOM.render(<Root />, document.getElementById('app'));
+render(() => <Root />, document.getElementById('app')!);

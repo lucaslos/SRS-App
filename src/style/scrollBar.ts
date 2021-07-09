@@ -1,34 +1,29 @@
-import { css } from '@emotion/core';
-import { rgba, tint, lighten } from 'polished';
-import { colorSecondary, colorSecondaryDarker } from 'style/theme';
+import { colors } from '@src/style/theme';
 
-const background = colorSecondaryDarker;
-const thumb = lighten(0.16, colorSecondary);
-
-export default css`
+export const scrollBarStyle = `
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
 
-  ::-webkit-scrollbar-track {
-    background-color: ${background};
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: ${colors.bgSecondary.darker(1)};
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: ${rgba(thumb, 0.5)};
+    margin: 2px;
+    background-color: ${colors.bgSecondary.alpha(0.24)};
 
     &:hover {
-      background-color: ${rgba(thumb, 0.7)};
+      background-color: ${colors.bgSecondary.alpha(0.3)};
     }
 
     &:active {
-      background-color: ${rgba(thumb, 0.9)};
+      background-color: ${colors.bgSecondary.alpha(0.35)};
     }
   }
 
-  ::-webkit-scrollbar-corner {
-    background-color: ${background};
-  }
-`;
+`
+

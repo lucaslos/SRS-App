@@ -1,31 +1,32 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "module": "es6",            // specify module code generation
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client", "typings"],
     "moduleResolution": "node",
-    "jsx": "react",             // use typescript to transpile jsx to js
-    "allowJs": true,            // allow a partial TypeScript and JavaScript codebase
-    "strictNullChecks": true,   // enable strict null checks as a best practice
+    "jsx": "react-jsx",
+    "jsxImportSource": "solid-js",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noEmit": true,
+    "alwaysStrict": true,
+    "composite": false,
+    "forceConsistentCasingInFileNames": true,
     "keyofStringsOnly": true,
+    "noUncheckedIndexedAccess": true,
 
-    "baseUrl": ".", // This must be specified if "paths" is set
+    "baseUrl": ".",
     "paths": {
-      "*": [
-        "src/*",
-        "*",
-      ]
-    },
+      "@src/*": ["src/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
-  "exclude": [
-    "docs",
-    "dist",
-    "resources",
-    "node_modules",
-    "**/node_modules/*",
-  ]
+  "exclude": ["node_modules", "assert.d.ts", "dist", "public", "saved-data"]
 }
