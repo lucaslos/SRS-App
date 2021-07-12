@@ -1,4 +1,4 @@
-import { Component, JSX } from 'solid-js';
+import { JSX } from 'solid-js';
 
 const ButtonElement = (props: JSX.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return <button {...props} onMouseDown={preventDefault} />;

@@ -1,14 +1,21 @@
-import ButtonElement from '@src/components/ButtonElement';
-import { Logo } from '@src/components/Logo';
-import { centerContent } from '@src/style/helpers/centerContent';
-import { fillContainer } from '@src/style/helpers/fillContainer';
-import { responsiveWidth } from '@src/style/helpers/responsiveSize';
-import { stack } from '@src/style/helpers/stack';
-import { transition } from '@src/style/helpers/transition';
-import { gradients } from '@src/style/theme';
-import { styled } from 'solid-styled-components';
-import firebase from 'firebase/app';
-import { auth } from '@src/firebase/initialize';
+import ButtonElement from '@src/components/ButtonElement'
+import { Logo } from '@src/components/Logo'
+import { centerContent } from '@src/style/helpers/centerContent'
+import { fillContainer } from '@src/style/helpers/fillContainer'
+import { responsiveWidth } from '@src/style/helpers/responsiveSize'
+import { stack } from '@src/style/helpers/stack'
+import { transition } from '@src/style/helpers/transition'
+import { colors, gradients } from '@src/style/theme'
+import { css, styled } from 'solid-styled-components'
+import firebase from 'firebase/app'
+import { auth } from '@src/firebase/initialize'
+import {
+  GoogleAuthProvider,
+  browserLocalPersistence,
+  User,
+  Persistence,
+  signInWithPopup,
+} from 'firebase/auth'
 
 const Container = styled('div')`
   ${fillContainer};
@@ -17,50 +24,55 @@ const Container = styled('div')`
   grid-template-rows: 100%;
   align-items: center;
   justify-items: center;
-`;
+`
 
 const Content = styled('div')`
   ${responsiveWidth(360, 16)};
   ${stack()};
 
-  > .logo {
+  .logo {
     width: 200px;
   }
+`
 
-  > button {
-    position: relative;
-    padding: 10px;
-    font-size: 24px;
-    width: 160px;
-    letter-spacing: 0.08em;
+const buttonStyle = css`
+  position: relative;
+  padding: 10px;
+  font-size: 24px;
+  width: 160px;
+  height: 48px;
+  letter-spacing: 0.08em;
+  border-radius: 50px;
+  isolation: isolate;
+  background: ${gradients.primary};
 
-    &::before {
-      content: '';
-      ${fillContainer};
-      border-radius: 50px;
-      border: 2px solid transparent;
-      background: ${gradients.primary} border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
-      mask-composite: exclude;
-
-      opacity: 0.8;
-      ${transition()};
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border: 2px solid transparent;
+    position: absolute;
+    background: ${colors.bgPrimary.var};
+    background-clip: padding-box;
+    opacity: 1;
+    ${transition()};
   }
-`;
+
+  &:hover::before {
+    opacity: 0.9;
+  }
+`
 
 const Login = () => {
   function signInWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    void auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
-      auth.signInWithPopup(provider);
-    });
+    const provider = new GoogleAuthProvider()
+    void auth.setPersistence(browserLocalPersistence).then(() => {
+      void signInWithPopup(auth, provider)
+    })
   }
 
   return (
@@ -68,10 +80,12 @@ const Login = () => {
       <Content>
         <Logo class="logo" />
 
-        <ButtonElement onClick={() => signInWithGoogle()}>Login</ButtonElement>
+        <ButtonElement class={buttonStyle} onClick={() => signInWithGoogle()}>
+          <div>Login</div>
+        </ButtonElement>
       </Content>
     </Container>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

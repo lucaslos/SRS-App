@@ -1,4 +1,4 @@
-import { injectCSS } from '@utils/css';
+import { injectCSS } from '@utils/css'
 
 const justifyValues = {
   left: 'flex-start',
@@ -7,39 +7,29 @@ const justifyValues = {
   spaceBetween: 'space-between',
   spaceAround: 'space-around',
   spaceEvenly: 'space-evenly',
-} as const;
+} as const
 
 const alignValues = {
   top: 'flex-start',
   bottom: 'flex-end',
   center: 'center',
   stretch: 'stretch',
-} as const;
-
-export function inlineSpacing(spacing?: string | number) {
-  return spacing
-    ? {
-        '> *:not(:last-child)': {
-          marginRight: spacing || 0,
-        },
-      }
-    : '';
-}
+} as const
 
 export type InlineProps = {
-  justify?: keyof typeof justifyValues;
-  align?: keyof typeof alignValues;
-  gap?: string | number;
-};
+  justify?: keyof typeof justifyValues
+  align?: keyof typeof alignValues
+  gap?: string | number
+}
 
 export const inline = ({
   justify = 'left',
   align = 'center',
   gap,
 }: InlineProps = {}) =>
-  injectCSS({
-    display: 'flex',
-    columnGap: gap,
-    justifyContent: justifyValues[justify],
-    alignItems: alignValues[align],
-  });
+  `
+    display: flex;
+    column-gap: ${gap}px;
+    justify-content: ${justifyValues[justify]};
+    align-items: ${alignValues[align]};
+  `

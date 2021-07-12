@@ -1,27 +1,29 @@
-import { auth } from '@src/firebase/initialize';
-import { anyFunction } from '@utils/typings';
-import firebase from 'firebase/app';
-import { createStore } from 'solid-js/store';
+import { auth } from '@src/firebase/initialize'
+import { subscribe } from '@utils/solid'
+import { onAuthStateChanged, User } from 'firebase/auth'
+import { createEffect, createRoot } from 'solid-js'
+import { createStore } from 'solid-js/store'
 
 type State = {
-  authState: 'loggedIn' | 'error' | 'loading' | 'loggedOut';
-  error: firebase.auth.Error | null;
-  user: firebase.User | null;
-};
+  authState: 'loggedIn' | 'error' | 'loading' | 'loggedOut'
+  error: Error | null
+  user: User | null
+}
 
 const [authStore, setAuthStore] = createStore<State>({
   user: auth.currentUser,
   authState: auth.currentUser ? 'loggedIn' : 'loading',
   error: null,
-});
+})
 
-auth.onAuthStateChanged(
+onAuthStateChanged(
+  auth,
   (user) => {
     return setAuthStore({
       user,
       error: null,
       authState: user ? 'loggedIn' : 'loggedOut',
-    });
+    })
   },
   (error) =>
     setAuthStore({
@@ -29,6 +31,6 @@ auth.onAuthStateChanged(
       error,
       authState: 'error',
     }),
-);
+)
 
-export { authStore };
+export { authStore }

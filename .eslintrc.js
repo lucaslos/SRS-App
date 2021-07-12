@@ -1,6 +1,6 @@
-const OFF = 0;
-const WARN = 1;
-const ERROR = 2;
+const OFF = 0
+const WARN = 1
+const ERROR = 2
 
 const noRestrictImportsDefault = {
   patterns: ['os', 'assert'],
@@ -10,19 +10,14 @@ const noRestrictImportsDefault = {
       importNames: ['cx'],
       message: 'Please use the custom implementation',
     },
-    {
-      name: 'react-router-dom',
-      importNames: ['Link'],
-      message: 'Please use the custom link implementation.',
-    },
   ],
-};
+}
 
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json', './app/tsconfig.json'],
+    project: ['./tsconfig.json'],
     createDefaultProgram: true,
     ecmaVersion: 8,
     ecmaFeatures: {
@@ -34,17 +29,13 @@ module.exports = {
   env: {
     browser: true,
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint'],
   globals: {
     firebase: true,
-    __DEV__: true,
-    import.meta.env.PROD: true,
-    __VERSION__: true,
   },
   rules: {
     'no-plusplus': OFF,
     // 'implicit-arrow-linebreak': OFF,
-    // 'react/jsx-filename-extension': OFF,
     'no-bitwise': OFF,
     'no-param-reassign': OFF,
     // 'no-multi-assign': OFF,
@@ -55,7 +46,6 @@ module.exports = {
     //   },
     // ],
     // curly: ['error', 'multi-line'],
-    'no-nested-ternary': OFF,
     'no-continue': OFF,
     'no-mixed-operators': [
       'error',
@@ -105,7 +95,6 @@ module.exports = {
     'import/no-unresolved': OFF,
     // 'import/first': OFF,
     'import/prefer-default-export': OFF,
-    'import/no-default-export': ERROR,
     // 'import/order': OFF,
     // 'import/no-cycle': OFF,
     // 'import/named': OFF,
@@ -122,26 +111,22 @@ module.exports = {
     'no-console': [ERROR, { allow: ['info'] }],
     'global-require': OFF,
 
-    'react/react-in-jsx-scope': OFF,
-    'react/require-default-props': OFF,
-    'react/no-unused-prop-types': OFF,
-    'react/prop-types': OFF,
-    'react/no-array-index-key': OFF,
-    // 'react/jsx-one-expression-per-line': OFF,
-    // 'react/jsx-indent': OFF,
-    // 'react/destructuring-assignment': OFF,
-    // 'react/jsx-closing-tag-location': OFF,
-    'react/jsx-props-no-spreading': OFF,
-    // 'react/jsx-curly-newline': OFF,
-    // 'react/no-children-prop': OFF,
-    // 'react/jsx-wrap-multilines': OFF,
-    'react/jsx-no-undef': OFF,
-    'react/jsx-key': [2, { checkFragmentShorthand: true }],
-    'react/jsx-no-useless-fragment': WARN,
-    'react/forbid-elements': [
-      WARN,
+    'no-restricted-syntax': [
+      ERROR,
       {
-        forbid: [{ element: 'button', message: 'Use o componente ButtonElem' }],
+        selector: 'ForInStatement',
+        message:
+          'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+      },
+      {
+        selector: 'LabeledStatement',
+        message:
+          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+      },
+      {
+        selector: 'WithStatement',
+        message:
+          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
       },
     ],
 
@@ -151,9 +136,6 @@ module.exports = {
     'jsx-a11y/anchor-has-content': OFF,
     'jsx-a11y/control-has-associated-label': OFF,
     'jsx-a11y/accessible-emoji': OFF,
-
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
 
     // '@typescript-eslint/indent': OFF,
     '@typescript-eslint/lines-between-class-members': [
@@ -201,12 +183,10 @@ module.exports = {
     'jest/no-deprecated-functions': OFF,
   },
   extends: [
-    'airbnb-typescript',
+    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
   ],
-};
+}

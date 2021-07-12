@@ -45,7 +45,6 @@ export const GlobalStyles = () => {
         position: absolute;
         width: 100%;
         height: 100%;
-        max-width: 600px;
 
         > * {
           pointer-events: auto;
@@ -92,7 +91,7 @@ export const GlobalStyles = () => {
     }
 
     h1 {
-      font-weight: 600;
+      font-weight: normal;
     }
 
     h2,

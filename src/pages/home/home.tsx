@@ -1,3 +1,4 @@
+import Loading from '@src/components/Loading';
 import { css, styled } from 'solid-styled-components';
 
 const containerStyle = css`
@@ -6,7 +7,7 @@ const containerStyle = css`
 
 const Home = () => {
   return <div class={containerStyle}>
-    home
+    <Loading />
   </div>;
 };
 

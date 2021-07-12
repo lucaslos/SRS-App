@@ -8,20 +8,20 @@ export const scrollBarStyle = `
 
   ::-webkit-scrollbar-track,
   ::-webkit-scrollbar-corner {
-    background-color: ${colors.bgSecondary.darker(1)};
+    background-color: ${colors.bgSecondary.var};
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     margin: 2px;
-    background-color: ${colors.bgSecondary.alpha(0.24)};
+    background-color: ${colors.bgSecondary.lighter(6)};
 
     &:hover {
-      background-color: ${colors.bgSecondary.alpha(0.3)};
+      background-color: ${colors.bgSecondary.lighter(12)};
     }
 
     &:active {
-      background-color: ${colors.bgSecondary.alpha(0.35)};
+      background-color: ${colors.bgSecondary.lighter(17)};
     }
   }
 

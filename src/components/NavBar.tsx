@@ -1,9 +1,10 @@
-import { NavLink, useRoute, useRouter } from '@rturnq/solid-router'
+import { Link, NavLink, useRoute, useRouter } from '@rturnq/solid-router'
 import Icon from '@src/components/Icon'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { inline } from '@src/style/helpers/inline'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
+import { getQueryLink } from '@src/utils/navigate'
 import { match } from '@utils/patternMatching'
 import { spring, animate } from 'popmotion'
 import {
@@ -58,22 +59,21 @@ const containerStyle = css`
 const NavBar = () => {
   const router = useRouter()
 
-  const animTo = createMemo<number>(() => {
-    const activePageIndex = match
+  const activePageIndex = createMemo(() => {
+    return match
       .inferedValue(router.location.path)<number>()
       .with('/', 0)
-      .with('/add', 1)
       .otherwise(2)
-
-    return activePageIndex * 100
   })
 
-  const [xPercent, setXPercent] = createSignal(0)
+  const [xPercent, setXPercent] = createSignal(
+    untrack(() => activePageIndex() * 100),
+  )
 
   createEffect(() => {
     const from = untrack(xPercent)
 
-    const to = animTo()
+    const to = activePageIndex() * 100
 
     if (from === to) {
       return
@@ -94,6 +94,10 @@ const NavBar = () => {
     onCleanup(() => animation.stop())
   })
 
+  function getActiveClass(index: number) {
+    return activePageIndex() === index ? 'navActive' : ''
+  }
+
   return (
     <nav class={containerStyle}>
       <div
@@ -101,17 +105,17 @@ const NavBar = () => {
         style={{ transform: `translate3d(${xPercent()}%, 0, 0)` }}
       />
 
-      <NavLink href="/" activeClass="navActive" end>
+      <Link href="/" class={getActiveClass(0)}>
         <Icon name="check" />
-      </NavLink>
+      </Link>
 
-      <NavLink href="add" class="add" activeClass="navActive">
+      <Link href={getQueryLink({ add: 'new' })} class={`add`}>
         <Icon name="add" />
-      </NavLink>
+      </Link>
 
-      <NavLink href="list" activeClass="navActive">
+      <Link href="list" class={getActiveClass(2)}>
         <Icon name="list" />
-      </NavLink>
+      </Link>
     </nav>
   )
 }

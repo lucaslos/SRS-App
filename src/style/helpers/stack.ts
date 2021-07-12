@@ -30,10 +30,10 @@ export const stack = ({
   align = 'center',
   gap,
 }: StackProps = {}) =>
-  injectCSS({
-    rowGap: gap,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: justifyValues[justify],
-    alignItems: alignValues[align],
-  });
+  `
+    row-gap: ${gap}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: ${justifyValues[justify]};
+    align-items: ${alignValues[align]};
+  `;
