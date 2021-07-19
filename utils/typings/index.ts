@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export type anyObj<T = any> = {
-  [key: string]: T;
-};
+  [key: string]: T
+}
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export type anyFunction = {
-  (...params: any): any;
-};
+  (...params: any): any
+}
 
 export type Serializable =
   | boolean
@@ -15,24 +15,26 @@ export type Serializable =
   | null
   | undefined
   | Serializable[]
-  | { [key: string]: Serializable };
+  | { [key: string]: Serializable }
 
-export type StrictEqualTypes = string | number | undefined;
+export type StrictEqualTypes = string | number | undefined
 
-export type PartialArray<T> = (T | undefined)[];
+export type PartialRecord<K extends keyof any, T> = {
+  [P in K]?: T
+}
 
-export type ObjectPropValue<T extends anyObj> = T[keyof T];
+export type ObjectPropValue<T extends anyObj> = T[keyof T]
 
-export type MutuallyAssignable<T extends U, U extends V, V = T> = void;
+export type MutuallyAssignable<T extends U, U extends V, V = T> = void
 
-export type Modify<T, R> = Omit<T, keyof R> & R;
+export type Modify<T, R> = Omit<T, keyof R> & R
 
 export type StrictPropertyCheck<
   T,
   TExpected,
-  TError = 'Type does not satisfies the expected shape'
+  TError = 'Type does not satisfies the expected shape',
 > = T extends TExpected
   ? Exclude<keyof T, keyof TExpected> extends never
     ? T
     : TError
-  : TExpected;
+  : TExpected

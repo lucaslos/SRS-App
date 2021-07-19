@@ -1,6 +1,6 @@
 import { pathIntegration, Router } from '@rturnq/solid-router'
 import Loading from '@src/components/Loading'
-import App from '@src/pages/App'
+import App from '@src/pages/main/App'
 import Login from '@src/pages/login/login'
 import { authStore } from '@src/stores/auth'
 import { GlobalStyles } from '@src/style/global'
@@ -22,6 +22,17 @@ const Root = () => {
               `}
             >
               <Loading />
+            </div>
+          </Match>
+
+          <Match when={authStore.authState === 'error'}>
+            <div
+              className={css`
+                ${fillContainer};
+                ${centerContent};
+              `}
+            >
+              {JSON.stringify(authStore.error)}
             </div>
           </Match>
 

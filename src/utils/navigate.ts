@@ -19,15 +19,14 @@ export function getQueryLink(query: Record<string, string | null>): string {
   return `${router.location.path}?${getSearchURL(query)}`
 }
 
-export function navigate(
-  path: string | null,
-  query?: Record<string, string | null>,
-) {
+export function useNavigate() {
   const router = useRouter()
 
-  if (path) {
-    router.push(path)
-  } else {
-    router.push(`${router.location.path}?${query ? getSearchURL(query) : ''}`)
+  return (path: string | null, query?: Record<string, string | null>) => {
+    if (path) {
+      router.push(path)
+    } else {
+      router.push(`${router.location.path}?${query ? getSearchURL(query) : ''}`)
+    }
   }
 }

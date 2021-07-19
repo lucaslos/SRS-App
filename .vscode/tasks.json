@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start-emulators",
+      "problemMatcher": [],
+      "label": "start emulators",
+      "detail": "firebase emulators:start --import=./saved-data"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "vite dev",
+      "detail": "vite dev"
+    },
+    {
+      "label": "Dev mode",
+      "problemMatcher": [],
+      "dependsOn": ["start emulators", "vite dev"]
+    }
+  ]
+}

@@ -10,11 +10,12 @@ export const colors = createThemeColors({
   warning: '#FDE047',
   error: '#E53558',
   success: '#6EE7B7',
+  white: '#fff',
 })
 
 export const gradients = {
   primary: `linear-gradient(90deg, #448cfd, #a746f5, #ec4899);`,
-  secondary: `linear-gradient(90deg, #448cfd, #4ba8fa, #51c1f7, #57d8f4, #5debf0, #63edde, #69eac9, #6ee7b7)`,
+  secondary: `linear-gradient(90deg, #448cfd , #6ee7b7)`,
 }
 
 export type ThemeColors = keyof typeof colors

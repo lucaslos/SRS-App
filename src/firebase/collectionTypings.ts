@@ -1,19 +1,18 @@
 export interface UsersCollection {
-  cards: Card[]
+  cards: FBCard[]
 }
 
 type StringDate = string
 
-export interface Card {
+export interface FBCard {
   front: string
-  id: string
   answer: string | null
   answer2: string | null
   createdAt: number
   tags: string[] | null
   lastReview: StringDate | null
   difficulty: number
-  repetitions: number
+  reviews: number
   wrongReviews: number
   draft: boolean
 }

@@ -1,16 +1,26 @@
 import { useRouter } from '@rturnq/solid-router'
 import ButtonElement from '@src/components/ButtonElement'
+import ModalContainer from '@src/components/ModalContainer'
 import { Switcher } from '@src/components/Switcher'
 import TextField from '@src/components/TextField'
-import { createCard } from '@src/stores/cards'
+import {
+  Card,
+  cardsStore,
+  createCard,
+  udpateCard,
+} from '@src/stores/cardsStore'
 import { gradientText } from '@src/style/helpers/gradientText'
 import { inline } from '@src/style/helpers/inline'
 import { responsiveWidth } from '@src/style/helpers/responsiveSize'
 import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
+import { useNavigate } from '@src/utils/navigate'
+import { iife } from '@utils/iife'
+import { typedObjectEntries, typedObjectKeys } from '@utils/typed'
+import { dequal } from 'dequal'
 import { createMemo, createSignal } from 'solid-js'
-import { createStore } from 'solid-js/store'
+import { createStore, unwrap } from 'solid-js/store'
 import { css } from 'solid-styled-components'
 
 const cardStyle = css`
@@ -24,13 +34,13 @@ const cardStyle = css`
   border-radius: 22px 22px 0 0;
   overflow: hidden;
 
-  .anim-from &,
-  .anim-exit & {
+  .modal-container-from &,
+  .modal-container-exit & {
     opacity: 0;
     transform: translate3d(0, 20px, 0);
   }
 
-  .anim-appear & {
+  .modal-container-appear & {
     opacity: 1;
   }
 
@@ -96,25 +106,43 @@ type FormData = {
   answer: string | null
   answer2: string | null
   tags: string[] | null
+  draft: boolean
 }
 
-interface AddCardProps {
+interface ModalContentProps {
   onClose: () => void
+  editCard?: string
 }
 
-const AddOrEditCard = (props: AddCardProps) => {
+const ModalContent = (props: ModalContentProps) => {
   const [keepOpenAfterSave, setKeepOpenAfterSave] = createSignal(false)
-  const [forceDraft, setForceDraft] = createSignal<boolean>(false)
   const router = useRouter()
 
-  const initialValues: FormData = {
-    front: null,
-    answer: null,
-    answer2: null,
-    tags: null,
-  }
+  const editCard = iife(() => {
+    if (!props.editCard) return false
 
-  const [formData, setFormData] = createStore<FormData>(initialValues)
+    const cardToEdit = cardsStore.cards.byId[props.editCard]
+
+    return cardToEdit || false
+  })
+
+  const initialValues: FormData = editCard
+    ? unwrap({
+        front: editCard.front,
+        answer: editCard.answer,
+        answer2: editCard.answer2,
+        tags: editCard.tags,
+        draft: editCard.draft,
+      })
+    : {
+        front: null,
+        answer: null,
+        answer2: null,
+        tags: null,
+        draft: false,
+      }
+
+  const [formData, setFormData] = createStore<FormData>({ ...initialValues })
 
   function setField<T extends keyof FormData>(field: T, value: FormData[T]) {
     setFormData(field, normalizeValue(value) as any)
@@ -123,19 +151,39 @@ const AddOrEditCard = (props: AddCardProps) => {
   const isDraft = createMemo((): boolean => {
     if (formData.answer === null) return true
 
-    return forceDraft()
+    return formData.draft
   })
 
-  const formIsDisabled = createMemo((): boolean => {
+  const saveIsDisabled = createMemo((): boolean => {
     if (formData.front === null) return true
 
     if (formData.answer2 && !formData.answer) return true
+
+    if (editCard) {
+      return dequal(initialValues, formData)
+    }
 
     return false
   })
 
   function onClickSave() {
-    if (formIsDisabled()) return
+    if (saveIsDisabled()) return
+
+    if (editCard) {
+      const changedValues: Partial<Card> = {}
+
+      for (const [key, value] of typedObjectEntries(formData)) {
+        if (!dequal(initialValues[key], value)) {
+          changedValues[key] = value as any
+        }
+      }
+
+      void udpateCard(editCard.id, changedValues)
+
+      props.onClose()
+
+      return
+    }
 
     void createCard({
       ...formData,
@@ -145,7 +193,7 @@ const AddOrEditCard = (props: AddCardProps) => {
       difficulty: 0,
       wrongReviews: 0,
       createdAt: Date.now(),
-      repetitions: 0,
+      reviews: 0,
     })
 
     if (keepOpenAfterSave()) {
@@ -163,13 +211,13 @@ const AddOrEditCard = (props: AddCardProps) => {
       <div className={contentStyle}>
         <header>
           <h1>
-            <span>Add card</span>
+            <span>{editCard ? `Edit card` : 'Add card'}</span>
           </h1>
 
           <Switcher
             label="Draft"
             checked={isDraft()}
-            onChange={(checked) => setForceDraft(checked)}
+            onChange={(checked) => setField('draft', checked)}
           />
         </header>
 
@@ -232,13 +280,33 @@ const AddOrEditCard = (props: AddCardProps) => {
       <footer>
         <ButtonElement onClick={() => props.onClose()}>Cancel</ButtonElement>
         <ButtonElement
-          disabled={formIsDisabled()}
+          disabled={saveIsDisabled()}
           onClick={() => onClickSave()}
         >
-          Add {isDraft() ? 'draft' : 'card'}
+          {editCard ? 'Save' : `Add ${isDraft() ? 'draft' : 'card'}`}
         </ButtonElement>
       </footer>
     </div>
+  )
+}
+
+const AddOrEditCard = () => {
+  const navigate = useNavigate()
+
+  const router = useRouter()
+
+  const showAddModal = createMemo(
+    () => !!router.query.add || !!router.query.edit,
+  )
+
+  function close() {
+    navigate(null)
+  }
+
+  return (
+    <ModalContainer show={showAddModal()} onClose={close}>
+      <ModalContent onClose={close} editCard={router.query.edit} />
+    </ModalContainer>
   )
 }
 

@@ -151,6 +151,7 @@ module.exports = {
     '@typescript-eslint/prefer-interface': OFF,
     '@typescript-eslint/no-explicit-any': OFF,
     '@typescript-eslint/no-use-before-define': OFF,
+    '@typescript-eslint/no-unused-vars': OFF,
     // '@typescript-eslint/semi': OFF,
     '@typescript-eslint/no-non-null-assertion': OFF,
     '@typescript-eslint/explicit-module-boundary-types': OFF,

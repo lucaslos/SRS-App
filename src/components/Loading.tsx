@@ -22,9 +22,7 @@ const containerStyle = css`
   }
 `
 
-interface LoadingProps {}
-
-const Loading = (props: LoadingProps) => {
+const Loading = () => {
   return (
     <div class={containerStyle}>
       <Logo />

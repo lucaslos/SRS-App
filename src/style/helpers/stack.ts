@@ -20,7 +20,6 @@ export type StackProps = {
   justify?: keyof typeof justifyValues;
   align?: keyof typeof alignValues;
   gap?: string | number;
-  preventShrink?: boolean;
 };
 
 // TODO: change spacing to gap

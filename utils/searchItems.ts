@@ -1,30 +1,26 @@
-import { searchQueryMatch } from '@utils/searchQueryMatch';
-import { sortByPriority } from '@utils/simpleSort';
+import { searchQueryMatch } from '@utils/searchQueryMatch'
+import { sortByPriority } from '@utils/simpleSort'
 
 export function searchItems<T>({
   items,
   searchQuery,
   getStringToMatch,
 }: {
-  items: T[];
-  getStringToMatch: (item: T) => string;
-  searchQuery: string;
+  items: T[]
+  getStringToMatch: (item: T) => string
+  searchQuery: string
 }) {
-  const filteredItems = items.reduce((acc, item) => {
-    const search = searchQueryMatch(searchQuery, getStringToMatch(item));
+  const searchedItems: { item: T; matchedIndex: number }[] = []
 
-    if (!search.matched) return acc;
+  items.forEach((item) => {
+    const search = searchQueryMatch(searchQuery, getStringToMatch(item))
 
-    return [
-      ...acc,
-      {
-        item,
-        search,
-      },
-    ];
-  }, []);
+    if (search.matched) {
+      searchedItems.push({ item, matchedIndex: search.matchedIndex })
+    }
+  })
 
-  return sortByPriority(filteredItems, (field) => field.search.matchedIndex, {
+  return sortByPriority(searchedItems, (item) => item.matchedIndex, {
     reverse: true,
-  }).map(({ item }) => item);
+  }).map(({ item }) => item)
 }

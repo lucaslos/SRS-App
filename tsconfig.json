@@ -4,7 +4,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "jest"],
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "jsxImportSource": "solid-js",

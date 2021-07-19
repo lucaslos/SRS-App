@@ -1,4 +1,4 @@
-export function removeDuplicatedFromArray<T extends any>(
+export function filterUnique<T extends any>(
   arr: T[],
   referenceSelector: (item: T) => any,
 ) {
