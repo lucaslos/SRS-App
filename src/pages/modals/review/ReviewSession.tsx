@@ -1,6 +1,7 @@
 import ButtonElement from '@src/components/ButtonElement'
 import Icon from '@src/components/Icon'
 import ReviewCard from '@src/pages/modals/review/Card'
+import ReviewTopBar from '@src/pages/modals/review/ReviewTopBar'
 import { cardsStore } from '@src/stores/cardsStore'
 import {
   closeReview,
@@ -10,8 +11,9 @@ import {
 } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { fillContainer } from '@src/style/helpers/fillContainer'
+import { inline } from '@src/style/helpers/inline'
 import { transition } from '@src/style/helpers/transition'
-import { gradients } from '@src/style/theme'
+import { colors, gradients } from '@src/style/theme'
 import { createSet } from '@src/utils/hooks/createSet'
 import { useAnimateMount } from '@src/utils/hooks/useAnimateMount'
 import { clampMin } from '@utils/clamp'
@@ -24,10 +26,7 @@ const containerStyle = css`
   display: grid;
   ${fillContainer};
   grid-template-columns: 100%;
-  grid-template-rows: 50px 1fr 80px;
-
-  .top-bar {
-  }
+  grid-template-rows: auto 1fr 80px;
 
   .cards-container {
     position: relative;
@@ -107,10 +106,14 @@ const ReviewSession = () => {
     ]
   })
 
+  function getActiveItem() {
+    return visibleCards()[1]
+  }
+
   const flippedCards = createSet<ReviewItem>()
 
   function goBack() {
-    const activeCardIsFlipped = flippedCards.has(visibleCards()[1])
+    const activeCardIsFlipped = flippedCards.has(getActiveItem())
 
     flippedCards.clear()
 
@@ -121,13 +124,10 @@ const ReviewSession = () => {
 
   return (
     <div class={cx(containerStyle, reviewIsInProgres.className())}>
-      <div class="top-bar">
-        <ButtonElement></ButtonElement>
-
-        <ButtonElement onClick={() => closeReview()}>
-          <Icon name="close" />
-        </ButtonElement>
-      </div>
+      <ReviewTopBar
+        activeItem={getActiveItem()}
+        activeIsFlipped={flippedCards.has(getActiveItem())}
+      />
 
       <div class="cards-container">
         <For each={visibleCards()}>

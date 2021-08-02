@@ -128,6 +128,10 @@ module.exports = {
         message:
           '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
       },
+      {
+        selector: 'JSXAttribute > JSXIdentifier[name="className"]',
+        message: 'no need to use className here',
+      },
     ],
 
     'jsx-a11y/no-static-element-interactions': OFF,

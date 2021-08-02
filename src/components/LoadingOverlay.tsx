@@ -11,7 +11,9 @@ const containerStyle = css`
   background: ${colors.bgPrimary.alpha(0.1)};
 `
 
-const LoadingOverlay = (props: { class?: string }) => {
+type LoadingOverlayProps = { class?: string }
+
+const LoadingOverlay = (props: LoadingOverlayProps) => {
   return (
     <div class={cx(containerStyle, props.class)}>
       <Loading />

@@ -1,11 +1,21 @@
 import ButtonElement from '@src/components/ButtonElement'
+import Icon from '@src/components/Icon'
 import { cardBaseStyle } from '@src/pages/modals/review/cardStyles'
+import { Card, cardsStore } from '@src/stores/cardsStore'
 import { answerActiveCard, ReviewItem } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
+import { inline } from '@src/style/helpers/inline'
+import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
+import { colors, gradients } from '@src/style/theme'
 import { useSpring } from '@src/utils/hooks/useSpring'
 import { cx } from '@utils/cx'
+import { createMemo, createSignal } from 'solid-js'
+import snarkdown from 'snarkdown'
 import { css } from 'solid-styled-components'
+import { gradientText } from '@src/style/helpers/gradientText'
+import { interpolate } from '@utils/interpolate'
+import { clamp } from '@utils/clamp'
 
 const containerStyle = css`
   position: absolute;
@@ -24,22 +34,176 @@ const containerStyle = css`
   .front,
   .back {
     will-change: transform;
+    overflow: hidden;
 
     &,
     * {
       backface-visibility: hidden;
     }
   }
+`
 
-  .front {
-    transform: translate3d(0, 0, var(--z-pos)) rotateX(var(--rotation));
+const attentionRequiredTagStyle = css`
+  ${inline({ gap: 8 })};
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  background: ${gradients.red};
+  color: ${colors.bgPrimary.var};
+  --icon-size: 18px;
+`
+
+const frontStyle = css`
+  cursor: pointer;
+  transform: translate3d(0, 0, var(--z-pos)) rotateX(var(--rotation));
+  padding: 16px;
+  ${stack()};
+
+  .content {
+    margin-block: auto;
+    padding: 28px 36px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-weight: 350;
+
+    strong em {
+      background: ${gradients.primary};
+      padding: 1px 8px 2px;
+      border-radius: 4px;
+      font-weight: 450;
+      white-space: break-spaces;
+    }
   }
 
-  .back {
-    transform: translate3d(0, 0, var(--z-pos))
-      rotateX(calc(var(--rotation) - 180deg));
+  .tags {
+    ${inline({ justify: 'center' })};
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .tag {
+      background: ${colors.primary.alpha(0.16)};
+      color: ${colors.primary.var};
+      height: 34px;
+      ${centerContent};
+      padding: 0 16px;
+      border-radius: 34px;
+      letter-spacing: 0.01em;
+
+      &.stat {
+        background: ${gradients.secondary};
+        color: ${colors.bgPrimary.var};
+        font-weight: 600;
+      }
+    }
   }
 `
+
+const backStyle = css`
+  transform: translate3d(0, 0, var(--z-pos))
+    rotateX(calc(var(--rotation) - 180deg));
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  padding: 0;
+
+  .answer-1 {
+    grid-row: 2;
+    padding: 28px 36px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-weight: 350;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .show-answer-2,
+  .answer-2 {
+    grid-row: 3;
+    background: ${colors.secondary.alpha(0.22)};
+    padding: 12px 16px;
+    margin: 0 20px;
+    border-radius: 18px;
+    letter-spacing: 0.01em;
+    ${transition()};
+    margin-bottom: 22px;
+  }
+
+  .show-answer-2 {
+    font-size: 18px;
+    color: ${colors.secondary.var};
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    &:hover {
+      background: ${colors.secondary.alpha(0.32)};
+    }
+  }
+
+  .answer-2 {
+    line-height: 1.5;
+    font-weight: 350;
+  }
+
+  .buttons {
+    grid-row: 4;
+    ${inline()};
+
+    button {
+      padding: 0 8px;
+      height: 66px;
+      width: 60px;
+      flex-grow: 1;
+      position: relative;
+      ${inline()};
+      padding: 0 32px;
+      ${transition()};
+
+      &:disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .wrong {
+      color: ${colors.secondary.var};
+    }
+
+    .hard {
+      justify-content: center;
+      color: ${colors.primary.var};
+    }
+
+    .success,
+    .hard {
+      --icon-size: 32px;
+    }
+
+    .success {
+      justify-content: flex-end;
+      color: ${colors.success.var};
+
+      .icon {
+        &:nth-child(1) {
+          margin-right: -25px;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+`
+
+interface CardData extends Partial<Card> {
+  tags: string[]
+  frontFontSize: string
+  answerFontSize: string
+  wrongReviews: number
+  difficulty: number
+}
 
 export interface ReviewCardProps {
   reviewItem: ReviewItem
@@ -49,6 +213,42 @@ export interface ReviewCardProps {
 }
 
 const ReviewCard = (props: ReviewCardProps) => {
+  const [showAnswer2, setShowAnswer2] = createSignal(false)
+
+  const card = createMemo(() => {
+    let cardData: CardData = {
+      tags: [],
+      frontFontSize: getTextSize(null),
+      answerFontSize: getTextSize(null),
+      wrongReviews: 0,
+      difficulty: 0,
+    }
+
+    const itemCard = cardsStore.cards.byId[props.reviewItem.cardId] ?? null
+
+    if (!itemCard) return cardData
+
+    cardData = {
+      ...cardData,
+      ...itemCard,
+      tags: itemCard.tags ? itemCard.tags : [],
+    }
+
+    cardData.frontFontSize = getTextSize(itemCard.front)
+    cardData.front = snarkdown(itemCard.front)
+
+    if (itemCard.answer) {
+      cardData.answerFontSize = getTextSize(itemCard.answer)
+      cardData.answer = snarkdown(itemCard.answer)
+    }
+
+    if (itemCard.answer2) {
+      cardData.answer2 = snarkdown(itemCard.answer2)
+    }
+
+    return cardData
+  })
+
   const zPos = useSpring(() => props.pos * 502, {
     damping: 26,
     stiffness: 100,
@@ -58,6 +258,14 @@ const ReviewCard = (props: ReviewCardProps) => {
     damping: 26,
     stiffness: 130,
   })
+
+  const attentionRequiredTag = (
+    <Show when={card().wrongReviews > 4 || card().difficulty > 0.4}>
+      <div class={attentionRequiredTagStyle}>
+        <Icon name="warning" /> <span>Attention Required</span>
+      </div>
+    </Show>
+  )
 
   return (
     <div
@@ -71,25 +279,79 @@ const ReviewCard = (props: ReviewCardProps) => {
         flipped: props.isFlipped,
       }}
     >
-      <div class={cx('front', cardBaseStyle)} onClick={() => props.flipCard()}>
-        {props.reviewItem.cardId}
+      <div
+        class={cx('front', frontStyle, cardBaseStyle)}
+        onClick={() => props.flipCard()}
+      >
+        {attentionRequiredTag}
+
+        <div
+          class="content"
+          style={{ 'font-size': card().frontFontSize }}
+          innerHTML={card().front}
+        />
+
+        <div class="tags">
+          <For each={card().tags}>{(tag) => <div class="tag">{tag}</div>}</For>
+
+          <div class="tag stat">TOP 1033</div>
+        </div>
       </div>
 
-      <div class={cx('back', cardBaseStyle)}>
-        {props.reviewItem.cof}
+      <div class={cx('back', backStyle, cardBaseStyle)}>
+        {attentionRequiredTag}
 
-        <br />
+        <div
+          class="answer-1"
+          style={{ 'font-size': card().answerFontSize }}
+          innerHTML={card().answer ?? ''}
+        />
 
-        <ButtonElement onClick={() => answerActiveCard('wrong')}>NO</ButtonElement>
-        <br />
+        <Show when={card().answer2 && !showAnswer2()}>
+          <ButtonElement
+            class="show-answer-2"
+            onClick={() => setShowAnswer2(true)}
+          >
+            Show 2nd Answer
+          </ButtonElement>
+        </Show>
 
-        <ButtonElement onClick={() => answerActiveCard('hard')}>SO SO</ButtonElement>
+        <Show when={showAnswer2()}>
+          <div class="answer-2" innerHTML={card().answer2!} />
+        </Show>
 
-        <br />
-        <ButtonElement onClick={() => answerActiveCard('success')}>OK</ButtonElement>
+        <div class="buttons">
+          <ButtonElement
+            class="wrong"
+            onClick={() => answerActiveCard('wrong')}
+          >
+            <Icon name="close" />
+          </ButtonElement>
+
+          <ButtonElement class="hard" onClick={() => answerActiveCard('hard')}>
+            <Icon name="check" />
+          </ButtonElement>
+
+          <ButtonElement
+            class="success"
+            disabled={showAnswer2()}
+            onClick={() => answerActiveCard('success')}
+          >
+            <Icon name="check" />
+            <Icon name="check" />
+          </ButtonElement>
+        </div>
       </div>
     </div>
   )
 }
 
 export default ReviewCard
+
+function getTextSize(text: string | null | undefined): string {
+  if (!text) return '28px'
+
+  const fontSize = interpolate(text.length, [150, 300], [28, 18])
+
+  return `${fontSize}px`
+}

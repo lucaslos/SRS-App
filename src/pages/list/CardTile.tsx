@@ -31,6 +31,7 @@ const containerStyle = css`
     ${stack({ justify: 'center', align: 'stretch' })};
     letter-spacing: 0.04em;
     text-align: center;
+    padding: 0 8px;
 
     > div {
       ${injectCSS(ellipsis())};

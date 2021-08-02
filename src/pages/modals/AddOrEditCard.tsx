@@ -9,13 +9,18 @@ import {
   createCard,
   udpateCard,
 } from '@src/stores/cardsStore'
+import { reviewStore } from '@src/stores/reviewStore'
+import { gradientBorder } from '@src/style/helpers/gradientBorder'
 import { gradientText } from '@src/style/helpers/gradientText'
 import { inline } from '@src/style/helpers/inline'
 import { responsiveWidth } from '@src/style/helpers/responsiveSize'
 import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
+import { getHighlightedText } from '@src/utils/getHighlightedText'
 import { useNavigate } from '@src/utils/navigate'
+import { openTranslationPopup, Translators } from '@src/utils/translators'
+import { getRegexMatches } from '@utils/getRegexMatches'
 import { iife } from '@utils/iife'
 import { typedObjectEntries, typedObjectKeys } from '@utils/typed'
 import { dequal } from 'dequal'
@@ -99,6 +104,61 @@ const contentStyle = css`
   .fields-container {
     ${stack({ gap: 20 })};
   }
+
+  .section {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    ${stack({ align: 'stretch' })};
+
+    h1 {
+      text-transform: uppercase;
+      color: ${colors.primary.var};
+      letter-spacing: 0.22em;
+      margin-bottom: 16px;
+      margin-left: 12px;
+
+      &.secondary {
+        color: ${colors.secondary.var};
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .translate-buttons {
+    ${inline({ gap: 10 })};
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    button {
+      ${gradientBorder({
+        gradient: gradients.primary,
+        background: colors.bgSecondary.var,
+        borderSize: 1,
+      })};
+      border-radius: 32px;
+      height: 32px;
+      font-size: 14px;
+      padding: 0 16px;
+      letter-spacing: 0.04em;
+
+      &::before {
+        ${transition()};
+      }
+
+      &:hover::before {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .review-data-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 12px;
+  }
 `
 
 type FormData = {
@@ -106,6 +166,10 @@ type FormData = {
   answer: string | null
   answer2: string | null
   tags: string[] | null
+  lastReview: string | null
+  difficulty: number
+  reviews: number
+  wrongReviews: number
   draft: boolean
 }
 
@@ -127,19 +191,27 @@ const ModalContent = (props: ModalContentProps) => {
   })
 
   const initialValues: FormData = editCard
-    ? unwrap({
+    ? {
         front: editCard.front,
         answer: editCard.answer,
         answer2: editCard.answer2,
         tags: editCard.tags,
         draft: editCard.draft,
-      })
+        lastReview: editCard.lastReview,
+        difficulty: editCard.difficulty || 0,
+        reviews: editCard.reviews || 0,
+        wrongReviews: editCard.wrongReviews || 0,
+      }
     : {
         front: null,
         answer: null,
         answer2: null,
         tags: null,
         draft: false,
+        lastReview: null,
+        difficulty: 0,
+        reviews: 0,
+        wrongReviews: 0,
       }
 
   const [formData, setFormData] = createStore<FormData>({ ...initialValues })
@@ -172,7 +244,16 @@ const ModalContent = (props: ModalContentProps) => {
     if (editCard) {
       const changedValues: Partial<Card> = {}
 
-      for (const [key, value] of typedObjectEntries(formData)) {
+      const normalizedValues: Omit<Card, 'id' | 'createdAt'> = {
+        ...formData,
+        front: formData.front || '',
+        difficulty: formData.difficulty || 0,
+        wrongReviews: formData.wrongReviews || 0,
+        reviews: formData.reviews || 0,
+        lastReview: formData.lastReview || null,
+      }
+
+      for (const [key, value] of typedObjectEntries(normalizedValues)) {
         if (!dequal(initialValues[key], value)) {
           changedValues[key] = value as any
         }
@@ -206,9 +287,28 @@ const ModalContent = (props: ModalContentProps) => {
     }
   }
 
+  function getTextFieldProps<T extends keyof FormData>(field: T) {
+    const isNumber = typeof initialValues[field] === 'number'
+
+    return {
+      defaultValue: initialValues[field] as string,
+      onChange: (value: string) => {
+        setField(field, (isNumber ? Number(value) || 0 : value) as any)
+      },
+    }
+  }
+
+  function openTranslation(translator: Translators) {
+    const text = formData.front
+
+    if (!text) return
+
+    openTranslationPopup(translator, getHighlightedText(text))
+  }
+
   return (
     <div class={cardStyle}>
-      <div className={contentStyle}>
+      <div class={contentStyle}>
         <header>
           <h1>
             <span>{editCard ? `Edit card` : 'Add card'}</span>
@@ -221,9 +321,10 @@ const ModalContent = (props: ModalContentProps) => {
           />
         </header>
 
-        <div className="fields-container">
+        <div class="fields-container">
           <TextField
             multiline
+            highlightText
             defaultValue={initialValues.front}
             onChange={(value) => {
               setField('front', value)
@@ -232,6 +333,22 @@ const ModalContent = (props: ModalContentProps) => {
           />
 
           {/* TODO: translation buttons */}
+
+          <div class="section">
+            <h1>Open translations</h1>
+
+            <div class="translate-buttons">
+              <ButtonElement onClick={() => openTranslation('cambridge')}>
+                Cambridge
+              </ButtonElement>
+              <ButtonElement onClick={() => openTranslation('reversoContext')}>
+                Reverso Context
+              </ButtonElement>
+              <ButtonElement onClick={() => openTranslation('googleTranslate')}>
+                Google Translate
+              </ButtonElement>
+            </div>
+          </div>
 
           <TextField
             multiline
@@ -250,8 +367,6 @@ const ModalContent = (props: ModalContentProps) => {
             label="Answer 2"
           />
 
-          {/* TODO: stats */}
-
           <TextField
             defaultValue={initialValues.tags?.join(', ')}
             onChange={(value) => {
@@ -264,7 +379,46 @@ const ModalContent = (props: ModalContentProps) => {
               )
             }}
             label="Tags"
+            placeholder="Separeted by ,"
           />
+
+          <Show when={editCard}>
+            <div class="section">
+              <h1 class="secondary">Review data</h1>
+
+              <Show when={reviewStore.status === 'closed'}>
+                <div class="review-data-fields">
+                  <TextField
+                    {...getTextFieldProps('wrongReviews')}
+                    label="Wrong views"
+                    type="number"
+                    step={1}
+                    min={0}
+                  />
+                  <TextField
+                    {...getTextFieldProps('reviews')}
+                    label="Reviews"
+                    type="number"
+                    step={1}
+                    min={0}
+                  />
+                  <TextField
+                    {...getTextFieldProps('difficulty')}
+                    label="Difficulty"
+                    type="number"
+                    step={0.1}
+                    min={0}
+                  />
+                  <TextField
+                    {...getTextFieldProps('lastReview')}
+                    label="Last Review"
+                    type="date"
+                  />
+                </div>
+              </Show>
+              {/* TODO: stats */}
+            </div>
+          </Show>
 
           <Switcher
             class={css`
@@ -313,7 +467,7 @@ const AddOrEditCard = () => {
 export default AddOrEditCard
 
 function normalizeValue<T>(value: T) {
-  if (!value) return null
+  if (value === undefined) return null
 
   if (typeof value === 'string' && value.trim() === '') return null
 

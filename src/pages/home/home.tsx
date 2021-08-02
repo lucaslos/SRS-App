@@ -96,11 +96,11 @@ const Home = () => {
 
   return (
     <div class={containerStyle}>
-      <Match when={cardsStore.status === 'loading'}>
-        <LoadingOverlay />
-      </Match>
-
       <Switch>
+        <Match when={cardsStore.status === 'loading'}>
+          <LoadingOverlay />
+        </Match>
+
         <Match when={cardsToReview().review + cardsToReview().new === 0}>
           <div className="empty-state">
             <span>Nothing to review</span>

@@ -18,8 +18,11 @@ const containerStyle = css`
 const bgStyle = css`
   ${fillContainer}
   ${transition()};
-  backdrop-filter: blur(20px);
-  background: ${colors.bgPrimary.alpha(0.6)};
+
+  &:not(.disableBgStyle) {
+    background: ${colors.bgPrimary.alpha(0.6)};
+    backdrop-filter: blur(20px);
+  }
 
   .modal-container-from &,
   .modal-container-exit & {
@@ -35,16 +38,25 @@ interface AddCardProps {
   show: boolean
   onClose?: () => any
   children: JSX.Element
+  animClass?: string
+  disableBgStyle?: boolean
 }
 
 const ModalContainer = (props: AddCardProps) => {
-  const animModal = useAnimateMount(() => props.show, 'modal-container')
+  const animModal = useAnimateMount(
+    () => props.show,
+    props.animClass ?? 'modal-container',
+  )
 
   return (
     <Portal mount={document.getElementById('modals')!}>
       <Show when={animModal.mount()}>
         <div class={cx(containerStyle, animModal.className())}>
-          <div className={bgStyle} onClick={props.onClose} />
+          <div
+            class={bgStyle}
+            classList={{ disableBgStyle: props.disableBgStyle }}
+            onClick={props.onClose}
+          />
 
           {props.children}
         </div>

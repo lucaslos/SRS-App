@@ -1,9 +1,9 @@
-import { clampRange } from '@utils/clamp';
+import { clampMax, clampMin, clampRange } from '@utils/clamp'
 
-type Interval = [number, number];
+type Interval = [number, number]
 
 function mod(n: number, m: number) {
-  return ((n % m) + m) % m;
+  return ((n % m) + m) % m
 }
 
 export function cyclicLerp(
@@ -14,41 +14,49 @@ export function cyclicLerp(
   return (
     mod((input - inStart) / (inEnd - inStart), 1) * (outEnd - outStart) +
     outStart
-  );
+  )
 }
 
 function findRange(input: number, inputRange: number[]) {
   for (let i = 1; i < inputRange.length - 1; i++) {
-    if (inputRange[i] >= input) return i - 1;
+    if (inputRange[i]! >= input) return i - 1
   }
 
-  return inputRange.length - 2;
+  return inputRange.length - 2
 }
 
 export function interpolate(
   input: number,
   inputRange: number[],
   outputRange: number[],
-  clamp = true,
+  clamp: boolean | 'end' | 'start' = true,
 ) {
   if (import.meta.env.DEV) {
     if (inputRange.length !== outputRange.length) {
       throw new Error(
         'Interpolate error: Input range and output range must have the same lenght',
-      );
+      )
     }
   }
 
-  const range = findRange(input, inputRange);
-  const inStart = inputRange[range];
-  const inEnd = inputRange[range + 1];
-  const outStart = outputRange[range];
-  const outEnd = outputRange[range + 1];
+  const range = findRange(input, inputRange)
+  const inStart = inputRange[range]!
+  const inEnd = inputRange[range + 1]!
+  const outStart = outputRange[range]!
+  const outEnd = outputRange[range + 1]!
 
   const interpolatedValue =
-    ((input - inStart) / (inEnd - inStart)) * (outEnd - outStart) + outStart;
+    ((input - inStart) / (inEnd - inStart)) * (outEnd - outStart) + outStart
 
-  return clamp
+  if (clamp === 'start') {
+    return clampMin(interpolatedValue, outStart)
+  }
+
+  if (clamp === 'end') {
+    return clampMax(interpolatedValue, outEnd)
+  }
+
+  return clamp === true
     ? clampRange(interpolatedValue, outStart, outEnd)
-    : interpolatedValue;
+    : interpolatedValue
 }

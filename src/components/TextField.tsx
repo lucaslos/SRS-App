@@ -1,6 +1,7 @@
+import ButtonElement from '@src/components/ButtonElement'
 import { gradientText } from '@src/style/helpers/gradientText'
 import { stack } from '@src/style/helpers/stack'
-import { colors } from '@src/style/theme'
+import { colors, gradients } from '@src/style/theme'
 import { autoIncrementId } from '@utils/autoIncrementId'
 import { cx } from '@utils/cx'
 import { JSX } from 'solid-js/jsx-runtime'
@@ -21,9 +22,11 @@ const containerStyle = css`
 
   .inputContainer {
     background: ${colors.bgPrimary.var};
-    border-radius: 12px;
+    border-radius: 14px;
     margin-top: -8px;
     width: 100%;
+    overflow: hidden;
+    ${stack({ align: 'left' })};
   }
 
   input,
@@ -40,22 +43,53 @@ const containerStyle = css`
     &:focus {
       outline: 0;
     }
+
+    &::placeholder {
+      opacity: 0.3;
+      color: ${colors.primary.var};
+    }
+  }
+
+  input {
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      margin-right: 10px;
+    }
   }
 
   textarea {
     resize: vertical;
     min-height: 100px;
     padding: 18px;
+
+    &::-webkit-resizer {
+      display: none;
+    }
+  }
+
+  .highlight-button {
+    align-self: flex-end;
+    height: 32px;
+    font-size: 14px;
+    padding: 0 14px;
+    letter-spacing: 0.06em;
+    background: ${gradients.primary};
+    border-top-left-radius: 16px;
   }
 `
 
 interface TexFieldProps {
   class?: string
   multiline?: boolean
-  defaultValue?: string | null
+  defaultValue?: string | number | null
   onChange: (value: string) => any
   label?: string
+  highlightText?: boolean
   placeholder?: string
+  type?: 'number' | 'date' | 'text'
+  step?: number
+  min?: number
+  max?: number
 }
 
 const TextField = (props: TexFieldProps) => {
@@ -66,11 +100,38 @@ const TextField = (props: TexFieldProps) => {
   function getInputProps() {
     return {
       id: inputId,
+      type: props.type ?? 'text',
       value: defaultValue ?? '',
+      step: props.step,
+      min: props.min,
+      max: props.max,
+      placeholder: props.placeholder,
       onInput: (e: any) => {
         props.onChange(e.currentTarget.value)
       },
     }
+  }
+
+  function highlightText() {
+    const input = document.getElementById(inputId) as HTMLInputElement
+
+    if (!input) return
+
+    const { value, selectionStart, selectionEnd } = input
+
+    if (selectionStart === null || selectionEnd === null) return
+
+    const selectedText = value.substring(selectionStart, selectionEnd).trimEnd()
+
+    const newValue = `${value.substring(
+      0,
+      selectionStart,
+    )}__*${selectedText}*__${value.substring(
+      selectionStart + selectedText.length,
+    )}`
+
+    input.value = newValue
+    props.onChange(newValue)
   }
 
   return (
@@ -83,7 +144,16 @@ const TextField = (props: TexFieldProps) => {
         {props.multiline ? (
           <textarea {...getInputProps()} />
         ) : (
-          <input type="text" {...getInputProps()} />
+          <input {...getInputProps()} />
+        )}
+
+        {props.highlightText && (
+          <ButtonElement
+            class="highlight-button"
+            onClick={() => highlightText()}
+          >
+            Highlight Text
+          </ButtonElement>
         )}
       </div>
     </div>

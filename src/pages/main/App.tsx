@@ -30,9 +30,9 @@ const App = () => {
         </MatchRoute>
       </Switch>
 
+      <Review />
       <AddOrEditCard />
       <DeleteCard />
-      <Review />
 
       <NavBar />
     </div>
