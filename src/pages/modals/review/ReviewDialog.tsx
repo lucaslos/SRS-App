@@ -85,7 +85,7 @@ const ReviewDialog = () => {
       seconds: estimatedSecondsPerCard * reviewStore.numOfCards,
     })
 
-    return pipe(duration.total({ unit: 'minutes' }), (v) => round(v, 10))
+    return pipe(duration.total({ unit: 'minutes' }), (v) => round(v, 2))
   }
 
   const isNew = () => reviewStore.type === 'reviewNew'
@@ -98,7 +98,7 @@ const ReviewDialog = () => {
       </h1>
       <h2>Est. time {estTime()} min</h2>
 
-      <div className="buttons-container">
+      <div class="buttons-container">
         <ButtonElement onClick={() => closeReview()}>Cancel</ButtonElement>
         <ButtonElement
           class="error"

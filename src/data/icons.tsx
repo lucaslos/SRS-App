@@ -7,6 +7,9 @@ import more from '@src/assets/icons/more.svg?raw'
 import edit from '@src/assets/icons/edit.svg?raw'
 import external from '@src/assets/icons/external.svg?raw'
 import warning from '@src/assets/icons/warning.svg?raw'
+import arrowLeft from '@src/assets/icons/left-arrow.svg?raw'
+import sound from '@src/assets/icons/sound.svg?raw'
+import doubleCheck from '@src/assets/icons/double-check.svg?raw'
 
 export type Icons =
   | 'add'
@@ -17,7 +20,10 @@ export type Icons =
   | 'warning'
   | 'close'
   | 'more'
+  | 'arrow-left'
   | 'edit'
+  | 'sound'
+  | 'double-check'
 
 export const iconsSvg: Record<Icons, string> = {
   add,
@@ -29,4 +35,7 @@ export const iconsSvg: Record<Icons, string> = {
   warning,
   edit,
   more,
+  sound,
+  'arrow-left': arrowLeft,
+  'double-check': doubleCheck,
 }

@@ -11,6 +11,7 @@ import { inline } from '@src/style/helpers/inline'
 import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
+import { useNavigate } from '@src/utils/navigate'
 import { signOut } from 'firebase/auth'
 import { createSignal } from 'solid-js'
 import { css, styled } from 'solid-styled-components'
@@ -97,6 +98,8 @@ const menuStyle = css`
 const AppHeader = () => {
   const [menuIsOpen, setMenuIsOpen] = createSignal(false)
 
+  const navigate = useNavigate()
+
   return (
     <header class={containerStyle}>
       <div class="logo-container">
@@ -114,8 +117,15 @@ const AppHeader = () => {
         onClose={() => setMenuIsOpen(false)}
       >
         <div class={menuStyle} onClick={() => setMenuIsOpen(false)}>
-          <div className="optionsContainer">
-            <ButtonElement class="delete" onClick={() => signOut(auth)}>
+          <div class="optionsContainer">
+            <ButtonElement
+              class="delete"
+              onClick={() => navigate(null, { import: '1' })}
+            >
+              <span>Import data</span>
+            </ButtonElement>
+
+            <ButtonElement onClick={() => signOut(auth)}>
               <span>Logout</span>
             </ButtonElement>
           </div>

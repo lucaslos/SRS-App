@@ -131,6 +131,7 @@ export function processReview(reviewItems: ReviewItem[]): {
     endTime: Temporal.now.instant().epochMilliseconds,
     wrong: 0,
     hard: 0,
+    cards: reviewItems.length,
     success: 0,
   }
 

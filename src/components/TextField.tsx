@@ -24,6 +24,7 @@ const containerStyle = css`
     background: ${colors.bgPrimary.var};
     border-radius: 14px;
     margin-top: -8px;
+    position: relative;
     width: 100%;
     overflow: hidden;
     ${stack({ align: 'left' })};
@@ -67,6 +68,14 @@ const containerStyle = css`
     }
   }
 
+  .label-background {
+    position: absolute;
+    left: 0;
+    right: 8px;
+    height: 17px;
+    background: ${colors.bgPrimary.var};
+  }
+
   .highlight-button {
     align-self: flex-end;
     height: 32px;
@@ -89,6 +98,7 @@ interface TexFieldProps {
   type?: 'number' | 'date' | 'text'
   step?: number
   min?: number
+  rows?: number
   max?: number
 }
 
@@ -140,9 +150,12 @@ const TextField = (props: TexFieldProps) => {
         <label for={inputId}>{props.label}</label>
       </Show>
 
-      <div className="inputContainer">
+      <div class="inputContainer">
         {props.multiline ? (
-          <textarea {...getInputProps()} />
+          <>
+            <textarea {...getInputProps()} rows={props.rows} />
+            <div class="label-background" />
+          </>
         ) : (
           <input {...getInputProps()} />
         )}

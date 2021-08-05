@@ -84,7 +84,7 @@ const NavBar = () => {
 
   return (
     <nav class={containerStyle}>
-      <div className="content">
+      <div class="content">
         <div
           class="active"
           style={{ transform: `translate3d(${xPercent()}%, 0, 0)` }}

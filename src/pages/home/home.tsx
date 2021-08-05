@@ -6,22 +6,29 @@ import { openReviewDialog, reviewStore } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { fillContainer } from '@src/style/helpers/fillContainer'
 import { inline } from '@src/style/helpers/inline'
+import { responsiveWidth } from '@src/style/helpers/responsiveSize'
+import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
 import { useNavigate } from '@src/utils/navigate'
 import { calcCOF, needsReview } from '@src/utils/srsAlgo'
+import { round } from '@utils/math'
 import { createMemo } from 'solid-js'
 import { css } from 'solid-styled-components'
 
 const containerStyle = css`
   width: 100%;
   flex: 1 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  align-content: flex-start;
-  padding: 12px;
+  ${stack()};
+
+  .cards-container {
+    gap: 12px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
 
   .review-group {
     height: 96px;
@@ -60,108 +67,207 @@ const containerStyle = css`
   }
 `
 
-const Home = () => {
-  const now = Temporal.now.instant().epochMilliseconds
+const reviewStatsStyle = css`
+  ${inline({ justify: 'spaceEvenly' })};
+  margin-bottom: 36px;
+  background: ${colors.bgSecondary.var};
+  border-radius: 100px;
+  ${responsiveWidth(440, 12)};
+  padding: 12px 8px;
 
-  type CardsToReview = {
-    new: number
-    review: number
-  }
+  .item {
+    ${stack()};
+    width: 64px;
 
-  const cardsToReview = createMemo<CardsToReview>((prev) => {
-    const cards: CardsToReview = {
-      new: 0,
-      review: 0,
+    .value {
+      font-size: 24px;
+      margin-bottom: 2px;
     }
 
-    if (reviewStore.status !== 'closed') return prev || cards
+    .label {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: ${colors.primary.var};
+    }
+  }
+`
+
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+const Home = () => {
+  const now = Temporal.now.zonedDateTimeISO()
+  const tomorrow = now.add({ days: 1 })
+  const next2Days = now.add({ days: 2 })
+
+  type CardsStats = {
+    new: number
+    review: number
+    nonDraftTotal: number
+    drafts: number
+    addedPerWeek: number
+    tomorrow: [day: string, value: number]
+    next2Days: [day: string, value: number]
+  }
+
+  const cardsStats = createMemo<CardsStats>((prev) => {
+    const stats: CardsStats = {
+      new: 0,
+      review: 0,
+      addedPerWeek: 0,
+      drafts: 0,
+      next2Days: ['sun', 0],
+      tomorrow: ['mon', 0],
+      nonDraftTotal: 0,
+    }
+
+    if (reviewStore.status !== 'closed') return prev || stats
+
+    const oneMonthAgoTimestamp = Temporal.now
+      .zonedDateTimeISO()
+      .subtract({
+        months: 1,
+      })
+      .toInstant().epochMilliseconds
+
+    let cardsAddedInLastMonth = 0
 
     for (const cardId of cardsStore.cards.allIds) {
       const card = cardsStore.cards.byId[cardId]
 
-      if (!card || card.draft) continue
+      if (!card) continue
+
+      if (card.draft) {
+        stats.drafts++
+      } else {
+        stats.nonDraftTotal++
+      }
+
+      if (card.createdAt > oneMonthAgoTimestamp) {
+        cardsAddedInLastMonth++
+      }
+
+      // review tomorrow and next 2 days
+      const cardCOF = calcCOF(card, now.epochMilliseconds)
+
+      if (!needsReview(cardCOF)) {
+        const cofTomorrow = calcCOF(card, tomorrow.epochMilliseconds)
+
+        if (needsReview(cofTomorrow)) {
+          stats.tomorrow[1]++
+        } else {
+          const cofNext2Days = calcCOF(card, next2Days.epochMilliseconds)
+
+          if (needsReview(cofNext2Days)) {
+            stats.next2Days[1]++
+          }
+        }
+      }
+
+      // new and review
+
+      if (card.draft) continue
 
       if (!card.lastReview) {
-        cards.new++
+        stats.new++
         continue
       }
 
-      if (needsReview(calcCOF(card, now))) {
-        cards.review++
+      if (needsReview(cardCOF)) {
+        stats.review++
       }
     }
 
-    return cards
+    stats.addedPerWeek = round(cardsAddedInLastMonth / 4.34, 1)
+
+    stats.tomorrow[0] = days[tomorrow.dayOfWeek]!
+    stats.next2Days[0] = days[next2Days.dayOfWeek]!
+
+    return stats
   })
+
+  function getStatsItem(label: string, value: number) {
+    return (
+      <div class="item">
+        <div class="value">{value}</div>
+        <div class="label">{label}</div>
+      </div>
+    )
+  }
 
   return (
     <div class={containerStyle}>
+      <div class={reviewStatsStyle}>
+        {getStatsItem('Drafts', cardsStats().drafts)}
+        {getStatsItem('Total', cardsStats().nonDraftTotal)}
+        {getStatsItem('Add/week', cardsStats().addedPerWeek)}
+        {getStatsItem(...cardsStats().tomorrow)}
+        {getStatsItem(...cardsStats().next2Days)}
+      </div>
+
       <Switch>
         <Match when={cardsStore.status === 'loading'}>
           <LoadingOverlay />
         </Match>
 
-        <Match when={cardsToReview().review + cardsToReview().new === 0}>
-          <div className="empty-state">
+        <Match when={cardsStats().review + cardsStats().new === 0}>
+          <div class="empty-state">
             <span>Nothing to review</span>
             <span>🌞</span>
           </div>
         </Match>
 
         <Match when>
-          <Show when={cardsToReview().review > 10}>
-            <ButtonElement
-              className="review-group"
-              onClick={() => openReviewDialog('review', 10)}
-            >
-              <div>Review 10</div>
-            </ButtonElement>
-          </Show>
-
-          <Show when={cardsToReview().review > 20}>
-            <ButtonElement
-              className="review-group"
-              onClick={() => openReviewDialog('review', 20)}
-            >
-              <div>Review 20</div>
-            </ButtonElement>
-          </Show>
-
-          <Show when={cardsToReview().review > 0}>
-            <ButtonElement
-              className="review-group"
-              onClick={() => openReviewDialog('review', cardsToReview().review)}
-            >
-              <div>Review All {cardsToReview().review}</div>
-            </ButtonElement>
-          </Show>
-
-          <Show when={cardsToReview().new > 10}>
-            <ButtonElement
-              className="review-group new"
-              onClick={() => openReviewDialog('reviewNew', 10)}
-            >
-              <div>Review 10 New</div>
-            </ButtonElement>
-          </Show>
-
-          <Show when={cardsToReview().new > 20}>
-            <ButtonElement
-              className="review-group new"
-              onClick={() => openReviewDialog('reviewNew', 20)}
-            >
-              <div>Review 20 New</div>
-            </ButtonElement>
-          </Show>
-
-          <Show when={cardsToReview().new > 0}>
-            <ButtonElement
-              className="review-group new"
-              onClick={() => openReviewDialog('reviewNew', cardsToReview().new)}
-            >
-              <div>Review All New {cardsToReview().new}</div>
-            </ButtonElement>
-          </Show>
+          <div class="cards-container">
+            <Show when={cardsStats().review > 10}>
+              <ButtonElement
+                class="review-group"
+                onClick={() => openReviewDialog('review', 10)}
+              >
+                <div>Review 10</div>
+              </ButtonElement>
+            </Show>
+            <Show when={cardsStats().review > 20}>
+              <ButtonElement
+                class="review-group"
+                onClick={() => openReviewDialog('review', 20)}
+              >
+                <div>Review 20</div>
+              </ButtonElement>
+            </Show>
+            <Show when={cardsStats().review > 0}>
+              <ButtonElement
+                class="review-group"
+                onClick={() => openReviewDialog('review', cardsStats().review)}
+              >
+                <div>Review All {cardsStats().review}</div>
+              </ButtonElement>
+            </Show>
+            <Show when={cardsStats().new > 10}>
+              <ButtonElement
+                class="review-group new"
+                onClick={() => openReviewDialog('reviewNew', 10)}
+              >
+                <div>Review 10 New</div>
+              </ButtonElement>
+            </Show>
+            <Show when={cardsStats().new > 20}>
+              <ButtonElement
+                class="review-group new"
+                onClick={() => openReviewDialog('reviewNew', 20)}
+              >
+                <div>Review 20 New</div>
+              </ButtonElement>
+            </Show>
+            <Show when={cardsStats().new > 0}>
+              <ButtonElement
+                class="review-group new"
+                onClick={() => openReviewDialog('reviewNew', cardsStats().new)}
+              >
+                <div>Review All New {cardsStats().new}</div>
+              </ButtonElement>
+            </Show>
+          </div>
         </Match>
       </Switch>
     </div>

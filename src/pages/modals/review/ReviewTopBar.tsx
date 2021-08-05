@@ -2,7 +2,7 @@ import ButtonElement from '@src/components/ButtonElement'
 import Icon from '@src/components/Icon'
 import TopSheet from '@src/components/modals/TopSheet'
 import { Card, cardsStore } from '@src/stores/cardsStore'
-import { closeReview, ReviewItem } from '@src/stores/reviewStore'
+import { closeReview, ReviewItem, reviewStore } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { inline } from '@src/style/helpers/inline'
 import { stack } from '@src/style/helpers/stack'
@@ -18,6 +18,11 @@ import { css } from 'solid-styled-components'
 const containerStyle = css`
   ${inline({ justify: 'spaceBetween' })};
   padding: 20px;
+  ${transition()};
+
+  &.hide {
+    opacity: 0;
+  }
 
   button {
     color: ${colors.primary.var};
@@ -109,7 +114,12 @@ const ReviewTopBar = (props: ReviewTopBarProps) => {
 
   return (
     <>
-      <div class={containerStyle}>
+      <div
+        class={containerStyle}
+        classList={{
+          hide: reviewStore.status === 'ended',
+        }}
+      >
         <ButtonElement onClick={() => setMenuIsOpen(true)}>
           <Icon name="more" />
         </ButtonElement>
@@ -132,7 +142,7 @@ const ReviewTopBar = (props: ReviewTopBarProps) => {
             <Icon name="close" />
           </ButtonElement>
 
-          <div className="optionsContainer">
+          <div class="optionsContainer">
             <Show when={props.activeIsFlipped}>
               <ButtonElement onClick={() => openTranslation('cambridge')}>
                 <Icon name="external" />

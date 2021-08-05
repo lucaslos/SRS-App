@@ -16,6 +16,9 @@ import { css } from 'solid-styled-components'
 import { gradientText } from '@src/style/helpers/gradientText'
 import { interpolate } from '@utils/interpolate'
 import { clamp } from '@utils/clamp'
+import { getRankingStats } from '@src/utils/getRankingStats'
+import { textToSpeech } from '@src/utils/textToSpeech'
+import { getHighlightedText } from '@src/utils/getHighlightedText'
 
 const containerStyle = css`
   position: absolute;
@@ -157,14 +160,17 @@ const backStyle = css`
       position: relative;
       ${inline()};
       padding: 0 32px;
-      ${transition()};
 
       &:disabled {
         opacity: 0.4;
         pointer-events: none;
       }
 
-      &:hover {
+      .icon {
+        ${transition()};
+      }
+
+      &:hover .icon {
         transform: scale(1.1);
       }
     }
@@ -184,15 +190,9 @@ const backStyle = css`
     }
 
     .success {
+      --icon-size: 38px;
       justify-content: flex-end;
       color: ${colors.success.var};
-
-      .icon {
-        &:nth-child(1) {
-          margin-right: -25px;
-          opacity: 0.5;
-        }
-      }
     }
   }
 `
@@ -203,6 +203,9 @@ interface CardData extends Partial<Card> {
   answerFontSize: string
   wrongReviews: number
   difficulty: number
+  frontHTML: string
+  answerHTML: string
+  answer2HTML: string
 }
 
 export interface ReviewCardProps {
@@ -222,6 +225,9 @@ const ReviewCard = (props: ReviewCardProps) => {
       answerFontSize: getTextSize(null),
       wrongReviews: 0,
       difficulty: 0,
+      frontHTML: '',
+      answerHTML: '',
+      answer2HTML: '',
     }
 
     const itemCard = cardsStore.cards.byId[props.reviewItem.cardId] ?? null
@@ -235,15 +241,15 @@ const ReviewCard = (props: ReviewCardProps) => {
     }
 
     cardData.frontFontSize = getTextSize(itemCard.front)
-    cardData.front = snarkdown(itemCard.front)
+    cardData.frontHTML = snarkdown(itemCard.front)
 
     if (itemCard.answer) {
       cardData.answerFontSize = getTextSize(itemCard.answer)
-      cardData.answer = snarkdown(itemCard.answer)
+      cardData.answerHTML = snarkdown(itemCard.answer)
     }
 
     if (itemCard.answer2) {
-      cardData.answer2 = snarkdown(itemCard.answer2)
+      cardData.answer2HTML = snarkdown(itemCard.answer2)
     }
 
     return cardData
@@ -267,6 +273,23 @@ const ReviewCard = (props: ReviewCardProps) => {
     </Show>
   )
 
+  const rankingStats = createMemo(() => {
+    const { front } = card()
+
+    return front ? getRankingStats(front) : null
+  })
+
+  const [blockInteraction, setBlockInteraction] = createSignal(false)
+
+  function answerCard(answer: 'wrong' | 'hard' | 'success') {
+    setBlockInteraction(true)
+
+    void textToSpeech(getHighlightedText(card().front ?? '')).then(() => {
+      answerActiveCard(answer)
+      setBlockInteraction(false)
+    })
+  }
+
   return (
     <div
       class={containerStyle}
@@ -288,23 +311,39 @@ const ReviewCard = (props: ReviewCardProps) => {
         <div
           class="content"
           style={{ 'font-size': card().frontFontSize }}
-          innerHTML={card().front}
+          innerHTML={card().frontHTML}
         />
 
         <div class="tags">
           <For each={card().tags}>{(tag) => <div class="tag">{tag}</div>}</For>
 
-          <div class="tag stat">TOP 1033</div>
+          <Show when={rankingStats()?.ccae}>
+            {({ position }) => <div class="tag stat">TOP {position}</div>}
+          </Show>
+
+          <Show when={rankingStats()?.oxford}>
+            {(rankingItem) => (
+              <div
+                class="tag stat"
+                title={`${rankingItem.type} | ${rankingItem.position} | ${rankingItem.cerfDescription}`}
+              >
+                {rankingItem.cerf}
+              </div>
+            )}
+          </Show>
         </div>
       </div>
 
-      <div class={cx('back', backStyle, cardBaseStyle)}>
+      <div
+        class={cx('back', backStyle, cardBaseStyle)}
+        style={{ 'pointer-events': blockInteraction() ? 'none' : undefined }}
+      >
         {attentionRequiredTag}
 
         <div
           class="answer-1"
           style={{ 'font-size': card().answerFontSize }}
-          innerHTML={card().answer ?? ''}
+          innerHTML={card().answerHTML}
         />
 
         <Show when={card().answer2 && !showAnswer2()}>
@@ -317,28 +356,24 @@ const ReviewCard = (props: ReviewCardProps) => {
         </Show>
 
         <Show when={showAnswer2()}>
-          <div class="answer-2" innerHTML={card().answer2!} />
+          <div class="answer-2" innerHTML={card().answer2HTML!} />
         </Show>
 
         <div class="buttons">
-          <ButtonElement
-            class="wrong"
-            onClick={() => answerActiveCard('wrong')}
-          >
+          <ButtonElement class="wrong" onClick={() => answerCard('wrong')}>
             <Icon name="close" />
           </ButtonElement>
 
-          <ButtonElement class="hard" onClick={() => answerActiveCard('hard')}>
+          <ButtonElement class="hard" onClick={() => answerCard('hard')}>
             <Icon name="check" />
           </ButtonElement>
 
           <ButtonElement
             class="success"
             disabled={showAnswer2()}
-            onClick={() => answerActiveCard('success')}
+            onClick={() => answerCard('success')}
           >
-            <Icon name="check" />
-            <Icon name="check" />
+            <Icon name="double-check" />
           </ButtonElement>
         </div>
       </div>

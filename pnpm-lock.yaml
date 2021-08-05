@@ -4,6 +4,7 @@ specifiers:
   '@js-temporal/polyfill': ^0.1.0
   '@rturnq/solid-router': ^0.3.0
   '@types/jest': ^26.0.24
+  '@types/remove-markdown': ^0.3.1
   '@typescript-eslint/eslint-plugin': ^4.28.5
   '@typescript-eslint/parser': ^4.28.5
   dequal: ^2.0.2
@@ -21,15 +22,18 @@ specifiers:
   framesync: ^5.3.0
   immer: ^9.0.5
   jest: ^27.0.6
+  myzod: ^1.8.4
   polished: ^4.1.3
   popmotion: ^9.4.0
   postcss-preset-env: ^6.7.0
   prettier: ^2.3.2
+  remove-markdown: ^0.3.0
   snarkdown: ^2.0.0
   solid-js: ^1.0.5
   solid-styled-components: ^0.27.1
   solid-transition-group: ^0.0.8
   typescript: ^4.4.0-beta
+  verbal-expressions: ^1.0.2
   vite: ^2.4.4
   vite-plugin-plain-text: ^1.1.4
   vite-plugin-solid: ^2.0.1
@@ -38,6 +42,7 @@ dependencies:
   '@js-temporal/polyfill': 0.1.0
   '@rturnq/solid-router': 0.3.0_solid-js@1.0.5
   '@types/jest': 26.0.24
+  '@types/remove-markdown': 0.3.1
   '@typescript-eslint/eslint-plugin': 4.28.5_e0629b4503a8ade38f55882ddd0f58df
   '@typescript-eslint/parser': 4.28.5_3fc2ecede1941820ce9460a84221670b
   dequal: 2.0.2
@@ -55,15 +60,18 @@ dependencies:
   framesync: 5.3.0
   immer: 9.0.5
   jest: 27.0.6
+  myzod: 1.8.4
   polished: 4.1.3
   popmotion: 9.4.0
   postcss-preset-env: 6.7.0
   prettier: 2.3.2
+  remove-markdown: 0.3.0
   snarkdown: 2.0.0
   solid-js: 1.0.5
   solid-styled-components: 0.27.1_solid-js@1.0.5
   solid-transition-group: 0.0.8_solid-js@1.0.5
   typescript: 4.4.0-beta
+  verbal-expressions: 1.0.2
   vite-plugin-plain-text: 1.1.4
 
 devDependencies:
@@ -1400,6 +1408,10 @@ packages:
 
   /@types/prettier/2.3.2:
     resolution: {integrity: sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==}
+    dev: false
+
+  /@types/remove-markdown/0.3.1:
+    resolution: {integrity: sha512-JpJNEJEsmmltyL2LdE8KRjJ0L2ad5vgLibqNj85clohT9AyTrfN6jvHxStPshDkmtcL/ShFu0p2tbY7DBS1mqQ==}
     dev: false
 
   /@types/stack-utils/2.0.1:
@@ -4450,6 +4462,10 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: false
 
+  /myzod/1.8.4:
+    resolution: {integrity: sha512-wLMGq0+sGf+c5L+Llifd6t214/0A6iqeoL3cThkoQdiBR4xnBUxsF0TQdQx35uUx14Y53hRWmq7uibs2XMXqhA==}
+    dev: false
+
   /nanoid/3.1.23:
     resolution: {integrity: sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -5308,6 +5324,10 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /remove-markdown/0.3.0:
+    resolution: {integrity: sha1-XktmdJOpNXlyjz1S7MHbnKUF3Jg=}
+    dev: false
+
   /remove-trailing-separator/1.1.0:
     resolution: {integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=}
     dev: false
@@ -6087,6 +6107,11 @@ packages:
     dependencies:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
+    dev: false
+
+  /verbal-expressions/1.0.2:
+    resolution: {integrity: sha512-LV8eG4ckcg1iIhGjOF+j1jb0b58m1DgGywce+2U8kbRrB5wZnGe4XCyUyOujZR9D/+rJGXTmxnL30o3zAgmC4w==}
+    engines: {node: '>=9.2.0'}
     dev: false
 
   /vite-plugin-plain-text/1.1.4:

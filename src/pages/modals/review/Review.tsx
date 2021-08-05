@@ -3,7 +3,7 @@ import ButtonElement from '@src/components/ButtonElement'
 import ModalContainer from '@src/components/ModalContainer'
 import ReviewDialog from '@src/pages/modals/review/ReviewDialog'
 import ReviewSession from '@src/pages/modals/review/ReviewSession'
-import ReviewStats from '@src/pages/modals/review/ReviewStats'
+import ReviewSummary from '@src/pages/modals/review/ReviewSummary'
 import { closeReview, reviewStore, startReview } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { fillContainer } from '@src/style/helpers/fillContainer'
@@ -71,7 +71,7 @@ const ModalContent = () => {
 
       <Show when={statsCard.mount()}>
         <div class={cx('dialog-container', statsCard.className())}>
-          <ReviewStats />
+          <ReviewSummary />
         </div>
       </Show>
     </div>

@@ -128,6 +128,30 @@ export async function createCard(card: Omit<Card, 'id'>) {
   }
 }
 
+export async function batchCreateCard(cards: Omit<Card, 'id'>[]) {
+  const userId = authStore.user?.uid
+
+  if (!userId) return false
+
+  const batch = writeBatch(db)
+
+  for (const card of cards) {
+    const newCardRef = doc(getCardsCollection(userId))
+
+    batch.set(newCardRef, card)
+  }
+
+  try {
+    await batch.commit()
+
+    return true
+  } catch (error) {
+    handleError(error)
+
+    return false
+  }
+}
+
 export async function udpateCard(id: string, card: Partial<Card>) {
   const userId = authStore.user?.uid
 

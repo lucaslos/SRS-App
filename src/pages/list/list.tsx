@@ -145,7 +145,7 @@ const List = () => {
           }}
         />
 
-        <div className={filtersStyle}>
+        <div class={filtersStyle}>
           <ButtonElement
             classList={{ active: listProps.filter === 'all' }}
             onClick={() => setListProps('filter', 'all')}
@@ -169,11 +169,11 @@ const List = () => {
         </div>
       </header>
 
-      <div className="items-scroll">
-        <div className="items">
+      <div class="items-scroll">
+        <div class="items">
           <Switch>
             <Match when={cardsStore.status === 'loading'}>
-              <div className="empty-msg">
+              <div class="empty-msg">
                 <Loading />
               </div>
             </Match>

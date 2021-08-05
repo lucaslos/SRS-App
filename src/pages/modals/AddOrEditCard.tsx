@@ -231,6 +231,8 @@ const ModalContent = (props: ModalContentProps) => {
 
     if (formData.answer2 && !formData.answer) return true
 
+    if (isDraft() && !formData.answer) return true
+
     if (editCard) {
       return dequal(initialValues, formData)
     }

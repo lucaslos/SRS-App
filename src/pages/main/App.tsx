@@ -5,6 +5,7 @@ import AppHeader from '@src/pages/main/AppHeader'
 import NavBar from '@src/pages/main/NavBar'
 import AddOrEditCard from '@src/pages/modals/AddOrEditCard'
 import DeleteCard from '@src/pages/modals/DeleteCard'
+import Import from '@src/pages/modals/ImportData'
 import Review from '@src/pages/modals/review/Review'
 import { stack } from '@src/style/helpers/stack'
 import { css } from 'solid-styled-components'
@@ -33,6 +34,7 @@ const App = () => {
       <Review />
       <AddOrEditCard />
       <DeleteCard />
+      <Import />
 
       <NavBar />
     </div>

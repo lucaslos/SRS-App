@@ -21,6 +21,7 @@ export type ReviewStats = {
   wrong: number
   hard: number
   success: number
+  cards: number
   endTime: number
 }
 
@@ -55,15 +56,20 @@ export function openReviewDialog(
 }
 
 export function closeReview() {
-  setReviewStore('status', 'closed')
+  setReviewStore(() => ({
+    status: 'closed',
+    reviewIndex: -1,
+  }))
 }
 
 export function startReview() {
+  const startTime = Temporal.now.instant().epochMilliseconds
+
   setReviewStore(() => ({
     status: 'inProgress',
-    reviewItems: getCardsToReview(),
+    reviewItems: getCardsToReview(startTime),
     reviewPos: -1,
-    startTime: Temporal.now.instant().epochMilliseconds,
+    startTime,
   }))
 
   setTimeout(() => {
@@ -71,8 +77,8 @@ export function startReview() {
   }, 220)
 }
 
-export function getCardsToReview() {
-  const { numOfCards, type, startTime } = reviewStore
+export function getCardsToReview(startTime: number) {
+  const { numOfCards, type } = reviewStore
 
   let cardsToReview: ReviewItem[] = []
 
@@ -85,7 +91,7 @@ export function getCardsToReview() {
       if (!card.lastReview) {
         cardsToReview.push({ cardId, cof: -1 })
 
-        if (cardsToReview.length > numOfCards) break
+        if (cardsToReview.length >= numOfCards) break
       }
     }
 
@@ -101,6 +107,8 @@ export function getCardsToReview() {
 
     if (needsReview(cof)) {
       cardsToReview.push({ cardId, cof })
+
+      if (cardsToReview.length >= numOfCards) break
     }
   }
 

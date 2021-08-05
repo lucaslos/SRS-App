@@ -78,10 +78,10 @@ const CardTile = (props: CardProps) => {
         class="content"
         onClick={() => navigate(null, { edit: props.card.id })}
       >
-        <div className="front">{props.card.front}</div>
+        <div class="front">{props.card.front}</div>
 
         <Show when={props.card.answer && props.showAnswer}>
-          <div className="answer">{props.card.answer}</div>
+          <div class="answer">{props.card.answer}</div>
         </Show>
       </ButtonElement>
 

@@ -16,7 +16,7 @@ const Root = () => {
         <Switch>
           <Match when={authStore.authState === 'loading'}>
             <div
-              className={css`
+              class={css`
                 ${fillContainer};
                 ${centerContent};
               `}
@@ -27,7 +27,7 @@ const Root = () => {
 
           <Match when={authStore.authState === 'error'}>
             <div
-              className={css`
+              class={css`
                 ${fillContainer};
                 ${centerContent};
               `}

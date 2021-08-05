@@ -107,7 +107,7 @@ const ModalContent = (props: DialogProps) => {
         <h2>Front: {cardToDelete?.front}</h2>
       </header>
 
-      <div className="buttons-container">
+      <div class="buttons-container">
         <ButtonElement onClick={() => props.onClose()}>Cancel</ButtonElement>
         <ButtonElement class="error" onClick={() => onDelete()}>
           Delete

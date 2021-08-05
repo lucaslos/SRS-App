@@ -4,22 +4,23 @@ import ReviewCard from '@src/pages/modals/review/Card'
 import ReviewTopBar from '@src/pages/modals/review/ReviewTopBar'
 import { cardsStore } from '@src/stores/cardsStore'
 import {
-  closeReview,
   goToPreviousCard,
   ReviewItem,
   reviewStore,
 } from '@src/stores/reviewStore'
 import { centerContent } from '@src/style/helpers/centerContent'
 import { fillContainer } from '@src/style/helpers/fillContainer'
+import { gradientText } from '@src/style/helpers/gradientText'
 import { inline } from '@src/style/helpers/inline'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
+import { getHighlightedText } from '@src/utils/getHighlightedText'
 import { createSet } from '@src/utils/hooks/createSet'
 import { useAnimateMount } from '@src/utils/hooks/useAnimateMount'
+import { textToSpeech } from '@src/utils/textToSpeech'
 import { clampMin } from '@utils/clamp'
 import { cx } from '@utils/cx'
-import { PartialRecord } from '@utils/typings'
-import { createMemo, createSelector, createSignal } from 'solid-js'
+import { createMemo } from 'solid-js'
 import { css } from 'solid-styled-components'
 
 const containerStyle = css`
@@ -36,6 +37,40 @@ const containerStyle = css`
 
   .progress {
     position: relative;
+    ${transition()};
+
+    &.hide {
+      opacity: 0;
+    }
+
+    .content {
+      ${inline({ justify: 'spaceBetween' })};
+      ${fillContainer};
+
+      .positions {
+        font-size: 30px;
+        ${gradientText(gradients.primary)};
+      }
+
+      button {
+        ${centerContent};
+        padding: 0 20px;
+
+        &.sound {
+          --icon-size: 30px;
+          color: ${colors.secondary.var};
+        }
+
+        &.back {
+          --icon-size: 30px;
+          color: ${colors.primary.var};
+        }
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
 
     .progress-bar {
       height: 2px;
@@ -122,6 +157,24 @@ const ReviewSession = () => {
     }
   }
 
+  function onClickTTS() {
+    const cardId = getActiveItem()?.cardId
+
+    if (!cardId) return
+
+    const itemCard = cardsStore.cards.byId[cardId] ?? null
+
+    if (!itemCard) return
+
+    const isFlipped = flippedCards.has(getActiveItem())
+
+    if (isFlipped) {
+      void textToSpeech(itemCard.answer ?? '')
+    } else {
+      void textToSpeech(itemCard.front)
+    }
+  }
+
   return (
     <div class={cx(containerStyle, reviewIsInProgres.className())}>
       <ReviewTopBar
@@ -144,26 +197,35 @@ const ReviewSession = () => {
         </For>
       </div>
 
-      <div class="progress">
-        <ButtonElement
-          onClick={() => goBack()}
-          classList={{ show: reviewStore.reviewIndex > 0 }}
-        >
-          Back
-        </ButtonElement>
+      <div
+        class="progress"
+        classList={{
+          hide: reviewStore.status === 'ended',
+        }}
+      >
+        <div class="content">
+          <ButtonElement onClick={() => goBack()} class="back">
+            <Icon name="arrow-left" />
+          </ButtonElement>
+
+          <div class="positions">
+            {clampMin(reviewStore.reviewIndex + 1, 1)} /{' '}
+            {filteredCards().length}
+          </div>
+
+          <ButtonElement onClick={() => onClickTTS()} class="sound">
+            <Icon name="sound" />
+          </ButtonElement>
+        </div>
 
         <div
-          className="progress-bar"
+          class="progress-bar"
           style={{
             '--progress-percent': `${
               ((reviewStore.reviewIndex + 1) / filteredCards().length) * 100
             }%`,
           }}
         />
-
-        <div className="positions">
-          {clampMin(reviewStore.reviewIndex + 1, 1)} / {filteredCards().length}
-        </div>
       </div>
     </div>
   )
