@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "front": "India is ***in the throes of a*** horrendous COVID surge",
+    "front": "India is __*in the throes of a*__ horrendous COVID surge",
     "back": "no meio de algo, em pleno\n\n> experiencing or doing something that is difficult, unpleasant, or painful",
     "tags": [],
     "notes": [],
@@ -9,7 +9,7 @@
     "isTopWord": false
   },
   {
-    "front": "After a certain age, a car's just a ***liability***",
+    "front": "After a certain age, a car's just a __*liability*__",
     "back": "something or someone that causes you a lot of trouble, often when that thing or person should be helping you.\nestorvo",
     "tags": [],
     "notes": [],
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "front": "We'll have to see how things ***pan out***",
+    "front": "We'll have to see how things __*pan out*__",
     "back": "to develop in a particular way or in a successful way\n> Nós vamos ver como as coisas se desenvolvem",
     "tags": [],
     "notes": [],
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "front": "a ***hunk*** of bread",
+    "front": "a __*hunk*__ of bread",
     "back": "a large, thick piece, especially of food",
     "tags": ["noun"],
     "notes": [],
@@ -37,8 +37,8 @@
   },
   {
     "id": 5,
-    "front": "One thing will **lead** to the other",
-    "back": "vai ***levar*** a outra",
+    "front": "One thing will __*lead*__ to the other",
+    "back": "vai __*levar*__ a outra",
     "tags": ["verb"],
     "notes": [],
     "isArchieved": false,
@@ -253,7 +253,7 @@
   },
   {
     "id": 28,
-    "front": "... cause I have more ***spare*** time.",
+    "front": "... cause I have more __*spare*__ time.",
     "back": "",
     "tags": [],
     "notes": [],
@@ -316,7 +316,7 @@
   },
   {
     "id": 37,
-    "front": "the variant likes to ***stall*** for time",
+    "front": "the variant likes to __*stall*__ for time",
     "back": "",
     "tags": [],
     "notes": [],
@@ -442,7 +442,7 @@
   },
   {
     "id": 39,
-    "front": "i'm ***chomping*** at the bit",
+    "front": "i'm __*chomping*__ at the bit",
     "back": "",
     "tags": [],
     "notes": [],

@@ -143,7 +143,7 @@ const Home = () => {
         stats.nonDraftTotal++
       }
 
-      if (card.createdAt > oneMonthAgoTimestamp) {
+      if (!card.draft && card.createdAt > oneMonthAgoTimestamp) {
         cardsAddedInLastMonth++
       }
 
