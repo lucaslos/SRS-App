@@ -1,0 +1,677 @@
+[
+  {
+    "id": 1,
+    "front": "India is ***in the throes of a*** horrendous COVID surge",
+    "back": "no meio de algo, em pleno\n\n> experiencing or doing something that is difficult, unpleasant, or painful",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "front": "After a certain age, a car's just a ***liability***",
+    "back": "something or someone that causes you a lot of trouble, often when that thing or person should be helping you.\nestorvo",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false,
+    "id": 2
+  },
+  {
+    "id": 3,
+    "front": "We'll have to see how things ***pan out***",
+    "back": "to develop in a particular way or in a successful way\n> Nós vamos ver como as coisas se desenvolvem",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 4,
+    "front": "a ***hunk*** of bread",
+    "back": "a large, thick piece, especially of food",
+    "tags": ["noun"],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 5,
+    "front": "One thing will **lead** to the other",
+    "back": "vai ***levar*** a outra",
+    "tags": ["verb"],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "front": "staff",
+    "back": "bastão",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false,
+    "id": 66
+  },
+  {
+    "id": 6,
+    "front": "bolt",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 7,
+    "front": "atrapalha o entendimento??",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 8,
+    "front": "pond",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 9,
+    "front": "cinders",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 10,
+    "front": "deceive",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 11,
+    "front": "hauling",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 12,
+    "front": "come to fruition",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 13,
+    "front": "stubborn",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 14,
+    "front": "she was a wreck",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 15,
+    "front": "soothe",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 16,
+    "front": "spicy",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 17,
+    "front": "mileage",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 18,
+    "front": "vessel",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 19,
+    "front": "evicted",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 20,
+    "front": "the company is bootstrapping itself out of a marred financial past",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 21,
+    "front": "overstated",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 22,
+    "front": "sneaky devil",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 23,
+    "front": "jealous",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 24,
+    "front": "weary",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 25,
+    "front": "loose end",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 26,
+    "front": "I am rooting for you",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 27,
+    "front": "mourn",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 28,
+    "front": "... cause I have more ***spare*** time.",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 29,
+    "front": "slip",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 30,
+    "front": "plead",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 31,
+    "front": "hunch",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 32,
+    "front": "tinder",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 33,
+    "front": "mischief",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 36,
+    "front": "vicinity",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 37,
+    "front": "the variant likes to ***stall*** for time",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 64,
+    "front": "dwell",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 65,
+    "front": "forfeit",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 67,
+    "front": "stirs",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 69,
+    "front": "oaths",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 70,
+    "front": "hid",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 71,
+    "front": "fibbed",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 72,
+    "front": "halves",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 73,
+    "front": "crooked",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 74,
+    "front": "cleats",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 75,
+    "front": "sway",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 34,
+    "front": "comply",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 35,
+    "front": "therefore",
+    "back": "",
+    "tags": ["adverb"],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 38,
+    "front": "clumsy",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 39,
+    "front": "i'm ***chomping*** at the bit",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 40,
+    "front": "be no mean feat",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 41,
+    "front": "sheathe",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 42,
+    "front": "smarm",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 43,
+    "front": "undercover",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 44,
+    "front": "overthrow",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 45,
+    "front": "lieutenant",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 46,
+    "front": "significant other",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 47,
+    "front": "to loan",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 48,
+    "front": "haggle",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 49,
+    "front": "truce",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 50,
+    "front": "reckon",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 51,
+    "front": "bearer",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 52,
+    "front": "shire",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 53,
+    "front": "riddles",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 54,
+    "front": "wraith",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 55,
+    "front": "shore",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 56,
+    "front": "wield",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 57,
+    "front": "pity",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 58,
+    "front": "linger",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 59,
+    "front": "attempt",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 60,
+    "front": "foe",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 61,
+    "front": "pits",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 62,
+    "front": "forsaken",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 63,
+    "front": "errand",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  },
+  {
+    "id": 68,
+    "front": "despair",
+    "back": "",
+    "tags": [],
+    "notes": [],
+    "isArchieved": false,
+    "isTopWord": false
+  }
+]

@@ -1,8 +1,10 @@
+import { Temporal } from '@js-temporal/polyfill'
 import { useRouter } from '@rturnq/solid-router'
 import ButtonElement from '@src/components/ButtonElement'
 import ModalContainer from '@src/components/ModalContainer'
 import { Switcher } from '@src/components/Switcher'
 import TextField from '@src/components/TextField'
+import { localTimezone } from '@src/data/temporal'
 import {
   Card,
   cardsStore,
@@ -18,10 +20,14 @@ import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
 import { getHighlightedText } from '@src/utils/getHighlightedText'
+import { getRankingStats } from '@src/utils/getRankingStats'
 import { useNavigate } from '@src/utils/navigate'
+import { calcCOF } from '@src/utils/srsAlgo'
 import { openTranslationPopup, Translators } from '@src/utils/translators'
 import { getRegexMatches } from '@utils/getRegexMatches'
 import { iife } from '@utils/iife'
+import { round } from '@utils/math'
+import { pipe } from '@utils/pipe'
 import { typedObjectEntries, typedObjectKeys } from '@utils/typed'
 import { dequal } from 'dequal'
 import { createMemo, createSignal } from 'solid-js'
@@ -121,6 +127,27 @@ const contentStyle = css`
       &.secondary {
         color: ${colors.secondary.var};
         opacity: 0.8;
+      }
+    }
+  }
+
+  .block-section {
+    width: 100%;
+    border-radius: 18px;
+    padding: 18px;
+    letter-spacing: 0.02em;
+    background: ${colors.primary.alpha(0.15)};
+    ${stack({ align: 'stretch', gap: 8 })};
+
+    strong {
+      font-weight: 500;
+    }
+
+    .inline {
+      ${inline({ justify: 'spaceEvenly' })};
+
+      .separator::before {
+        content: '·';
       }
     }
   }
@@ -240,11 +267,52 @@ const ModalContent = (props: ModalContentProps) => {
     return false
   })
 
+  const rankingStats = createMemo(() => {
+    if (!formData.front) return null
+
+    const stats = getRankingStats(getHighlightedText(formData.front))
+
+    if (stats.ccae || stats.oxford) return stats
+
+    return null
+  })
+
+  const reviewStats = createMemo<{
+    cof: number
+    createdAt: string
+    nextReview: string
+  } | null>(() => {
+    if (!editCard || !formData.lastReview) return null
+
+    return {
+      cof: pipe(
+        calcCOF(
+          {
+            difficulty: formData.difficulty,
+            lastReview: formData.lastReview,
+            reviews: formData.reviews,
+          },
+          Temporal.now.instant().epochMilliseconds,
+        ),
+        (v) => round(v, 2),
+      ),
+      createdAt: editCard.createdAt
+        ? Temporal.Instant.fromEpochMilliseconds(editCard.createdAt)
+            .toZonedDateTimeISO(localTimezone)
+            .toPlainDate()
+            .toLocaleString()
+        : '-',
+      nextReview: '?',
+    }
+  })
+
   function onClickSave() {
     if (saveIsDisabled()) return
 
     if (editCard) {
-      const changedValues: Partial<Card> = {}
+      const changedValues: Partial<Card> = {
+        draft: isDraft(),
+      }
 
       const normalizedValues: Omit<Card, 'id' | 'createdAt'> = {
         ...formData,
@@ -259,6 +327,10 @@ const ModalContent = (props: ModalContentProps) => {
         if (!dequal(initialValues[key], value)) {
           changedValues[key] = value as any
         }
+      }
+
+      if (!editCard.draft && changedValues.draft) {
+        changedValues.createdAt = Temporal.now.instant().epochMilliseconds
       }
 
       void udpateCard(editCard.id, changedValues)
@@ -352,6 +424,27 @@ const ModalContent = (props: ModalContentProps) => {
             </div>
           </div>
 
+          <Show when={rankingStats()}>
+            {(stats) => (
+              <div class="block-section">
+                {stats.oxford && (
+                  <div class="row">
+                    CCAE Rank:{' '}
+                    <strong>
+                      {stats.oxford.cerfDescription} ({stats.oxford.type})
+                    </strong>
+                  </div>
+                )}
+
+                {stats.ccae && (
+                  <div class="row">
+                    CERF Level: <strong>{stats.ccae.position}</strong>
+                  </div>
+                )}
+              </div>
+            )}
+          </Show>
+
           <TextField
             multiline
             defaultValue={initialValues.answer}
@@ -418,8 +511,27 @@ const ModalContent = (props: ModalContentProps) => {
                   />
                 </div>
               </Show>
-              {/* TODO: stats */}
             </div>
+          </Show>
+
+          <Show when={reviewStats()}>
+            {(stats) => (
+              <div class="block-section">
+                <div class="inline">
+                  <div>
+                    COF: <strong>{stats.cof}</strong>
+                  </div>
+                  <div class="separator" />
+                  <div>
+                    Created: <strong>{stats.createdAt}</strong>
+                  </div>
+                  <div class="separator" />
+                  <div>
+                    Next Review: <strong>{stats.nextReview}</strong>
+                  </div>
+                </div>
+              </div>
+            )}
           </Show>
 
           <Switcher

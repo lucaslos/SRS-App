@@ -93,7 +93,7 @@ const reviewStatsStyle = css`
   }
 `
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const days = ['?', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 const Home = () => {
   const now = Temporal.now.zonedDateTimeISO()
@@ -178,7 +178,7 @@ const Home = () => {
       }
     }
 
-    stats.addedPerWeek = round(cardsAddedInLastMonth / 4.34, 1)
+    stats.addedPerWeek = cardsAddedInLastMonth / 4.34
 
     stats.tomorrow[0] = days[tomorrow.dayOfWeek]!
     stats.next2Days[0] = days[next2Days.dayOfWeek]!
@@ -186,9 +186,9 @@ const Home = () => {
     return stats
   })
 
-  function getStatsItem(label: string, value: number) {
+  function getStatsItem(label: string, value: number, title?: string) {
     return (
-      <div class="item">
+      <div class="item" title={title}>
         <div class="value">{value}</div>
         <div class="label">{label}</div>
       </div>
@@ -200,7 +200,11 @@ const Home = () => {
       <div class={reviewStatsStyle}>
         {getStatsItem('Drafts', cardsStats().drafts)}
         {getStatsItem('Total', cardsStats().nonDraftTotal)}
-        {getStatsItem('Add/week', cardsStats().addedPerWeek)}
+        {getStatsItem(
+          'Add/week',
+          round(cardsStats().addedPerWeek),
+          String(round(cardsStats().addedPerWeek, 3)),
+        )}
         {getStatsItem(...cardsStats().tomorrow)}
         {getStatsItem(...cardsStats().next2Days)}
       </div>

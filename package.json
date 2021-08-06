@@ -9,7 +9,8 @@
     "save-emultators-data": "firebase emulators:export ./saved-data",
     "build": "vite build",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "deploy": "surge dist --domain srs.surge.sh"
   },
   "license": "MIT",
   "devDependencies": {

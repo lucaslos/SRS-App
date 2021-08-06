@@ -25,8 +25,6 @@ export function getRankingStats(text: string): {
 
   const ccaeListIndex = ccaeList.indexOf(textToSearch)
 
-  console.log(`CCAE list position: ${textToSearch}`)
-
   const oxfordListIndex = oxford.findIndex(({ w }) => w === textToSearch)
 
   const oxfordListItem =

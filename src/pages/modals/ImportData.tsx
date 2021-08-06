@@ -24,6 +24,7 @@ import z, { Infer } from 'myzod'
 import { getRegexMatches } from '@utils/getRegexMatches'
 import VerEx from 'verbal-expressions'
 import { typedObjectEntries } from '@utils/typed'
+import { Temporal } from '@js-temporal/polyfill'
 
 const containerStyle = css`
   ${responsiveWidth(600)};
@@ -122,6 +123,23 @@ const importRealtimeDBJsonSchema = z.object({
   ),
 })
 
+const importFromPhrasebookSchema = z.array(
+  z.object({
+    back: z.string(),
+    front: z.string(),
+    id: z.number(),
+    tags: z.array(z.string()).optional(),
+    notes: z.array(z.string()).optional(),
+    isArchieved: z.boolean(),
+    isTopWord: z.boolean(),
+  }),
+)
+
+const importSchemas = z.union([
+  importFromPhrasebookSchema,
+  importRealtimeDBJsonSchema,
+])
+
 interface DialogProps {
   onClose: () => void
 }
@@ -147,7 +165,7 @@ const ModalContent = (props: DialogProps) => {
 
     if (!rawData) return { data: null, error: 'Invalid JSON' }
 
-    const parsedData = importRealtimeDBJsonSchema.try(rawData)
+    const parsedData = importSchemas.try(rawData)
 
     if (parsedData instanceof z.ValidationError) {
       return { data: null, error: parsedData.message }
@@ -155,19 +173,38 @@ const ModalContent = (props: DialogProps) => {
 
     const importCards: ImportCards = []
 
-    for (const [id, card] of typedObjectEntries(parsedData.cards)) {
-      importCards.push({
-        front: card.front,
-        answer: card.back || null,
-        createdAt: card.createdAt,
-        answer2: null,
-        difficulty: card.diff,
-        draft: card.back === null,
-        lastReview: card.lastReview,
-        reviews: card.repetitions,
-        tags: card.tags || null,
-        wrongReviews: card.wrongReviews,
-      })
+    const now = Temporal.now.instant().epochMilliseconds
+
+    if (!Array.isArray(parsedData)) {
+      for (const [_, card] of typedObjectEntries(parsedData.cards)) {
+        importCards.push({
+          front: card.front,
+          answer: card.back || null,
+          createdAt: Date.now(),
+          answer2: null,
+          difficulty: card.diff,
+          draft: !card.back,
+          lastReview: card.lastReview,
+          reviews: card.repetitions,
+          tags: card.tags || null,
+          wrongReviews: card.wrongReviews,
+        })
+      }
+    } else {
+      for (const card of parsedData) {
+        importCards.push({
+          front: card.front,
+          answer: card.back || null,
+          createdAt: now,
+          answer2: null,
+          difficulty: 0,
+          draft: !card.back,
+          lastReview: null,
+          reviews: 0,
+          tags: card.tags || null,
+          wrongReviews: 0,
+        })
+      }
     }
 
     return { data: importCards }

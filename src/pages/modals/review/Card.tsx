@@ -284,7 +284,7 @@ const ReviewCard = (props: ReviewCardProps) => {
   function answerCard(answer: 'wrong' | 'hard' | 'success') {
     setBlockInteraction(true)
 
-    void textToSpeech(getHighlightedText(card().front ?? '')).then(() => {
+    void textToSpeech(getHighlightedText(card().front ?? '')).finally(() => {
       answerActiveCard(answer)
       setBlockInteraction(false)
     })

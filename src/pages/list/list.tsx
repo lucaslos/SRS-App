@@ -8,6 +8,7 @@ import { responsiveWidth } from '@src/style/helpers/responsiveSize'
 import { stack } from '@src/style/helpers/stack'
 import { transition } from '@src/style/helpers/transition'
 import { colors } from '@src/style/theme'
+import { filterUnique } from '@utils/removeDuplicatedFromArray'
 import { searchItems } from '@utils/searchItems'
 import { sortByPriority } from '@utils/simpleSort'
 import { createEffect, createMemo, createSignal } from 'solid-js'
@@ -93,16 +94,15 @@ const filtersStyle = css`
     }
   }
 `
+type ListProps = {
+  showAnswer: boolean
+  filter: 'all' | 'to-review' | 'duplicated'
+}
 
 const [listProps, setListProps] = createStore<ListProps>({
   showAnswer: false,
   filter: 'all',
 })
-
-type ListProps = {
-  showAnswer: boolean
-  filter: 'all' | 'to-review'
-}
 
 const List = () => {
   const [searchQuery, setSearchQuery] = createSignal('')
@@ -123,14 +123,26 @@ const List = () => {
     }
 
     if (listProps.filter !== 'all') {
-      filteredItems = filteredItems.filter((card) => !card.draft)
+      if (listProps.filter === 'to-review') {
+        filteredItems = filteredItems.filter((card) => !card.draft)
+      } else if (listProps.filter === 'duplicated') {
+        // find duplicated items in array
+        filteredItems = sortByPriority(filteredItems, (item) => item.front)
+
+        filteredItems = filteredItems.filter((item, index, arr) => {
+          return (
+            item.front === arr[index + 1]?.front ||
+            item.front === arr[index - 1]?.front
+          )
+        })
+      }
     }
 
-    const sortedItems = sortByPriority(filteredItems, (card) =>
+    filteredItems = sortByPriority(filteredItems, (card) =>
       card.draft ? 2 * card.createdAt : 1 * card.createdAt,
     )
 
-    return sortedItems
+    return filteredItems
   })
 
   return (
@@ -163,6 +175,13 @@ const List = () => {
             onClick={() => setListProps('showAnswer', !listProps.showAnswer)}
           >
             Show Back
+          </ButtonElement>
+
+          <ButtonElement
+            classList={{ active: listProps.filter === 'duplicated' }}
+            onClick={() => setListProps('filter', 'duplicated')}
+          >
+            Duplicated
           </ButtonElement>
           {/* TODO: review tomorrow */}
           {/* TODO: sort by */}
