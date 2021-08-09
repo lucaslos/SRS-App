@@ -26,9 +26,10 @@ const Root = () => {
           </Match>
 
           <Match when={authStore.authState === 'error'}>
+            <Login />
+
             <div
               class={css`
-                ${fillContainer};
                 ${centerContent};
               `}
             >

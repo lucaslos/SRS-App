@@ -17,7 +17,7 @@ import { createMemo } from 'solid-js'
 import { css } from 'solid-styled-components'
 
 const cardStyle = css`
-  ${responsiveWidth(400)};
+  ${responsiveWidth(400, 16)};
   background: ${gradients.primary};
   ${transition()};
   ${stack({ align: 'stretch' })};

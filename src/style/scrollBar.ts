@@ -1,9 +1,18 @@
-import { colors } from '@src/style/theme';
+import { mq } from '@src/style/mediaQueries'
+import { colors } from '@src/style/theme'
 
 export const scrollBarStyle = `
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+
+  }
+
+  ${mq.mobile} {
+    *::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
   }
 
   ::-webkit-scrollbar-track,
@@ -26,4 +35,3 @@ export const scrollBarStyle = `
   }
 
 `
-

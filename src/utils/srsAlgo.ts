@@ -1,4 +1,5 @@
 import { Temporal } from '@js-temporal/polyfill'
+import { localTimezone } from '@src/data/temporal'
 import { Card, cardsStore } from '@src/stores/cardsStore'
 import { ReviewItem, ReviewStats, reviewStore } from '@src/stores/reviewStore'
 import { clamp, clampMax, clampMin } from '@utils/clamp'
@@ -159,4 +160,41 @@ export function processReview(reviewItems: ReviewItem[]): {
   }
 
   return { results, stats }
+}
+
+const dayMiliseconds = 1000 * 60 * 60 * 24
+
+export function getNextReviewDate(
+  card: Pick<Card, 'lastReview' | 'reviews' | 'difficulty'>,
+  referenceUnixTimestamp: number,
+): string {
+  let addedDays = 0
+
+  while (addedDays < 100) {
+    const timestamp = referenceUnixTimestamp + addedDays * dayMiliseconds
+
+    const cof = calcCOF(card, timestamp)
+
+    if (needsReview(cof)) {
+      if (addedDays === 0) {
+        return 'Today'
+      }
+
+      if (addedDays === 1) {
+        return 'Tomorrow'
+      }
+
+      return Temporal.Instant.fromEpochMilliseconds(timestamp)
+        .toZonedDateTimeISO(localTimezone)
+        .toPlainDate()
+        .toLocaleString()
+    }
+
+    addedDays++
+  }
+
+  return `after ${Temporal.Instant.fromEpochMilliseconds(100 * dayMiliseconds)
+    .toZonedDateTimeISO(localTimezone)
+    .toPlainDate()
+    .toLocaleString()}`
 }

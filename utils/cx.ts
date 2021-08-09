@@ -21,7 +21,7 @@ export function cx(...args: (string | false | undefined | null | anyObj)[]) {
       //   }
     } else if (argType === 'object') {
       for (let i2 = 0, keys = Object.keys(arg); i2 < keys.length; i2++) {
-        if ((arg as anyObj<boolean>)[keys[i2]]) {
+        if ((arg as anyObj<boolean>)[keys[i2]!]) {
           classNames.push(keys[i2]);
         }
       }

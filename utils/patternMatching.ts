@@ -174,7 +174,7 @@ const builder =
     },
     otherwise(defaultValue) {
       for (let i = 0; i < patterns.length; i++) {
-        const pattern = patterns[i]
+        const pattern = patterns[i]!
 
         if (pattern.multiple) {
           for (let i2 = 0; i2 < pattern.value.length; i2++) {

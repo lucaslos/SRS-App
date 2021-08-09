@@ -1,4 +1,5 @@
 import { auth } from '@src/firebase/initialize'
+import { matchesOneOf } from '@utils/checkIf'
 import { subscribe } from '@utils/solid'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { createEffect, createRoot } from 'solid-js'
@@ -19,11 +20,22 @@ const [authStore, setAuthStore] = createStore<State>({
 onAuthStateChanged(
   auth,
   (user) => {
-    return setAuthStore({
-      user,
-      error: null,
-      authState: user ? 'loggedIn' : 'loggedOut',
-    })
+    if (user && !matchesOneOf(user.email, ['email@lucassantos.net'])) {
+      setAuthStore({
+        user: null,
+        error: {
+          message: 'User not allowed',
+          name: 'UnauthorizedError',
+        },
+        authState: 'error',
+      })
+    } else {
+      setAuthStore({
+        user,
+        error: null,
+        authState: user ? 'loggedIn' : 'loggedOut',
+      })
+    }
   },
   (error) =>
     setAuthStore({

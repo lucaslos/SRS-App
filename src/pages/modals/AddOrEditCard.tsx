@@ -22,7 +22,7 @@ import { colors, gradients } from '@src/style/theme'
 import { getHighlightedText } from '@src/utils/getHighlightedText'
 import { getRankingStats } from '@src/utils/getRankingStats'
 import { useNavigate } from '@src/utils/navigate'
-import { calcCOF } from '@src/utils/srsAlgo'
+import { calcCOF, getNextReviewDate } from '@src/utils/srsAlgo'
 import { openTranslationPopup, Translators } from '@src/utils/translators'
 import { getRegexMatches } from '@utils/getRegexMatches'
 import { iife } from '@utils/iife'
@@ -30,7 +30,13 @@ import { round } from '@utils/math'
 import { pipe } from '@utils/pipe'
 import { typedObjectEntries, typedObjectKeys } from '@utils/typed'
 import { dequal } from 'dequal'
-import { createMemo, createSignal } from 'solid-js'
+import {
+  createDeferred,
+  createEffect,
+  createMemo,
+  createSignal,
+  onCleanup,
+} from 'solid-js'
 import { createStore, unwrap } from 'solid-js/store'
 import { css } from 'solid-styled-components'
 
@@ -144,7 +150,8 @@ const contentStyle = css`
     }
 
     .inline {
-      ${inline({ justify: 'spaceEvenly' })};
+      ${inline({ justify: 'spaceEvenly', gap: 4 })};
+      flex-wrap: wrap;
 
       .separator::before {
         content: '·';
@@ -185,6 +192,7 @@ const contentStyle = css`
     grid-template-rows: 1fr 1fr;
     column-gap: 20px;
     row-gap: 12px;
+    align-items: flex-end;
   }
 `
 
@@ -256,9 +264,11 @@ const ModalContent = (props: ModalContentProps) => {
   const saveIsDisabled = createMemo((): boolean => {
     if (formData.front === null) return true
 
-    if (formData.answer2 && !formData.answer) return true
+    if (!isDraft()) {
+      if (formData.answer2 && !formData.answer) return true
 
-    if (isDraft() && !formData.answer) return true
+      if (!formData.answer) return true
+    }
 
     if (editCard) {
       return dequal(initialValues, formData)
@@ -267,10 +277,14 @@ const ModalContent = (props: ModalContentProps) => {
     return false
   })
 
-  const rankingStats = createMemo(() => {
-    if (!formData.front) return null
+  const debouncedFront = useDebouncedValue(() => formData.front, 700)
 
-    const stats = getRankingStats(getHighlightedText(formData.front))
+  const rankingStats = createDeferred(() => {
+    const frontText = debouncedFront()
+
+    if (!frontText) return null
+
+    const stats = getRankingStats(getHighlightedText(frontText))
 
     if (stats.ccae || stats.oxford) return stats
 
@@ -284,25 +298,17 @@ const ModalContent = (props: ModalContentProps) => {
   } | null>(() => {
     if (!editCard || !formData.lastReview) return null
 
+    const timestamp = Temporal.now.instant().epochMilliseconds
+
     return {
-      cof: pipe(
-        calcCOF(
-          {
-            difficulty: formData.difficulty,
-            lastReview: formData.lastReview,
-            reviews: formData.reviews,
-          },
-          Temporal.now.instant().epochMilliseconds,
-        ),
-        (v) => round(v, 2),
-      ),
+      cof: pipe(calcCOF(formData, timestamp), (v) => round(v, 2)),
       createdAt: editCard.createdAt
         ? Temporal.Instant.fromEpochMilliseconds(editCard.createdAt)
             .toZonedDateTimeISO(localTimezone)
             .toPlainDate()
             .toLocaleString()
         : '-',
-      nextReview: '?',
+      nextReview: getNextReviewDate(formData, timestamp),
     }
   })
 
@@ -517,18 +523,14 @@ const ModalContent = (props: ModalContentProps) => {
           <Show when={reviewStats()}>
             {(stats) => (
               <div class="block-section">
-                <div class="inline">
-                  <div>
-                    COF: <strong>{stats.cof}</strong>
-                  </div>
-                  <div class="separator" />
-                  <div>
-                    Created: <strong>{stats.createdAt}</strong>
-                  </div>
-                  <div class="separator" />
-                  <div>
-                    Next Review: <strong>{stats.nextReview}</strong>
-                  </div>
+                <div>
+                  COF: <strong>{stats.cof}</strong>
+                </div>
+                <div>
+                  Created: <strong>{stats.createdAt}</strong>
+                </div>
+                <div>
+                  Next Review: <strong>{stats.nextReview}</strong>
                 </div>
               </div>
             )}
@@ -588,4 +590,20 @@ function normalizeValue<T>(value: T) {
   if (Array.isArray(value) && value.length === 0) return null
 
   return value
+}
+
+function useDebouncedValue<T>(value: () => T, ms: number) {
+  const [debouncedValue, setDebouncedValue] = createSignal(value())
+
+  let timeoutId: number
+
+  createEffect(() => {
+    const newValue = value()
+
+    timeoutId = window.setTimeout(() => setDebouncedValue(() => newValue), ms)
+
+    onCleanup(() => clearTimeout(timeoutId))
+  })
+
+  return debouncedValue
 }
