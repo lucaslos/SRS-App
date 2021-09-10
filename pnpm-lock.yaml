@@ -31,7 +31,7 @@ specifiers:
   remove-markdown: ^0.3.0
   rollup-plugin-visualizer: ^5.5.2
   snarkdown: ^2.0.0
-  solid-js: ^1.0.5
+  solid-js: ^1.1.3
   solid-styled-components: ^0.27.1
   solid-transition-group: ^0.0.8
   typescript: ^4.4.0-beta
@@ -45,7 +45,7 @@ specifiers:
 
 dependencies:
   '@js-temporal/polyfill': 0.1.0
-  '@rturnq/solid-router': 0.3.0_solid-js@1.0.5
+  '@rturnq/solid-router': 0.3.0_solid-js@1.1.3
   '@types/jest': 26.0.24
   '@types/remove-markdown': 0.3.1
   '@types/rollup-plugin-visualizer': 4.2.1
@@ -74,9 +74,9 @@ dependencies:
   remove-markdown: 0.3.0
   rollup-plugin-visualizer: 5.5.2
   snarkdown: 2.0.0
-  solid-js: 1.0.5
-  solid-styled-components: 0.27.1_solid-js@1.0.5
-  solid-transition-group: 0.0.8_solid-js@1.0.5
+  solid-js: 1.1.3
+  solid-styled-components: 0.27.1_solid-js@1.1.3
+  solid-transition-group: 0.0.8_solid-js@1.1.3
   typescript: 4.4.0-beta
   verbal-expressions: 1.0.2
   vite-plugin-plain-text: 1.1.4
@@ -2371,13 +2371,13 @@ packages:
       rollup: 2.56.0
     dev: false
 
-  /@rturnq/solid-router/0.3.0_solid-js@1.0.5:
+  /@rturnq/solid-router/0.3.0_solid-js@1.1.3:
     resolution: {integrity: sha512-jD78tPyuK4RLXQch/fjxQKZkJBuQUZB9zhGna1uIg7VpDbqCyNXq/9hISKpmR3vuoQYrc1l39nBPsJjSLAl0Jg==}
     peerDependencies:
       solid-js: '>= 1.0.0'
     dependencies:
       regexparam: 1.3.0
-      solid-js: 1.0.5
+      solid-js: 1.1.3
     dev: false
 
   /@sinonjs/commons/1.8.3:
@@ -7026,6 +7026,11 @@ packages:
 
   /solid-js/1.0.5:
     resolution: {integrity: sha512-qW2FnTcvTNUgi6UTfyDs9jC8sls6OjGBt2d6+LeG8D3ULQupSG7OyJq0LXDIDXdwsjodwe1v+ih5x0BvBxKwmQ==}
+    dev: true
+
+  /solid-js/1.1.3:
+    resolution: {integrity: sha512-xJe/1btcyxL5YNxDhU80rrpaj0SvuW+qA1AYV4R3SzhYI18OfFDc1WYQ0ASJnqaY7kVGu4dfqjH15yVLVVzrKg==}
+    dev: false
 
   /solid-refresh/0.2.2_solid-js@1.0.5:
     resolution: {integrity: sha512-oQN3pUJ8fBd4ldMxZVqK7S4PGzAn1yx1B5bRRfANoxoqmHyY2QLfzrOzXsYnAkhh272K+W24oKgFWlmdUZ6HtQ==}
@@ -7035,22 +7040,22 @@ packages:
       solid-js: 1.0.5
     dev: true
 
-  /solid-styled-components/0.27.1_solid-js@1.0.5:
+  /solid-styled-components/0.27.1_solid-js@1.1.3:
     resolution: {integrity: sha512-DKlLBxiq75af/6vUXyM42Alg+hZ1eK2vffQG1kvZFsxuADR9zfTYUNCDmon54jsRUq4EYfkdI+f4IRb95mez0w==}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:
       csstype: 2.6.17
       goober: 2.0.39_csstype@2.6.17
-      solid-js: 1.0.5
+      solid-js: 1.1.3
     dev: false
 
-  /solid-transition-group/0.0.8_solid-js@1.0.5:
+  /solid-transition-group/0.0.8_solid-js@1.1.3:
     resolution: {integrity: sha512-5cS/Ircfs/Y0J00oEToL+MWd9V07KgQlw+qRD8kpd6azb2Ri5SjXg/ocqT8U8Wgdx1VQPx45HyopQN+UumkVGQ==}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:
-      solid-js: 1.0.5
+      solid-js: 1.1.3
     dev: false
 
   /source-map-js/0.6.2:

@@ -10,7 +10,7 @@ import { transition } from '@src/style/helpers/transition'
 import { colors, gradients } from '@src/style/theme'
 import { useSpring } from '@src/utils/hooks/useSpring'
 import { cx } from '@utils/cx'
-import { createMemo, createSignal } from 'solid-js'
+import { createEffect, createMemo, createSignal } from 'solid-js'
 import snarkdown from 'snarkdown'
 import { css } from 'solid-styled-components'
 import { gradientText } from '@src/style/helpers/gradientText'
@@ -285,8 +285,8 @@ const ReviewCard = (props: ReviewCardProps) => {
     setBlockInteraction(true)
 
     void textToSpeech(getHighlightedText(card().front ?? '')).finally(() => {
-      answerActiveCard(answer)
       setBlockInteraction(false)
+      answerActiveCard(answer)
     })
   }
 
@@ -336,7 +336,7 @@ const ReviewCard = (props: ReviewCardProps) => {
 
       <div
         class={cx('back', backStyle, cardBaseStyle)}
-        style={{ 'pointer-events': blockInteraction() ? 'none' : undefined }}
+        style={{ 'pointer-events': blockInteraction() ? 'none' : 'auto' }}
       >
         {attentionRequiredTag}
 
@@ -368,11 +368,7 @@ const ReviewCard = (props: ReviewCardProps) => {
             <Icon name="check" />
           </ButtonElement>
 
-          <ButtonElement
-            class="success"
-            disabled={showAnswer2()}
-            onClick={() => answerCard('success')}
-          >
+          <ButtonElement class="success" onClick={() => answerCard('success')}>
             <Icon name="double-check" />
           </ButtonElement>
         </div>
