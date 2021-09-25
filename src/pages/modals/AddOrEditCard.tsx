@@ -214,8 +214,10 @@ interface ModalContentProps {
 }
 
 const ModalContent = (props: ModalContentProps) => {
-  const [keepOpenAfterSave, setKeepOpenAfterSave] = createSignal(false)
   const router = useRouter()
+  const [keepOpenAfterSave, setKeepOpenAfterSave] = createSignal(
+    router.location.queryString.includes('keepOpenAfterSave'),
+  )
 
   const editCard = iife(() => {
     if (!props.editCard) return false
@@ -360,8 +362,8 @@ const ModalContent = (props: ModalContentProps) => {
     if (keepOpenAfterSave()) {
       props.onClose()
       setTimeout(() => {
-        router.push('?add')
-      }, 400)
+        router.push('?add=1&keepOpenAfterSave=1')
+      }, 500)
     } else {
       props.onClose()
     }
